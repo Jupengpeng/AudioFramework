@@ -6,3 +6,8 @@
 .DS_Store
 /build
 /captures
+src/main/java/cn/
+src/main/res/drawable/
+RecoderDemo/libs/
+LameLibraries/src/main/java/cn/
+LameLibraries/src/main/res/drawable/
