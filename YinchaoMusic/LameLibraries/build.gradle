@@ -9,33 +9,27 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+
+
     }
 
-    sourceSets {
-        main {
-            jni.srcDirs = []
-            jniLibs.srcDirs = ['libs']
+//    sourceSets {
+//        main {
+//            jni.srcDirs = []
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
+
+    externalNativeBuild {
+        ndkBuild {
+            path 'src/main/jni/Android.mk'
         }
     }
-
 
 
     buildTypes {
         release {
 
-//            ndk {
-//                moduleName = "mp3lame"
-//                abiFilters "armeabi","x86","armeabi-v7a"
-//            }
-
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-        debug {
-//            ndk {
-//                moduleName = "test"
-//                abiFilters "armeabi","x86","armeabi-v7a"
-//            }
 
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'

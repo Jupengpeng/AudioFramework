@@ -42,12 +42,12 @@
 # include <ctype.h>
 #else
 # ifndef HAVE_STRCHR
-#  define strchr index
+//#  define strchr index
 #  define strrchr rindex
 # endif
 char   *strchr(), *strrchr();
 # ifndef HAVE_MEMCPY
-#  define memcpy(d, s, n) bcopy ((s), (d), (n))
+//#  define memcpy(d, s, n) bcopy ((s), (d), (n))
 # endif
 #endif
 
@@ -59,6 +59,8 @@ char   *strchr(), *strrchr();
 #include "lame_global_flags.h"
 #include "util.h"
 #include "bitstream.h"
+
+#include <string.h>
 
 #define lame_calloc(TYPE, COUNT) ((TYPE*)calloc(COUNT, sizeof(TYPE)))
 

@@ -32,6 +32,8 @@
 #include "util.h"
 #include "tables.h"
 
+#include <string.h>
+
 #define PRECOMPUTE
 #if defined(__FreeBSD__) && !defined(__alpha__)
 # include <machine/floatingpoint.h>

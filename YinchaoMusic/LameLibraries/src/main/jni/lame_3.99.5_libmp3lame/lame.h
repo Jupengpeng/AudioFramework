@@ -28,8 +28,13 @@
 #include <stddef.h>
 /* for va_list typedef */
 #include <stdarg.h>
+#include <jni.h>
+#include <string.h>
+#include <stdlib.h>
+
 /* for FILE typedef, TODO: remove when removing lame_mp3_tags_fid */
 #include <stdio.h>
+#include <jni.h>
 
 #if defined(__cplusplus)
 extern "C" {
