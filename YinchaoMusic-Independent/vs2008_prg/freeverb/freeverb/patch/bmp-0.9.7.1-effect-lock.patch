@@ -1,0 +1,223 @@
+*** bmp-0.9.7.1/beep/effect.c.orig	2008-07-29 22:57:37.000000000 +0900
+--- bmp-0.9.7.1/beep/effect.c	2008-07-29 23:00:14.000000000 +0900
+***************
+*** 17,59 ****
+--- 17,65 ----
+   *  You should have received a copy of the GNU General Public License
+   *  along with this program; if not, write to the Free Software
+   *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+   */
+  
+  #include "effect.h"
+  
+  #include <glib.h>
+  #include <string.h>
+  #include "plugin.h"
++ #include "pluginenum.h"
+  
+  EffectPluginData ep_data = {
+      NULL,
+      NULL,
+      FALSE,
+      FALSE
+  };
+  
+  static gint
+  effect_do_mod_samples(gpointer * data, gint length,
+                        AFormat fmt, gint srate, gint nch)
+  {
+      GList *l = ep_data.enabled_list;
+  
++     if(g_mutex_trylock(effectMutex) != TRUE)
++         return length;
++ 
+      while (l) {
+          if (l->data) {
+              EffectPlugin *ep = l->data;
+              if (ep->mod_samples)
+                  length = ep->mod_samples(data, length, fmt, srate, nch);
+          }
+          l = g_list_next(l);
+      }
+  
++     g_mutex_unlock(effectMutex);
++ 
+      return length;
+  }
+  
+  static void
+  effect_do_query_format(AFormat * fmt, gint * rate, gint * nch)
+  {
+      GList *l = ep_data.enabled_list;
+  
+      while (l) {
+          if (l->data) {
+***************
+*** 121,157 ****
+          effect = node->data;
+          if (effect && effect->configure)
+              effect->configure();
+      }
+  }
+  
+  
+  void
+  enable_effect_plugin(int i, gboolean enable)
+  {
+!     GList *node = g_list_nth(ep_data.effect_list, i);
+      EffectPlugin *ep;
+  
+      if (!node || !(node->data))
+          return;
+      ep = node->data;
+  
+      if (enable && !g_list_find(ep_data.enabled_list, ep)) {
+          ep_data.enabled_list = g_list_append(ep_data.enabled_list, ep);
+          if (ep->init)
+              ep->init();
+      }
+      else if (!enable && g_list_find(ep_data.enabled_list, ep)) {
+          ep_data.enabled_list = g_list_remove(ep_data.enabled_list, ep);
+          if (ep->cleanup)
+              ep->cleanup();
+      }
+  }
+  
+  GList *
+  get_effect_list(void)
+  {
+      return ep_data.effect_list;
+  }
+  
+  gboolean
+  effect_enabled(int i)
+--- 127,169 ----
+          effect = node->data;
+          if (effect && effect->configure)
+              effect->configure();
+      }
+  }
+  
+  
+  void
+  enable_effect_plugin(int i, gboolean enable)
+  {
+!     GList *node;
+      EffectPlugin *ep;
+  
++     g_mutex_lock(effectMutex);
++ 
++     node = g_list_nth(ep_data.effect_list, i);
++ 
+      if (!node || !(node->data))
+          return;
+      ep = node->data;
+  
+      if (enable && !g_list_find(ep_data.enabled_list, ep)) {
+          ep_data.enabled_list = g_list_append(ep_data.enabled_list, ep);
+          if (ep->init)
+              ep->init();
+      }
+      else if (!enable && g_list_find(ep_data.enabled_list, ep)) {
+          ep_data.enabled_list = g_list_remove(ep_data.enabled_list, ep);
+          if (ep->cleanup)
+              ep->cleanup();
+      }
++ 
++     g_mutex_unlock(effectMutex);
+  }
+  
+  GList *
+  get_effect_list(void)
+  {
+      return ep_data.effect_list;
+  }
+  
+  gboolean
+  effect_enabled(int i)
+*** bmp-0.9.7.1/beep/pluginenum.h.orig	2008-07-29 23:03:10.000000000 +0900
+--- bmp-0.9.7.1/beep/pluginenum.h	2008-07-29 23:03:27.000000000 +0900
+***************
+*** 23,34 ****
+--- 23,35 ----
+  
+  #include <glib.h>
+  
+  #define PLUGIN_FILENAME(name) ("lib" name "." G_MODULE_SUFFIX)
+  
+  void plugin_system_init(void);
+  void plugin_system_cleanup(void);
+  
+  extern const gchar *plugin_dir_list[];
+  extern GHashTable *plugin_matrix;
++ extern GMutex * effectMutex;
+  
+  #endif
+*** bmp-0.9.7.1/beep/pluginenum.c.orig	2008-07-29 23:00:34.000000000 +0900
+--- bmp-0.9.7.1/beep/pluginenum.c	2008-07-29 23:02:58.000000000 +0900
+***************
+*** 42,61 ****
+--- 42,63 ----
+  #include "output.h"
+  #include "visualization.h"
+  
+  const gchar *plugin_dir_list[] = {
+      PLUGINSUBS,
+      NULL
+  };
+  
+  GHashTable *plugin_matrix = NULL;
+  
++ GMutex * effectMutex = NULL;
++ 
+  static gint
+  inputlist_compare_func(gconstpointer a, gconstpointer b)
+  {
+      const InputPlugin *ap = a, *bp = b;
+      return strcasecmp(ap->description, bp->description);
+  }
+  
+  static gint
+  outputlist_compare_func(gconstpointer a, gconstpointer b)
+  {
+***************
+*** 254,273 ****
+--- 256,277 ----
+      if (!g_module_supported()) {
+          /* FIXME: We should open an error dialog for this. BMP is
+             practically useless without plugins */
+          g_warning("Module loading not supported! Plugins will not be loaded.");
+          return;
+      }
+  
+      plugin_matrix = g_hash_table_new_full(g_str_hash, g_int_equal, g_free,
+                                            NULL);
+  
++     effectMutex = g_mutex_new();
++ 
+  #ifndef DISABLE_USER_PLUGIN_DIR
+      scan_plugins(bmp_paths[BMP_PATH_USER_PLUGIN_DIR]);
+      /*
+       * This is in a separate loop so if the user puts them in the
+       * wrong dir we'll still get them in the right order (home dir
+       * first)                                                - Zinx
+       */
+      while (plugin_dir_list[dirsel]) {
+          dir = g_build_filename(bmp_paths[BMP_PATH_USER_PLUGIN_DIR],
+                                 plugin_dir_list[dirsel++], NULL);
+***************
+*** 430,440 ****
+--- 434,446 ----
+      while (g_main_iteration(FALSE));
+      GDK_THREADS_ENTER();
+  
+      for (node = get_vis_list(); node; node = g_list_next(node)) {
+          vp = VIS_PLUGIN(node->data);
+          g_module_close(vp->handle);
+      }
+  
+      if (vp_data.vis_list)
+          g_list_free(vp_data.vis_list);
++ 
++     g_mutex_free(effectMutex);
+  }
