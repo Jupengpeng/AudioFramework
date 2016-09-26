@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/id_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="play" />
+    
+    <Button
+		android:id="@+id/id_pause"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="pause" />
+    
+    <Button
+		android:id="@+id/id_resume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="resume" />
+    
+    <Button
+        android:id="@+id/id_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="stop" />
+
+    <Button
+        android:id="@+id/id_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="background" />
+    
+    <Button
+        android:id="@+id/id_origin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="origin" />
+    
+    <Button
+        android:id="@+id/id_mix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="play_mix" />
+    
+    <Button
+        android:id="@+id/id_mix2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="play_mix2" />
+
+    <SeekBar
+        android:id="@+id/id_player_volume"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
+    <SeekBar
+        android:id="@+id/id_recorder_volume"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
+    <SeekBar
+        android:id="@+id/id_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="1000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout><!-- From: file:/E:/TTSing-Independent/Android/test/res/layout/activity_main.xml -->
