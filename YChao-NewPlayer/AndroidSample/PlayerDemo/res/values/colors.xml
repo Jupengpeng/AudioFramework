@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+    <color name="default_background_and_selector">#ffffff</color>
+
+    <color name="mv_thumb">#ffffff</color>
+    <color name="default_screen_bg">#f9f9f9</color>
+    <color name="rounded_container_bg">#222222</color>
+    <color name="rounded_container_border">#3b3f44</color>
+    <color name="light_gray_header_color">#646663</color>
+
+    <color name="touch_area">#8ff26e8f</color>
+    <color name="progress_touch_area">#00f2fe8f</color>
+
+    <color name="seek_bar_background">#34000000</color>
+    <color name="seek_bar_progress">#67c5ff</color>
+    <color name="seek_bar_second_progress">#f9f9f9</color>
+</resources>

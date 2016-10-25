@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\TTSing-Independent\Android\playback\assets"/></dataSet><dataSet config="debug"><source path="E:\TTSing-Independent\Android\playback\build-types\debug\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="F:\musicchao\YCMusic\YinchaoMusic-Independent\Android\playback\assets"/></dataSet><dataSet config="debug"><source path="F:\musicchao\YCMusic\YinchaoMusic-Independent\Android\playback\build-types\debug\assets"/></dataSet></merger>
