@@ -14,18 +14,18 @@ android {
 
     }
 
-//    sourceSets {
-//        main {
-//            jni.srcDirs = []
-//            jniLibs.srcDirs = ['libs']
-//        }
-//    }
-
-    externalNativeBuild {
-        ndkBuild {
-            path 'src/main/jni/Android.mk'
+    sourceSets {
+        main {
+            jni.srcDirs = []
+            jniLibs.srcDirs = ['libs']
         }
     }
+
+//    externalNativeBuild {
+//        ndkBuild {
+//            path 'src/main/jni/Android.mk'
+//        }
+//    }
 
 
     buildTypes {

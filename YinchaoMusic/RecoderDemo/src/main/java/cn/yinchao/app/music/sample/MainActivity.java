@@ -91,10 +91,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     @OnClick(R.id.iv_play)
-
-    public void playMusic(){
+    public void playMusic() {
 
         File file = new File(Environment.getExternalStorageDirectory(), fileName);
         MediaInstance.getInstance().startMediaPlay(file.getAbsolutePath());
@@ -102,10 +100,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.iv_restart)
-    public void clearTempFile(){
+    public void clearTempFile() {
         File file = new File(Environment.getExternalStorageDirectory(), fileName);
 
-        if (file.exists()){
+        if (file.exists()) {
             file.delete();
         }
     }

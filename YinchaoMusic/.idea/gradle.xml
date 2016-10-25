@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/LameLibraries" />
             <option value="$PROJECT_DIR$/RecoderDemo" />
+            <option value="$PROJECT_DIR$/yinchao-mediaplayer" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
