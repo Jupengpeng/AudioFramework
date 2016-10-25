@@ -1,0 +1,465 @@
+# Copyright (C) 2009 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+
+MY_INC_PATH_MP3DEC_N:= $(LOCAL_PATH)/MP3Dec/inc
+MY_SRC_PATH_MP3DEC_N:= MP3Dec/src
+
+
+
+# MP3Dec
+include $(CLEAR_VARS)
+
+LOCAL_MODULE    := MP3Dec
+
+LOCAL_SRC_FILES := $(MY_SRC_PATH_MP3DEC_N)/ttMemAlign.c \
+					$(MY_SRC_PATH_MP3DEC_N)/ttMP3DecApis.c \
+					$(MY_SRC_PATH_MP3DEC_N)/ttMP3DecBit.c \
+					$(MY_SRC_PATH_MP3DEC_N)/ttMP3DecBuf.c \
+					$(MY_SRC_PATH_MP3DEC_N)/ttMP3Decdct32.c \
+					$(MY_SRC_PATH_MP3DEC_N)/ttMP3DecFrame.c \
+					$(MY_SRC_PATH_MP3DEC_N)/ttMP3DecHuffman.c \
+					$(MY_SRC_PATH_MP3DEC_N)/ttMP3DecLayer3.c \
+					$(MY_SRC_PATH_MP3DEC_N)/ttMP3DecLayer12.c \
+					$(MY_SRC_PATH_MP3DEC_N)/ttMP3DecPolyphase.c \
+					$(MY_SRC_PATH_MP3DEC_N)/ttMP3DecRQTable.c
+				
+					
+LOCAL_C_INCLUDES := $(LOCAL_PATH) \
+					$(MY_INC_PATH_MP3DEC_N) 
+		
+LOCAL_CFLAGS	:= -D__GCC32__ -D__X86__ -D__MIPS__ -DHAVE_CONFIG_H -DOPT_GENERIC -DREAL_IS_FLOAT -DNOXFERMEM -ffast-math -O2  -nostdlib -enable-int-quality -mandroid
+
+LOCAL_SHARED_LIBRARIES := mediaplayer osal
+
+include $(BUILD_SHARED_LIBRARY)
+
+
+# APEDec
+include $(CLEAR_VARS)
+
+LOCAL_MODULE    := APEDec
+
+LOCAL_SRC_FILES :=	$(MY_SRC_PATH_APEDEC)/predictor.c \
+					$(MY_SRC_PATH_APEDEC)/crc.c \
+					$(MY_SRC_PATH_APEDEC)/decoder.c \
+					$(MY_SRC_PATH_APEDEC)/entropy.c \
+					$(MY_SRC_PATH_APEDEC)/filter_1280_15.c \
+					$(MY_SRC_PATH_APEDEC)/filter_16_11.c \
+					$(MY_SRC_PATH_APEDEC)/filter_256_13.c \
+					$(MY_SRC_PATH_APEDEC)/filter_32_10.c \
+					$(MY_SRC_PATH_APEDEC)/filter_64_11.c \
+					$(MY_SRC_PATH_APEDEC)/TTAPEDec.cpp						
+					
+LOCAL_C_INCLUDES := $(LOCAL_PATH) \
+					$(MY_INC_PATH_APEPLUGIN) 
+
+
+LOCAL_CFLAGS	:= -D__GCC32__ -D__WINS__
+
+LOCAL_SHARED_LIBRARIES := mediaplayer osal
+
+include $(BUILD_SHARED_LIBRARY)
+
+# DTSec
+include $(CLEAR_VARS)
+
+LOCAL_MODULE    := DTSDec
+ 
+LOCAL_SRC_FILES :=	$(MY_SRC_PATH_DTSDEC)/audioconvert.c \
+					$(MY_SRC_PATH_DTSDEC)/bitstream.c \
+					$(MY_SRC_PATH_DTSDEC)/channel_layout.c \
+					$(MY_SRC_PATH_DTSDEC)/dca_parser.c \
+					$(MY_SRC_PATH_DTSDEC)/dcadec.c \
+					$(MY_SRC_PATH_DTSDEC)/dcadsp.c \
+					$(MY_SRC_PATH_DTSDEC)/dither.c \
+					$(MY_SRC_PATH_DTSDEC)/fft.c \
+					$(MY_SRC_PATH_DTSDEC)/float_dsp.c \
+					$(MY_SRC_PATH_DTSDEC)/fmtconvert.c \
+					$(MY_SRC_PATH_DTSDEC)/mathtables.c \
+					$(MY_SRC_PATH_DTSDEC)/mdct.c \
+					$(MY_SRC_PATH_DTSDEC)/mem.c \
+					$(MY_SRC_PATH_DTSDEC)/opt.c \
+					$(MY_SRC_PATH_DTSDEC)/rematrix.c \
+					$(MY_SRC_PATH_DTSDEC)/resample.c \
+					$(MY_SRC_PATH_DTSDEC)/samplefmt.c \
+					$(MY_SRC_PATH_DTSDEC)/swresample.c \
+					$(MY_SRC_PATH_DTSDEC)/synth_filter.c \
+					$(MY_SRC_PATH_DTSDEC)/utils.c \
+					$(MY_SRC_PATH_DTSDEC)/TTDTSDecApi.cpp
+					
+LOCAL_C_INCLUDES := $(LOCAL_PATH) \
+					$(MY_INC_PATH_DTSPLUGIN) \
+					$(MY_INC_PATH_COMMONIN) \
+					$(LOCAL_PATH)/../../osal/inc \
+																									
+LOCAL_CFLAGS	:= -D__GCC32__
+
+LOCAL_SHARED_LIBRARIES := mediaplayer osal
+
+include $(BUILD_SHARED_LIBRARY)
+
+# WMADec
+include $(CLEAR_VARS)
+
+LOCAL_MODULE    := WMADec
+ 
+LOCAL_SRC_FILES :=  $(MY_SRC_PATH_WMA_ASF)/ms_api_wrap.c \
+					$(MY_SRC_PATH_WMA_ASF)/wmaudio.c \
+					$(MY_SRC_PATH_WMA_ASF)/wmaudio_audec.c \
+					$(MY_SRC_PATH_WMA_ASF)/wmaudio_parse.c \
+					$(MY_SRC_PATH_WMA_AUD)/crc.c \
+					$(MY_SRC_PATH_WMA_AUD)/wmabuffilt.c \
+					$(MY_SRC_PATH_WMA_AUD)/wmachmtx.c \
+					$(MY_SRC_PATH_WMA_AUD)/wmaerror.c \
+					$(MY_SRC_PATH_WMA_AUD)/wmaltrt.c \
+					$(MY_SRC_PATH_WMA_AUD)/wmamalloc.c \
+					$(MY_SRC_PATH_WMA_AUD)/wmapcmacc.c \
+					$(MY_SRC_PATH_WMA_COM)/basepluspro.c \
+					$(MY_SRC_PATH_WMA_COM)/chexpro.c \
+					$(MY_SRC_PATH_WMA_COM)/configcommon.c \
+					$(MY_SRC_PATH_WMA_COM)/dectables.c \
+					$(MY_SRC_PATH_WMA_COM)/dectablespro.c \
+					$(MY_SRC_PATH_WMA_COM)/dectablesstd.c \
+					$(MY_SRC_PATH_WMA_COM)/dectablesstdpro.c \
+					$(MY_SRC_PATH_WMA_COM)/drccommonpro.c \
+					$(MY_SRC_PATH_WMA_COM)/fex.c \
+					$(MY_SRC_PATH_WMA_COM)/fft.c \
+					$(MY_SRC_PATH_WMA_COM)/lowrate_common.c \
+					$(MY_SRC_PATH_WMA_COM)/lowrate_commonstd.c \
+					$(MY_SRC_PATH_WMA_COM)/lpc.c \
+					$(MY_SRC_PATH_WMA_COM)/lpclsl.c \
+					$(MY_SRC_PATH_WMA_COM)/lpcprolsl.c \
+					$(MY_SRC_PATH_WMA_COM)/lpcstd.c \
+					$(MY_SRC_PATH_WMA_COM)/msaudio.c \
+					$(MY_SRC_PATH_WMA_COM)/msaudiolsl.c \
+					$(MY_SRC_PATH_WMA_COM)/msaudiopro.c \
+					$(MY_SRC_PATH_WMA_COM)/msaudiostd.c \
+					$(MY_SRC_PATH_WMA_COM)/msaudiostdpro.c \
+					$(MY_SRC_PATH_WMA_COM)/wma10_dec_interface.c \
+					$(MY_SRC_PATH_WMA_DEC)/baseplusdecpro.c \
+					$(MY_SRC_PATH_WMA_DEC)/chexdecpro.c \
+					$(MY_SRC_PATH_WMA_DEC)/entropydec.c \
+					$(MY_SRC_PATH_WMA_DEC)/entropydecpro.c \
+					$(MY_SRC_PATH_WMA_DEC)/entropydecprolsl.c \
+					$(MY_SRC_PATH_WMA_DEC)/entropydecstd.c \
+					$(MY_SRC_PATH_WMA_DEC)/fexdec.c \
+					$(MY_SRC_PATH_WMA_DEC)/huffdec.c \
+					$(MY_SRC_PATH_WMA_DEC)/losslessdeclsl.c \
+					$(MY_SRC_PATH_WMA_DEC)/losslessdecpro.c \
+					$(MY_SRC_PATH_WMA_DEC)/losslessdecprolsl.c \
+					$(MY_SRC_PATH_WMA_DEC)/msaudiodec.c \
+					$(MY_SRC_PATH_WMA_DEC)/strmdec_wma.c\
+					$(MY_SRC_PATH_WMA_FMT)/pcmfmt.c \
+					$(MY_SRC_PATH_WMA_FMT)/wmafmt.c \
+					$(MY_SRC_PATH_WMA_INTERFACE)/wma_interface.c\
+					
+LOCAL_C_INCLUDES := $(LOCAL_PATH) \
+					$(MY_INC_PATH_WMAPLUGIN) \
+					$(MY_INC_PATH_COMMONIN) \
+					$(LOCAL_PATH)/../../osal/inc \
+					
+MM:= -DBUILD_INTEGER -DENABLE_LPC \
+     -DENABLE_ALL_ENCOPT -DDISABLE_OPT -DDISABLE_UES \
+	 -DWMA_DECPK_BUILD -D_CRT_NON_CONFORMING_SWPRINTFS \
+	 -D_CRT_SECURE_NO_DEPRECATE -DWMAAPI_NO_DRM \
+	 -DWMAAPI_NO_DRM_STREAM -DWMA_OS_ANDROID \
+	 -DGST_API -DGST_RAW_DECODER -DWMAD_HUFFMANDEC_OPT_C \
+	 -DWMAPD_GETMV_BAND_SCLAE_OPT_C -DWMAD_AUSUBFRAMERECON_OPT_C \
+	 -DWMAD_MIDRATE_INVQUANT_OPT_C -DWMAPD_HUFFDEC_OPT_LUT \
+	 -DWMAPD_USE_INT_PI -DWMAPD_INVERSEQUANTER_OPT_C \
+	 -DWMAPD_SCALE_BAND_OPT_C -DWMAPD_INVCHANLXFORM_OPT_C \
+	 -DWMAPD_BPCHNLTRANSFORM_OPT_C -DWMAPD_BPRECONCOEF_OPT_C \
+	 -DWMAPD_MCLMS_OPT_C -DWMAPD_BP_IQ_CHANNEL_OPT_C \
+	 -DWMAPD_BP_IQ_CHANNEL_OPT_C \
+					
+LOCAL_CFLAGS	:= $(MM) -D__GCC32__
+#LOCAL_LDFLAGS += -Wl,--gc-sections#,--icf=safe
+LOCAL_LDFLAGS := -llog
+
+LOCAL_SHARED_LIBRARIES := mediaplayer osal
+
+include $(BUILD_SHARED_LIBRARY)
+
+
+# AACDec
+include $(CLEAR_VARS)
+
+LOCAL_MODULE    := AACDec
+
+LOCAL_SRC_FILES := $(MY_SRC_PATH_AACDEC)/bitstream.c \
+					$(MY_SRC_PATH_AACDEC)/bsac_dec_spectra.c \
+					$(MY_SRC_PATH_AACDEC)/decframe.c \
+					$(MY_SRC_PATH_AACDEC)/decode_bsac.c \
+					$(MY_SRC_PATH_AACDEC)/decoder.c \
+					$(MY_SRC_PATH_AACDEC)/downMatrix.c \
+					$(MY_SRC_PATH_AACDEC)/Header.c \
+					$(MY_SRC_PATH_AACDEC)/ic_predict.c \
+					$(MY_SRC_PATH_AACDEC)/latmheader.c \
+					$(MY_SRC_PATH_AACDEC)/lc_dequant.c \
+					$(MY_SRC_PATH_AACDEC)/lc_huff.c \
+					$(MY_SRC_PATH_AACDEC)/lc_hufftab.c \
+					$(MY_SRC_PATH_AACDEC)/lc_imdct.c \
+					$(MY_SRC_PATH_AACDEC)/lc_mdct.c \
+					$(MY_SRC_PATH_AACDEC)/lc_pns.c \
+					$(MY_SRC_PATH_AACDEC)/lc_stereo.c \
+					$(MY_SRC_PATH_AACDEC)/lc_syntax.c \
+					$(MY_SRC_PATH_AACDEC)/lc_tns.c \
+					$(MY_SRC_PATH_AACDEC)/ltp_dec.c \
+					$(MY_SRC_PATH_AACDEC)/ps_dec.c \
+					$(MY_SRC_PATH_AACDEC)/ps_syntax.c \
+					$(MY_SRC_PATH_AACDEC)/sam_decode_bsac.c \
+					$(MY_SRC_PATH_AACDEC)/sam_fadecode.c \
+					$(MY_SRC_PATH_AACDEC)/sbr_dec.c \
+					$(MY_SRC_PATH_AACDEC)/sbr_hfadj.c \
+					$(MY_SRC_PATH_AACDEC)/sbr_hfgen.c \
+					$(MY_SRC_PATH_AACDEC)/sbr_huff.c \
+					$(MY_SRC_PATH_AACDEC)/sbr_qmf.c \
+					$(MY_SRC_PATH_AACDEC)/sbr_syntax.c \
+					$(MY_SRC_PATH_AACDEC)/sbr_utility.c \
+					$(MY_SRC_PATH_AACDEC)/table.c \
+					$(MY_SRC_PATH_AACDEC)/unit.c
+					
+LOCAL_C_INCLUDES := $(LOCAL_PATH) \
+					$(MY_INC_PATH_AACPLUGIN) \
+					$(MY_INC_PATH_AFLIB) 
+
+
+LOCAL_CFLAGS	:= -D__GCC32__ -fsigned-char
+
+
+LOCAL_SHARED_LIBRARIES := mediaplayer resample osal
+
+include $(BUILD_SHARED_LIBRARY)
+
+# Resample module
+include $(CLEAR_VARS)
+MY_INC_PATH_AFLIB:=  $(LOCAL_PATH)/../audiodecoder/src/aflib
+MY_SRC_PATH_AFLIB:= ../audiodecoder/src/aflib
+
+LOCAL_MODULE    := resample
+
+LOCAL_SRC_FILES :=  $(MY_SRC_PATH_AFLIB)/aflibConverter.cpp
+
+LOCAL_C_INCLUDES :=	$(MY_INC_PATH_AFLIB)
+
+LOCAL_CFLAGS := -D_RESAMPLE_SMALL_FILTER_
+
+include $(BUILD_SHARED_LIBRARY)
+
+
+# Color Conversion
+include $(CLEAR_VARS)
+
+LOCAL_MODULE   := clconv
+
+LOCAL_SRC_FILES := 	\
+					$(MY_SRC_PATH_CLCONV)/clconv.c
+					
+								
+LOCAL_C_INCLUDES := $(LOCAL_PATH) \
+					$(MY_INC_PATH_COMMONIN)  \
+					$(MY_INC_PATH_CLCONV) \
+					$(LOCAL_PATH)/../../osal/inc \
+
+LOCAL_SHARED_LIBRARIES := mediaplayer osal
+
+include $(BUILD_SHARED_LIBRARY)
+
+# FLACDec
+include $(CLEAR_VARS)
+
+LOCAL_MODULE    := FLACDec
+
+LOCAL_SRC_FILES :=	$(MY_SRC_PATH_FLACDEC)/flacbitstream.c \
+					$(MY_SRC_PATH_FLACDEC)/flacdecoder.c \
+					$(MY_SRC_PATH_FLACDEC)/ttFLACDecApi.cpp						
+					
+LOCAL_C_INCLUDES := $(LOCAL_PATH) \
+					$(MY_INC_PATH_FLACPLUGIN) \
+					$(MY_INC_PATH_COMMONIN) \
+					$(LOCAL_PATH)/../../osal/inc \
+
+LOCAL_CFLAGS	:= -D__GCC32__
+
+LOCAL_SHARED_LIBRARIES := mediaplayer osal
+
+include $(BUILD_SHARED_LIBRARY)
+
+# AMRDec
+include $(CLEAR_VARS)
+
+LOCAL_MODULE    := AMRDec
+
+LOCAL_SRC_FILES :=	$(MY_SRC_PATH_AMRDEC)/amr_nb/a_refl.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/agc.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/amrdecode.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/b_cn_cod.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/bgnscd.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/c_g_aver.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/d1035pf.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/d2_11pf.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/d2_9pf.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/d3_14pf.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/d4_17pf.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/d8_31pf.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/d_gain_c.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/d_gain_p.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/d_plsf.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/d_plsf_3.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/d_plsf_5.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/dec_amr.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/dec_gain.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/dec_input_format_tab.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/dec_lag3.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/dec_lag6.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/dtx_dec.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/ec_gains.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/ex_ctrl.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/if2_to_ets.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/int_lsf.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/lsp_avg.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/ph_disp.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/post_pro.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/preemph.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/pstfilt.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/qgain475_tab.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/sp_dec.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/amr_nb/wmf_to_ets.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/copy.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/bits2prm.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/add.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/az_lsp.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/bitno_tab.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/bitreorder_tab.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/bytesused.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/c2_9pf_tab.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/div_32.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/div_s.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/extract_h.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/extract_l.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/gains_tbl.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/gc_pred.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/gmed_n.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/grid_tbl.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/gray_tbl.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/int_lpc.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/inv_sqrt.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/inv_sqrt_tbl.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/l_abs.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/l_deposit_h.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/l_deposit_l.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/l_shr_r.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/log2.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/log2_norm.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/log2_tbl.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/lsfwt.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/lsp.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/lsp_az.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/lsp_lsf.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/lsp_lsf_tbl.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/lsp_tab.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/mult_r.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/norm_l.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/norm_s.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/overflow_tbl.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/ph_disp_tab.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/pow2.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/pow2_tbl.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/pred_lt.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/q_plsf.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/q_plsf_3.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/q_plsf_3_tbl.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/q_plsf_5.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/q_plsf_5_tbl.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/qua_gain_tbl.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/reorder.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/residu.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/round.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/set_zero.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/shr.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/shr_r.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/sqrt_l.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/sqrt_l_tbl.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/sub.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/syn_filt.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/vad1.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/weight_a.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/common/window_tab.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/ttAMRDecApis.cpp \
+ 					$(MY_SRC_PATH_AMRDEC)/wrapperNb.cpp 
+					
+LOCAL_C_INCLUDES := $(LOCAL_PATH) \
+					$(MY_INC_PATH_AMRNB_SRC) \
+					$(MY_INC_PATH_AMRPLUGIN)/common \
+					$(MY_INC_PATH_AMRPLUGIN)/amr_nb \
+					$(MY_INC_PATH_AMRPLUGIN)/oscl \
+					$(MY_INC_PATH_AMRPLUGIN)
+					
+LOCAL_CFLAGS	:= -D__GCC32__ -DDISABLE_AMRNB_ENCODER					
+					
+LOCAL_SHARED_LIBRARIES := mediaplayer osal
+
+include $(BUILD_SHARED_LIBRARY)
+
+# ALACDec
+include $(CLEAR_VARS)
+
+LOCAL_MODULE    := ALACDec
+
+LOCAL_SRC_FILES :=	$(MY_SRC_PATH_ALACDEC)/ag_dec.c \
+					$(MY_SRC_PATH_ALACDEC)/ALACBitUtilities.c \
+					$(MY_SRC_PATH_ALACDEC)/dp_dec.c \
+					$(MY_SRC_PATH_ALACDEC)/EndianPortable.c \
+					$(MY_SRC_PATH_ALACDEC)/matrix_dec.c \
+					$(MY_SRC_PATH_ALACDEC)/ALACDecoder.cpp \
+					$(MY_SRC_PATH_ALACDEC)/ttALACDecApi.cpp									
+					
+LOCAL_C_INCLUDES := $(LOCAL_PATH) \
+					$(MY_INC_PATH_ALACPLUGIN) \
+					$(MY_INC_PATH_COMMONIN) \
+					$(LOCAL_PATH)/../../osal/inc 
+
+LOCAL_CFLAGS	:= -D__GCC32__
+
+LOCAL_SHARED_LIBRARIES := mediaplayer osal
+
+include $(BUILD_SHARED_LIBRARY)
+
+#MediaCodecDec
+include $(CLEAR_VARS)
+
+LOCAL_MODULE    := MediaCodecJDec
+
+LOCAL_SRC_FILES :=  \
+$(MY_SRC_PATH_MEDIACODECJ)/MediaCodecJava.cpp 			\
+$(MY_SRC_PATH_MEDIACODECJ)/ttMediaCodecDec.cpp			\
+../../osal/src/TTJniEnvUtil.cpp	 \
+
+LOCAL_C_INCLUDES :=  \
+		$(MY_INC_PATH_MEDIACODECJLUGIN) \
+		$(MY_INC_PATH_COMMONIN)		\
+		$(LOCAL_PATH)/../info/inc  \
+		$(LOCAL_PATH)/../../osal/inc  \
+
+LOCAL_CFLAGS := -DNDEBUG
+
+LOCAL_LDLIBS	:= -llog 
+
+LOCAL_SHARED_LIBRARIES := mediaplayer osal
+
+include $(BUILD_SHARED_LIBRARY)
