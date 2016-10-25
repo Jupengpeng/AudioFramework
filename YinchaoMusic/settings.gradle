@@ -1,1 +1,1 @@
-include ':RecoderDemo', ':LameLibraries', ':yinchao-mediaplayer'
+include ':RecoderDemo', ':LameLibraries', ':yinchao-mediaplayer', ':yinchao-player', ':yinchao-lib'
