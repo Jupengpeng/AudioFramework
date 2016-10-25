@@ -1,0 +1,262 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\PlayerTest.rc2""  // ·? Microsoft Visual C++ ±à?-μ?×ê?′\r\n"
+    "#include ""afxres.rc""     // ±ê×?×é?t\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\PlayerTest.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 PlayerTest"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "PlayerTest 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2011",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_PLAYERTEST_DIALOG DIALOGEX 0, 0, 471, 345
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "PlayerTest"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "播放",IDOK,81,175,50,16
+    PUSHBUTTON      "暂停",IDC_PAUSE,263,177,50,15
+    PUSHBUTTON      "停止",IDC_STOP,141,177,50,14
+    PUSHBUTTON      "继续",IDC_RESUME,203,177,50,14
+    PUSHBUTTON      "退出",IDC_Exit,327,177,50,14
+    CONTROL         "",IDC_PROGRESS,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,105,205,229,15
+    CONTROL         "",IDC_SLIDER1,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,85,239,17,77,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "上一曲",IDC_PRE,15,228,50,14
+    PUSHBUTTON      "下一曲",IDC_NEXT,15,246,50,14
+    CONTROL         "流行",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,119,245,35,10
+    CONTROL         "平坦",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,119,260,32,10
+    CONTROL         "重金属",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,119,274,40,10
+    CONTROL         "摇滚",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,119,289,32,10
+    GROUPBOX        "均衡器",IDC_STATIC,111,231,201,88
+    CONTROL         "爵士",IDC_RADIO5,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,119,303,32,10
+    GROUPBOX        "音量",IDC_STATIC,81,230,26,90
+    CONTROL         "",IDC_SLIDER2,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,159,241,11,68
+    CONTROL         "",IDC_SLIDER3,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,175,241,11,68
+    CONTROL         "",IDC_SLIDER4,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,189,241,11,68
+    CONTROL         "",IDC_SLIDER5,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,205,241,11,68
+    CONTROL         "",IDC_SLIDER6,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,219,241,11,68
+    CONTROL         "启用",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,323,245,47,10
+    CONTROL         "",IDC_SLIDER7,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,321,261,70,11
+    GROUPBOX        "低音增强",IDC_STATIC,317,232,73,47
+    CONTROL         "启用",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,401,243,30,13
+    CONTROL         "小间",IDC_RADIO6,"Button",BS_AUTORADIOBUTTON,433,245,34,8
+    CONTROL         "中间",IDC_RADIO7,"Button",BS_AUTORADIOBUTTON,433,258,34,8
+    CONTROL         "大间",IDC_RADIO8,"Button",BS_AUTORADIOBUTTON,433,270,34,8
+    CONTROL         "中厅",IDC_RADIO9,"Button",BS_AUTORADIOBUTTON,433,282,34,8
+    CONTROL         "大厅",IDC_RADIO10,"Button",BS_AUTORADIOBUTTON,433,293,34,8
+    CONTROL         "舞台",IDC_RADIO11,"Button",BS_AUTORADIOBUTTON,433,305,34,8
+    GROUPBOX        "环境音效",IDC_STATIC,395,232,73,94
+    CONTROL         "启用",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,325,293,47,10
+    CONTROL         "",IDC_SLIDER8,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,321,309,70,11
+    GROUPBOX        "虚拟声场",IDC_STATIC,317,279,73,47
+    GROUPBOX        "高音增强",IDC_STATIC,9,269,66,46
+    CONTROL         "启用",IDC_CHECK_TREBLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,282,47,10
+    CONTROL         "",IDC_SLD_TREBLE,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,11,298,70,11
+    CONTROL         "",IDC_SLIDER10,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,235,241,11,68
+    CONTROL         "",IDC_SLIDER11,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,249,241,11,68
+    CONTROL         "",IDC_SLIDER12,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,265,241,11,68
+    CONTROL         "",IDC_SLIDER13,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,279,241,11,68
+    CONTROL         "",IDC_SLIDER14,"msctls_trackbar32",TBS_VERT | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,295,241,11,68
+    LTEXT           "31",IDC_STATIC,159,309,9,8
+    LTEXT           "62",IDC_STATIC,175,309,9,8
+    LTEXT           "125",IDC_STATIC,187,309,13,8
+    LTEXT           "500",IDC_STATIC,219,309,13,8
+    LTEXT           "1k",IDC_STATIC,235,309,9,8
+    LTEXT           "2k",IDC_STATIC,251,309,9,8
+    LTEXT           "4k",IDC_STATIC,265,309,9,8
+    LTEXT           "8k",IDC_STATIC,279,309,9,8
+    LTEXT           "250",IDC_STATIC,203,309,13,8
+    LTEXT           "16k",IDC_STATIC,293,309,13,8
+    PUSHBUTTON      "重置",IDC_BTN_EQ_RESET,285,321,28,11
+    LTEXT           "+15",IDC_STATIC,305,241,13,8
+    LTEXT           "-15",IDC_STATIC,305,304,13,8
+END
+
+IDD_VIDEOVIEW DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "FileDescription", "TODO: <文件说明>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "PlayerTest.exe"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+            VALUE "OriginalFilename", "PlayerTest.exe"
+            VALUE "ProductName", "TODO: <产品名>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PLAYERTEST_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        TOPMARGIN, 7
+    END
+
+    IDD_VIDEOVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 PlayerTest(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\PlayerTest.rc2"  // ·? Microsoft Visual C++ ±à?-μ?×ê?′
+#include "afxres.rc"     // ±ê×?×é?t
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
