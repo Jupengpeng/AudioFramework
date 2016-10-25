@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/E:/TTSing-Independent/Android/playback/res/values/strings.xml -->
+    <!-- From: file:/F:/musicchao/YCMusic/YinchaoMusic-Independent/Android/playback/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">playback</string>
-    <!-- From: file:/E:/TTSing-Independent/Android/playback/res/values/styles.xml -->
+    <!-- From: file:/F:/musicchao/YCMusic/YinchaoMusic-Independent/Android/playback/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--

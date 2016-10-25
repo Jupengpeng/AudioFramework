@@ -11,7 +11,15 @@ apply plugin: 'android-library'
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
 }
+task makeJar(type: Copy) {
+    delete 'build/libs/mysdk.jar'
+    from('build/intermediates/bundles/release/')
+    into('build/libs/')
+    include('classes.jar')
+    rename ('classes.jar', 'mysdk.jar')
+}
 
+makeJar.dependsOn(build)
 android {
     compileSdkVersion 19
     buildToolsVersion "24.0.2"
