@@ -21,5 +21,11 @@ Debug/
 *.xcuserdatad/
 
 *.log
+*.tlog
 *.idp
 *.pdb
+*.ipdb
+*.VC.db
+/media/player/win32test/Release
+/media/player/win32test/Backup
+/win32libs
