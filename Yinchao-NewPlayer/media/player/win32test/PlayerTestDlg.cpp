@@ -289,7 +289,7 @@ BOOL CPlayerTestDlg::OnInitDialog()
 	//TravelFolder(CString(_T("E:\\测试集\\全歌曲格式\\wav\\立体声\\1.41M")),0);//84
 	//TravelFolder(CString(_T("C:\\temp")),0);//84
 	//TravelFolder(CString(_T("E:\\测试集\\歌曲\\320")),0);//84
-
+	
 	TravelFolder(CString(_T("D:\\Music")),0);//84
 	
 	
@@ -506,8 +506,8 @@ void CPlayerTestDlg::OnBnClickedOk()
 
 	//wprintf_s(_T("\n+++++Playing %d\n"), iCurPlayIdx);
 
-	const wchar_t* filename = L"E:\\2test.mp3";
-
+	//const wchar_t* filename = L"E:\\2test.mp3";
+	const wchar_t* filename = L"E:\\home\\music.mp3";
  	//wchar_t* filename = (wchar_t*)(LPCTSTR)(iFileArray.at(iCurPlayIdx));
 // 	
 	char *pcstr = (char *)malloc(sizeof(char)*(2 * wcslen(filename)+1));
