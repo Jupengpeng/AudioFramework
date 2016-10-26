@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
 
+apply from: "${rootProject.projectDir}/config/maven.gradle"
+
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
@@ -20,7 +22,7 @@ android {
 
     sourceSets {
         main {
-            jni.srcDirs = ['jni']
+//            jni.srcDirs = ['jni']
             jniLibs.srcDirs = ['jniLibs']
         }
     }
