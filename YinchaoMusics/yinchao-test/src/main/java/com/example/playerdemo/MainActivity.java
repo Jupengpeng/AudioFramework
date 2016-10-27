@@ -70,7 +70,7 @@ public class MainActivity extends Activity {
 
 
 //		String pluginPath = "/data/data/com.firmlyshell.app.music.test/lib";
-        String pluginPath = "/data/data/com.yinchao.android.app/lib";
+        String pluginPath = "/data/data/com.firmlyshell.app/lib";
 //		String pluginPath = "/data/app/com.firmlyshell.app-1/lib/arm";
         try {
 
@@ -167,12 +167,10 @@ public class MainActivity extends Activity {
 
         mSeekBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 
-            int value = 0;
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 // TODO Auto-generated method stub
 
-                mPlayProxy.seek(value);
             }
 
             @Override
@@ -185,7 +183,6 @@ public class MainActivity extends Activity {
             public void onProgressChanged(SeekBar seekBar, int progress,
                                           boolean fromUser) {
                 // TODO Auto-generated method stub
-                value = progress;
 
             }
         });
@@ -197,7 +194,7 @@ public class MainActivity extends Activity {
                             String playurl = urlEdit.getText().toString();
                             // mPlayProxy.palySong(playurl, cachePath);
                             mPlayProxy.palySong(playurl);
-
+                            Log.e(TAG, "start player ");
                         } catch (Exception e) {
 
                         }
