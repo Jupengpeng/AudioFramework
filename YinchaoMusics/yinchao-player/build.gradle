@@ -20,12 +20,12 @@ android {
         abortOnError false
     }
 
-    sourceSets {
-        main {
-//            jni.srcDirs = ['jni']
-            jniLibs.srcDirs = ['jniLibs']
-        }
-    }
+//    sourceSets {
+//        main {
+////            jni.srcDirs = ['jni']
+//            jniLibs.srcDirs = ['jniLibs']
+//        }
+//    }
 
 
 //    externalNativeBuild {

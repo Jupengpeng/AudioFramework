@@ -69,7 +69,7 @@ public class MainActivity extends Activity {
 
 
 //		String pluginPath = "/data/data/com.firmlyshell.app.music.test/lib";
-        String pluginPath = "/data/data/com.firmlyshell.app/lib";
+		String pluginPath = "/data/data/com.example.playerdemo/lib";
 //		String pluginPath = "/data/app/com.firmlyshell.app-1/lib/arm";
         try {
 
@@ -87,7 +87,7 @@ public class MainActivity extends Activity {
         }
         totalTimeTV = (TextView) findViewById(R.id.textView2);
         mPlayProxy = new MediaPlayerProxy(pluginPath);
-
+        timer.schedule(task, 1000, 1000);
         mPlayProxy.setOnStateChangeListener(new OnStateChangeListener() {
 
             @Override
@@ -110,9 +110,6 @@ public class MainActivity extends Activity {
                 totalTimeTV.setText(min + ":" + msec);
                 mSeekBar.setMax(nDuration);
                 mPlayProxy.start();
-
-
-                timer.schedule(task, 1000, 1000);
             }
 
             @Override
@@ -188,7 +185,7 @@ public class MainActivity extends Activity {
                             String playurl = urlEdit.getText().toString();
                             // mPlayProxy.palySong(playurl, cachePath);
                             mPlayProxy.palySong(playurl);
-
+                            Log.e(TAG, "start player ");
                         } catch (Exception e) {
 
                         }

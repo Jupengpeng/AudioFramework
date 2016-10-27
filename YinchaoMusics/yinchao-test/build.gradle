@@ -12,12 +12,11 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
-//    sourceSets {
-//        main {
-//            jni.srcDirs = ['jni']
-//            jniLibs.srcDirs = ['jniLibs']
-//        }
-//    }
+    sourceSets.main {
+           // jni.srcDirs = ['jni']
+            jniLibs.srcDirs 'jniLibs'
+            jni.srcDirs = []
+    }
 
     lintOptions {
         abortOnError false
@@ -32,13 +31,11 @@ android {
 }
 
 dependencies {
-
     compile project(':yinchao-player')
-
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-//    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-//        exclude group: 'com.android.support', module: 'support-annotations'
-//    })
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+        androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+            exclude group: 'com.android.support', module: 'support-annotations'
+       })
     compile 'com.android.support:appcompat-v7:24.2.1'
     testCompile 'junit:junit:4.12'
 }

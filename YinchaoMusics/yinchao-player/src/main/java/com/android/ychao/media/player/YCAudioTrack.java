@@ -186,19 +186,10 @@ public class YCAudioTrack {
         }
     }
 
-    public void audioDestroy(){
-        Log.d(LOG_TAG, "audioDestroy: " + " - ");
-    }
-
-    /**
-     *
-     * @param aLVolume
-     * @param aRVolume
-     */
-    private void audioSetVolume(int aLVolume, int aRVolume) {
-        if (mAudioTrack != null) {
-            float fLVolume;
-            float fRVolume;
+	private void audioSetVolume(int aLVolume, int aRVolume) {
+		if (mAudioTrack != null) {
+			float fLVolume;
+			float fRVolume;
 
             if (aLVolume == 0) {
                 fLVolume = 1.0f;
