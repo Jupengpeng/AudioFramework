@@ -38,6 +38,10 @@ public final class MediaPlayerProxy {
         	mCurMediaPlayer.stop();
         mPlayStatus = PlayStatus.STATUS_STOPPED;
     }
+
+	public void seek(int value){
+		mCurMediaPlayer.setPosition(value,0);
+	}
     
     public void palySong(String sourcePath) throws Exception{
     	stop();
