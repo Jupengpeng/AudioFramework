@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5BBA2C91DC86B9F00C016EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BBA2C71DC86B9F00C016EA /* LaunchScreen.storyboard */; };
+		A5BBA2CA1DC86B9F00C016EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BBA2C81DC86B9F00C016EA /* Main.storyboard */; };
 		B8511A631DC8467A00462222 /* YCPlayer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B80A12EC1DC7418800B69CA1 /* YCPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B8511A641DC8467F00462222 /* YCOsal.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B80A12E61DC7418100B69CA1 /* YCOsal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B8511A651DC8468300462222 /* YCMP3Dec.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B80A12E01DC7417900B69CA1 /* YCMP3Dec.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -21,9 +23,7 @@
 		B8F074871DC7207F00F4F936 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F074861DC7207F00F4F936 /* main.m */; };
 		B8F0748A1DC7207F00F4F936 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F074891DC7207F00F4F936 /* AppDelegate.m */; };
 		B8F0748D1DC7207F00F4F936 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8F0748C1DC7207F00F4F936 /* ViewController.mm */; };
-		B8F074901DC7207F00F4F936 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F0748E1DC7207F00F4F936 /* Main.storyboard */; };
 		B8F074921DC7207F00F4F936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F074911DC7207F00F4F936 /* Assets.xcassets */; };
-		B8F074951DC7207F00F4F936 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F074931DC7207F00F4F936 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +117,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A5BBA2C71DC86B9F00C016EA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A5BBA2C81DC86B9F00C016EA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B80A12CF1DC7416600B69CA1 /* YCAudioDecoder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YCAudioDecoder.xcodeproj; path = ../YCAudioDecoder/YCAudioDecoder.xcodeproj; sourceTree = "<group>"; };
 		B80A12D51DC7417100B69CA1 /* YCInfo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YCInfo.xcodeproj; path = ../YCInfo/YCInfo.xcodeproj; sourceTree = "<group>"; };
 		B80A12DB1DC7417900B69CA1 /* YCMP3Dec.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YCMP3Dec.xcodeproj; path = ../YCMP3Dec/YCMP3Dec.xcodeproj; sourceTree = "<group>"; };
@@ -129,9 +131,7 @@
 		B8F074891DC7207F00F4F936 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B8F0748B1DC7207F00F4F936 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B8F0748C1DC7207F00F4F936 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
-		B8F0748F1DC7207F00F4F936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B8F074911DC7207F00F4F936 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B8F074941DC7207F00F4F936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8F074961DC7207F00F4F936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,14 +215,14 @@
 		B8F074841DC7207F00F4F936 /* YCiOSPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				A5BBA2C71DC86B9F00C016EA /* LaunchScreen.storyboard */,
+				A5BBA2C81DC86B9F00C016EA /* Main.storyboard */,
 				B89F69731DC762CA00D5B156 /* Omi,AronChupa-Drop In the Ocean.mp3 */,
 				B8F074881DC7207F00F4F936 /* AppDelegate.h */,
 				B8F074891DC7207F00F4F936 /* AppDelegate.m */,
 				B8F0748B1DC7207F00F4F936 /* ViewController.h */,
 				B8F0748C1DC7207F00F4F936 /* ViewController.mm */,
-				B8F0748E1DC7207F00F4F936 /* Main.storyboard */,
 				B8F074911DC7207F00F4F936 /* Assets.xcassets */,
-				B8F074931DC7207F00F4F936 /* LaunchScreen.storyboard */,
 				B8F074961DC7207F00F4F936 /* Info.plist */,
 				B8F074851DC7207F00F4F936 /* Supporting Files */,
 			);
@@ -362,10 +362,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8F074951DC7207F00F4F936 /* LaunchScreen.storyboard in Resources */,
+				A5BBA2C91DC86B9F00C016EA /* LaunchScreen.storyboard in Resources */,
 				B8F074921DC7207F00F4F936 /* Assets.xcassets in Resources */,
-				B8F074901DC7207F00F4F936 /* Main.storyboard in Resources */,
 				B89F69741DC762CA00D5B156 /* Omi,AronChupa-Drop In the Ocean.mp3 in Resources */,
+				A5BBA2CA1DC86B9F00C016EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,25 +411,6 @@
 			targetProxy = B89F69671DC75D8F00D5B156 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		B8F0748E1DC7207F00F4F936 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B8F0748F1DC7207F00F4F936 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B8F074931DC7207F00F4F936 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B8F074941DC7207F00F4F936 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B8F074971DC7207F00F4F936 /* Debug */ = {

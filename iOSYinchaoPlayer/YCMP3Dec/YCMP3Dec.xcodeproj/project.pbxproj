@@ -36,10 +36,6 @@
 		B80A14431DC7456B00B69CA1 /* ttMP3DecGlobal.h in Sources */ = {isa = PBXBuildFile; fileRef = B80A13871DC743FB00B69CA1 /* ttMP3DecGlobal.h */; };
 		B80A14441DC7456B00B69CA1 /* ttMP3DecHuffman.h in Sources */ = {isa = PBXBuildFile; fileRef = B80A13881DC743FB00B69CA1 /* ttMP3DecHuffman.h */; };
 		B80A14451DC7456B00B69CA1 /* ttTypeDefine.h in Sources */ = {isa = PBXBuildFile; fileRef = B80A13891DC743FB00B69CA1 /* ttTypeDefine.h */; };
-		B81D2F521DC301200076EA18 /* TTOsalConfig.h in Sources */ = {isa = PBXBuildFile; fileRef = B8BDAF0B1DC2FFDA00D26A13 /* TTOsalConfig.h */; };
-		B81D2F531DC301200076EA18 /* TTTypedef.h in Sources */ = {isa = PBXBuildFile; fileRef = B8BDAF0C1DC2FFDA00D26A13 /* TTTypedef.h */; };
-		B81D2F541DC301200076EA18 /* TTAudio.h in Sources */ = {isa = PBXBuildFile; fileRef = B8BDAF0D1DC2FFDA00D26A13 /* TTAudio.h */; };
-		B89F697F1DC765CE00D5B156 /* TTOsalConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B8BDAF0B1DC2FFDA00D26A13 /* TTOsalConfig.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,9 +61,6 @@
 		B80A13A61DC743FB00B69CA1 /* ttMP3DecRQTable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ttMP3DecRQTable.c; sourceTree = "<group>"; };
 		B8BDAF001DC2FFBF00D26A13 /* YCMP3Dec.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YCMP3Dec.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8BDAF041DC2FFBF00D26A13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B8BDAF0B1DC2FFDA00D26A13 /* TTOsalConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTOsalConfig.h; path = "/Users/yintao/Documents/YCMusic/Yinchao-NewPlayer/osal/inc/TTOsalConfig.h"; sourceTree = "<absolute>"; };
-		B8BDAF0C1DC2FFDA00D26A13 /* TTTypedef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTTypedef.h; path = "/Users/yintao/Desktop/Music tests/YCMP3Dec/YCMP3Dec/../../../../Documents/YCMusic/Yinchao-NewPlayer/osal/inc/TTTypedef.h"; sourceTree = "<absolute>"; };
-		B8BDAF0D1DC2FFDA00D26A13 /* TTAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTAudio.h; path = "/Users/yintao/Desktop/Music tests/YCMP3Dec/YCMP3Dec/../../../../Documents/YCMusic/Yinchao-NewPlayer/osal/inc/TTAudio.h"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,9 +131,6 @@
 			children = (
 				B80A13801DC743FB00B69CA1 /* inc */,
 				B80A138A1DC743FB00B69CA1 /* src */,
-				B8BDAF0B1DC2FFDA00D26A13 /* TTOsalConfig.h */,
-				B8BDAF0C1DC2FFDA00D26A13 /* TTTypedef.h */,
-				B8BDAF0D1DC2FFDA00D26A13 /* TTAudio.h */,
 				B8BDAF041DC2FFBF00D26A13 /* Info.plist */,
 			);
 			path = YCMP3Dec;
@@ -154,7 +144,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B80A13A81DC743FB00B69CA1 /* ttMP3Dec.h in Headers */,
-				B89F697F1DC765CE00D5B156 /* TTOsalConfig.h in Headers */,
 				B80A13AF1DC743FB00B69CA1 /* ttTypeDefine.h in Headers */,
 				B80A13AA1DC743FB00B69CA1 /* ttMP3DecBuf.h in Headers */,
 				B80A13AD1DC743FB00B69CA1 /* ttMP3DecGlobal.h in Headers */,
@@ -246,16 +235,13 @@
 				B80A14451DC7456B00B69CA1 /* ttTypeDefine.h in Sources */,
 				B80A13C71DC743FB00B69CA1 /* ttMP3DecRQTable.c in Sources */,
 				B80A13C31DC743FB00B69CA1 /* ttMP3DecHuffman.c in Sources */,
-				B81D2F521DC301200076EA18 /* TTOsalConfig.h in Sources */,
 				B80A13C51DC743FB00B69CA1 /* ttMP3DecLayer3.c in Sources */,
 				B80A13BE1DC743FB00B69CA1 /* ttMP3DecApis.c in Sources */,
-				B81D2F531DC301200076EA18 /* TTTypedef.h in Sources */,
 				B80A13C61DC743FB00B69CA1 /* ttMP3DecPolyphase.c in Sources */,
 				B80A13BF1DC743FB00B69CA1 /* ttMP3DecBit.c in Sources */,
 				B80A13C11DC743FB00B69CA1 /* ttMP3Decdct32.c in Sources */,
 				B80A13C41DC743FB00B69CA1 /* ttMP3DecLayer12.c in Sources */,
 				B80A13C01DC743FB00B69CA1 /* ttMP3DecBuf.c in Sources */,
-				B81D2F541DC301200076EA18 /* TTAudio.h in Sources */,
 				B80A13C21DC743FB00B69CA1 /* ttMP3DecFrame.c in Sources */,
 				B80A13BD1DC743FB00B69CA1 /* ttMemAlign.c in Sources */,
 			);
@@ -369,6 +355,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../Yinchao-NewPlayer/osal/inc";
 				INFOPLIST_FILE = YCMP3Dec/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -388,6 +375,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../Yinchao-NewPlayer/osal/inc";
 				INFOPLIST_FILE = YCMP3Dec/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

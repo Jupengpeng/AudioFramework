@@ -37,7 +37,6 @@
 		B89F6AC81DC82C4A00D5B156 /* TTMP3Header.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AAE1DC82C4A00D5B156 /* TTMP3Header.h */; };
 		B89F6AC91DC82C4A00D5B156 /* TTMP3Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AAF1DC82C4A00D5B156 /* TTMP3Parser.h */; };
 		B89F6ACA1DC82C4A00D5B156 /* TTMP4Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AB01DC82C4A00D5B156 /* TTMP4Parser.h */; };
-		B89F6ACB1DC82C4A00D5B156 /* YCInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AB11DC82C4A00D5B156 /* YCInfo.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,7 +71,6 @@
 		B89F6AAE1DC82C4A00D5B156 /* TTMP3Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMP3Header.h; path = "../../Yinchao-NewPlayer/media/info/inc/TTMP3Header.h"; sourceTree = "<group>"; };
 		B89F6AAF1DC82C4A00D5B156 /* TTMP3Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMP3Parser.h; path = "../../Yinchao-NewPlayer/media/info/inc/TTMP3Parser.h"; sourceTree = "<group>"; };
 		B89F6AB01DC82C4A00D5B156 /* TTMP4Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMP4Parser.h; path = "../../Yinchao-NewPlayer/media/info/inc/TTMP4Parser.h"; sourceTree = "<group>"; };
-		B89F6AB11DC82C4A00D5B156 /* YCInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCInfo.h; path = "../../../../Desktop/Music tests/YCInfo/YCInfo/YCInfo.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +117,6 @@
 				B89F6AAE1DC82C4A00D5B156 /* TTMP3Header.h */,
 				B89F6AAF1DC82C4A00D5B156 /* TTMP3Parser.h */,
 				B89F6AB01DC82C4A00D5B156 /* TTMP4Parser.h */,
-				B89F6AB11DC82C4A00D5B156 /* YCInfo.h */,
 				B81D2FF51DC324780076EA18 /* Products */,
 				B81D303B1DC329A20076EA18 /* Frameworks */,
 			);
@@ -158,7 +155,6 @@
 				B89F6AC31DC82C4A00D5B156 /* TTIntReader.h in Headers */,
 				B89F6ABC1DC82C4A00D5B156 /* TTExtAudioFileParser.h in Headers */,
 				B89F6ABD1DC82C4A00D5B156 /* TTPureDataParser.h in Headers */,
-				B89F6ACB1DC82C4A00D5B156 /* YCInfo.h in Headers */,
 				B89F6AC61DC82C4A00D5B156 /* TTMediaParser.h in Headers */,
 				B89F6ABF1DC82C4A00D5B156 /* TTAPETag.h in Headers */,
 				B89F6AC51DC82C4A00D5B156 /* TTMediainfoProxy.h in Headers */,

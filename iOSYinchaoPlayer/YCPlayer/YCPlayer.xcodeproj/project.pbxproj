@@ -64,7 +64,6 @@
 		B8511A541DC82EC900462222 /* TTBaseDataSink.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A221DC82EC900462222 /* TTBaseDataSink.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8511A551DC82EC900462222 /* TTMediaPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A231DC82EC900462222 /* TTMediaPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8511A561DC82EC900462222 /* TTSrcDemux.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A241DC82EC900462222 /* TTSrcDemux.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A571DC82EC900462222 /* YCPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A251DC82EC900462222 /* YCPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8829D8A1DC36D6C00A675D6 /* libc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B8829D891DC36D6C00A675D6 /* libc.tbd */; };
 		B89F686E1DC751B500D5B156 /* YCAudioDecoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89F686A1DC751B500D5B156 /* YCAudioDecoder.framework */; };
 		B89F686F1DC751B500D5B156 /* YCInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89F686B1DC751B500D5B156 /* YCInfo.framework */; };
@@ -143,7 +142,6 @@
 		B8511A221DC82EC900462222 /* TTBaseDataSink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTBaseDataSink.h; path = "../../Yinchao-NewPlayer/media/player/inc/TTBaseDataSink.h"; sourceTree = "<group>"; };
 		B8511A231DC82EC900462222 /* TTMediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMediaPlayer.h; path = "../../Yinchao-NewPlayer/media/player/inc/TTMediaPlayer.h"; sourceTree = "<group>"; };
 		B8511A241DC82EC900462222 /* TTSrcDemux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTSrcDemux.h; path = "../../Yinchao-NewPlayer/media/player/inc/TTSrcDemux.h"; sourceTree = "<group>"; };
-		B8511A251DC82EC900462222 /* YCPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCPlayer.h; path = "../../../../Desktop/Music tests/YCPlayer/YCPlayer/YCPlayer.h"; sourceTree = "<group>"; };
 		B8829D891DC36D6C00A675D6 /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = usr/lib/libc.tbd; sourceTree = SDKROOT; };
 		B89F686A1DC751B500D5B156 /* YCAudioDecoder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YCAudioDecoder.framework; path = "../../../../Library/Developer/Xcode/DerivedData/YCiOSPlayer-frrrcxngyoayzjghudpwstfnresz/Build/Products/Debug-iphonesimulator/YCAudioDecoder.framework"; sourceTree = "<group>"; };
 		B89F686B1DC751B500D5B156 /* YCInfo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YCInfo.framework; path = "../../../../Library/Developer/Xcode/DerivedData/YCiOSPlayer-frrrcxngyoayzjghudpwstfnresz/Build/Products/Debug-iphonesimulator/YCInfo.framework"; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 				B8511A221DC82EC900462222 /* TTBaseDataSink.h */,
 				B8511A231DC82EC900462222 /* TTMediaPlayer.h */,
 				B8511A241DC82EC900462222 /* TTSrcDemux.h */,
-				B8511A251DC82EC900462222 /* YCPlayer.h */,
 				B81D320C1DC3334B0076EA18 /* Products */,
 				B81D32F11DC33B0D0076EA18 /* Frameworks */,
 			);
@@ -279,7 +276,6 @@
 				B8511A2F1DC82EC900462222 /* ttIpodDec.h in Headers */,
 				B8511A3B1DC82EC900462222 /* TTGLRenderES2_FTU.h in Headers */,
 				B8511A421DC82EC900462222 /* TTVideoView.h in Headers */,
-				B8511A571DC82EC900462222 /* YCPlayer.h in Headers */,
 				B8511A271DC82EC900462222 /* ttALACDec.h in Headers */,
 				B8511A341DC82EC900462222 /* ttWMADec.h in Headers */,
 				B8511A2A1DC82EC900462222 /* ttClConv.h in Headers */,
