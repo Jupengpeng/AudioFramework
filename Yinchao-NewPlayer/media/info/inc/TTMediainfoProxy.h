@@ -55,7 +55,7 @@ public:
 	/**
 	* \fn								 TTInt Open(const TTChar* aUrl);
 	* \brief							 打开媒体文件
-	* \param[in]   aUrl					 文件路径  
+	* \param[in]   aUrl					 文件路径
 	* \param[in]   aStreamBufferingObserver	 ITTStreamBufferingObserver对象指针 
 	* \return							 返回状态
 	*/

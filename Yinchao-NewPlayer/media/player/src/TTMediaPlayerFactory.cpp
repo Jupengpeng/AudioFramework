@@ -3,7 +3,9 @@
 
 ITTMediaPlayer* CTTMediaPlayerFactory::NewL(ITTMediaPlayerObserver* aPlayerObserver)
 {
-	ITTMediaPlayer* pMediaPlayer = new CTTMediaPlayer(aPlayerObserver, NULL);
+    char* myChar = "123";
+    
+	ITTMediaPlayer* pMediaPlayer = new CTTMediaPlayer(aPlayerObserver, myChar);
 
 	return pMediaPlayer;
 }

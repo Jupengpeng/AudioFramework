@@ -23,7 +23,7 @@
 #include	"ttMP3DecFrame.h"
 #include	"ttMP3Dec.h"
 #include    "ttMemAlign.h"
-
+#include <string.h>
 //#define LOGDUMP
 #ifdef LOGDUMP
 static FILE* dump =NULL;

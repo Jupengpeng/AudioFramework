@@ -19,10 +19,10 @@
 #include "ttFLACDec.h"
 #include "ttWMADec.h"
 #include "ttIpodDec.h"
-
-#if (defined __TT_OS_ANDROID__) && (defined CPU_ARM)
-#include <cpu-features.h>
-#endif
+#include "ttAACDec.h"
+//#if (defined __TT_OS_ANDROID__) && (defined CPU_ARM)
+//#include <cpu-features.h>
+//#endif
 
 TTChar CTTAudioPluginManager::mPluginPath[256] = "";
 
@@ -159,38 +159,39 @@ void CTTAudioPluginManager::setPluginPath(const TTChar* aPath)
 TTInt32 CTTAudioPluginManager::LoadLib ()
 {
     __GetAudioDECAPI  pGetAudioDec = NULL;
-    
+//    
 	if (mFormat == TTAudioInfo::KTTMediaTypeAudioCodeMP3)
     {
         pGetAudioDec = ttGetMP3DecAPI;
-	} else if (mFormat == TTAudioInfo::KTTMediaTypeAudioCodeAAC)
-    {
-		pGetAudioDec = ttGetAACDecAPI;
-	} else if (mFormat == TTAudioInfo::KTTMediaTypeAudioCodeAPE)
-    {
-		pGetAudioDec = ttGetAPEDecAPI;
-	} else if (mFormat==TTAudioInfo::KTTMediaTypeAudioCodeALAC)
-    {
-		pGetAudioDec = ttGetALACDecAPI;
-	} else if (mFormat==TTAudioInfo::KTTMediaTypeAudioCodeFLAC)
-    {
-		pGetAudioDec = ttGetFLACDecAPI;
-	//} else if (mFormat==TTAudioInfo::KTTMediaTypeAudioCodeDTS){
-	//	strcpy (APIName,"ttGetDTSDecAPI");
-	} else if (mFormat==TTAudioInfo::KTTMediaTypeAudioCodeWMA)
-    {
-		pGetAudioDec = ttGetWMADecAPI;
-	}  else if(mFormat == TTAudioInfo::KTTMediaTypeAudioCodeAMR)
-    {
-		pGetAudioDec = ttGetAMRDecAPI;
-	}
-    else if(mFormat==TTAudioInfo::KTTMediaTypeAudioCodeIPodLibrary)
-    {
-        pGetAudioDec = ttGetIPodDecAPI;
     }
+//	} else if (mFormat == TTAudioInfo::KTTMediaTypeAudioCodeAAC)
+//    {
+//		pGetAudioDec = ttGetAACDecAPI;
+//	} else if (mFormat == TTAudioInfo::KTTMediaTypeAudioCodeAPE)
+//    {
+//		pGetAudioDec = ttGetAPEDecAPI;
+//	} else if (mFormat==TTAudioInfo::KTTMediaTypeAudioCodeALAC)
+//    {
+//		pGetAudioDec = ttGetALACDecAPI;
+//	} else if (mFormat==TTAudioInfo::KTTMediaTypeAudioCodeFLAC)
+//    {
+//		pGetAudioDec = ttGetFLACDecAPI;
+//	//} else if (mFormat==TTAudioInfo::KTTMediaTypeAudioCodeDTS){
+//	//	strcpy (APIName,"ttGetDTSDecAPI");
+//	} else if (mFormat==TTAudioInfo::KTTMediaTypeAudioCodeWMA)
+//    {
+//		pGetAudioDec = ttGetWMADecAPI;
+//	}  else if(mFormat == TTAudioInfo::KTTMediaTypeAudioCodeAMR)
+//    {
+//		pGetAudioDec = ttGetAMRDecAPI;
+//	}
+//    else if(mFormat==TTAudioInfo::KTTMediaTypeAudioCodeIPodLibrary)
+//    {
+//        pGetAudioDec = ttGetIPodDecAPI;
+//    }
     
-    ttGetIPodDecAPI(&mAudioCodecAPI);
-    
+//    ttGetIPodDecAPI(&mAudioCodecAPI);
+
     if(pGetAudioDec == NULL)
     {
         //LOGI("could not find Audio decoder api APIName");

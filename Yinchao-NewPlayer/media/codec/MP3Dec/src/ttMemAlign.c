@@ -20,6 +20,9 @@
 
 #include	"ttMemAlign.h"
 #include    <stdlib.h>
+#include    <string.h>
+#include    <stdio.h>
+
 
 void *mem_malloc(unsigned int size, unsigned char alignment)
 {

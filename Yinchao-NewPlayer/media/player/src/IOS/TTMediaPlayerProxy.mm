@@ -591,6 +591,7 @@ void audioRouteChangeListenerCallback(void *inClientData,AudioSessionPropertyID	
         iCurUrl = NULL;
     }
     
+    
     iCurUrl = [[NSString alloc] initWithString : aUrl];
     iUrlUpdated = false;
     iPlayer->SetDataSourceAsync([iCurUrl UTF8String]);

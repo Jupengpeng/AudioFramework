@@ -8,7 +8,7 @@ extern "C" {
 
 #include "TTOsalConfig.h"
 #include "TTAudio.h"
-#include "M4a.h"
+//#include "M4a.h"
 
 typedef enum {
 	TTAAC_NULL_OBJECT		= 0,	

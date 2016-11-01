@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:YCPlayer/YCPlayer.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:YCMP3Dec/YCMP3Dec.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:YCInfo/YCInfo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:YCAudioDecoder/YCAudioDecoder.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:YCiOSPlayer/YCiOSPlayer.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:YCOsal/YCOsal.xcodeproj">
+   </FileRef>
+</Workspace>
