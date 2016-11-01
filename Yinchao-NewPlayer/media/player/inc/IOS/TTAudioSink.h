@@ -3,7 +3,7 @@
 * Created on : 2011-9-1
 * Author : hu.cao
 * Copyright : Copyright (c) 2011 Shuidushi Software Ltd. All rights reserved.
-* Description : CTTAudioSink ¶¨ÒåÎÄ¼ş
+* Description : CTTAudioSink å®šä¹‰æ–‡ä»¶
 */
 #ifndef __TT_AUDIO_SINK_H__
 #define __TT_AUDIO_SINK_H__
@@ -26,15 +26,15 @@ class CTTAudioSink : public TTCBaseAudioSink
 public:
 	/**
 	* \fn							CTTAudioSink(ITTSinkDataProvider* aDataProvider, ITTPlayRangeObserver& aObserver);
-	* \brief						¹¹Ôìº¯Êı
-	* \param[in] aDataProvider		Êı¾İÌá¹©Õß½Ó¿ÚÒıÓÃ
-    * \param[in] aObserver			²¥·Å·¶Î§»Øµ÷	
+	* \brief						æ„é€ å‡½æ•°
+	* \param[in] aDataProvider		æ•°æ®æä¾›è€…æ¥å£å¼•ç”¨
+    * \param[in] aObserver			æ’­æ”¾èŒƒå›´å›è°ƒ	
 	*/
 	CTTAudioSink(CTTSrcDemux* SrcMux, TTInt nCount);
 
 	/**
 	* \fn							~CTTAudioSink();
-	* \brief						Îö¹¹º¯Êı
+	* \brief						ææ„å‡½æ•°
 	*/
 	virtual ~CTTAudioSink();
 
@@ -43,53 +43,53 @@ public://from ITTDataSink
 
 	/**
 	* \fn                       void Render(CTTMediaBuffer* aBuffer);
-	* \brief                    Ìá½»Êı¾İ
-	* \param[in] aBuffer		Êı¾İÖ¸Õë
-	* \return					·µ»Ø×´Ì¬
+	* \brief                    æäº¤æ•°æ®
+	* \param[in] aBuffer		æ•°æ®æŒ‡é’ˆ
+	* \return					è¿”å›çŠ¶æ€
 	*/
 	virtual TTInt			render();
 
 	/**
 	* \fn                       TTInt Open(TTAudioDataSettings& aAudioDataSetting)
-	* \brief                    ´ò¿ªÉè±¸
-	* \param[in] aAudioDataSetting     ÒôÆµĞÅÏ¢
-	* \return					·µ»Ø²Ù×÷×´Ì¬
+	* \brief                    æ‰“å¼€è®¾å¤‡
+	* \param[in] aAudioDataSetting     éŸ³é¢‘ä¿¡æ¯
+	* \return					è¿”å›æ“ä½œçŠ¶æ€
 	*/
 	
 
 	/**
 	* \fn                       void Close()
-	* \brief                    ¹Ø±ÕÉè±¸
+	* \brief                    å…³é—­è®¾å¤‡
 	*/
 	virtual TTInt           close();
 
 	/**
 	* \fn						void GetCurWave(TTInt aSamples, TTInt16** aWave, TTInt& nChannels);
-	* \brief					»ñÈ¡µ±Ç°²¥·ÅµÄÊı¾İ
-	* \param[in]  aSamples		È¡²ÉÑùµÄ¸öÊı	
-	* \param[out] aWave			²ÉÑùµãµÄÊı¾İÖ¸Õë	
-	* \param[out] nChannels		ÒôÆµÉùµÀÊı	
+	* \brief					è·å–å½“å‰æ’­æ”¾çš„æ•°æ®
+	* \param[in]  aSamples		å–é‡‡æ ·çš„ä¸ªæ•°	
+	* \param[out] aWave			é‡‡æ ·ç‚¹çš„æ•°æ®æŒ‡é’ˆ	
+	* \param[out] nChannels		éŸ³é¢‘å£°é“æ•°	
 	*/
 	//virtual void				GetCurWave(TTInt aSamples, TTInt16* aWave, TTInt& aChannels);
 
     /**
      * \fn						void SetVolume(TTInt aVolume)
-     * \brief					ÉèÖÃÒôÁ¿
-     * \param[in] aLVolume		ÒôÁ¿Öµ	
-     * \param[in] aRVolume		ÒôÁ¿Öµ	
+     * \brief					è®¾ç½®éŸ³é‡
+     * \param[in] aLVolume		éŸ³é‡å€¼	
+     * \param[in] aRVolume		éŸ³é‡å€¼	
      */
 	virtual void				SetVolume(TTInt aLVolume, TTInt aRVolume);
     
     /**	
      * \fn						void Flush();
-     * \brief					Çå¿Õ»º³åÖĞµÄÊı¾İ
+     * \brief					æ¸…ç©ºç¼“å†²ä¸­çš„æ•°æ®
      */
 	virtual TTInt				flush();
     
     /**
      * \fn						void Position(TTUint& aPosition)
-     * \brief					»ñÈ¡²¥·ÅÎ»ÖÃ
-     * \param[out] aPosition	²¥·ÅÎ»ÖÃ£¬µ¥Î»ºÁÃë
+     * \brief					è·å–æ’­æ”¾ä½ç½®
+     * \param[out] aPosition	æ’­æ”¾ä½ç½®ï¼Œå•ä½æ¯«ç§’
      */
 	//virtual void				Position(TTUint& aPosition);
     
@@ -109,27 +109,27 @@ public://from ITTSyncClock
 
 	/**
      * \fn						void Pause()
-     * \brief					ÔİÍ£ËÍÊı¾İ
+     * \brief					æš‚åœé€æ•°æ®
      */
 	virtual	TTInt				pause(TTBool aFadeOut);
     
     /**
      * \fn						TTInt Resume()
-     * \brief					ÔİÍ£ºó£¬¼ÌĞøËÍÊı¾İ
+     * \brief					æš‚åœåï¼Œç»§ç»­é€æ•°æ®
      * \return                  TTKErrNone respresents success, other value respresents fail.
      */
 	virtual	TTInt				resume(TTBool aWait = false,TTBool aFadeIn= false);
     
 	/**
 	* \fn						void Stop()
-	* \brief					Í£Ö¹ËÍÊı¾İ
+	* \brief					åœæ­¢é€æ•°æ®
 	*/
 	virtual	TTInt				stop();
     
     static  void                setIOSVersion();
     
     
-private://ÓĞCTTActive¼Ì³Ğ
+private://æœ‰CTTActiveç»§æ‰¿
 	 
     void                FlushData();
    
