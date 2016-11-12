@@ -270,7 +270,13 @@ void audioRouteChangeListenerCallback(void *inClientData,AudioSessionPropertyID	
     }
     else
     {   sessionError = nil;
-        [[AVAudioSession sharedInstance] setActive:YES withFlags:kAudioSessionSetActiveFlag_NotifyOthersOnDeactivation error:&sessionError];
+        
+        if (iOSVersion>6.0) {
+            [[AVAudioSession sharedInstance] setActive:YES withOptions:kAudioSessionSetActiveFlag_NotifyOthersOnDeactivation error:&sessionError];
+        }else{
+            [[AVAudioSession sharedInstance] setActive:YES withFlags:kAudioSessionSetActiveFlag_NotifyOthersOnDeactivation error:&sessionError];
+        }
+        
         if(sessionError)
         {
             NSLogDebug(@"%@", sessionError);

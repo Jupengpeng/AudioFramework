@@ -76,11 +76,11 @@ static TTInt32 ttMP3DecInit(TTHandle * phCodec)
 	decoder->subband = subband;
 
 #ifdef LOGDUMP
-	dump = fopen("/sdcard/dump.mp3", "wb");
+	dump = fopen("/Users/yintao/Desktop/PCMS/dump.pcm", "wb");
 #endif
 
 #ifdef PCMDUMP
-	pcm = fopen("E://dump.pcm", "wb");
+	pcm = fopen("/Users/yintao/Desktop/PCMS/dump.pcm", "wb");
 #endif
 	*phCodec = (TTHandle)decoder;
 

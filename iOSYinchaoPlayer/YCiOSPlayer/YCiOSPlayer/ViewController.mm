@@ -13,6 +13,7 @@
 @interface ViewController ()
 {
     TTMediaPlayerProxy *_proxy;
+    BOOL _canPlay;
 }
 @end
 
@@ -22,12 +23,10 @@
     [super viewDidLoad];
 
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Omi,AronChupa-Drop In the Ocean" ofType:@"mp3"];
     
     _proxy = [[TTMediaPlayerProxy alloc] init];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playHere:) name:@"PlayerNotifyEvent"  object:nil];
 
-    [_proxy playWithUrl:path];
     
 //    CTTMediaPlayerWarp * iMediaPlayer = new CTTMediaPlayerWarp((__bridge void*)proxy);
 //    
@@ -44,7 +43,19 @@
 - (void)playHere:(NSNotification *)obj{
 
     [_proxy start];
+//    [_proxy start];
 
+}
+- (IBAction)playAction:(id)sender {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Omi,AronChupa-Drop In the Ocean" ofType:@"mp3"];
+
+    [_proxy playWithUrl:path];
+
+ 
+}
+- (IBAction)pauseAction:(id)sender {
+
+    [_proxy stop];
 }
 
 - (void)didReceiveMemoryWarning {

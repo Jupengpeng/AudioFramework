@@ -393,11 +393,12 @@ M660:
 L664:
 	.word       0x5a82799a
 
-DCT32_Idx:
-        .word       _dctIdx
 
 DCT32_Tab:
-        .word       _dcttab 
+        .word       _dcttab
+
+DCT32_Idx:
+        .word       _dctIdx
 
 	@.ENd
 #endif
