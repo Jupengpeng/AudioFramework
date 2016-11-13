@@ -1,5 +1,6 @@
 package com.example.playerdemo;
 
+
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.graphics.PixelFormat;
@@ -33,6 +34,7 @@ public class MainActivity extends Activity {
     String defaulturl;
     String cachePath;
     EditText urlEdit;
+    TextView currentTimeTV;
     TextView totalTimeTV;
     SeekBar mSeekBar;
     private static int position;
@@ -54,7 +56,7 @@ public class MainActivity extends Activity {
         if (PermissionUtils.checkRecordAudioPermission(this)) {
 
         }
-        if (PermissionUtils.checkCallPhonePermission(this)) {
+            if (PermissionUtils.checkCallPhonePermission(this)) {
 
         }
         if (PermissionUtils.checkReadPhoneStatePermission(this)) {
@@ -69,7 +71,7 @@ public class MainActivity extends Activity {
 
 
 //		String pluginPath = "/data/data/com.firmlyshell.app.music.test/lib";
-		String pluginPath = "/data/data/com.example.playerdemo/lib";
+        String pluginPath = "/data/data/com.yinchao.android.app/lib";
 //		String pluginPath = "/data/app/com.firmlyshell.app-1/lib/arm";
         try {
 
@@ -86,8 +88,33 @@ public class MainActivity extends Activity {
             mPlayProxy = null;
         }
         totalTimeTV = (TextView) findViewById(R.id.textView2);
+        currentTimeTV = (TextView) findViewById(R.id.textView3);
+
+//        init();
+        ((Button) findViewById(R.id.button1))
+                .setOnClickListener(new OnClickListener() {
+                    public void onClick(View view) {
+                        try {
+                            init();
+                        } catch (Exception e) {
+
+                        }
+                    }
+                });
+
+    }
+
+    private void init() {
+
+//        String pluginPath = "/data/app/com.yinchao.android.app-1/lib/arm64";
+        String pluginPath = "/data/data/com.yinchao.android.app/lib";
+//		String pluginPath = "/data/app/com.firmlyshell.app-1/lib/arm";
+
         mPlayProxy = new MediaPlayerProxy(pluginPath);
-        timer.schedule(task, 1000, 1000);
+
+
+
+
         mPlayProxy.setOnStateChangeListener(new OnStateChangeListener() {
 
             @Override
@@ -102,6 +129,9 @@ public class MainActivity extends Activity {
 
             @Override
             public void onPrepared(int error, int av) {
+
+                Log.e(TAG, "onPrepared ");
+
                 int nDuration = mPlayProxy.duration();
                 Log.e(TAG, "nDuration " + nDuration);
                 int sec = nDuration / 1000;
@@ -110,6 +140,9 @@ public class MainActivity extends Activity {
                 totalTimeTV.setText(min + ":" + msec);
                 mSeekBar.setMax(nDuration);
                 mPlayProxy.start();
+
+
+                timer.schedule(task, 1000, 1000);
             }
 
             @Override
@@ -121,13 +154,14 @@ public class MainActivity extends Activity {
             public void onError(int error, int httpCode,
                                 MediaPlayerNotificationInfo notificationInfo) {
                 Log.e(TAG, "onError :" + error + " httpCode:" + httpCode + "::" + notificationInfo);
-
+                timer.cancel();
 
             }
 
             @Override
             public void onCompleted() {
                 Log.e(TAG, "onCompleted ");
+                timer.cancel();
             }
 
             @Override
@@ -222,8 +256,6 @@ public class MainActivity extends Activity {
                         }
                     }
                 });
-
-
     }
 
     public void onConfigurationChanged(Configuration newConfig) {
@@ -263,11 +295,21 @@ public class MainActivity extends Activity {
                 //mSeekBar.setProgress(mPlayProxy.getPosition()/mPlayProxy.duration());
                 Log.e(TAG, "posion=" + String.valueOf(mPlayProxy.getPosition()));
                 mSeekBar.setProgress(mPlayProxy.getPosition());
+
+
+
+                int sec = mPlayProxy.getPosition() / 1000;
+                int min = sec / 60;
+                int msec = sec % 60;
+                currentTimeTV.setText(min + ":" + msec);
+
+                short[] wv = new short[20];
+                boolean te = mPlayProxy.getWave(wv,1);
+                Log.e("YYYYY","statu:"+te+" wa:"+wv[1]);
             }
             super.handleMessage(msg);
         }
 
-        ;
     };
 
     TimerTask task = new TimerTask() {

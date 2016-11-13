@@ -42,7 +42,7 @@ LOCAL_SRC_FILES := $(MY_SRC_PATH_MP3DEC_N)/ttMemAlign.c \
 LOCAL_C_INCLUDES := $(LOCAL_PATH) \
 					$(MY_INC_PATH_MP3DEC_N) 
 		
-LOCAL_CFLAGS	:= -D__GCC32__ -D__X86__ -D__MIPS__ -DHAVE_CONFIG_H -DOPT_GENERIC -DREAL_IS_FLOAT -DNOXFERMEM -ffast-math -O2  -nostdlib -enable-int-quality
+LOCAL_CFLAGS	:= -D__GCC32__ -D__X86__ -D__MIPS__ -DHAVE_CONFIG_H -DOPT_GENERIC -DREAL_IS_FLOAT -DNOXFERMEM -ffast-math -O2  -nostdlib -enable-int-quality 
 
 LOCAL_SHARED_LIBRARIES := mediaplayer osal
 

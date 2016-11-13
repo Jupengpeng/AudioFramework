@@ -2,15 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:showDividers="beginning"
-    tools:context=".MainActivity" >
+    android:showDividers="beginning">
 
-    <SurfaceView
-        android:id="@+id/surfaceView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_centerInParent="true" 
-        android:visibility="gone"/>
+    <!--<SurfaceView-->
+    <!--android:id="@+id/surfaceView"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:layout_centerInParent="true" -->
+    <!--android:visibility="gone"/>-->
 
     <Button
         android:id="@+id/button1"
@@ -18,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/editText1"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="16dp"
         android:text="Play" />
 
@@ -40,12 +40,11 @@
         android:text="Stop" />
 
 
-    <TextView 
-        android:id="@+id/textView1"        
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-    </TextView>
+        android:layout_height="wrap_content"></TextView>
+
     <EditText
         android:id="@+id/editText1"
         android:layout_width="match_parent"
@@ -54,39 +53,36 @@
         android:layout_below="@+id/textView1"
         android:gravity="left|top"
         android:inputType="textMultiLine"
-        android:minLines="2" >
+        android:minLines="2">
+
         <requestFocus />
     </EditText>
-    
-    <SeekBar 
+
+    <SeekBar
         android:id="@+id/seekBar1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="16dp"
-        android:layout_alignParentLeft="true">
-    </SeekBar>
-    
-    
-     <TextView 
-        android:id="@+id/textView2"        
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/seekBar1"
-        android:layout_alignRight="@+id/seekBar1"
-        android:text="时长"
-     >
-     </TextView>
-
-        <TextView 
-        android:id="@+id/textView3"        
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/seekBar1"
         android:layout_alignParentLeft="true"
-        android:text="0"
-     >
-     </TextView>
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="16dp"></SeekBar>
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/seekBar1"
+        android:layout_below="@+id/seekBar1"
+        android:text="时长"></TextView>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/seekBar1"
+        android:gravity="right"
+        android:text="0:0"></TextView>
 
 
 </RelativeLayout>

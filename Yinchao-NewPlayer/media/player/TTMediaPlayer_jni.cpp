@@ -14,13 +14,13 @@
 
 //#define VERIFY_SIGNATURES
 
-static const char kSignatures_md5[] =
-    #include "signatures_md5.h"
-;
+static const char kSignatures_md5[] = "\x85\x0d\x08\xd0\x2d\x18\xef\x52\xc5\x7c\x72\x68\x6d\xd1\xb6\xd8";
+//    #include "signatures_md5.h"
+//;
 
-static const char kDebugSignatures_md5[] =
-    #include "debug_signatures_md5.h"
-;
+static const char kDebugSignatures_md5[] = "\x85\x0d\x08\xd0\x2d\x18\xef\x52\xc5\x7c\x72\x68\x6d\xd1\xb6\xd8";
+//    #include "debug_signatures_md5.h"
+//;
 
 JavaVM* gJVM = NULL;
 jobject g_Surface = NULL;
@@ -40,34 +40,34 @@ class JNITTMediaPlayerListener: public ITTMediaPlayerObserver
 {
 public:
 	JNITTMediaPlayerListener(jobject thiz, jobject weak_thiz, jmethodID postEvnt, JNIEnv* aEnv);
-    ~JNITTMediaPlayerListener();
+	~JNITTMediaPlayerListener();
 	void PlayerNotifyEvent(TTNotifyMsg aMsg, TTInt aArg1, TTInt aArg2, const TTChar* aArg3);
 
 private:
-    JNITTMediaPlayerListener();
-    jclass      	mClass;     // Reference to MediaPlayer class
-    jobject     	mObject;    // Weak ref to MediaPlayer Java object to call on
+	JNITTMediaPlayerListener();
+	jclass      	mClass;     // Reference to MediaPlayer class
+	jobject     	mObject;    // Weak ref to MediaPlayer Java object to call on
 	JNIEnv*			mEnv;
 	jmethodID	    post_event;
 };
 
 JNITTMediaPlayerListener::JNITTMediaPlayerListener(jobject thiz, jobject weak_thiz, jmethodID postEvnt, JNIEnv* aEnv)
 {
-    // Hold onto the MediaPlayer class for use in calling the static method
-    // that posts events to the application thread.
+	// Hold onto the MediaPlayer class for use in calling the static method
+	// that posts events to the application thread.
 	mEnv = aEnv;
 	post_event = postEvnt;
-    jclass clazz = mEnv->GetObjectClass(thiz);
-    if (clazz == NULL) {
-        LOGE("Can't create JNITTMediaPlayerListener");
-        mEnv->ThrowNew(clazz, "Can't create JNITTMediaPlayerListener");
-        return;
-    }
-    mClass = (jclass)mEnv->NewGlobalRef(clazz);
+	jclass clazz = mEnv->GetObjectClass(thiz);
+	if (clazz == NULL) {
+		LOGE("Can't create JNITTMediaPlayerListener");
+		mEnv->ThrowNew(clazz, "Can't create JNITTMediaPlayerListener");
+		return;
+	}
+	mClass = (jclass)mEnv->NewGlobalRef(clazz);
 
-    // We use a weak reference so the MediaPlayer object can be garbage collected.
-    // The reference is only used as a proxy for callbacks.
-    mObject = mEnv->NewGlobalRef(weak_thiz);
+	// We use a weak reference so the MediaPlayer object can be garbage collected.
+	// The reference is only used as a proxy for callbacks.
+	mObject = mEnv->NewGlobalRef(weak_thiz);
 }
 
 JNITTMediaPlayerListener::~JNITTMediaPlayerListener()
@@ -166,14 +166,14 @@ static void SetSurface(JNIEnv* env,jobject obj, MediaPara* pMediaPara)
 	{
 		env->DeleteGlobalRef(g_Surface);
 		g_Surface = NULL;
-	}	
+	}
 
 
 	g_Surface = env->NewGlobalRef(surfaceObj);
-	if(pMediaPara) 
-   {	
-	   pMediaPara->iMediaPlayer->SetView(g_Surface);
-   }
+	if(pMediaPara)
+	{
+		pMediaPara->iMediaPlayer->SetView(g_Surface);
+	}
 
 	env->DeleteLocalRef(clazz);
 
@@ -211,21 +211,21 @@ static void ychao_media_YCMediaPlayer_native_setup(JNIEnv* env, jobject thiz, jo
 	jmethodID postEvent = env->GetStaticMethodID(className, "postEventFromNative", "(Ljava/lang/Object;IIILjava/lang/Object;)V");
 
 #ifdef VERIFY_SIGNATURES
-    jbyte* signatureBytes = env->GetByteArrayElements(signatures, JNI_FALSE);
+	jbyte* signatureBytes = env->GetByteArrayElements(signatures, JNI_FALSE);
     jsize byteLength = env->GetArrayLength(signatures);
     if (memcmp(signatureBytes, kSignatures_md5, byteLength) == 0
         || memcmp(signatureBytes, kDebugSignatures_md5, byteLength) == 0) {
 #endif
 	const char *pPluginChars = env->GetStringUTFChars(plugin_path, NULL);
-   	JNITTMediaPlayerListener* PlayerListener = new JNITTMediaPlayerListener(thiz, weak_this, postEvent, env);
-    ITTMediaPlayer* pMediaPlayer = new CTTMediaPlayer(PlayerListener, pPluginChars);
+	JNITTMediaPlayerListener* PlayerListener = new JNITTMediaPlayerListener(thiz, weak_this, postEvent, env);
+	ITTMediaPlayer* pMediaPlayer = new CTTMediaPlayer(PlayerListener, pPluginChars);
 
 	pMediaPara->iPlayerListener = PlayerListener;
 	pMediaPara->iMediaPlayer = pMediaPlayer;
 	//audioTrack_native_init
 	jclass AudioTrack = env->FindClass("com/android/ychao/media/player/YCAudioTrack");
 	jclass* pAudioTrack = new jclass((jclass)env->NewGlobalRef(AudioTrack));
-    pMediaPlayer->SaveAudioTrackJClass(pAudioTrack);
+	pMediaPlayer->SaveAudioTrackJClass(pAudioTrack);
 	pMediaPlayer->SetMaxOutPutSamplerate(samplerate);
 
 	TTChar szProp[64];
@@ -238,27 +238,27 @@ static void ychao_media_YCMediaPlayer_native_setup(JNIEnv* env, jobject thiz, jo
 		//env->DeleteLocalRef(VideoTrack);
 	}
 
-	jfieldID MediaPlayPara = env->GetFieldID(className,kClassFieldName, "I"); 
-	env->SetIntField(thiz,MediaPlayPara, (int)pMediaPara);
+	jfieldID MediaPlayPara = env->GetFieldID(className,kClassFieldName, "J");
+	env->SetLongField(thiz,MediaPlayPara, (long)pMediaPara);
 	env->DeleteLocalRef(className);
 	env->ReleaseStringUTFChars(plugin_path, pPluginChars);
 	env->DeleteLocalRef(AudioTrack);
 
 	//audioTrack_native_init
 #ifdef VERIFY_SIGNATURES
-    }
+	}
     env->ReleaseByteArrayElements(signatures, signatureBytes, 0);
 #endif
 
-    if (pMediaPlayer == NULL) {
-        LOGI("Create Player Error");
-    } else {
-        pMediaPara->iFreq = new TTInt16[KMaxWaveSample];
-        pMediaPara->iWave = new TTInt16[KMaxWaveSample * 2];
-    }
+	if (pMediaPlayer == NULL) {
+		LOGI("Create Player Error");
+	} else {
+		pMediaPara->iFreq = new TTInt16[KMaxWaveSample];
+		pMediaPara->iWave = new TTInt16[KMaxWaveSample * 2];
+	}
 }
 
-static void ychao_media_YCMediaPlayer_native_release(JNIEnv* env, jobject thiz, jint context)
+static void ychao_media_YCMediaPlayer_native_release(JNIEnv* env, jobject thiz, jlong context)
 {
 	LOGI("mediaplayer native_release");
 	MediaPara* pMediaPara = (MediaPara* )context;
@@ -267,7 +267,7 @@ static void ychao_media_YCMediaPlayer_native_release(JNIEnv* env, jobject thiz, 
 		return;
 	}
 
-    jclass* pAudiotrackJclass = NULL;
+	jclass* pAudiotrackJclass = NULL;
 	jclass* pVideotrackJclass = NULL;
 	if (pMediaPara->iMediaPlayer != NULL)
 	{
@@ -280,13 +280,13 @@ static void ychao_media_YCMediaPlayer_native_release(JNIEnv* env, jobject thiz, 
 	}
 	SAFE_DELETE(pMediaPara);
 
-	if(pAudiotrackJclass !=NULL)	
+	if(pAudiotrackJclass !=NULL)
 	{
 		env->DeleteGlobalRef(*pAudiotrackJclass);
 		delete pAudiotrackJclass;
 	}
 
-	if(pVideotrackJclass !=NULL)	
+	if(pVideotrackJclass !=NULL)
 	{
 		env->DeleteGlobalRef(*pVideotrackJclass);
 		delete pVideotrackJclass;
@@ -296,12 +296,12 @@ static void ychao_media_YCMediaPlayer_native_release(JNIEnv* env, jobject thiz, 
 	{
 		env->DeleteGlobalRef(g_Surface);
 		g_Surface = NULL;
-	}	
+	}
 
 	LOGI("native_release Finish");
 }
 
-static void ychao_media_YCMediaPlayer_setCacheFilePath_native(JNIEnv* env, jobject thiz, jint context, jstring uri)
+static void ychao_media_YCMediaPlayer_setCacheFilePath_native(JNIEnv* env, jobject thiz, jlong context, jstring uri)
 {
 	LOGI("setCacheFilePath start");
 	MediaPara* pMediaPara = (MediaPara* )context;
@@ -315,12 +315,12 @@ static void ychao_media_YCMediaPlayer_setCacheFilePath_native(JNIEnv* env, jobje
 		const char *uriStr = env->GetStringUTFChars(uri, NULL);
 		pMediaPara->iMediaPlayer->SetCacheFilePath(uriStr);
 		env->ReleaseStringUTFChars(uri, uriStr);
-		
+
 	}
 	LOGI("setCacheFilePath End");
 }
 
-static int ychao_media_YCMediaPlayer_setDataSourceSync_native(JNIEnv* env, jobject thiz, jint context, jstring uri, jint flag)
+static int ychao_media_YCMediaPlayer_setDataSourceSync_native(JNIEnv* env, jobject thiz, jlong context, jstring uri, jint flag)
 {
 	LOGI("native_setDataSourceSync");
 	MediaPara* pMediaPara = (MediaPara* )context;
@@ -344,7 +344,7 @@ static int ychao_media_YCMediaPlayer_setDataSourceSync_native(JNIEnv* env, jobje
 	return nErr;
 }
 
-static int ychao_media_YCMediaPlayer_setDataSourceAsync_native(JNIEnv* env, jobject thiz, jint context, jstring uri, jint flag)
+static int ychao_media_YCMediaPlayer_setDataSourceAsync_native(JNIEnv* env, jobject thiz, jlong context, jstring uri, jint flag)
 {
 	LOGI("native_setDataSourceAsync");
 	MediaPara* pMediaPara = (MediaPara* )context;
@@ -352,24 +352,27 @@ static int ychao_media_YCMediaPlayer_setDataSourceAsync_native(JNIEnv* env, jobj
 	{
 		return -1;
 	}
-
-	if(!(flag&0xA)) {
-		GetScreenSize(env, thiz);
-		SetSurface(env, thiz, pMediaPara);
-	}
-
+	LOGI("native_setDataSourceAsync");
+//	if(!(flag&0xA)) {
+//		GetScreenSize(env, thiz);
+//		SetSurface(env, thiz, pMediaPara);
+//	}
 	int nErr = -1;
+	LOGI("native_setDataSourceAsync");
 	if (pMediaPara->iMediaPlayer != NULL)
 	{
+		LOGI("native_setDataSourceAsync");
 		const char *uriStr = env->GetStringUTFChars(uri, NULL);
+		LOGI("native_setDataSourceAsync");
 		nErr = pMediaPara->iMediaPlayer->SetDataSourceAsync(uriStr, (int)flag);
+		LOGI("native_setDataSourceAsync");
 		env->ReleaseStringUTFChars(uri, uriStr);
 	}
-
+	LOGI("native_setDataSourceAsync");
 	return nErr;
 }
 
-static int ychao_media_YCMediaPlayer_play_native(JNIEnv* env, jobject thiz, jint context)
+static int ychao_media_YCMediaPlayer_play_native(JNIEnv* env, jobject thiz, jlong context)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL)
@@ -394,7 +397,7 @@ static int ychao_media_YCMediaPlayer_play_native(JNIEnv* env, jobject thiz, jint
 	}
 }
 
-static void ychao_media_YCMediaPlayer_pause_native(JNIEnv* env, jobject thiz, jint context, jboolean afadeout)
+static void ychao_media_YCMediaPlayer_pause_native(JNIEnv* env, jobject thiz, jlong context, jboolean afadeout)
 {
 	LOGI("ITTMediaPlayer pause");
 	MediaPara* pMediaPara = (MediaPara* )context;
@@ -414,7 +417,7 @@ static void ychao_media_YCMediaPlayer_pause_native(JNIEnv* env, jobject thiz, ji
 	}
 }
 
-static void ychao_media_YCMediaPlayer_resume_native(JNIEnv* env, jobject thiz, jint context, jboolean afadein)
+static void ychao_media_YCMediaPlayer_resume_native(JNIEnv* env, jobject thiz, jlong context, jboolean afadein)
 {
 	LOGI("MediaPlayer resume");
 	MediaPara* pMediaPara = (MediaPara* )context;
@@ -434,12 +437,12 @@ static void ychao_media_YCMediaPlayer_resume_native(JNIEnv* env, jobject thiz, j
 	}
 }
 
-static void ychao_media_YCMediaPlayer_setAudioEffectLowDelay_native(JNIEnv* env, jobject thiz, jint context, jboolean lowdelay)
+static void ychao_media_YCMediaPlayer_setAudioEffectLowDelay_native(JNIEnv* env, jobject thiz, jlong context, jboolean lowdelay)
 {
 	gAudioEffectLowDelay = lowdelay;
 }
 
-static void ychao_media_YCMediaPlayer_setvolume_native(JNIEnv* env, jobject thiz, jint context, jint lvolume, jint rvolume)
+static void ychao_media_YCMediaPlayer_setvolume_native(JNIEnv* env, jobject thiz, jlong context, jint lvolume, jint rvolume)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL)
@@ -459,7 +462,7 @@ static void ychao_media_YCMediaPlayer_setvolume_native(JNIEnv* env, jobject thiz
 	}
 }
 
-static int ychao_media_YCMediaPlayer_stop_native(JNIEnv* env, jobject thiz, jint context)
+static int ychao_media_YCMediaPlayer_stop_native(JNIEnv* env, jobject thiz, jlong context)
 {
 	LOGI("MediaPlayer stop");
 	MediaPara* pMediaPara = (MediaPara* )context;
@@ -482,7 +485,7 @@ static int ychao_media_YCMediaPlayer_stop_native(JNIEnv* env, jobject thiz, jint
 	return nErr;
 }
 
-static int ychao_media_YCMediaPlayer_setSurface_native(JNIEnv* env, jobject thiz, jint context)
+static int ychao_media_YCMediaPlayer_setSurface_native(JNIEnv* env, jobject thiz, jlong context)
 {
 	LOGI("MediaPlayer setSurface");
 	MediaPara* pMediaPara = (MediaPara* )context;
@@ -498,7 +501,7 @@ static int ychao_media_YCMediaPlayer_setSurface_native(JNIEnv* env, jobject thiz
 	return 0;
 }
 
-static void ychao_media_YCMediaPlayer_setPlayRange_native(JNIEnv* env, jobject thiz, jint context, jint start, jint end)
+static void ychao_media_YCMediaPlayer_setPlayRange_native(JNIEnv* env, jobject thiz, jlong context, jint start, jint end)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL)
@@ -518,7 +521,7 @@ static void ychao_media_YCMediaPlayer_setPlayRange_native(JNIEnv* env, jobject t
 
 }
 
-static int ychao_media_YCMediaPlayer_setPosition_native(JNIEnv* env, jobject thiz, jint context, jint pos, jint flag)
+static int ychao_media_YCMediaPlayer_setPosition_native(JNIEnv* env, jobject thiz, jlong context, jint pos, jint flag)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	int nPos = 0;
@@ -547,7 +550,7 @@ static int ychao_media_YCMediaPlayer_setPosition_native(JNIEnv* env, jobject thi
 	return nPos;
 }
 
-static void ychao_media_YCMediaPlayer_setActiveNetWorkType_native(JNIEnv* env, jobject thiz, jint context, jint type)
+static void ychao_media_YCMediaPlayer_setActiveNetWorkType_native(JNIEnv* env, jobject thiz, jlong context, jint type)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL)
@@ -565,7 +568,7 @@ static void ychao_media_YCMediaPlayer_setActiveNetWorkType_native(JNIEnv* env, j
 	}
 }
 
-static void ychao_media_YCMediaPlayer_setDecoderType_native(JNIEnv* env, jobject thiz, jint context, jint type)
+static void ychao_media_YCMediaPlayer_setDecoderType_native(JNIEnv* env, jobject thiz, jlong context, jint type)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL)
@@ -583,7 +586,7 @@ static void ychao_media_YCMediaPlayer_setDecoderType_native(JNIEnv* env, jobject
 	}
 }
 
-static int ychao_media_YCMediaPlayer_getPosition_native(JNIEnv* env, jobject thiz, jint context)
+static int ychao_media_YCMediaPlayer_getPosition_native(JNIEnv* env, jobject thiz, jlong context)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL)
@@ -606,7 +609,7 @@ static int ychao_media_YCMediaPlayer_getPosition_native(JNIEnv* env, jobject thi
 	return pos;
 }
 
-static int ychao_media_YCMediaPlayer_duration_native(JNIEnv* env, jobject thiz, jint context)
+static int ychao_media_YCMediaPlayer_duration_native(JNIEnv* env, jobject thiz, jlong context)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL)
@@ -627,7 +630,7 @@ static int ychao_media_YCMediaPlayer_duration_native(JNIEnv* env, jobject thiz, 
 	return duration;
 }
 
-static int ychao_media_YCMediaPlayer_size_native(JNIEnv* env, jobject thiz, jint context)
+static int ychao_media_YCMediaPlayer_size_native(JNIEnv* env, jobject thiz, jlong context)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL)
@@ -648,7 +651,7 @@ static int ychao_media_YCMediaPlayer_size_native(JNIEnv* env, jobject thiz, jint
 	return size;
 }
 
-static int ychao_media_YCMediaPlayer_bufferedSize_native(JNIEnv* env, jobject thiz, jint context)
+static int ychao_media_YCMediaPlayer_bufferedSize_native(JNIEnv* env, jobject thiz, jlong context)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL)
@@ -669,7 +672,7 @@ static int ychao_media_YCMediaPlayer_bufferedSize_native(JNIEnv* env, jobject th
 	return bufferedSize;
 }
 
-static int ychao_media_YCMediaPlayer_bufferedPercent_native(JNIEnv* env, jobject thiz, jint context)
+static int ychao_media_YCMediaPlayer_bufferedPercent_native(JNIEnv* env, jobject thiz, jlong context)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL)
@@ -687,7 +690,7 @@ static int ychao_media_YCMediaPlayer_bufferedPercent_native(JNIEnv* env, jobject
 	return nErr;
 }
 
-static int ychao_media_YCMediaPlayer_bufferBandWidth_native(JNIEnv* env, jobject thiz, jint context)
+static int ychao_media_YCMediaPlayer_bufferBandWidth_native(JNIEnv* env, jobject thiz, jlong context)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL)
@@ -698,13 +701,13 @@ static int ychao_media_YCMediaPlayer_bufferBandWidth_native(JNIEnv* env, jobject
 	int nBandWidth = 0;
 	if(pMediaPara->iMediaPlayer != NULL)
 	{
-		nBandWidth = pMediaPara->iMediaPlayer->BandWidth();		
+		nBandWidth = pMediaPara->iMediaPlayer->BandWidth();
 	}
 
 	return nBandWidth;
 }
 
-static int ychao_media_YCMediaPlayer_bufferBandPercent_native(JNIEnv* env, jobject thiz, jint context)
+static int ychao_media_YCMediaPlayer_bufferBandPercent_native(JNIEnv* env, jobject thiz, jlong context)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL)
@@ -715,13 +718,13 @@ static int ychao_media_YCMediaPlayer_bufferBandPercent_native(JNIEnv* env, jobje
 	int nBandPercent = 0;
 	if(pMediaPara->iMediaPlayer != NULL)
 	{
-		nBandPercent = pMediaPara->iMediaPlayer->BandPercent();		
+		nBandPercent = pMediaPara->iMediaPlayer->BandPercent();
 	}
 
 	return nBandPercent;
 }
 
-static int ychao_media_YCMediaPlayer_getStatus_native(JNIEnv* env, jobject thiz, jint context)
+static int ychao_media_YCMediaPlayer_getStatus_native(JNIEnv* env, jobject thiz, jlong context)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL)
@@ -742,7 +745,7 @@ static int ychao_media_YCMediaPlayer_getStatus_native(JNIEnv* env, jobject thiz,
 	return playstatus;
 }
 
-static int ychao_media_YCMediaPlayer_getCurFreqAndWave_native(JNIEnv* env, jobject thiz, jint context, jshortArray freqarr, jshortArray wavearr, jint samplenum)
+static int ychao_media_YCMediaPlayer_getCurFreqAndWave_native(JNIEnv* env, jobject thiz, jlong context, jshortArray freqarr, jshortArray wavearr, jint samplenum)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL)
@@ -773,7 +776,7 @@ static int ychao_media_YCMediaPlayer_getCurFreqAndWave_native(JNIEnv* env, jobje
 	return nErr;
 }
 
-static int ychao_media_YCMediaPlayer_getCurFreq_native(JNIEnv* env, jobject thiz, jint context, jshortArray freqarr, jint freqnum)
+static int ychao_media_YCMediaPlayer_getCurFreq_native(JNIEnv* env, jobject thiz, jlong context, jshortArray freqarr, jint freqnum)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL)
@@ -815,7 +818,7 @@ static int ychao_media_YCMediaPlayer_getCurFreq_native(JNIEnv* env, jobject thiz
 	return nErr;
 }
 
-static int ychao_media_YCMediaPlayer_getCurWave_native(JNIEnv* env, jobject thiz, jint context, jshortArray wavearr, jint wavenum)
+static int ychao_media_YCMediaPlayer_getCurWave_native(JNIEnv* env, jobject thiz, jlong context, jshortArray wavearr, jint wavenum)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL)
@@ -855,16 +858,16 @@ static int ychao_media_YCMediaPlayer_getCurWave_native(JNIEnv* env, jobject thiz
 }
 
 
-static void ychao_media_YCMediaPlayer_CongfigProxyServer_native(JNIEnv* env, jobject thiz, jint context, jstring aIP, jint aPort, jstring authenkey, jboolean aUserProxy)
+static void ychao_media_YCMediaPlayer_CongfigProxyServer_native(JNIEnv* env, jobject thiz, jlong context, jstring aIP, jint aPort, jstring authenkey, jboolean aUserProxy)
 {
 	struct in_addr address;
 	const char *pAuthenkey = env->GetStringUTFChars(authenkey, NULL);
-    const char *pIP = env->GetStringUTFChars(aIP, NULL);
+	const char *pIP = env->GetStringUTFChars(aIP, NULL);
 	TTBool bUserProxy = (TTBool)aUserProxy;
 	inet_aton(pIP, &address);
 	ConfigProxyServer(address.s_addr, aPort, pAuthenkey, bUserProxy);
 	env->ReleaseStringUTFChars(authenkey, pAuthenkey);
-    env->ReleaseStringUTFChars(aIP, pIP);
+	env->ReleaseStringUTFChars(aIP, pIP);
 
 	LOGI("Player set networkProxy aUserProxy %d", (int)aUserProxy);
 	MediaPara* pMediaPara = (MediaPara* )context;
@@ -873,7 +876,7 @@ static void ychao_media_YCMediaPlayer_CongfigProxyServer_native(JNIEnv* env, job
 	}
 }
 
-//static void ychao_media_YCMediaPlayer_ClearScreen_native(JNIEnv* env, jobject thiz, jint context, jint bClear)
+//static void ychao_media_YCMediaPlayer_ClearScreen_native(JNIEnv* env, jobject thiz, jlong context, jint bClear)
 //{
 //	MediaPara* pMediaPara = (MediaPara* )context;
 //	if (pMediaPara == NULL)
@@ -885,14 +888,14 @@ static void ychao_media_YCMediaPlayer_CongfigProxyServer_native(JNIEnv* env, job
 //	if(pMediaPara->iMediaPlayer != NULL)
 //	{
 //		TTBool aClear = (TTBool)bClear;
-//		pMediaPara->iMediaPlayer->ClearScreen(aClear);		
+//		pMediaPara->iMediaPlayer->ClearScreen(aClear);
 //	}
 //
 //	return;
 //}
 
 
-static int ychao_media_YCMediaPlayer_getPCMData(JNIEnv* env, jobject thiz, jint context, jstring uri, jbyteArray aArray)
+static int ychao_media_YCMediaPlayer_getPCMData(JNIEnv* env, jobject thiz, jlong context, jstring uri, jbyteArray aArray)
 {
 	LOGI("getPCMData start");
 	int nErr = -1;
@@ -921,7 +924,7 @@ static int ychao_media_YCMediaPlayer_getPCMData(JNIEnv* env, jobject thiz, jint 
 	return nErr;
 }
 
-static int ychao_media_YCMediaPlayer_getPcmChannel(JNIEnv* env, jobject thiz, jint context)
+static int ychao_media_YCMediaPlayer_getPcmChannel(JNIEnv* env, jobject thiz, jlong context)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL || pMediaPara->iMediaPlayer == NULL)
@@ -931,7 +934,7 @@ static int ychao_media_YCMediaPlayer_getPcmChannel(JNIEnv* env, jobject thiz, ji
 	return pMediaPara->iMediaPlayer->GetPCMDataChannle();
 }
 
-static int ychao_media_YCMediaPlayer_getPcmSamplerate(JNIEnv* env, jobject thiz, jint context)
+static int ychao_media_YCMediaPlayer_getPcmSamplerate(JNIEnv* env, jobject thiz, jlong context)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL || pMediaPara->iMediaPlayer == NULL)
@@ -941,7 +944,7 @@ static int ychao_media_YCMediaPlayer_getPcmSamplerate(JNIEnv* env, jobject thiz,
 	return pMediaPara->iMediaPlayer->GetPCMDataSamplerate();
 }
 
-static int ychao_media_YCMediaPlayer_getPcmSize(JNIEnv* env, jobject thiz, jint context)
+static int ychao_media_YCMediaPlayer_getPcmSize(JNIEnv* env, jobject thiz, jlong context)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL || pMediaPara->iMediaPlayer == NULL)
@@ -951,17 +954,17 @@ static int ychao_media_YCMediaPlayer_getPcmSize(JNIEnv* env, jobject thiz, jint 
 	return pMediaPara->iMediaPlayer->GetPCMDataSize();
 }
 
-static void ychao_media_YCMediaPlayer_cancelPcm(JNIEnv* env, jobject thiz, jint context)
+static void ychao_media_YCMediaPlayer_cancelPcm(JNIEnv* env, jobject thiz, jlong context)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL || pMediaPara->iMediaPlayer == NULL)
 	{
 	}
 	else
-	pMediaPara->iMediaPlayer->CancelGetPCM();
+		pMediaPara->iMediaPlayer->CancelGetPCM();
 }
 
-static void ychao_media_YCMediaPlayer_setPcmRange(JNIEnv* env, jobject thiz, jint context, jint start, jint end, jint decodeStartPos)
+static void ychao_media_YCMediaPlayer_setPcmRange(JNIEnv* env, jobject thiz, jlong context, jint start, jint end, jint decodeStartPos)
 {
 	MediaPara* pMediaPara = (MediaPara* )context;
 	if (pMediaPara == NULL || pMediaPara->iMediaPlayer == NULL)
@@ -971,42 +974,42 @@ static void ychao_media_YCMediaPlayer_setPcmRange(JNIEnv* env, jobject thiz, jin
 }
 
 static JNINativeMethod gMethods[] = {
-    //{"nativeInit",         "()V",            					(void *)ychao_media_YCMediaPlayer_native_init},
-    {"nativeSetup",        "(Ljava/lang/Object;[BILjava/lang/String;)V",    			(void *)ychao_media_YCMediaPlayer_native_setup},
-    {"nativeRelease",      "(I)V",            					(void *)ychao_media_YCMediaPlayer_native_release},
-    {"nativePlay",      			"(I)I",       						(void *)ychao_media_YCMediaPlayer_play_native},
-    {"nativeSetDataSourceAsync", 	"(ILjava/lang/String;I)I",    (void *)ychao_media_YCMediaPlayer_setDataSourceAsync_native},
-    {"nativeSetDataSourceSync", 	"(ILjava/lang/String;I)I",    (void *)ychao_media_YCMediaPlayer_setDataSourceSync_native},
-    {"nativeSetCacheFilePath", 	"(ILjava/lang/String;)V",    (void *)ychao_media_YCMediaPlayer_setCacheFilePath_native},
-    {"nativeStop",      	"(I)I",       						(void *)ychao_media_YCMediaPlayer_stop_native},
-    {"nativeSetSurface",      		"(I)I",       				(void *)ychao_media_YCMediaPlayer_setSurface_native},
-	{"nativePause",      			"(IZ)V",       						(void *)ychao_media_YCMediaPlayer_pause_native},
-    {"nativeResume",      		"(IZ)V",       						(void *)ychao_media_YCMediaPlayer_resume_native},
-    {"nativeSetPosition",      	"(III)I",       						(void *)ychao_media_YCMediaPlayer_setPosition_native},
-    {"nativeSetPlayRange",      	"(III)V",       						(void *)ychao_media_YCMediaPlayer_setPlayRange_native},
-    {"nativeGetPosition",      	"(I)I",       						(void *)ychao_media_YCMediaPlayer_getPosition_native},
-    {"nativeSetActiveNetWorkType", "(II)V",       						(void *)ychao_media_YCMediaPlayer_setActiveNetWorkType_native},
-	{"nativeSetDecoderType", "(II)V",       						(void *)ychao_media_YCMediaPlayer_setDecoderType_native},
-    {"nativeDuration",      		"(I)I",       						(void *)ychao_media_YCMediaPlayer_duration_native},
-    {"nativeSize",      		"(I)I",       						(void *)ychao_media_YCMediaPlayer_size_native},
-    {"nativeBufferedSize",      		"(I)I",       						(void *)ychao_media_YCMediaPlayer_bufferedSize_native},
-    {"nativeBufferedPercent",   	"(I)I",       				   		(void *)ychao_media_YCMediaPlayer_bufferedPercent_native},
-	{"nativeBufferBandWidth",   	"(I)I",       				   		(void *)ychao_media_YCMediaPlayer_bufferBandWidth_native},
-    {"nativeGetStatus",      		"(I)I",       						(void *)ychao_media_YCMediaPlayer_getStatus_native},
-    {"nativeGetCurFreqAndWave",   "(I[S[SI)I",       			(void *)ychao_media_YCMediaPlayer_getCurFreqAndWave_native},
-    {"nativeGetCurWave",   		"(I[SI)I",       				(void *)ychao_media_YCMediaPlayer_getCurWave_native},
-    {"nativeGetCurFreq",   		"(I[SI)I",       				(void *)ychao_media_YCMediaPlayer_getCurFreq_native},
-    {"nativeSetVolume",   		"(III)V",       				   	(void *)ychao_media_YCMediaPlayer_setvolume_native},
-    {"nativeSetAudioEffectLowDelay" ,  "(IZ)V",                  (void *)ychao_media_YCMediaPlayer_setAudioEffectLowDelay_native},
-	{"nativeCongfigProxyServer" ,  "(ILjava/lang/String;ILjava/lang/String;Z)V",  (void *)ychao_media_YCMediaPlayer_CongfigProxyServer_native},
-	{"nativeBufferBandPercent",   	"(I)I",       				   		(void *)ychao_media_YCMediaPlayer_bufferBandPercent_native},
-	//{"nativeClearScrren", "(II)V",       						(void *)ychao_media_YCMediaPlayer_ClearScreen_native},
-	//{"nativeGetPCMData", 	    "(ILjava/lang/String;[B)I",        (void *)ychao_media_YCMediaPlayer_getPCMData},
-	//{"nativeGetPcmSize",      		"(I)I",       				(void *)ychao_media_YCMediaPlayer_getPcmSize},
-	//{"nativeGetPcmChannel",      "(I)I",       						(void *)ychao_media_YCMediaPlayer_getPcmChannel},
-	//{"nativeGetPcmSamplerate",    "(I)I",       						(void *)ychao_media_YCMediaPlayer_getPcmSamplerate},
-	//{"nativeCancelPcm",      	  "(I)V",       						(void *)ychao_media_YCMediaPlayer_cancelPcm},
-	//{"nativeSetPcmRange",      	"(IIII)V",       					(void *)ychao_media_YCMediaPlayer_setPcmRange},
+		//{"nativeInit",         "()V",            					(void *)ychao_media_YCMediaPlayer_native_init},
+		{"nativeSetup",        "(Ljava/lang/Object;[BILjava/lang/String;)V",    			(void *)ychao_media_YCMediaPlayer_native_setup},
+		{"nativeRelease",      "(J)V",            					(void *)ychao_media_YCMediaPlayer_native_release},
+		{"nativePlay",      			"(J)I",       						(void *)ychao_media_YCMediaPlayer_play_native},
+		{"nativeSetDataSourceAsync", 	"(JLjava/lang/String;I)I",    (void *)ychao_media_YCMediaPlayer_setDataSourceAsync_native},
+		{"nativeSetDataSourceSync", 	"(JLjava/lang/String;I)I",    (void *)ychao_media_YCMediaPlayer_setDataSourceSync_native},
+		{"nativeSetCacheFilePath", 	"(JLjava/lang/String;)V",    (void *)ychao_media_YCMediaPlayer_setCacheFilePath_native},
+		{"nativeStop",      	"(J)I",       						(void *)ychao_media_YCMediaPlayer_stop_native},
+		{"nativeSetSurface",      		"(J)I",       				(void *)ychao_media_YCMediaPlayer_setSurface_native},
+		{"nativePause",      			"(JZ)V",       						(void *)ychao_media_YCMediaPlayer_pause_native},
+		{"nativeResume",      		"(JZ)V",       						(void *)ychao_media_YCMediaPlayer_resume_native},
+		{"nativeSetPosition",      	"(JII)I",       						(void *)ychao_media_YCMediaPlayer_setPosition_native},
+		{"nativeSetPlayRange",      	"(JII)V",       						(void *)ychao_media_YCMediaPlayer_setPlayRange_native},
+		{"nativeGetPosition",      	"(J)I",       						(void *)ychao_media_YCMediaPlayer_getPosition_native},
+		{"nativeSetActiveNetWorkType", "(JI)V",       						(void *)ychao_media_YCMediaPlayer_setActiveNetWorkType_native},
+		{"nativeSetDecoderType", "(JI)V",       						(void *)ychao_media_YCMediaPlayer_setDecoderType_native},
+		{"nativeDuration",      		"(J)I",       						(void *)ychao_media_YCMediaPlayer_duration_native},
+		{"nativeSize",      		"(J)I",       						(void *)ychao_media_YCMediaPlayer_size_native},
+		{"nativeBufferedSize",      		"(J)I",       						(void *)ychao_media_YCMediaPlayer_bufferedSize_native},
+		{"nativeBufferedPercent",   	"(J)I",       				   		(void *)ychao_media_YCMediaPlayer_bufferedPercent_native},
+		{"nativeBufferBandWidth",   	"(J)I",       				   		(void *)ychao_media_YCMediaPlayer_bufferBandWidth_native},
+		{"nativeGetStatus",      		"(J)I",       						(void *)ychao_media_YCMediaPlayer_getStatus_native},
+		{"nativeGetCurFreqAndWave",   "(J[S[SI)I",       			(void *)ychao_media_YCMediaPlayer_getCurFreqAndWave_native},
+		{"nativeGetCurWave",   		"(J[SI)I",       				(void *)ychao_media_YCMediaPlayer_getCurWave_native},
+		{"nativeGetCurFreq",   		"(J[SI)I",       				(void *)ychao_media_YCMediaPlayer_getCurFreq_native},
+		{"nativeSetVolume",   		"(JII)V",       				   	(void *)ychao_media_YCMediaPlayer_setvolume_native},
+		{"nativeSetAudioEffectLowDelay" ,  "(JZ)V",                  (void *)ychao_media_YCMediaPlayer_setAudioEffectLowDelay_native},
+		{"nativeCongfigProxyServer" ,  "(JLjava/lang/String;ILjava/lang/String;Z)V",  (void *)ychao_media_YCMediaPlayer_CongfigProxyServer_native},
+		{"nativeBufferBandPercent",   	"(J)I",       				   		(void *)ychao_media_YCMediaPlayer_bufferBandPercent_native},
+		//{"nativeClearScrren", "(II)V",       						(void *)ychao_media_YCMediaPlayer_ClearScreen_native},
+		//{"nativeGetPCMData", 	    "(ILjava/lang/String;[B)I",        (void *)ychao_media_YCMediaPlayer_getPCMData},
+		//{"nativeGetPcmSize",      		"(I)I",       				(void *)ychao_media_YCMediaPlayer_getPcmSize},
+		//{"nativeGetPcmChannel",      "(I)I",       						(void *)ychao_media_YCMediaPlayer_getPcmChannel},
+		//{"nativeGetPcmSamplerate",    "(I)I",       						(void *)ychao_media_YCMediaPlayer_getPcmSamplerate},
+		//{"nativeCancelPcm",      	  "(I)V",       						(void *)ychao_media_YCMediaPlayer_cancelPcm},
+		//{"nativeSetPcmRange",      	"(IIII)V",       					(void *)ychao_media_YCMediaPlayer_setPcmRange},
 };
 
 // ----------------------------------------------------------------------------
@@ -1021,7 +1024,7 @@ static int register_ttpod_media_MediaPlayer(JNIEnv *env)
 	}
 
 	if (env->RegisterNatives(className, gMethods, sizeof(gMethods)
-			/ sizeof(gMethods[0])) != JNI_OK) {
+												  / sizeof(gMethods[0])) != JNI_OK) {
 		LOGE("ERROR: Register mediaplayer jni methods failed\n");
 		env->DeleteLocalRef(className);
 		return -1;
@@ -1036,35 +1039,35 @@ static int register_ttpod_media_MediaPlayer(JNIEnv *env)
 
 jint JNI_OnLoad(JavaVM* vm, void* reserved)
 {
-    JNIEnv* env = NULL;
-    jint result = -1;
-    LOGI("MediaPlayer: JNI OnLoad\n");
+	JNIEnv* env = NULL;
+	jint result = -1;
+	LOGI("MediaPlayer: JNI OnLoad\n");
 #ifdef JNI_VERSION_1_6
-    if (result==-1 && vm->GetEnv((void**) &env, JNI_VERSION_1_6) == JNI_OK) {
-        LOGI("JNI_OnLoad: JNI_VERSION_1_6\n");
-   	    result = JNI_VERSION_1_6;
-    }
+	if (result==-1 && vm->GetEnv((void**) &env, JNI_VERSION_1_6) == JNI_OK) {
+		LOGI("JNI_OnLoad: JNI_VERSION_1_6\n");
+		result = JNI_VERSION_1_6;
+	}
 #endif
 #ifdef JNI_VERSION_1_4
-    if (result==-1 && vm->GetEnv((void**) &env, JNI_VERSION_1_4) == JNI_OK) {
-        LOGI("JNI_OnLoad: JNI_VERSION_1_4\n");
-   	    result = JNI_VERSION_1_4;
-    }
+	if (result==-1 && vm->GetEnv((void**) &env, JNI_VERSION_1_4) == JNI_OK) {
+		LOGI("JNI_OnLoad: JNI_VERSION_1_4\n");
+		result = JNI_VERSION_1_4;
+	}
 #endif
 #ifdef JNI_VERSION_1_2
-    if (result==-1 && vm->GetEnv((void**) &env, JNI_VERSION_1_2) == JNI_OK) {
-        LOGI("JNI_OnLoad: JNI_VERSION_1_2\n");
-   	    result = JNI_VERSION_1_2;
-    }
+	if (result==-1 && vm->GetEnv((void**) &env, JNI_VERSION_1_2) == JNI_OK) {
+		LOGI("JNI_OnLoad: JNI_VERSION_1_2\n");
+		result = JNI_VERSION_1_2;
+	}
 #endif
-	
+
 	if(result == -1)
 		return result;
 
-    if (register_ttpod_media_MediaPlayer(env) < 0) {
-        LOGE("ERROR: MediaPlayer native registration failed\n");
-        return -1;    
+	if (register_ttpod_media_MediaPlayer(env) < 0) {
+		LOGE("ERROR: MediaPlayer native registration failed\n");
+		return -1;
 	}
 
-    return result;
+	return result;
 }

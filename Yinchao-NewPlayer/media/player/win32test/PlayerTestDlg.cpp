@@ -507,14 +507,15 @@ void CPlayerTestDlg::OnBnClickedOk()
 	//wprintf_s(_T("\n+++++Playing %d\n"), iCurPlayIdx);
 
 	//const wchar_t* filename = L"E:\\2test.mp3";
-	const wchar_t* filename = L"E:\\home\\music.mp3";
+	//const wchar_t* filename = L"E:\\home\\music.mp3";
+	const wchar_t* filename = L"E:\\home\\Ocean.mp3";
  	//wchar_t* filename = (wchar_t*)(LPCTSTR)(iFileArray.at(iCurPlayIdx));
 // 	
 	char *pcstr = (char *)malloc(sizeof(char)*(2 * wcslen(filename)+1));
 	memset(pcstr , 0 , 2 * wcslen(filename)+1 );
 	wstr2cstr(pcstr,filename,2 * wcslen(filename)+1);
 
-	char *pcstr1 = "http://mv.hotmusique.com/mv_2_5/48/3a/48eba57e06d814529b7288c8a2192c3a.mp4?k=519f81dd9869f504&t=1420682830";
+	char *pcstr1 = "http://audio.yinchao.cn/uploadfiles/2016/03/10/201603101147391457581659.mp3";
 				//"http://oen.cye.yymommy.com/defc86e3077c73b8/1416819671/mp3_128_6/c1/1f/c1c2e16313e0312988a13fe68ed3111f.mp3?s=t";
 		        //"http://oen.cye.yymommy.com/mp3_190_0/dd/fc/dd8668e52d1ac1939ab8dd92551b3efc.mp3?k=382b0c0e5648304e&t=1414226907";
 				//	"http://nie.dfe.yymommy.com/mp3_190_2/5d/ca/5dfb15661068e11d4899787a0d14a4ca.mp3?k=24bd7435bcadad36&t=1414226907";
@@ -533,13 +534,13 @@ void CPlayerTestDlg::OnBnClickedOk()
 	printf("SetDataSource: %s\n", pcstr);
 
 	iMediaPlayer->SetView(m_hView);
-iOpenSync=1;
+	iOpenSync=1;
 	if(iOpenSync) 
 	{	
-		if (TTKErrNone == iMediaPlayer->SetDataSourceSync(pcstr))
+		if (TTKErrNone == iMediaPlayer->SetDataSourceSync(pcstr1))
 		{	
 			//iMediaPlayer->SetPlayRange(3611000, 3703000);
-			//iMediaPlayer->SetPosition(4510);
+			iMediaPlayer->SetPosition(4510);
 
 			iMediaPlayer->Play();
 
@@ -548,7 +549,7 @@ iOpenSync=1;
 	}
 	else
 	{
-		if (TTKErrNone == iMediaPlayer->SetDataSourceAsync(pcstr1, 1))
+		if (TTKErrNone == iMediaPlayer->SetDataSourceAsync(pcstr, 1))
 		{	
 			//iMediaPlayer->SetPlayRange(3611000, 3703000);
 			//iMediaPlayer->SetPosition(4510);
