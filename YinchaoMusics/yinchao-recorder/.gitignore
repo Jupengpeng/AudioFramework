@@ -1,2 +1,15 @@
 /build
 *.Plo
+*.html
+*.tex
+*.txt
+*.vqs
+*.Po
+*.png
+*.jpg
+*.cue
+*.gif
+*.meta
+*.log
+*.sub
+jni/sox/libsndfile-1.0.24/*/ChangeLog
