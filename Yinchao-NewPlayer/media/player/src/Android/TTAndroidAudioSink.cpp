@@ -409,12 +409,12 @@ void CTTAndroidAudioSink::audioTrack_updateEnv()
 			break;
 	}
 
-	LOGI("mEnv Initialize, mEnv %d",(TTInt)mEnv);
+	LOGI("mEnv Initialize, mEnv %d",(long)mEnv);
 }
 
 void CTTAndroidAudioSink::audioTrack_updateCloseEnv()
 {
-	LOGI("mEnv UnInitialize, mEnv %d", (TTInt)mEnv);
+	LOGI("mEnv UnInitialize, mEnv %d", (long)mEnv);
 	
 	if(mEnv) {
 		if (mNeedDetach) 

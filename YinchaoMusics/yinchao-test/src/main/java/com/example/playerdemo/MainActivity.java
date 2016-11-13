@@ -1,5 +1,6 @@
 package com.example.playerdemo;
 
+
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.graphics.PixelFormat;
@@ -55,7 +56,7 @@ public class MainActivity extends Activity {
         if (PermissionUtils.checkRecordAudioPermission(this)) {
 
         }
-        if (PermissionUtils.checkCallPhonePermission(this)) {
+            if (PermissionUtils.checkCallPhonePermission(this)) {
 
         }
         if (PermissionUtils.checkReadPhoneStatePermission(this)) {
@@ -70,7 +71,7 @@ public class MainActivity extends Activity {
 
 
 //		String pluginPath = "/data/data/com.firmlyshell.app.music.test/lib";
-        String pluginPath = "/data/data/com.firmlyshell.app/lib";
+        String pluginPath = "/data/data/com.yinchao.android.app/lib";
 //		String pluginPath = "/data/app/com.firmlyshell.app-1/lib/arm";
         try {
 
@@ -88,7 +89,31 @@ public class MainActivity extends Activity {
         }
         totalTimeTV = (TextView) findViewById(R.id.textView2);
         currentTimeTV = (TextView) findViewById(R.id.textView3);
+
+//        init();
+        ((Button) findViewById(R.id.button1))
+                .setOnClickListener(new OnClickListener() {
+                    public void onClick(View view) {
+                        try {
+                            init();
+                        } catch (Exception e) {
+
+                        }
+                    }
+                });
+
+    }
+
+    private void init() {
+
+//        String pluginPath = "/data/app/com.yinchao.android.app-1/lib/arm64";
+        String pluginPath = "/data/data/com.yinchao.android.app/lib";
+//		String pluginPath = "/data/app/com.firmlyshell.app-1/lib/arm";
+
         mPlayProxy = new MediaPlayerProxy(pluginPath);
+
+
+
 
         mPlayProxy.setOnStateChangeListener(new OnStateChangeListener() {
 
@@ -231,8 +256,6 @@ public class MainActivity extends Activity {
                         }
                     }
                 });
-
-
     }
 
     public void onConfigurationChanged(Configuration newConfig) {
@@ -279,11 +302,14 @@ public class MainActivity extends Activity {
                 int min = sec / 60;
                 int msec = sec % 60;
                 currentTimeTV.setText(min + ":" + msec);
+
+                short[] wv = new short[20];
+                boolean te = mPlayProxy.getWave(wv,1);
+                Log.e("YYYYY","statu:"+te+" wa:"+wv[1]);
             }
             super.handleMessage(msg);
         }
 
-        ;
     };
 
     TimerTask task = new TimerTask() {

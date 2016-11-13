@@ -13,6 +13,9 @@
 # limitations under the License.
 #
 
+LOCAL_DISABLE_FATAL_LINKER_WARNINGS := true
+
+APP_ABI := armeabi armeabi-v7a x86
 
 LOCAL_PATH := $(call my-dir)
 

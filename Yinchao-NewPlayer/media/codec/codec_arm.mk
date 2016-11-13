@@ -55,11 +55,13 @@ LOCAL_SRC_FILES := 	\
 endif					
 
 ifeq ($(TARGET_ARCH_ABI),armeabi-v7a)
-LOCAL_CFLAGS := -DARM_OPT -DARMV6_OPT -DARMV7_OPT -DNDEBUG -mfloat-abi=soft -mfpu=neon -march=armv7-a -mtune=cortex-a8 -fsigned-char -O2 -ffast-math  -nostdlib -enable-int-quality -mandroid -fvisibility=hidden -ffunction-sections -fdata-sections
+LOCAL_CFLAGS := -DARM_OPT -DARMV6_OPT -DARMV7_OPT -DNDEBUG -mfloat-abi=soft -mfpu=neon -march=armv7-a -mtune=cortex-a8 -fsigned-char -O2 -ffast-math  -nostdlib -enable-int-quality  -fvisibility=hidden -ffunction-sections -fdata-sections
 else
-LOCAL_CFLAGS := -DARM_OPT -DARMV6_OPT -DNDEBUG -mfloat-abi=soft -march=armv6j -mtune=arm1136jf-s -fsigned-char -O2 -ffast-math  -nostdlib -enable-int-quality -mandroid -fvisibility=hidden -ffunction-sections -fdata-sections
+LOCAL_CFLAGS := -DARM_OPT -DARMV6_OPT -DNDEBUG -mfloat-abi=soft -march=armv6j -mtune=arm1136jf-s -fsigned-char -O2 -ffast-math  -nostdlib -enable-int-quality  -fvisibility=hidden -ffunction-sections -fdata-sections
 endif 
 LOCAL_LDFLAGS := -Wl,--gc-sections
+
+LOCAL_DISABLE_FATAL_LINKER_WARNINGS := true
 
 ifneq ($(TARGET_ARCH_ABI),armeabi-v7a)
 LOCAL_SRC_FILES := 	\

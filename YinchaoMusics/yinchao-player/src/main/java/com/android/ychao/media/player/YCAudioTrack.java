@@ -174,6 +174,9 @@ public class YCAudioTrack {
         mAudioTrack = null;
     }
 
+    /**
+     *
+     */
     private void audioStop() {
         if(mAudioTrack == null)
             return;
@@ -186,10 +189,22 @@ public class YCAudioTrack {
         }
     }
 
-	private void audioSetVolume(int aLVolume, int aRVolume) {
-		if (mAudioTrack != null) {
-			float fLVolume;
-			float fRVolume;
+    /**
+     * audioDestroy.
+     */
+    public void audioDestroy(){
+        Log.e(LOG_TAG, "audioDestroy: " + " - ");
+    }
+
+    /**
+     *
+     * @param aLVolume
+     * @param aRVolume
+     */
+    private void audioSetVolume(int aLVolume, int aRVolume) {
+        if (mAudioTrack != null) {
+            float fLVolume;
+            float fRVolume;
 
             if (aLVolume == 0) {
                 fLVolume = 1.0f;

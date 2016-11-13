@@ -1,7 +1,5 @@
 package com.android.ychao.media.player;
 
-import android.media.AudioManager;
-import android.media.AudioTrack;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -9,8 +7,6 @@ import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 
 
@@ -23,6 +19,7 @@ public class YCMediaPlayer implements IMediaPlayer {
             System.loadLibrary("osal");
             // System.loadLibrary("resample");
             System.loadLibrary("mediaplayer");
+            Log.e("YCMediaPlayer"," System.loadLibrary(osal);");
         } catch (UnsatisfiedLinkError error) {
             error.printStackTrace();
         }
@@ -31,7 +28,7 @@ public class YCMediaPlayer implements IMediaPlayer {
     private static final int MIN_HARDWARE_VOLUME = -990;
     private EventHandler mEventHandler;
     private boolean mPlayerReleased = false;
-    private int mNativePlayerPara = 0;
+    private long mNativePlayerPara = 0;
 
     private Surface 			mSurface;
     private SurfaceHolder  		mSurfaceHolder;
@@ -63,60 +60,60 @@ public class YCMediaPlayer implements IMediaPlayer {
 
     private native void nativeSetup(Object weakThis, byte[] headerBytes, int samplerate, String pluginPath);
 
-    private native void nativeRelease(int context);
+    private native void nativeRelease(long context);
 
-    private native int nativeSetDataSourceSync(int context, String url, int flag);
+    private native int nativeSetDataSourceSync(long context, String url, int flag);
 
-    private native int nativeSetDataSourceAsync(int context, String url, int flag);
+    private native int nativeSetDataSourceAsync(long context, String url, int flag);
 
-    private native int nativeSetSurface(int context);
+    private native int nativeSetSurface(long context);
 
-    private native int nativeGetCurFreqAndWave(int context, short[] freqArr, short[] waveArr, int sampleNum);
+    private native int nativeGetCurFreqAndWave(long context, short[] freqArr, short[] waveArr, int sampleNum);
 
-    private native int nativeGetCurFreq(int context, short[] freqArr, int freqNum);
+    private native int nativeGetCurFreq(long context, short[] freqArr, int freqNum);
 
-    private native int nativeGetCurWave(int context, short[] waveArr, int waveNum);
+    private native int nativeGetCurWave(long context, short[] waveArr, int waveNum);
 
-    private native void nativeSetVolume(int context, int lVolume, int rVolume);
+    private native void nativeSetVolume(long context, int lVolume, int rVolume);
 
-    private native int nativeStop(int context);
+    private native int nativeStop(long context);
 
-    private native void nativeSetCacheFilePath(int context, String cacheFilePath);
+    private native void nativeSetCacheFilePath(long context, String cacheFilePath);
 
-    private native void nativeSetAudioEffectLowDelay(int context, boolean enable);
+    private native void nativeSetAudioEffectLowDelay(long context, boolean enable);
 
-    private native void nativeCongfigProxyServer(int context, String ip, int port, String authenkey, boolean useProxy);
+    private native void nativeCongfigProxyServer(long context, String ip, int port, String authenkey, boolean useProxy);
 
-    private native void nativeSetActiveNetWorkType(int context, int type);
+    private native void nativeSetActiveNetWorkType(long context, int type);
 
-    private native void nativeSetDecoderType(int context, int type);
+    private native void nativeSetDecoderType(long context, int type);
 
-    private native int nativePlay(int context);
+    private native int nativePlay(long context);
 
-    private native void nativePause(int context,boolean enable);
+    private native void nativePause(long context,boolean enable);
 
-    private native void nativeResume(int context,boolean enable);
+    private native void nativeResume(long context,boolean enable);
 
-    private native int nativeSetPosition(int context, int aPos, int flag);
+    private native int nativeSetPosition(long context, int aPos, int flag);
 
-    private native void nativeSetPlayRange(int context, int aStart, int aEnd);
+    private native void nativeSetPlayRange(long context, int aStart, int aEnd);
 
-    private native int nativeGetPosition(int context);
+    private native int nativeGetPosition(long context);
 
-    private native int nativeDuration(int context);
+    private native int nativeDuration(long context);
 
-    private native int nativeSize(int context);
+    private native int nativeSize(long context);
 
-    private native int nativeBufferedSize(int context);
+    private native int nativeBufferedSize(long context);
 
-    private native int nativeBufferBandWidth(int context);
+    private native int nativeBufferBandWidth(long context);
 
-    private native int nativeBufferedPercent(int context);
+    private native int nativeBufferedPercent(long context);
 
-    private native int nativeBufferBandPercent(int context);
-    private native int nativeGetStatus(int context);
+    private native int nativeBufferBandPercent(long context);
+    private native int nativeGetStatus(long context);
 
-    private native void nativeClearScrren(int context, int aClear);
+    private native void nativeClearScrren(long context, int aClear);
     /**
      * 设置网络类型
      *
@@ -379,6 +376,7 @@ public class YCMediaPlayer implements IMediaPlayer {
 
     private int setDataSource(String aUrl, int flag, boolean aSync) {
         int nErr;
+        Log.e("YCMediaPlayer","setDataSource:context="+mNativePlayerPara);
         if (aSync) {
             nErr = nativeSetDataSourceSync(mNativePlayerPara, aUrl, flag);
         } else {
