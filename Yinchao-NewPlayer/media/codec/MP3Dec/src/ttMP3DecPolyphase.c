@@ -290,7 +290,10 @@ int ttMP3DecSubbandFrame(FrameDataInfo *frame, SubbandInfo *subband, short *outb
 				ttMP3DecSynthStereo(outbuf, subband->vbuf + subband->vindex + VBUF_LENGTH * (b & 0x01), polyCoef);
 #endif
 				subband->vindex = (subband->vindex - (b & 0x01)) & 7;
-				outbuf += (2 * SBLIMIT);
+
+                outbuf += (2 * SBLIMIT);
+                
+                
 			}
 		}
 	}

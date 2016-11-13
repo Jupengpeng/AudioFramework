@@ -6,6 +6,8 @@
 #include "TTFFT.h"
 #include "TTSysTime.h"
 #include "TTHttpClient.h"
+#include "PureDecodeEntity.h"
+
 
 #ifdef __TT_OS_WINDOWS__
 #include "Wins/TTWinAudioSink.h"
@@ -19,7 +21,7 @@
 
 #ifdef __TT_OS_IOS__
 #include "TTAudioSink.h"
-#include "TTIosVideoSink.h"
+//#include "TTIosVideoSink.h"
 #endif
 
 #ifndef __TT_OS_WINDOWS__
@@ -27,7 +29,6 @@
 #include <arpa/inet.h>
 #endif
 
-#include "PureDecodeEntity.h"
 
 #ifdef __TT_OS_IOS__
 extern int gIosStop;
@@ -976,7 +977,7 @@ TTInt CTTMediaPlayer::GetCurrentFreqAndWave(TTInt16 *aFreq, TTInt16 *aWave, TTIn
 	{
 		if (aFreq != NULL)
 		{
-			TTFFT::WaveformToFreqBin(aFreq, aWave, nChannels, aSampleNum);
+//			TTFFT::WaveformToFreqBin(aFreq, aWave, nChannels, aSampleNum);
 		}
 	}
 

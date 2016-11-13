@@ -14,7 +14,7 @@ public:
 	/**
 	* \fn								 CTTDemux(TTObserver& aObserver);
 	* \brief							 构造函数
-	* \param[in] aElementObserver		 接口引用		
+	* \param[in] aElementObserver		 接口引用
 	*/
 	CTTSrcDemux(TTObserver*	aObserver);
 	

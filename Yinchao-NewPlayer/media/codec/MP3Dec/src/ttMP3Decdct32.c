@@ -79,7 +79,6 @@ const int dctIdx[12] = {
 	0x1, 0x0, 0x0, 0x0,
 	0x0, 0x1, 0x1, 0x3
 };
-
 #endif
 
 //iOS ARMv6 asm table
@@ -96,6 +95,9 @@ const int dcttab_v6[48] = {
 
 #ifndef ARM_OPT
 // faster in ROM
+
+
+
 static const int dcttab[48] = {
 	/* first pass */
 	COS0_00, COS0_15, COS1_00,	/* 31, 27, 31 */

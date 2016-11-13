@@ -31,6 +31,7 @@ typedef struct
 	void*				PBuffer;			/*!< user data pointer */
 }TT_MEM_INFO;
 
+
 void *mem_malloc(unsigned int size, unsigned char alignment);
 void mem_free(void *mem_ptr);
 

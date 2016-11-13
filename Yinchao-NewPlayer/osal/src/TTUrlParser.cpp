@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "TTUrlParser.h"
-
+#include <string.h>
 #define HTTP_PREFIX_LENGTH	7
 #define HTTPS_PREFIX_LENGTH	8
 

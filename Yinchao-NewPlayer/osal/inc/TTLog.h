@@ -59,6 +59,8 @@
 
 #if defined(__TT_OS_IOS__)// IOS
 #define __LOG_ALLOW__ 0
+#define iOSVersion  [[UIDevice currentDevice].systemVersion floatValue]
+
 #if __LOG_ALLOW__
 #define NSLogDebug(...) NSLog(__VA_ARGS__)
 #else

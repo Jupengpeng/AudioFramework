@@ -7,10 +7,11 @@
  */
 
 #import "TTUIDeviceHardware.h"
-#import <UIKit/UIApplication.h>
+//#import <UIKit/UIApplication.h>
 #include <sys/types.h>
 #include <sys/sysctl.h>
 #include "TTLog.h"
+#import <UIKit/UIKit.h>
 static TTUIDeviceHardware* gUIDeviceHardware = NULL; 
 
 static const NSString* kIPHONE_1_G = @"iPhone1,1";

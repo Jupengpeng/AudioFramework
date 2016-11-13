@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B81D31281DC32FD00076EA18 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B81D31271DC32FD00076EA18 /* AVFoundation.framework */; };
+		B81D312A1DC32FD60076EA18 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B81D31291DC32FD60076EA18 /* CoreMedia.framework */; };
+		B81D312C1DC32FDC0076EA18 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B81D312B1DC32FDC0076EA18 /* AudioToolbox.framework */; };
+		B81D312E1DC32FE10076EA18 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B81D312D1DC32FE10076EA18 /* UIKit.framework */; };
+		B89F68691DC7515400D5B156 /* YCOsal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89F68681DC7515400D5B156 /* YCOsal.framework */; };
+		B89F6AB21DC82C4A00D5B156 /* TTExtAudioFileParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B89F6A981DC82C4A00D5B156 /* TTExtAudioFileParser.cpp */; };
+		B89F6AB31DC82C4A00D5B156 /* TTIPodLibraryParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B89F6A991DC82C4A00D5B156 /* TTIPodLibraryParser.cpp */; };
+		B89F6AB41DC82C4A00D5B156 /* TTMediaParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B89F6A9A1DC82C4A00D5B156 /* TTMediaParser.cpp */; };
+		B89F6AB51DC82C4A00D5B156 /* TTAPETag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B89F6A9B1DC82C4A00D5B156 /* TTAPETag.cpp */; };
+		B89F6AB61DC82C4A00D5B156 /* TTHttpMP3Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B89F6A9C1DC82C4A00D5B156 /* TTHttpMP3Parser.cpp */; };
+		B89F6AB71DC82C4A00D5B156 /* TTID3Tag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B89F6A9D1DC82C4A00D5B156 /* TTID3Tag.cpp */; };
+		B89F6AB81DC82C4A00D5B156 /* TTIntReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B89F6A9E1DC82C4A00D5B156 /* TTIntReader.cpp */; };
+		B89F6AB91DC82C4A00D5B156 /* TTMediainfoProxy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B89F6A9F1DC82C4A00D5B156 /* TTMediainfoProxy.cpp */; };
+		B89F6ABA1DC82C4A00D5B156 /* TTMP3Header.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B89F6AA01DC82C4A00D5B156 /* TTMP3Header.cpp */; };
+		B89F6ABB1DC82C4A00D5B156 /* TTMP3Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B89F6AA11DC82C4A00D5B156 /* TTMP3Parser.cpp */; };
+		B89F6ABC1DC82C4A00D5B156 /* TTExtAudioFileParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AA21DC82C4A00D5B156 /* TTExtAudioFileParser.h */; };
+		B89F6ABD1DC82C4A00D5B156 /* TTPureDataParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AA31DC82C4A00D5B156 /* TTPureDataParser.h */; };
+		B89F6ABE1DC82C4A00D5B156 /* RIFF.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AA41DC82C4A00D5B156 /* RIFF.h */; };
+		B89F6ABF1DC82C4A00D5B156 /* TTAPETag.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AA51DC82C4A00D5B156 /* TTAPETag.h */; };
+		B89F6AC01DC82C4A00D5B156 /* TTHttpMP3Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AA61DC82C4A00D5B156 /* TTHttpMP3Parser.h */; };
+		B89F6AC11DC82C4A00D5B156 /* TTID3Tag.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AA71DC82C4A00D5B156 /* TTID3Tag.h */; };
+		B89F6AC21DC82C4A00D5B156 /* TTIMediaInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AA81DC82C4A00D5B156 /* TTIMediaInfo.h */; };
+		B89F6AC31DC82C4A00D5B156 /* TTIntReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AA91DC82C4A00D5B156 /* TTIntReader.h */; };
+		B89F6AC41DC82C4A00D5B156 /* TTMediainfoDef.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AAA1DC82C4A00D5B156 /* TTMediainfoDef.h */; };
+		B89F6AC51DC82C4A00D5B156 /* TTMediainfoProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AAB1DC82C4A00D5B156 /* TTMediainfoProxy.h */; };
+		B89F6AC61DC82C4A00D5B156 /* TTMediaParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AAC1DC82C4A00D5B156 /* TTMediaParser.h */; };
+		B89F6AC71DC82C4A00D5B156 /* TTMediaParserItf.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AAD1DC82C4A00D5B156 /* TTMediaParserItf.h */; };
+		B89F6AC81DC82C4A00D5B156 /* TTMP3Header.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AAE1DC82C4A00D5B156 /* TTMP3Header.h */; };
+		B89F6AC91DC82C4A00D5B156 /* TTMP3Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AAF1DC82C4A00D5B156 /* TTMP3Parser.h */; };
+		B89F6ACA1DC82C4A00D5B156 /* TTMP4Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6AB01DC82C4A00D5B156 /* TTMP4Parser.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B81D2FF41DC324780076EA18 /* YCInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YCInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B81D31271DC32FD00076EA18 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B81D31291DC32FD60076EA18 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		B81D312B1DC32FDC0076EA18 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B81D312D1DC32FE10076EA18 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B89F68681DC7515400D5B156 /* YCOsal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YCOsal.framework; path = "../../../../Library/Developer/Xcode/DerivedData/YCiOSPlayer-frrrcxngyoayzjghudpwstfnresz/Build/Products/Debug-iphonesimulator/YCOsal.framework"; sourceTree = "<group>"; };
+		B89F6A981DC82C4A00D5B156 /* TTExtAudioFileParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTExtAudioFileParser.cpp; path = "../../Yinchao-NewPlayer/media/info/src/IOS/TTExtAudioFileParser.cpp"; sourceTree = "<group>"; };
+		B89F6A991DC82C4A00D5B156 /* TTIPodLibraryParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTIPodLibraryParser.cpp; path = "../../Yinchao-NewPlayer/media/info/src/IOS/TTIPodLibraryParser.cpp"; sourceTree = "<group>"; };
+		B89F6A9A1DC82C4A00D5B156 /* TTMediaParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTMediaParser.cpp; path = "../../Yinchao-NewPlayer/media/info/src/TTMediaParser.cpp"; sourceTree = "<group>"; };
+		B89F6A9B1DC82C4A00D5B156 /* TTAPETag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTAPETag.cpp; path = "../../Yinchao-NewPlayer/media/info/src/TTAPETag.cpp"; sourceTree = "<group>"; };
+		B89F6A9C1DC82C4A00D5B156 /* TTHttpMP3Parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTHttpMP3Parser.cpp; path = "../../Yinchao-NewPlayer/media/info/src/TTHttpMP3Parser.cpp"; sourceTree = "<group>"; };
+		B89F6A9D1DC82C4A00D5B156 /* TTID3Tag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTID3Tag.cpp; path = "../../Yinchao-NewPlayer/media/info/src/TTID3Tag.cpp"; sourceTree = "<group>"; };
+		B89F6A9E1DC82C4A00D5B156 /* TTIntReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTIntReader.cpp; path = "../../Yinchao-NewPlayer/media/info/src/TTIntReader.cpp"; sourceTree = "<group>"; };
+		B89F6A9F1DC82C4A00D5B156 /* TTMediainfoProxy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTMediainfoProxy.cpp; path = "../../Yinchao-NewPlayer/media/info/src/TTMediainfoProxy.cpp"; sourceTree = "<group>"; };
+		B89F6AA01DC82C4A00D5B156 /* TTMP3Header.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTMP3Header.cpp; path = "../../Yinchao-NewPlayer/media/info/src/TTMP3Header.cpp"; sourceTree = "<group>"; };
+		B89F6AA11DC82C4A00D5B156 /* TTMP3Parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTMP3Parser.cpp; path = "../../Yinchao-NewPlayer/media/info/src/TTMP3Parser.cpp"; sourceTree = "<group>"; };
+		B89F6AA21DC82C4A00D5B156 /* TTExtAudioFileParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTExtAudioFileParser.h; path = "../../Yinchao-NewPlayer/media/info/inc/IOS/TTExtAudioFileParser.h"; sourceTree = "<group>"; };
+		B89F6AA31DC82C4A00D5B156 /* TTPureDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTPureDataParser.h; path = "../../Yinchao-NewPlayer/media/info/inc/IOS/TTPureDataParser.h"; sourceTree = "<group>"; };
+		B89F6AA41DC82C4A00D5B156 /* RIFF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RIFF.h; path = "../../Yinchao-NewPlayer/media/info/inc/RIFF.h"; sourceTree = "<group>"; };
+		B89F6AA51DC82C4A00D5B156 /* TTAPETag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTAPETag.h; path = "../../Yinchao-NewPlayer/media/info/inc/TTAPETag.h"; sourceTree = "<group>"; };
+		B89F6AA61DC82C4A00D5B156 /* TTHttpMP3Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTHttpMP3Parser.h; path = "../../Yinchao-NewPlayer/media/info/inc/TTHttpMP3Parser.h"; sourceTree = "<group>"; };
+		B89F6AA71DC82C4A00D5B156 /* TTID3Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTID3Tag.h; path = "../../Yinchao-NewPlayer/media/info/inc/TTID3Tag.h"; sourceTree = "<group>"; };
+		B89F6AA81DC82C4A00D5B156 /* TTIMediaInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTIMediaInfo.h; path = "../../Yinchao-NewPlayer/media/info/inc/TTIMediaInfo.h"; sourceTree = "<group>"; };
+		B89F6AA91DC82C4A00D5B156 /* TTIntReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTIntReader.h; path = "../../Yinchao-NewPlayer/media/info/inc/TTIntReader.h"; sourceTree = "<group>"; };
+		B89F6AAA1DC82C4A00D5B156 /* TTMediainfoDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMediainfoDef.h; path = "../../Yinchao-NewPlayer/media/info/inc/TTMediainfoDef.h"; sourceTree = "<group>"; };
+		B89F6AAB1DC82C4A00D5B156 /* TTMediainfoProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMediainfoProxy.h; path = "../../Yinchao-NewPlayer/media/info/inc/TTMediainfoProxy.h"; sourceTree = "<group>"; };
+		B89F6AAC1DC82C4A00D5B156 /* TTMediaParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMediaParser.h; path = "../../Yinchao-NewPlayer/media/info/inc/TTMediaParser.h"; sourceTree = "<group>"; };
+		B89F6AAD1DC82C4A00D5B156 /* TTMediaParserItf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMediaParserItf.h; path = "../../Yinchao-NewPlayer/media/info/inc/TTMediaParserItf.h"; sourceTree = "<group>"; };
+		B89F6AAE1DC82C4A00D5B156 /* TTMP3Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMP3Header.h; path = "../../Yinchao-NewPlayer/media/info/inc/TTMP3Header.h"; sourceTree = "<group>"; };
+		B89F6AAF1DC82C4A00D5B156 /* TTMP3Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMP3Parser.h; path = "../../Yinchao-NewPlayer/media/info/inc/TTMP3Parser.h"; sourceTree = "<group>"; };
+		B89F6AB01DC82C4A00D5B156 /* TTMP4Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMP4Parser.h; path = "../../Yinchao-NewPlayer/media/info/inc/TTMP4Parser.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B81D2FF01DC324780076EA18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B89F68691DC7515400D5B156 /* YCOsal.framework in Frameworks */,
+				B81D312E1DC32FE10076EA18 /* UIKit.framework in Frameworks */,
+				B81D312C1DC32FDC0076EA18 /* AudioToolbox.framework in Frameworks */,
+				B81D312A1DC32FD60076EA18 /* CoreMedia.framework in Frameworks */,
+				B81D31281DC32FD00076EA18 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B81D2FEA1DC324780076EA18 = {
+			isa = PBXGroup;
+			children = (
+				B89F6A981DC82C4A00D5B156 /* TTExtAudioFileParser.cpp */,
+				B89F6A991DC82C4A00D5B156 /* TTIPodLibraryParser.cpp */,
+				B89F6A9A1DC82C4A00D5B156 /* TTMediaParser.cpp */,
+				B89F6A9B1DC82C4A00D5B156 /* TTAPETag.cpp */,
+				B89F6A9C1DC82C4A00D5B156 /* TTHttpMP3Parser.cpp */,
+				B89F6A9D1DC82C4A00D5B156 /* TTID3Tag.cpp */,
+				B89F6A9E1DC82C4A00D5B156 /* TTIntReader.cpp */,
+				B89F6A9F1DC82C4A00D5B156 /* TTMediainfoProxy.cpp */,
+				B89F6AA01DC82C4A00D5B156 /* TTMP3Header.cpp */,
+				B89F6AA11DC82C4A00D5B156 /* TTMP3Parser.cpp */,
+				B89F6AA21DC82C4A00D5B156 /* TTExtAudioFileParser.h */,
+				B89F6AA31DC82C4A00D5B156 /* TTPureDataParser.h */,
+				B89F6AA41DC82C4A00D5B156 /* RIFF.h */,
+				B89F6AA51DC82C4A00D5B156 /* TTAPETag.h */,
+				B89F6AA61DC82C4A00D5B156 /* TTHttpMP3Parser.h */,
+				B89F6AA71DC82C4A00D5B156 /* TTID3Tag.h */,
+				B89F6AA81DC82C4A00D5B156 /* TTIMediaInfo.h */,
+				B89F6AA91DC82C4A00D5B156 /* TTIntReader.h */,
+				B89F6AAA1DC82C4A00D5B156 /* TTMediainfoDef.h */,
+				B89F6AAB1DC82C4A00D5B156 /* TTMediainfoProxy.h */,
+				B89F6AAC1DC82C4A00D5B156 /* TTMediaParser.h */,
+				B89F6AAD1DC82C4A00D5B156 /* TTMediaParserItf.h */,
+				B89F6AAE1DC82C4A00D5B156 /* TTMP3Header.h */,
+				B89F6AAF1DC82C4A00D5B156 /* TTMP3Parser.h */,
+				B89F6AB01DC82C4A00D5B156 /* TTMP4Parser.h */,
+				B81D2FF51DC324780076EA18 /* Products */,
+				B81D303B1DC329A20076EA18 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B81D2FF51DC324780076EA18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B81D2FF41DC324780076EA18 /* YCInfo.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B81D303B1DC329A20076EA18 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B89F68681DC7515400D5B156 /* YCOsal.framework */,
+				B81D312D1DC32FE10076EA18 /* UIKit.framework */,
+				B81D312B1DC32FDC0076EA18 /* AudioToolbox.framework */,
+				B81D31291DC32FD60076EA18 /* CoreMedia.framework */,
+				B81D31271DC32FD00076EA18 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B81D2FF11DC324780076EA18 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B89F6AC81DC82C4A00D5B156 /* TTMP3Header.h in Headers */,
+				B89F6AC11DC82C4A00D5B156 /* TTID3Tag.h in Headers */,
+				B89F6AC41DC82C4A00D5B156 /* TTMediainfoDef.h in Headers */,
+				B89F6AC31DC82C4A00D5B156 /* TTIntReader.h in Headers */,
+				B89F6ABC1DC82C4A00D5B156 /* TTExtAudioFileParser.h in Headers */,
+				B89F6ABD1DC82C4A00D5B156 /* TTPureDataParser.h in Headers */,
+				B89F6AC61DC82C4A00D5B156 /* TTMediaParser.h in Headers */,
+				B89F6ABF1DC82C4A00D5B156 /* TTAPETag.h in Headers */,
+				B89F6AC51DC82C4A00D5B156 /* TTMediainfoProxy.h in Headers */,
+				B89F6AC71DC82C4A00D5B156 /* TTMediaParserItf.h in Headers */,
+				B89F6AC01DC82C4A00D5B156 /* TTHttpMP3Parser.h in Headers */,
+				B89F6AC21DC82C4A00D5B156 /* TTIMediaInfo.h in Headers */,
+				B89F6AC91DC82C4A00D5B156 /* TTMP3Parser.h in Headers */,
+				B89F6ABE1DC82C4A00D5B156 /* RIFF.h in Headers */,
+				B89F6ACA1DC82C4A00D5B156 /* TTMP4Parser.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B81D2FF31DC324780076EA18 /* YCInfo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B81D2FFC1DC324780076EA18 /* Build configuration list for PBXNativeTarget "YCInfo" */;
+			buildPhases = (
+				B81D2FEF1DC324780076EA18 /* Sources */,
+				B81D2FF01DC324780076EA18 /* Frameworks */,
+				B81D2FF11DC324780076EA18 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YCInfo;
+			productName = YCInfo;
+			productReference = B81D2FF41DC324780076EA18 /* YCInfo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B81D2FEB1DC324780076EA18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = yintao;
+				TargetAttributes = {
+					B81D2FF31DC324780076EA18 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 62UDHM98C2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B81D2FEE1DC324780076EA18 /* Build configuration list for PBXProject "YCInfo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B81D2FEA1DC324780076EA18;
+			productRefGroup = B81D2FF51DC324780076EA18 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B81D2FF31DC324780076EA18 /* YCInfo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B81D2FEF1DC324780076EA18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B89F6AB61DC82C4A00D5B156 /* TTHttpMP3Parser.cpp in Sources */,
+				B89F6ABA1DC82C4A00D5B156 /* TTMP3Header.cpp in Sources */,
+				B89F6AB31DC82C4A00D5B156 /* TTIPodLibraryParser.cpp in Sources */,
+				B89F6ABB1DC82C4A00D5B156 /* TTMP3Parser.cpp in Sources */,
+				B89F6AB41DC82C4A00D5B156 /* TTMediaParser.cpp in Sources */,
+				B89F6AB91DC82C4A00D5B156 /* TTMediainfoProxy.cpp in Sources */,
+				B89F6AB21DC82C4A00D5B156 /* TTExtAudioFileParser.cpp in Sources */,
+				B89F6AB51DC82C4A00D5B156 /* TTAPETag.cpp in Sources */,
+				B89F6AB71DC82C4A00D5B156 /* TTID3Tag.cpp in Sources */,
+				B89F6AB81DC82C4A00D5B156 /* TTIntReader.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B81D2FFA1DC324780076EA18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B81D2FFB1DC324780076EA18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B81D2FFD1DC324780076EA18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 62UDHM98C2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_INPUT_FILETYPE = automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../Yinchao-NewPlayer/osal/inc/**",
+					"$(SRCROOT)/../../Yinchao-NewPlayer/media/info/inc",
+					"$(SRCROOT)/../../Yinchao-NewPlayer/media/info/inc/IOS/",
+				);
+				INFOPLIST_FILE = YCInfo/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JPTest.YCInfo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		B81D2FFE1DC324780076EA18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 62UDHM98C2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_INPUT_FILETYPE = automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../Yinchao-NewPlayer/osal/inc/**",
+					"$(SRCROOT)/../../Yinchao-NewPlayer/media/info/inc",
+					"$(SRCROOT)/../../Yinchao-NewPlayer/media/info/inc/IOS/",
+				);
+				INFOPLIST_FILE = YCInfo/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JPTest.YCInfo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B81D2FEE1DC324780076EA18 /* Build configuration list for PBXProject "YCInfo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B81D2FFA1DC324780076EA18 /* Debug */,
+				B81D2FFB1DC324780076EA18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B81D2FFC1DC324780076EA18 /* Build configuration list for PBXNativeTarget "YCInfo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B81D2FFD1DC324780076EA18 /* Debug */,
+				B81D2FFE1DC324780076EA18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B81D2FEB1DC324780076EA18 /* Project object */;
+}

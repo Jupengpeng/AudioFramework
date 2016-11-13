@@ -8,7 +8,7 @@
 #include "TTIPodLibraryFileReader.h"
 #include "TTExtAudioFileReader.h"
 #include "TTIPodLibraryPCMOutputFormat.h"
-#include "AVCDecoderTypes.h"
+//#include "AVCDecoderTypes.h"
 #endif
 
 #define RETURN_IF_EOF(start, length, end)	{	\

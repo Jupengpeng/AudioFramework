@@ -1,0 +1,570 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A5BBA2C91DC86B9F00C016EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BBA2C71DC86B9F00C016EA /* LaunchScreen.storyboard */; };
+		A5BBA2CA1DC86B9F00C016EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5BBA2C81DC86B9F00C016EA /* Main.storyboard */; };
+		B8511A631DC8467A00462222 /* YCPlayer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B80A12EC1DC7418800B69CA1 /* YCPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B8511A641DC8467F00462222 /* YCOsal.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B80A12E61DC7418100B69CA1 /* YCOsal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B8511A651DC8468300462222 /* YCMP3Dec.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B80A12E01DC7417900B69CA1 /* YCMP3Dec.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B8511A661DC8468600462222 /* YCInfo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B80A12DA1DC7417100B69CA1 /* YCInfo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B8511A671DC8468A00462222 /* YCAudioDecoder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B80A12D41DC7416600B69CA1 /* YCAudioDecoder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B89F69691DC75DA200D5B156 /* YCAudioDecoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80A12D41DC7416600B69CA1 /* YCAudioDecoder.framework */; };
+		B89F696A1DC75DA200D5B156 /* YCInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80A12DA1DC7417100B69CA1 /* YCInfo.framework */; };
+		B89F696B1DC75DA200D5B156 /* YCMP3Dec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80A12E01DC7417900B69CA1 /* YCMP3Dec.framework */; };
+		B89F696C1DC75DA200D5B156 /* YCOsal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80A12E61DC7418100B69CA1 /* YCOsal.framework */; };
+		B89F696D1DC75DA200D5B156 /* YCPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80A12EC1DC7418800B69CA1 /* YCPlayer.framework */; };
+		B89F69741DC762CA00D5B156 /* Omi,AronChupa-Drop In the Ocean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B89F69731DC762CA00D5B156 /* Omi,AronChupa-Drop In the Ocean.mp3 */; };
+		B8F074871DC7207F00F4F936 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F074861DC7207F00F4F936 /* main.m */; };
+		B8F0748A1DC7207F00F4F936 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F074891DC7207F00F4F936 /* AppDelegate.m */; };
+		B8F0748D1DC7207F00F4F936 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8F0748C1DC7207F00F4F936 /* ViewController.mm */; };
+		B8F074921DC7207F00F4F936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F074911DC7207F00F4F936 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B80A12D31DC7416600B69CA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B80A12CF1DC7416600B69CA1 /* YCAudioDecoder.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B81D2FD31DC3226A0076EA18;
+			remoteInfo = YCAudioDecoder;
+		};
+		B80A12D91DC7417100B69CA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B80A12D51DC7417100B69CA1 /* YCInfo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B81D2FF41DC324780076EA18;
+			remoteInfo = YCInfo;
+		};
+		B80A12DF1DC7417900B69CA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B80A12DB1DC7417900B69CA1 /* YCMP3Dec.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B8BDAF001DC2FFBF00D26A13;
+			remoteInfo = YCMP3Dec;
+		};
+		B80A12E51DC7418100B69CA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B80A12E11DC7418000B69CA1 /* YCOsal.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B823E0CB1DC21A0000912A85;
+			remoteInfo = YCOsal;
+		};
+		B80A12EB1DC7418800B69CA1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B80A12E71DC7418800B69CA1 /* YCPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B81D320B1DC3334B0076EA18;
+			remoteInfo = YCPlayer;
+		};
+		B89F695F1DC75D8000D5B156 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B80A12E71DC7418800B69CA1 /* YCPlayer.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B81D320A1DC3334B0076EA18;
+			remoteInfo = YCPlayer;
+		};
+		B89F69611DC75D8400D5B156 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B80A12DB1DC7417900B69CA1 /* YCMP3Dec.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B8BDAEFF1DC2FFBF00D26A13;
+			remoteInfo = YCMP3Dec;
+		};
+		B89F69631DC75D8700D5B156 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B80A12D51DC7417100B69CA1 /* YCInfo.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B81D2FF31DC324780076EA18;
+			remoteInfo = YCInfo;
+		};
+		B89F69651DC75D8B00D5B156 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B80A12E11DC7418000B69CA1 /* YCOsal.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B823E0CA1DC21A0000912A85;
+			remoteInfo = YCOsal;
+		};
+		B89F69671DC75D8F00D5B156 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B80A12CF1DC7416600B69CA1 /* YCAudioDecoder.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B81D2FD21DC3226A0076EA18;
+			remoteInfo = YCAudioDecoder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B8511A621DC8466E00462222 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B8511A671DC8468A00462222 /* YCAudioDecoder.framework in CopyFiles */,
+				B8511A661DC8468600462222 /* YCInfo.framework in CopyFiles */,
+				B8511A651DC8468300462222 /* YCMP3Dec.framework in CopyFiles */,
+				B8511A641DC8467F00462222 /* YCOsal.framework in CopyFiles */,
+				B8511A631DC8467A00462222 /* YCPlayer.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A5BBA2C71DC86B9F00C016EA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A5BBA2C81DC86B9F00C016EA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B80A12CF1DC7416600B69CA1 /* YCAudioDecoder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YCAudioDecoder.xcodeproj; path = ../YCAudioDecoder/YCAudioDecoder.xcodeproj; sourceTree = "<group>"; };
+		B80A12D51DC7417100B69CA1 /* YCInfo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YCInfo.xcodeproj; path = ../YCInfo/YCInfo.xcodeproj; sourceTree = "<group>"; };
+		B80A12DB1DC7417900B69CA1 /* YCMP3Dec.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YCMP3Dec.xcodeproj; path = ../YCMP3Dec/YCMP3Dec.xcodeproj; sourceTree = "<group>"; };
+		B80A12E11DC7418000B69CA1 /* YCOsal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YCOsal.xcodeproj; path = ../YCOsal/YCOsal.xcodeproj; sourceTree = "<group>"; };
+		B80A12E71DC7418800B69CA1 /* YCPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YCPlayer.xcodeproj; path = ../YCPlayer/YCPlayer.xcodeproj; sourceTree = "<group>"; };
+		B89F69731DC762CA00D5B156 /* Omi,AronChupa-Drop In the Ocean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Omi,AronChupa-Drop In the Ocean.mp3"; sourceTree = "<group>"; };
+		B8F074821DC7207F00F4F936 /* YCiOSPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YCiOSPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8F074861DC7207F00F4F936 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B8F074881DC7207F00F4F936 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B8F074891DC7207F00F4F936 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B8F0748B1DC7207F00F4F936 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B8F0748C1DC7207F00F4F936 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		B8F074911DC7207F00F4F936 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B8F074961DC7207F00F4F936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B8F0747F1DC7207F00F4F936 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B89F69691DC75DA200D5B156 /* YCAudioDecoder.framework in Frameworks */,
+				B89F696A1DC75DA200D5B156 /* YCInfo.framework in Frameworks */,
+				B89F696B1DC75DA200D5B156 /* YCMP3Dec.framework in Frameworks */,
+				B89F696C1DC75DA200D5B156 /* YCOsal.framework in Frameworks */,
+				B89F696D1DC75DA200D5B156 /* YCPlayer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B80A12D01DC7416600B69CA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B80A12D41DC7416600B69CA1 /* YCAudioDecoder.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B80A12D61DC7417100B69CA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B80A12DA1DC7417100B69CA1 /* YCInfo.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B80A12DC1DC7417900B69CA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B80A12E01DC7417900B69CA1 /* YCMP3Dec.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B80A12E21DC7418000B69CA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B80A12E61DC7418100B69CA1 /* YCOsal.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B80A12E81DC7418800B69CA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B80A12EC1DC7418800B69CA1 /* YCPlayer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B8F074791DC7207F00F4F936 = {
+			isa = PBXGroup;
+			children = (
+				B80A12E71DC7418800B69CA1 /* YCPlayer.xcodeproj */,
+				B80A12E11DC7418000B69CA1 /* YCOsal.xcodeproj */,
+				B80A12DB1DC7417900B69CA1 /* YCMP3Dec.xcodeproj */,
+				B80A12D51DC7417100B69CA1 /* YCInfo.xcodeproj */,
+				B80A12CF1DC7416600B69CA1 /* YCAudioDecoder.xcodeproj */,
+				B8F074841DC7207F00F4F936 /* YCiOSPlayer */,
+				B8F074831DC7207F00F4F936 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B8F074831DC7207F00F4F936 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B8F074821DC7207F00F4F936 /* YCiOSPlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B8F074841DC7207F00F4F936 /* YCiOSPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				A5BBA2C71DC86B9F00C016EA /* LaunchScreen.storyboard */,
+				A5BBA2C81DC86B9F00C016EA /* Main.storyboard */,
+				B89F69731DC762CA00D5B156 /* Omi,AronChupa-Drop In the Ocean.mp3 */,
+				B8F074881DC7207F00F4F936 /* AppDelegate.h */,
+				B8F074891DC7207F00F4F936 /* AppDelegate.m */,
+				B8F0748B1DC7207F00F4F936 /* ViewController.h */,
+				B8F0748C1DC7207F00F4F936 /* ViewController.mm */,
+				B8F074911DC7207F00F4F936 /* Assets.xcassets */,
+				B8F074961DC7207F00F4F936 /* Info.plist */,
+				B8F074851DC7207F00F4F936 /* Supporting Files */,
+			);
+			path = YCiOSPlayer;
+			sourceTree = "<group>";
+		};
+		B8F074851DC7207F00F4F936 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B8F074861DC7207F00F4F936 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B8F074811DC7207F00F4F936 /* YCiOSPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B8F074991DC7207F00F4F936 /* Build configuration list for PBXNativeTarget "YCiOSPlayer" */;
+			buildPhases = (
+				B8F0747E1DC7207F00F4F936 /* Sources */,
+				B8F074801DC7207F00F4F936 /* Resources */,
+				B8F0747F1DC7207F00F4F936 /* Frameworks */,
+				B8511A621DC8466E00462222 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B89F69681DC75D8F00D5B156 /* PBXTargetDependency */,
+				B89F69661DC75D8B00D5B156 /* PBXTargetDependency */,
+				B89F69641DC75D8700D5B156 /* PBXTargetDependency */,
+				B89F69621DC75D8400D5B156 /* PBXTargetDependency */,
+				B89F69601DC75D8000D5B156 /* PBXTargetDependency */,
+			);
+			name = YCiOSPlayer;
+			productName = YCiOSPlayer;
+			productReference = B8F074821DC7207F00F4F936 /* YCiOSPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B8F0747A1DC7207F00F4F936 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = yintao;
+				TargetAttributes = {
+					B8F074811DC7207F00F4F936 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 62UDHM98C2;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = B8F0747D1DC7207F00F4F936 /* Build configuration list for PBXProject "YCiOSPlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B8F074791DC7207F00F4F936;
+			productRefGroup = B8F074831DC7207F00F4F936 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B80A12D01DC7416600B69CA1 /* Products */;
+					ProjectRef = B80A12CF1DC7416600B69CA1 /* YCAudioDecoder.xcodeproj */;
+				},
+				{
+					ProductGroup = B80A12D61DC7417100B69CA1 /* Products */;
+					ProjectRef = B80A12D51DC7417100B69CA1 /* YCInfo.xcodeproj */;
+				},
+				{
+					ProductGroup = B80A12DC1DC7417900B69CA1 /* Products */;
+					ProjectRef = B80A12DB1DC7417900B69CA1 /* YCMP3Dec.xcodeproj */;
+				},
+				{
+					ProductGroup = B80A12E21DC7418000B69CA1 /* Products */;
+					ProjectRef = B80A12E11DC7418000B69CA1 /* YCOsal.xcodeproj */;
+				},
+				{
+					ProductGroup = B80A12E81DC7418800B69CA1 /* Products */;
+					ProjectRef = B80A12E71DC7418800B69CA1 /* YCPlayer.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				B8F074811DC7207F00F4F936 /* YCiOSPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B80A12D41DC7416600B69CA1 /* YCAudioDecoder.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = YCAudioDecoder.framework;
+			remoteRef = B80A12D31DC7416600B69CA1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B80A12DA1DC7417100B69CA1 /* YCInfo.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = YCInfo.framework;
+			remoteRef = B80A12D91DC7417100B69CA1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B80A12E01DC7417900B69CA1 /* YCMP3Dec.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = YCMP3Dec.framework;
+			remoteRef = B80A12DF1DC7417900B69CA1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B80A12E61DC7418100B69CA1 /* YCOsal.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = YCOsal.framework;
+			remoteRef = B80A12E51DC7418100B69CA1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B80A12EC1DC7418800B69CA1 /* YCPlayer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = YCPlayer.framework;
+			remoteRef = B80A12EB1DC7418800B69CA1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B8F074801DC7207F00F4F936 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5BBA2C91DC86B9F00C016EA /* LaunchScreen.storyboard in Resources */,
+				B8F074921DC7207F00F4F936 /* Assets.xcassets in Resources */,
+				B89F69741DC762CA00D5B156 /* Omi,AronChupa-Drop In the Ocean.mp3 in Resources */,
+				A5BBA2CA1DC86B9F00C016EA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B8F0747E1DC7207F00F4F936 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8F0748D1DC7207F00F4F936 /* ViewController.mm in Sources */,
+				B8F0748A1DC7207F00F4F936 /* AppDelegate.m in Sources */,
+				B8F074871DC7207F00F4F936 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B89F69601DC75D8000D5B156 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YCPlayer;
+			targetProxy = B89F695F1DC75D8000D5B156 /* PBXContainerItemProxy */;
+		};
+		B89F69621DC75D8400D5B156 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YCMP3Dec;
+			targetProxy = B89F69611DC75D8400D5B156 /* PBXContainerItemProxy */;
+		};
+		B89F69641DC75D8700D5B156 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YCInfo;
+			targetProxy = B89F69631DC75D8700D5B156 /* PBXContainerItemProxy */;
+		};
+		B89F69661DC75D8B00D5B156 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YCOsal;
+			targetProxy = B89F69651DC75D8B00D5B156 /* PBXContainerItemProxy */;
+		};
+		B89F69681DC75D8F00D5B156 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YCAudioDecoder;
+			targetProxy = B89F69671DC75D8F00D5B156 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B8F074971DC7207F00F4F936 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B8F074981DC7207F00F4F936 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B8F0749A1DC7207F00F4F936 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 62UDHM98C2;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../Yinchao-NewPlayer/osal/inc/**",
+					"$(SRCROOT)/../../Yinchao-NewPlayer/media/info/inc",
+					"$(SRCROOT)/../../Yinchao-NewPlayer/media/info/inc/IOS",
+					"$(SRCROOT)/../../Yinchao-NewPlayer/media/audiodecoder/src/aflib",
+				);
+				INFOPLIST_FILE = YCiOSPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yintao.wybz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d7638656-a7c9-49ef-80a4-c9186208b826";
+				PROVISIONING_PROFILE_SPECIFIER = YCDevelopment;
+			};
+			name = Debug;
+		};
+		B8F0749B1DC7207F00F4F936 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../../Yinchao-NewPlayer/osal/inc/**",
+					"$(SRCROOT)/../../Yinchao-NewPlayer/media/info/inc",
+					"$(SRCROOT)/../../Yinchao-NewPlayer/media/info/inc/IOS",
+					"$(SRCROOT)/../../Yinchao-NewPlayer/media/audiodecoder/src/aflib",
+				);
+				INFOPLIST_FILE = YCiOSPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yintao.wybz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B8F0747D1DC7207F00F4F936 /* Build configuration list for PBXProject "YCiOSPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8F074971DC7207F00F4F936 /* Debug */,
+				B8F074981DC7207F00F4F936 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B8F074991DC7207F00F4F936 /* Build configuration list for PBXNativeTarget "YCiOSPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8F0749A1DC7207F00F4F936 /* Debug */,
+				B8F0749B1DC7207F00F4F936 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B8F0747A1DC7207F00F4F936 /* Project object */;
+}

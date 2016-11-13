@@ -89,7 +89,7 @@ static int ttMP3DecHeaderinfo(FrameHeader* pHeader, unsigned char *pBuf)
 	pHeader->modeext    = (pBuf[3] >> 4) & 0x03;
 
 	if(pHeader->layer == 4) 
-		pHeader->layer--;
+		pHeader->layer = MPA_LAYER_III;
 
 	if (srIdx == 3 || brIdx == 15 || verIdx == 1)
 		return -1;

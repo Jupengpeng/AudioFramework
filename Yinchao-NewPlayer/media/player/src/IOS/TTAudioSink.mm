@@ -11,11 +11,11 @@
 #import <Foundation/NSThread.h>
 #import <AVFoundation/AVAudioSession.h>
 #import <UIKit/UIApplication.h>
-#include "TTAudioEffectManager.h"
+//#include "TTAudioEffectManager.h"
 #include "TTBackgroundConfig.h"
 #include "TTLog.h"
 #include "TTSysTime.h"
-
+#include "TTAudioSink.h"
 #define MAX_COUNT 10
 
 extern TTInt gIos8Above;
