@@ -1,4 +1,4 @@
-package com.firmlyshell.app.player;
+package com.example.yinchao_recorder;
 
 import org.junit.Test;
 

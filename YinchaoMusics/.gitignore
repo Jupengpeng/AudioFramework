@@ -11,3 +11,7 @@
 /.idea/copyright/profiles_settings.xml
 /.idea/misc.xml
 /yinchao-player/gradle.properties
+jni/
+libs/
+src/androidTest/
+src/main/res/drawable/
