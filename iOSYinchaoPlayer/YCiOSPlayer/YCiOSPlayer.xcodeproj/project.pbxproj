@@ -14,6 +14,7 @@
 		B8511A651DC8468300462222 /* YCMP3Dec.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B80A12E01DC7417900B69CA1 /* YCMP3Dec.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B8511A661DC8468600462222 /* YCInfo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B80A12DA1DC7417100B69CA1 /* YCInfo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B8511A671DC8468A00462222 /* YCAudioDecoder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B80A12D41DC7416600B69CA1 /* YCAudioDecoder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B89730BA1DD73EDC009012CB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B87B621DD7322E00A2218F /* CoreMedia.framework */; };
 		B89F69691DC75DA200D5B156 /* YCAudioDecoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80A12D41DC7416600B69CA1 /* YCAudioDecoder.framework */; };
 		B89F696A1DC75DA200D5B156 /* YCInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80A12DA1DC7417100B69CA1 /* YCInfo.framework */; };
 		B89F696B1DC75DA200D5B156 /* YCMP3Dec.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80A12E01DC7417900B69CA1 /* YCMP3Dec.framework */; };
@@ -125,6 +126,7 @@
 		B80A12E11DC7418000B69CA1 /* YCOsal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YCOsal.xcodeproj; path = ../YCOsal/YCOsal.xcodeproj; sourceTree = "<group>"; };
 		B80A12E71DC7418800B69CA1 /* YCPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YCPlayer.xcodeproj; path = ../YCPlayer/YCPlayer.xcodeproj; sourceTree = "<group>"; };
 		B89F69731DC762CA00D5B156 /* Omi,AronChupa-Drop In the Ocean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Omi,AronChupa-Drop In the Ocean.mp3"; sourceTree = "<group>"; };
+		B8B87B621DD7322E00A2218F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		B8F074821DC7207F00F4F936 /* YCiOSPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YCiOSPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F074861DC7207F00F4F936 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B8F074881DC7207F00F4F936 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B89730BA1DD73EDC009012CB /* CoreMedia.framework in Frameworks */,
 				B89F69691DC75DA200D5B156 /* YCAudioDecoder.framework in Frameworks */,
 				B89F696A1DC75DA200D5B156 /* YCInfo.framework in Frameworks */,
 				B89F696B1DC75DA200D5B156 /* YCMP3Dec.framework in Frameworks */,
@@ -191,6 +194,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B8B87B611DD7322E00A2218F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8B87B621DD7322E00A2218F /* CoreMedia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B8F074791DC7207F00F4F936 = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +212,7 @@
 				B80A12CF1DC7416600B69CA1 /* YCAudioDecoder.xcodeproj */,
 				B8F074841DC7207F00F4F936 /* YCiOSPlayer */,
 				B8F074831DC7207F00F4F936 /* Products */,
+				B8B87B611DD7322E00A2218F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

@@ -276,7 +276,7 @@ int const root_table[7] = {
 };
 
 static
-double const imdctWin[4][36] = {
+int const imdctWin[4][36] = {
 	{
 	0x02aace8b, 0x07311c28, 0x0a868fec, 0x0c913b52, 0x0d413ccd, 0x0c913b52, 0x0a868fec, 0x07311c28, 
 	0x02aace8b, 0xfd16d8dd, 0xf6a09e66, 0xef7a6275, 0xe7dbc161, 0xe0000000, 0xd8243e9f, 0xd0859d8b,
@@ -330,7 +330,7 @@ const int IDCT9_D[5] = {
 
 #ifndef ARM_OPT
 static 
-double const csa_table[8][4] = {
+int const csa_table[8][4] = {
 	{0x36e12a00, 0xdf128041, 0x15f3aa41, 0xa8315641},
 	{0x386e7600, 0xe1cf24a1, 0x1a3d9aa1, 0xa960aea1}, 
 	{0x3cc6b740, 0xebf19fa1, 0x28b856e1, 0xaf2ae861}, 
