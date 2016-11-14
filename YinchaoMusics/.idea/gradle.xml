@@ -9,7 +9,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/yinchao-player" />
-            <option value="$PROJECT_DIR$/yinchao-playertest" />
             <option value="$PROJECT_DIR$/yinchao-test" />
           </set>
         </option>
