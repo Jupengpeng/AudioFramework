@@ -3,7 +3,7 @@
 * Created on : 2014-11-4
 * Author : yongping.lin
 * Copyright : Copyright (c) 2011 Shuidushi Software Ltd. All rights reserved.
-* Description : CTTAndroidAudioSinkʵ��
+* Description : CTTAndroidAudioSink实锟斤拷
 */
 
 #include <dlfcn.h>
@@ -43,12 +43,15 @@ CTTAndroidAudioSink::~CTTAndroidAudioSink()
 
 TTInt CTTAndroidAudioSink::newAudioTrack()
 {
-	closeAudioTrack();
+	LOGE("TTInt CTTAndroidAudioSink::newAudioTrack()");
+//	closeAudioTrack();
+	LOGE("TTInt CTTAndroidAudioSink::newAudioTrack()");
 	return audioTrack_open(mAudioFormat.SampleRate, mAudioFormat.Channels);
 }
 
 TTInt CTTAndroidAudioSink::closeAudioTrack()
 {
+	LOGE("TTInt CTTAndroidAudioSink::closeAudioTrack()");
 	audioTrack_close();
 }
 
@@ -170,7 +173,7 @@ TTInt CTTAndroidAudioSink::setVolume(TTInt aLVolume, TTInt aRVolume)
 TTInt CTTAndroidAudioSink::stop()
 {
 	TTCBaseAudioSink::stop();
-	//closeAudioTrack();
+	closeAudioTrack();
 	return TTKErrNone;
 }
 
@@ -234,6 +237,8 @@ void CTTAndroidAudioSink::audioTrack_uninit()
 
 int CTTAndroidAudioSink::audioTrack_open(int aSamplerate, int aChannels)
 {
+
+	LOGE("CTTAndroidAudioSink::audioTrack_open(int aSamplerate, int aChannels)");
 	CJniEnvUtil	env(gJVM);
 	JNIEnv* pEnv = env.getEnv();
 	int nErr = TTKErrNone;
@@ -280,6 +285,7 @@ void CTTAndroidAudioSink::audioTrack_setvolume(int aLVolume, int aRVolume)
 
 void CTTAndroidAudioSink::audioTrack_close()
 {
+	LOGE("void CTTAndroidAudioSink::audioTrack_close()");
 	CJniEnvUtil	env(gJVM);
 	JNIEnv* pEnv = env.getEnv();
 	mJMethodClose = pEnv->GetMethodID(mAudioTrackClass, "audioClose", "()V");
@@ -402,7 +408,7 @@ void CTTAndroidAudioSink::audioTrack_updateEnv()
 			if (gJVM->AttachCurrentThread(&mEnv, NULL) != 0) { 
 				LOGE("callback_handler: failed to attach current thread");
 				break;
-			} 			
+			}
 			break; 
 		case JNI_EVERSION: 
 			LOGE("Invalid java version"); 

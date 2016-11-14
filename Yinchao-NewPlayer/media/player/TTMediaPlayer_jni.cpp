@@ -231,7 +231,7 @@ static void ychao_media_YCMediaPlayer_native_setup(JNIEnv* env, jobject thiz, jo
 	TTChar szProp[64];
 	memset (szProp, 0, 64);
 	//__system_property_get ("ro.build.version.release", szProp);
-	////if (strstr (szProp, "2.") == szProp || strstr (szProp, "1.") == szProp) {
+	if (strstr (szProp, "2.") == szProp || strstr (szProp, "1.") == szProp) {
 		//jclass VideoTrack = env->FindClass("com/sds/android/ttpod/media/player/TTVideoTrack");
 		//jclass* pVideoTrack = new jclass((jclass)env->NewGlobalRef(VideoTrack));
 		//pMediaPlayer->SaveVideoTrackJClass(pVideoTrack);

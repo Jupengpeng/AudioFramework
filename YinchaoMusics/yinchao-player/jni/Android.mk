@@ -19,6 +19,11 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
+
+#OSAL_MK := $(LOCAL_PATH)/resources/osal/Android.mk
+#PLAYER_MK := $(LOCAL_PATH)/resources/media/player/Android.mk
+#CODEC_MK := $(LOCAL_PATH)/resources/media/codec/Android.mk
+
 OSAL_MK := $(LOCAL_PATH)/../../../Yinchao-NewPlayer/osal/Android.mk
 PLAYER_MK := $(LOCAL_PATH)/../../../Yinchao-NewPlayer/media/player/Android.mk
 CODEC_MK := $(LOCAL_PATH)/../../../Yinchao-NewPlayer/media/codec/Android.mk
