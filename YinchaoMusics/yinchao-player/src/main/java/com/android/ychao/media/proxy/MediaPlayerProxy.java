@@ -342,7 +342,7 @@ public final class MediaPlayerProxy {
     }
 
 
-    private void setVolume(float leftVolume, float rightVolume) {
+    public void setVolume(float leftVolume, float rightVolume) {
         mCurMediaPlayer.setVolume(leftVolume, rightVolume);
     }
 
