@@ -1,4 +1,4 @@
-package com.example.playerdemo;
+package com.yinchao.android.media.test;
 
 
 import android.app.Activity;
@@ -22,8 +22,8 @@ import android.widget.TextView;
 import com.android.ychao.media.player.MediaPlayerNotificationInfo;
 import com.android.ychao.media.proxy.MediaPlayerProxy;
 import com.android.ychao.media.proxy.OnStateChangeListener;
-import com.example.playerdemo.utils.PermissionUtils;
-import com.yinchao.android.app.R;
+import com.yinchao.android.media.R;
+import com.yinchao.android.media.test.utils.PermissionUtils;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -120,6 +120,11 @@ public class MainActivity extends Activity {
         mPlayProxy.setOnStateChangeListener(new OnStateChangeListener() {
 
             @Override
+            public void onOver(int id) {
+
+            }
+
+            @Override
             public void onStarted() {
                 Log.e(TAG, "onStarted ");
             }
@@ -181,6 +186,8 @@ public class MainActivity extends Activity {
                 Log.e(TAG, "onBufferFinished ");
             }
         });
+
+
         btnPauseResume = (Button) findViewById(R.id.button2);
 
         defaulturl = "http://audio.yinchao.cn/accompaniment/2016071500000000001.mp3";// "/sdcard/background.mp3";

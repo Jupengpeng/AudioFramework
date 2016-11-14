@@ -1,4 +1,4 @@
-package com.example.playerdemo.utils;
+package com.yinchao.android.media.test.utils;
 
 import android.Manifest;
 import android.app.Activity;
