@@ -11,17 +11,16 @@ import android.view.ViewGroup.LayoutParams;
 
 
 public class YCMediaPlayer implements IMediaPlayer {
+
     private static final float PERCENT = 0.01f;
     private final static String TAG = "YCMediaPlayer";
 
     static {
         try {
             System.loadLibrary("osal");
-            // System.loadLibrary("resample");
             System.loadLibrary("mediaplayer");
-            Log.e("YCMediaPlayer"," System.loadLibrary(osal);");
         } catch (UnsatisfiedLinkError error) {
-            error.printStackTrace();
+            Log.wtf(TAG,"System.loadLibrary:failed.",error);
         }
     }
 
@@ -30,21 +29,24 @@ public class YCMediaPlayer implements IMediaPlayer {
     private boolean mPlayerReleased = false;
     private long mNativePlayerPara = 0;
 
-    private Surface 			mSurface;
-    private SurfaceHolder  		mSurfaceHolder;
-    private SurfaceView			mSurfaceView;
+    /**
+     * 频谱显示相关.
+     */
+    private Surface mSurface;
+    private SurfaceHolder mSurfaceHolder;
+    private SurfaceView mSurfaceView;
 
-    private int 				mWidth = 0;
-    private int					mHeight = 0;
+    private int mWidth = 0;
+    private int mHeight = 0;
 
-    private int 				mViewWidth = 0;
-    private int					mViewHeight = 0;
+    private int mViewWidth = 0;
+    private int mViewHeight = 0;
 
     /**
      * constructors.
      *
      * @param headerBytes 不注
-     * @param plugInPath 动库文件路径.
+     * @param plugInPath  动库文件路径.
      */
     public YCMediaPlayer(byte[] headerBytes, String plugInPath) {
         mEventHandler = new EventHandler(this, Looper.myLooper());
@@ -90,9 +92,9 @@ public class YCMediaPlayer implements IMediaPlayer {
 
     private native int nativePlay(long context);
 
-    private native void nativePause(long context,boolean enable);
+    private native void nativePause(long context, boolean enable);
 
-    private native void nativeResume(long context,boolean enable);
+    private native void nativeResume(long context, boolean enable);
 
     private native int nativeSetPosition(long context, int aPos, int flag);
 
@@ -111,19 +113,19 @@ public class YCMediaPlayer implements IMediaPlayer {
     private native int nativeBufferedPercent(long context);
 
     private native int nativeBufferBandPercent(long context);
+
     private native int nativeGetStatus(long context);
 
     private native void nativeClearScrren(long context, int aClear);
+
     /**
      * 设置网络类型
      *
      * @param type 类型
      */
-    public void setActiveNetWorkType(int type)
-    {
+    public void setActiveNetWorkType(int type) {
         nativeSetActiveNetWorkType(mNativePlayerPara, type);
     }
-
 
     public static final int EDecoderDefault = 0x00;
     public static final int EDecoderSoft = 0x01;
@@ -133,8 +135,7 @@ public class YCMediaPlayer implements IMediaPlayer {
      *
      * @param type 类型
      */
-    public void setDecoderType(int type)
-    {
+    public void setDecoderType(int type) {
         nativeSetDecoderType(mNativePlayerPara, type);
     }
 
@@ -161,14 +162,14 @@ public class YCMediaPlayer implements IMediaPlayer {
      * pause stream
      */
     public void pause() {
-        nativePause(mNativePlayerPara,false);
+        nativePause(mNativePlayerPara, false);
     }
 
     /**
      * resume stream
      */
     public void resume() {
-        nativeResume(mNativePlayerPara,false);
+        nativeResume(mNativePlayerPara, false);
     }
 
     /**
@@ -189,13 +190,14 @@ public class YCMediaPlayer implements IMediaPlayer {
     public void setPlayRange(int aStart, int aEnd) {
         nativeSetPlayRange(mNativePlayerPara, aStart, aEnd);
     }
+
     /**
      * get current position.
      *
      * @return current position in milliseconds
      */
     public int getPosition() {
-        return  nativeGetPosition(mNativePlayerPara);
+        return nativeGetPosition(mNativePlayerPara);
     }
 
     /**
@@ -203,7 +205,7 @@ public class YCMediaPlayer implements IMediaPlayer {
      *
      * @return stream duration in milliseconds
      */
-    public int duration()  {
+    public int duration() {
         return nativeDuration(mNativePlayerPara);
     }
 
@@ -213,7 +215,7 @@ public class YCMediaPlayer implements IMediaPlayer {
      * @return stream size in bytes
      */
     public int size() {
-        return  nativeSize(mNativePlayerPara);
+        return nativeSize(mNativePlayerPara);
     }
 
     /**
@@ -231,7 +233,7 @@ public class YCMediaPlayer implements IMediaPlayer {
      * @return stream duration in %
      */
     public int bufferedPercent() {
-        return  nativeBufferedPercent(mNativePlayerPara);
+        return nativeBufferedPercent(mNativePlayerPara);
     }
 
     /**
@@ -240,7 +242,7 @@ public class YCMediaPlayer implements IMediaPlayer {
      * @return stream status
      */
     public int getStatus() {
-        return  nativeGetStatus(mNativePlayerPara);
+        return nativeGetStatus(mNativePlayerPara);
     }
 
 
@@ -259,37 +261,14 @@ public class YCMediaPlayer implements IMediaPlayer {
     }
 
 
-    public void ClearScreen(int aClear) {
-        nativeClearScrren(mNativePlayerPara, aClear);
-    }
-
     /**
      * 获取文件大小
+     *
      * @return 文件大小
      */
     @Override
     public int getFileSize() {
         return nativeSize(mNativePlayerPara);
-    }
-
-    public void setView (SurfaceView sv)
-    {
-        if (sv == null)
-        {
-            mSurface = null;
-            nativeSetSurface(mNativePlayerPara);
-            return;
-        }
-
-        mSurfaceView = sv;
-        mSurfaceHolder = mSurfaceView.getHolder();
-
-        if (mSurfaceHolder != null)
-            mSurface = mSurfaceHolder.getSurface();
-        else
-            mSurface = null;
-
-        nativeSetSurface(mNativePlayerPara);
     }
 
 
@@ -376,11 +355,11 @@ public class YCMediaPlayer implements IMediaPlayer {
 
     private int setDataSource(String aUrl, int flag, boolean aSync) {
         int nErr;
-        Log.e("YCMediaPlayer","setDataSource:context="+mNativePlayerPara);
+        Log.e("YCMediaPlayer", "setDataSource:context=" + mNativePlayerPara);
         if (aSync) {
             nErr = nativeSetDataSourceSync(mNativePlayerPara, aUrl, flag);
         } else {
-            nErr  = nativeSetDataSourceAsync(mNativePlayerPara, aUrl, flag);
+            nErr = nativeSetDataSourceAsync(mNativePlayerPara, aUrl, flag);
         }
         return nErr;
     }
@@ -426,7 +405,7 @@ public class YCMediaPlayer implements IMediaPlayer {
     public static final int OPEN_DEFAULT = 0x00;
     public static final int OPEN_BUFFER = 0x01;
     public static final int OPEN_PRE_LOADING = 0x10;
-    public static final int OPEN_PRE_LOADED 	= 0x20;
+    public static final int OPEN_PRE_LOADED = 0x20;
 
     public static final int SEEK_FAST = 0x00;
     public static final int SEEK_CORRECT = 0x01;
@@ -583,6 +562,49 @@ public class YCMediaPlayer implements IMediaPlayer {
     }
 
     /**
+     * 波形显示.
+     *
+     * @param sv 当前SurfaceView
+     */
+    @Override
+    public void setView(SurfaceView sv) {
+
+    }
+
+    /**
+     * 波形显示.
+     *
+     * @param width
+     * @param Height
+     */
+    @Override
+    public void setViewSize(int width, int Height) {
+
+    }
+
+    /**
+     * 波形显示.
+     *
+     * @param width
+     * @param Height
+     */
+    @Override
+    public void videoSizeChanged(int width, int Height) {
+
+    }
+
+    /**
+     * 波形显示.
+     *
+     * @param aClear
+     */
+    @Override
+    public void ClearScreen(int aClear) {
+
+    }
+
+
+    /**
      * MediaPlayerListener
      *
      * @author zhan.liu
@@ -613,6 +635,7 @@ public class YCMediaPlayer implements IMediaPlayer {
 
     /**
      * enable low delay audio effect processing
+     *
      * @param enable enable
      */
     @Override
@@ -621,72 +644,15 @@ public class YCMediaPlayer implements IMediaPlayer {
     }
 
     /**
-     * enable screen size
-     * @param width
-     * @param height
-     */
-    public void setViewSize(int width, int height) {
-        mViewWidth = width;
-        mViewHeight = height;
-        Log.i(TAG, "setScreenSize: width" + width + "height" + height);
-    }
-
-
-    /**
-     * enable width size changed
-     * @param width
-     * @param height
-     */
-    public void videoSizeChanged(int width, int height) {
-        if(width != 0) {
-            mWidth = width;
-        }
-
-        if(height != 0) {
-            mHeight = height;
-        }
-
-        if(mWidth == 0 || mHeight == 0)
-            return;
-
-        if(mSurfaceView == null)
-            return;
-
-        LayoutParams lp = mSurfaceView.getLayoutParams();
-
-        int nMaxOutW = mViewWidth;
-        int nMaxOutH = mViewHeight;
-        int w = 0, h = 0;
-
-        if (nMaxOutW * mHeight > mWidth * nMaxOutH)
-        {
-            h = nMaxOutH;
-            w = nMaxOutH * mWidth / mHeight;
-        }
-        else
-        {
-            w = nMaxOutW;
-            h = nMaxOutW * mHeight / mWidth;
-        }
-        //w &= ~0x7;
-        //h &= ~0x3;
-
-        lp.width = w;
-        lp.height = h;
-
-        mSurfaceView.setLayoutParams(lp);
-    }
-
-    /**
      * set ProxyServer Config parameter
-     * @param ip ip
-     * @param port port
+     *
+     * @param ip        ip
+     * @param port      port
      * @param authenkey authenkey
-     * @param useProxy useProxy
+     * @param useProxy  useProxy
      */
     @Override
-    public void setProxyServerConfig(String ip, int port, String authenkey, boolean useProxy)
-    {
+    public void setProxyServerConfig(String ip, int port, String authenkey, boolean useProxy) {
         nativeCongfigProxyServer(mNativePlayerPara, ip, port, authenkey, useProxy);
     }
 }

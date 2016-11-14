@@ -170,7 +170,7 @@ void JNICALL Java_com_yinchao_media_recoder_YCAudioRecoder_initRecord
 
 	jclass className = jni_env->FindClass(kClassPathName);
 	jfieldID AudioManagerPara = jni_env->GetFieldID(className,kClassFieldName, "I"); 
-	jni_env->SetIntField(thiz,AudioManagerPara, (int)pAudioManager);
+	jni_env->SetIntField(thiz,AudioManagerPara, (long)pAudioManager);
 	jni_env->DeleteLocalRef(className);
 
 }

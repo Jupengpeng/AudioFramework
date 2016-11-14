@@ -20,6 +20,8 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 import com.android.ychao.media.player.MediaPlayerNotificationInfo;
+import com.android.ychao.media.proxy.MediaPlayerProxy;
+import com.android.ychao.media.proxy.OnStateChangeListener;
 import com.example.playerdemo.utils.PermissionUtils;
 import com.yinchao.android.app.R;
 
@@ -317,8 +319,7 @@ public class MainActivity extends Activity {
         @Override
         public void run() {
             // 需要做的事:发送消息
-            Message message = new Message();
-            message.what = 1;
+            Message message = handler.obtainMessage(1);
             handler.sendMessage(message);
         }
     };

@@ -1,7 +1,5 @@
 package com.android.ychao.media.player;
 
-import android.view.Surface;
-import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 public interface IMediaPlayer {
@@ -10,7 +8,7 @@ public interface IMediaPlayer {
      * 异步设置播
      *
      * @param aUrl 流路.
-     * @param aflag. 打开参数
+     * @param aflag 打开参数
      * @throws Exception Exception
      */
     void setDataSourceAsync(String aUrl, int aflag) throws Exception;
@@ -176,20 +174,25 @@ public interface IMediaPlayer {
      * @param enable enable
      */
     void setAudioEffectLowDelay(boolean enable);
-    
+
+
+
+
+
+
     /**
      * enable screen size
      * @param width
      * @param height
      */
-    void setViewSize(int width, int Height);
+    void setViewSize(int width, int height);
     
     /**
      * enable width size changed
      * @param width
      * @param height
      */
-    void videoSizeChanged(int width, int Height);
+    void videoSizeChanged(int width, int height);
 
     /**
      * set ProxyServer Config parameter

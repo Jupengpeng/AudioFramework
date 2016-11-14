@@ -74,7 +74,7 @@
 #endif
 
 #ifdef HAVE_SYS_TIMEB_H
-  #include <sys/timeb.h>
+//  #include <sys/timeb.h>
 #endif
 
 #ifdef HAVE_SYS_UTSNAME_H

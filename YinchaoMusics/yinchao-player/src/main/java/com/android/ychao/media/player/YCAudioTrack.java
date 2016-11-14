@@ -9,8 +9,14 @@ import android.util.Log;
 
 import java.util.Random;
 
-
+/**
+ * YCAudioTrack.
+ *
+ */
 public class YCAudioTrack {
+    /**
+     *
+     */
     private final static String LOG_TAG = "YCAudioTrack";
 
     private static final int ERR_ACCESS_DENIED = -21;
@@ -193,7 +199,7 @@ public class YCAudioTrack {
      * audioDestroy.
      */
     public void audioDestroy(){
-        Log.e(LOG_TAG, "audioDestroy: " + " - ");
+        Log.i(LOG_TAG, "audioDestroy: " + " - ");
     }
 
     /**
