@@ -1,1 +1,1 @@
-include ':yinchao-test', ':yinchao-player'
+include ':yinchao-test', ':yinchao-player', ':yinchao-recorder'
