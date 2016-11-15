@@ -1,5 +1,6 @@
 package com.yinchao.android.media.test.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import com.android.ychao.media.proxy.MediaPlayerProxy;
 import com.android.ychao.media.proxy.OnStateChangeListenerAdapter;
 import com.android.ychao.media.proxy.PlayStatus;
 import com.yinchao.android.media.R;
+import com.yinchao.android.media.service.BindTestActivity;
 import com.yinchao.android.media.test.utils.ScheduleTask;
 import com.yinchao.android.media.test.utils.TimeFormatUtils;
 
@@ -188,11 +190,17 @@ public class YCMediaPlayerTestActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mediaPlayerProxy.stop();
+//                mediaPlayerProxy.stop();
+
+                start();
             }
         });
 
 
+    }
+
+    private void start(){
+        startActivity(new Intent(this, BindTestActivity.class));
     }
 
 

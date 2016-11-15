@@ -24,16 +24,16 @@ android {
 
     sourceSets {
         main {
-            jni.srcDirs = ['jni']
-//            jniLibs.srcDirs = ['jniLibs']
+//            jni.srcDirs = ['jni']
+            jniLibs.srcDirs = ['jniLibs']
         }
     }
 
-    externalNativeBuild {
-        ndkBuild {
-            path 'jni/Android.mk'
-        }
-    }
+//    externalNativeBuild {
+//        ndkBuild {
+//            path 'jni/Android.mk'
+//        }
+//    }
 
     buildTypes {
         release {
@@ -44,6 +44,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:24.0.0'
+//    compile 'com.android.support:appcompat-v7:24.0.0'
     testCompile 'junit:junit:4.12'
 }

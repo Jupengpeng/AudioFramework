@@ -27,17 +27,17 @@ android {
 
     sourceSets {
         main {
-//            jni.srcDirs = ['jni']
-            jniLibs.srcDirs = ['jniLibs']
+            jni.srcDirs = ['jni']
+//            jniLibs.srcDirs = ['jniLibs']
         }
     }
 
 
-//    externalNativeBuild {
-//        ndkBuild {
-//            path 'jni/Android.mk'
-//        }
-//    }
+    externalNativeBuild {
+        ndkBuild {
+            path 'jni/Android.mk'
+        }
+    }
 
     buildTypes {
         release {
