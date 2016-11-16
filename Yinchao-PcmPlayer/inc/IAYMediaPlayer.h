@@ -22,6 +22,15 @@ typedef struct AYMediaAudioFormat{
 	int nChannels;
 	int wBitsPerSample;
 }AYMediaAudioFormat;
+
+//paremeter Id
+#define PID_JAVA_VM							0X0001
+#define PID_RECORD_FILE_PATH				0X0002
+#define PID_BACKGROUD_FILE_PATH				0X0003
+#define PID_AUDIO_VOLUME					0X0004
+#define PID_RECORDER_AUDIO_FORMAT			0X0005
+#define PID_BACKGROUD_AUDIO_FORMAT			0X0006
+
 /****************************************************************************************
 IAYMediaPlayer : AY Media Player Function Interface
 *****************************************************************************************/

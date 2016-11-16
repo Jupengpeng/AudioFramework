@@ -41,6 +41,10 @@ CAYMediaPlayer::CAYMediaPlayer()
 	, m_pViderRenderView(NULL)
 	, m_bIsPauseFlag(false)
 	, m_bIsNeedRender(true)
+	, m_pRecodReader(NULL)
+	, m_pBackgroudReader(NULL)
+	, m_iRecordStepSize(0)
+	, m_iBackGroudStepSize(0)
 
 {
 	initAudioContext();
@@ -128,6 +132,75 @@ int CAYMediaPlayer::getCurrentPosition(unsigned int * puPosition)
 
 int CAYMediaPlayer::setParam(unsigned int uParamId, void * pParam)
 {
+	int iRet = 0;
+	switch(uParamId){
+	case PID_JAVA_VM:
+		m_pJVM =pParam;
+		if (m_pAudioRender)
+		{
+#ifdef _LINUX_ANDROID
+			ulu_CAutoLock lock(&m_lookAudio);
+			m_pAudioRender->SetNativeWindow(m_pJVM);
+#endif
+		}
+		break;
+	case PID_RECORD_FILE_PATH:
+		{
+			char*path=(char*)pParam;
+			if (m_pRecodReader==NULL)
+			{
+				m_pRecodReader = (ISTDataReaderItf *)new STFileReader();
+			}
+		}
+		break;
+
+	case PID_BACKGROUD_FILE_PATH:
+		{
+			char*path=(char*)pParam;
+			if (m_pBackgroudReader==NULL)
+			{
+				m_pBackgroudReader = (ISTDataReaderItf *)new STFileReader();
+			}
+		}
+		break;
+
+	case PID_AUDIO_VOLUME:
+		{
+			ulu_CAutoLock lock(&m_lookAudio);
+			m_iAudioVolume = *(int*)pParam;
+			if (m_pAudioRender)
+			{
+				m_pAudioRender->SetVolume(m_iAudioVolume);
+			}
+		}
+
+	case PID_RECORDER_AUDIO_FORMAT:
+		{
+			AYMediaAudioFormat *pAudioFormat = (AYMediaAudioFormat*)pParam;
+			m_sRecordAudioFormat.nChannels = pAudioFormat->nChannels;
+			m_sRecordAudioFormat.nSamplesPerSec = pAudioFormat->nSamplesPerSec;
+			m_sRecordAudioFormat.wBitsPerSample = pAudioFormat->wBitsPerSample;
+
+			m_iRecordStepSize =(m_sRecordAudioFormat.nSamplesPerSec*m_sRecordAudioFormat.nChannels
+				*m_sRecordAudioFormat.wBitsPerSample) / 50;
+			break;
+		}
+
+
+	case PID_BACKGROUD_AUDIO_FORMAT:
+		{
+			AYMediaAudioFormat *pAudioFormat = (AYMediaAudioFormat*)pParam;
+			m_sBackGroudAudioFormat.nChannels = pAudioFormat->nChannels;
+			m_sBackGroudAudioFormat.nSamplesPerSec = pAudioFormat->nSamplesPerSec;
+			m_sBackGroudAudioFormat.wBitsPerSample = pAudioFormat->wBitsPerSample;
+
+			m_iBackGroudStepSize =(m_sBackGroudAudioFormat.nSamplesPerSec*m_sBackGroudAudioFormat.nChannels
+				*m_sBackGroudAudioFormat.wBitsPerSample) / 50;
+			break;
+		}
+	default:
+		break;
+	}
 
 	return 0;
 }
@@ -158,6 +231,8 @@ void CAYMediaPlayer::functionAudioThread()
 	unsigned int nPrePcmTimestamp = -1;
 	unsigned int nPrePcmDuration = 0;
 	while(m_bAudioRunningFlag){
+
+
 
 	}
 
@@ -227,10 +302,111 @@ int CAYMediaPlayer::createAudioRender(AYMediaAudioFormat &sAudioFormat)
 		m_pAudioRender->Start();
 		iRetValue = 0;
 	}
-	//m_nStepSize = (m_sAudioFormat.nSamplesPerSec*m_sAudioFormat.nChannels*m_sAudioFormat.wBitsPerSample) / 50;
 
 	return iRetValue;
 
+}
+static inline int mulAdd(short in, short v, int a)
+{
+#if defined(__arm__) && !defined(__thumb__)
+	STInt out;
+	asm( "smlabb %[out], %[in], %[v], %[a] \n"
+		: [out]"=r"(out)
+		: [in]"%r"(in), [v]"r"(v), [a]"r"(a)
+		: );
+	return out;
+#else
+	return a + in * int(v);
+#endif
+}
+
+static inline int mul(short in, short v)
+{
+#if defined(__arm__) && !defined(__thumb__)
+	STInt out;
+	asm( "smulbb %[out], %[in], %[v] \n"
+		: [out]"=r"(out)
+		: [in]"%r"(in), [v]"r"(v)
+		: );
+	return out;
+#else
+	return in * int(v);
+#endif
+}
+
+static inline short clamp16(long sample)
+{
+	if ((sample>>15) ^ (sample>>31))
+		sample = 0x7FFF ^ (sample>>31);
+	return sample;
+}
+
+
+int CAYMediaPlayer::mono2stereo(short*pDstBuffer,short*pSrcBuffer,int inSize){    
+	/*	unsigned short szBuf[4096];       
+	unsigned short *pst = (unsigned short*)pData;    
+	memset(szBuf, 0, sizeof(szBuf));    
+	memcpy(szBuf, pData, nSize);  */  
+
+	if (pDstBuffer==NULL||pSrcBuffer==NULL)
+	{
+		return -1;
+	}
+	for (int i = 0; i < inSize; i++)    
+	{        
+		pDstBuffer[i] = pSrcBuffer[i];
+		pDstBuffer[i+1] = pSrcBuffer[i];
+
+	}    
+	return inSize * 2;
+
+}
+
+
+void CAYMediaPlayer::mixAudio(short*pDstBuffer,short*pRecordBuffer,short*pBackGroudBuffer,int bufferSize)
+{
+	short* pSrc1 = pRecordBuffer;
+	short* pSrc2 = pBackGroudBuffer;
+	int iChannels = m_sBackGroudAudioFormat.nChannels;
+	int nProcessSample = bufferSize / iChannels;
+
+	if (iChannels == 2)
+	{
+		long* pDstBuffer = (long*)pDstBuffer;
+		while (nProcessSample--)
+		{
+			int nLeft0 = *pSrc1++;
+			int nRight0 = *pSrc1++;
+			nLeft0 = mul(nLeft0, m_iBackGroudAudioVolume);
+			nRight0 = mul(nRight0, m_iBackGroudAudioVolume);
+			int nLeft1 = *pSrc2++;
+			int nRight1 = *pSrc2++;
+
+			nLeft1 = mulAdd(nLeft1, m_iRecordAudioVolume, nLeft0) >> 12;
+			nRight1 = mulAdd(nRight1, m_iRecordAudioVolume, nRight0) >> 12;
+
+			nLeft1 = clamp16(nLeft1);
+			nRight1 = clamp16(nRight1);
+
+			*pDstBuffer++ = (nRight1 << 16) | (nLeft1 & 0xFFFF);
+		}
+	}
+	else
+	{
+		short* pDstBuffer = (short*)pDstBuffer;
+		while (nProcessSample--)
+		{
+			int nLeft0 = *pSrc1++;
+			nLeft0 = mul(nLeft0, m_iRecordAudioVolume);
+
+			int nLeft1 = *pSrc2++;
+			nLeft1 = mulAdd(nLeft1, m_iRecordAudioVolume, nLeft0) >> 12;
+
+			nLeft1 = clamp16(nLeft1);
+
+			*pDstBuffer++ = (nLeft1 & 0xFFFF);
+		}
+	}
 }
 
 

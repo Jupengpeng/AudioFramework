@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pcmPlayer", "pcmPlayer\pcmPlayer.vcxproj", "{31F2F782-B91E-4D4E-961B-C6BE9CC2C63B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31F2F782-B91E-4D4E-961B-C6BE9CC2C63B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{31F2F782-B91E-4D4E-961B-C6BE9CC2C63B}.Debug|Win32.Build.0 = Debug|Win32
+		{31F2F782-B91E-4D4E-961B-C6BE9CC2C63B}.Release|Win32.ActiveCfg = Release|Win32
+		{31F2F782-B91E-4D4E-961B-C6BE9CC2C63B}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
