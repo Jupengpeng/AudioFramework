@@ -3,15 +3,20 @@ package com.yinchao.android.media.service;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.os.ResultReceiver;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.media.MediaBrowserCompat;
 import android.support.v4.media.MediaBrowserServiceCompat;
 import android.support.v4.media.RatingCompat;
+import android.support.v4.media.session.MediaButtonReceiver;
 import android.support.v4.media.session.MediaSessionCompat;
 import android.support.v4.media.session.PlaybackStateCompat;
+import android.util.Log;
 
+import java.lang.ref.WeakReference;
 import java.util.List;
 
 /**
@@ -20,12 +25,15 @@ import java.util.List;
 
 public class YCMusicPlayerService extends MediaBrowserServiceCompat {
 
+    private static String TAG = "YCMusicPlayerService";
+
     private MediaSessionCompat mSession;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        mSession = new MediaSessionCompat(this, "MusicService");
+        mSession = new MediaSessionCompat(this, "YCMusicPlayerService");
+
         setSessionToken(mSession.getSessionToken());
         mSession.setCallback(new MediaSessionCallback());
         mSession.setFlags(MediaSessionCompat.FLAG_HANDLES_MEDIA_BUTTONS |
@@ -37,15 +45,27 @@ public class YCMusicPlayerService extends MediaBrowserServiceCompat {
         super.onDestroy();
     }
 
+    /**
+     * 控制Service重启，处理重启的一些事件.
+     * @param intent
+     * @param flags
+     * @param startId
+     * @return
+     */
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        return super.onStartCommand(intent, flags, startId);
+        if (intent != null){
+            MediaButtonReceiver.handleIntent(mSession, intent);
+        }
+
+        return START_STICKY;
     }
 
 
     @Nullable
     @Override
     public BrowserRoot onGetRoot(@NonNull String clientPackageName, int clientUid, @Nullable Bundle rootHints) {
+        Log.d(TAG, "OnGetRoot: clientPackageName=" + clientPackageName + "; clientUid=" + clientUid + " ; rootHints=" + rootHints);
         return new BrowserRoot("MEDIA_ID_ROOT", null);
     }
 
@@ -159,6 +179,31 @@ public class YCMusicPlayerService extends MediaBrowserServiceCompat {
         @Override
         public void onCustomAction(String action, Bundle extras) {
             super.onCustomAction(action, extras);
+        }
+    }
+
+
+    /**
+     * A simple handler that stops the service if playback is not active (playing)
+     */
+    private static class DelayedStopHandler extends Handler {
+        private final WeakReference<YCMusicPlayerService> mWeakReference;
+
+        private DelayedStopHandler(YCMusicPlayerService service) {
+            mWeakReference = new WeakReference<>(service);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            YCMusicPlayerService service = mWeakReference.get();
+//            if (service != null && service.mPlaybackManager.getPlayback() != null) {
+//                if (service.mPlaybackManager.getPlayback().isPlaying()) {
+//                    LogHelper.d(TAG, "Ignoring delayed stop since the media player is in use.");
+//                    return;
+//                }
+//                LogHelper.d(TAG, "Stopping service with delay handler.");
+                service.stopSelf();
+//            }
         }
     }
 }
