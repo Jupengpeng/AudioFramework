@@ -1,15 +1,17 @@
 #ifndef __IAYMediaPlayer_H__
 #define __IAYMediaPlayer_H__
 
-#ifdef _WINDOWS
-#ifdef AYMEDIAPLAYER_SDK_EXPORTS
 #define AYMEDIAPLAYER_SDK_API extern "C" __declspec(dllexport)
-#else	// AYMEDIAPLAYER_SDK_EXPORTS
-#define AYMEDIAPLAYER_SDK_API extern "C" __declspec(dllimport)
-#endif	// AYMEDIAPLAYER_SDK_EXPORTS
-#else	// _WINDOWS
-#define AYMEDIAPLAYER_SDK_API extern "C" 
-#endif	// _WINDOWS
+
+//#ifdef _WINDOWS
+//#ifdef AYMEDIAPLAYER_SDK_EXPORTS
+//#define AYMEDIAPLAYER_SDK_API extern "C" __declspec(dllexport)
+//#else	// AYMEDIAPLAYER_SDK_EXPORTS
+//#define AYMEDIAPLAYER_SDK_API extern "C" __declspec(dllimport)
+//#endif	// AYMEDIAPLAYER_SDK_EXPORTS
+//#else	// _WINDOWS
+//#define AYMEDIAPLAYER_SDK_API extern "C" 
+//#endif	// _WINDOWS
 
 typedef struct tagMediaPlayerInitParam 
 {
@@ -27,9 +29,10 @@ typedef struct AYMediaAudioFormat{
 #define PID_JAVA_VM							0X0001
 #define PID_RECORD_FILE_PATH				0X0002
 #define PID_BACKGROUD_FILE_PATH				0X0003
-#define PID_AUDIO_VOLUME					0X0004
+#define PID_AUDIO_RECORD_VOLUME				0X0004
 #define PID_RECORDER_AUDIO_FORMAT			0X0005
 #define PID_BACKGROUD_AUDIO_FORMAT			0X0006
+#define PID_AUDIO_BACKGROUD_VOLUME			0X0007
 
 /****************************************************************************************
 IAYMediaPlayer : AY Media Player Function Interface

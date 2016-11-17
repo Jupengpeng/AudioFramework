@@ -14,9 +14,8 @@ AYMEDIAPLAYER_SDK_API void destroyMediaPlayerInstance(IAYMediaPlayer *& piMediaP
 	delete piMediaPlayer;
 }
 
-CAYMediaPlayerThread::CAYMediaPlayerThread(CAYMediaPlayer*pMediaPlayer,AYMEDIAPLAYERTHREADTYPE eType)
+CAYMediaPlayerThread::CAYMediaPlayerThread(CAYMediaPlayer*pMediaPlayer)
 	: m_pMediaPlayer(pMediaPlayer)
-	, m_eType(eType)
 {
 	ut_begin();
 }
@@ -29,10 +28,7 @@ CAYMediaPlayerThread::~CAYMediaPlayerThread()
 
 void CAYMediaPlayerThread::ut_thread_function()
 {
-	if (m_pMediaPlayer!=NULL)
-	{
-		m_pMediaPlayer->functionAudioThread();
-	}
+	m_pMediaPlayer->functionAudioThread();
 }
 CAYMediaPlayer::CAYMediaPlayer()
 	: m_pAudioThread(NULL)
@@ -58,7 +54,8 @@ CAYMediaPlayer::~CAYMediaPlayer(){
 int CAYMediaPlayer::initAudioContext(){
 
 	m_pAudioRender = NULL;
-	m_iAudioVolume = 0;
+	m_iRecordAudioVolume = 0;
+	m_iBackGroudAudioVolume =0;
 	return 0;
 }
 
@@ -83,7 +80,7 @@ int CAYMediaPlayer::run()
 		delete m_pAudioThread;
 	}
 	m_bAudioRunningFlag = true;
-	m_pAudioThread = new CAYMediaPlayerThread(this,AYMEDIAPLAYERTHREADTYPE_AUDIO);
+	m_pAudioThread = new CAYMediaPlayerThread(this);
 
 	return 0;
 }
@@ -150,6 +147,7 @@ int CAYMediaPlayer::setParam(unsigned int uParamId, void * pParam)
 			if (m_pRecodReader==NULL)
 			{
 				m_pRecodReader = (ISTDataReaderItf *)new STFileReader();
+				m_pRecodReader->Open(path);
 			}
 		}
 		break;
@@ -160,17 +158,27 @@ int CAYMediaPlayer::setParam(unsigned int uParamId, void * pParam)
 			if (m_pBackgroudReader==NULL)
 			{
 				m_pBackgroudReader = (ISTDataReaderItf *)new STFileReader();
+				m_pBackgroudReader->Open(path);
 			}
 		}
 		break;
 
-	case PID_AUDIO_VOLUME:
+	case PID_AUDIO_RECORD_VOLUME:
 		{
 			ulu_CAutoLock lock(&m_lookAudio);
-			m_iAudioVolume = *(int*)pParam;
+			m_iRecordAudioVolume = *(int*)pParam;
 			if (m_pAudioRender)
 			{
-				m_pAudioRender->SetVolume(m_iAudioVolume);
+				m_pAudioRender->SetVolume(m_iRecordAudioVolume);
+			}
+		}
+	case PID_AUDIO_BACKGROUD_VOLUME:
+		{
+			ulu_CAutoLock lock(&m_lookAudio);
+			m_iBackGroudAudioVolume = *(int*)pParam;
+			if (m_pAudioRender)
+			{
+				m_pAudioRender->SetVolume(m_iBackGroudAudioVolume);
 			}
 		}
 
@@ -230,8 +238,33 @@ void CAYMediaPlayer::functionAudioThread()
 	unsigned char* pTempPcmData = NULL;
 	unsigned int nPrePcmTimestamp = -1;
 	unsigned int nPrePcmDuration = 0;
+	unsigned char *recordBuffer = (unsigned char*)malloc(m_iRecordStepSize);
+	unsigned char *backGroudBuffer =(unsigned char*)malloc(m_iBackGroudStepSize);
+	unsigned int recoderReadPos=0;
+	unsigned int backGroudReadPos=0;
+	unsigned char*temp;
 	while(m_bAudioRunningFlag){
+		int read=0;
+		if (m_pRecodReader!=NULL)
+		{
+			read=m_pRecodReader->Read(recordBuffer,recoderReadPos,m_iRecordStepSize);
+			recoderReadPos+=read;
+			//单声道转双声道
+			if (m_sRecordAudioFormat.nChannels==1)
+			{
+				temp = (unsigned char*)malloc(read*2);
+				mono2stereo((short*)temp,(short*)recordBuffer,read/2);
+			}
+		}
+		if (m_pBackgroudReader!=NULL)
+		{
+			read=m_pRecodReader->Read(backGroudBuffer,backGroudReadPos,m_iBackGroudStepSize);
+			backGroudReadPos+=read;
+		}
+		int mixSize =(m_iRecordStepSize*2>m_iBackGroudStepSize)?m_iBackGroudStepSize/2:m_iRecordStepSize;
 
+		short*out =(short*)malloc(sizeof(short)*mixSize);
+		mixAudio(out,(short*)temp,(short*)backGroudBuffer,mixSize);
 
 
 	}

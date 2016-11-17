@@ -86,6 +86,9 @@
     <ClCompile Include="..\..\common\STFileReader.cpp">
       <Filter>common</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\test\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\src\CIOSAudioRender.mm">

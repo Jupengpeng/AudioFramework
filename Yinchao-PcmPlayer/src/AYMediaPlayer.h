@@ -31,7 +31,7 @@ typedef enum {
 class CAYMediaPlayer;
 class CAYMediaPlayerThread:public ulu_thread{
 public:
-	CAYMediaPlayerThread(CAYMediaPlayer*pMediaPlayer,AYMEDIAPLAYERTHREADTYPE eType);
+	CAYMediaPlayerThread(CAYMediaPlayer*pMediaPlayer);
 	virtual ~CAYMediaPlayerThread();
 
 protected:
