@@ -19,7 +19,7 @@ typedef struct tagMediaPlayerInitParam
 	void *							pCallbackUserData;
 } MediaPlayerInitParam;
 
-typedef struct AYMediaAudioFormat{
+typedef struct{
 	int nSamplesPerSec;
 	int nChannels;
 	int wBitsPerSample;

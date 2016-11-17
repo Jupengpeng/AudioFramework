@@ -228,8 +228,11 @@ int CAYMediaPlayer::SetMediaPlayerInitParam(MediaPlayerInitParam *pPlayerInitPar
 	return 0;
 }
 
-
-
+#define DUMP_FILE
+#ifdef DUMP_FILE
+FILE *outFile = fopen("out.pcm","wb");
+FILE *stereFile = fopen("stereo.pcm","wb");
+#endif
 void CAYMediaPlayer::functionAudioThread()
 {
 	void* pSourceFunc=NULL;
@@ -242,33 +245,70 @@ void CAYMediaPlayer::functionAudioThread()
 	unsigned char *backGroudBuffer =(unsigned char*)malloc(m_iBackGroudStepSize);
 	unsigned int recoderReadPos=0;
 	unsigned int backGroudReadPos=0;
-	unsigned char*temp;
+	unsigned short*temp=NULL;;
 	while(m_bAudioRunningFlag){
 		int read=0;
+		int readCout =0;
+		int accoCount =0;
 		if (m_pRecodReader!=NULL)
 		{
 			read=m_pRecodReader->Read(recordBuffer,recoderReadPos,m_iRecordStepSize);
 			recoderReadPos+=read;
+			if (read< 0)
+			{
+				break;
+			}
 			//单声道转双声道
 			if (m_sRecordAudioFormat.nChannels==1)
 			{
-				temp = (unsigned char*)malloc(read*2);
-				mono2stereo((short*)temp,(short*)recordBuffer,read/2);
+				int size =read/2;
+				readCout = size*2;
+				temp = (unsigned short*)malloc(readCout*sizeof(unsigned short));
+				mono2stereo((short*)temp,(short*)recordBuffer,size);
+
+#ifdef DUMP_FILE
+				fwrite(temp,2,readCout,stereFile);
+#endif
 			}
 		}
+
 		if (m_pBackgroudReader!=NULL)
 		{
-			read=m_pRecodReader->Read(backGroudBuffer,backGroudReadPos,m_iBackGroudStepSize);
+			read=m_pBackgroudReader->Read(backGroudBuffer,backGroudReadPos,m_iBackGroudStepSize);
 			backGroudReadPos+=read;
+			accoCount = read/2;
 		}
-		int mixSize =(m_iRecordStepSize*2>m_iBackGroudStepSize)?m_iBackGroudStepSize/2:m_iRecordStepSize;
-
-		short*out =(short*)malloc(sizeof(short)*mixSize);
-		mixAudio(out,(short*)temp,(short*)backGroudBuffer,mixSize);
-
+		if (read<0)
+		{
+			break;
+		}
+		int mixSize =(readCout>accoCount)?accoCount:readCout;
+		mixSize = mixSize*2;
+		char*out =(char*)malloc(mixSize);
+		memset(out,0,mixSize);
+		mixAudio(out,(char*)temp,(char*)backGroudBuffer,mixSize);
+#ifdef DUMP_FILE
+		fwrite(out,1,mixSize,outFile);
+#endif
+		if (temp!=NULL)
+		{
+			free(temp);
+		}
+		if (out!=NULL)
+		{
+			free(out);
+		}
 
 	}
 
+	if (recordBuffer!=NULL)
+	{
+		free(recordBuffer);
+	}
+	if (backGroudBuffer!=NULL)
+	{
+		free(backGroudBuffer);
+	}
 	unInitAudioContext();
 
 }
@@ -385,61 +425,112 @@ int CAYMediaPlayer::mono2stereo(short*pDstBuffer,short*pSrcBuffer,int inSize){
 	{
 		return -1;
 	}
+	int j=0;
 	for (int i = 0; i < inSize; i++)    
 	{        
-		pDstBuffer[i] = pSrcBuffer[i];
-		pDstBuffer[i+1] = pSrcBuffer[i];
+		pDstBuffer[j] = pSrcBuffer[i];
+		pDstBuffer[j+1] = pSrcBuffer[i];
+		j+=2;
 
 	}    
 	return inSize * 2;
 
 }
 
-
-void CAYMediaPlayer::mixAudio(short*pDstBuffer,short*pRecordBuffer,short*pBackGroudBuffer,int bufferSize)
+void  CAYMediaPlayer::mixAudio(char*pOutBuffer,char*pRecordBuffer,char*pBackGroudBuffer,int bufferSize)
 {
-	short* pSrc1 = pRecordBuffer;
-	short* pSrc2 = pBackGroudBuffer;
-	int iChannels = m_sBackGroudAudioFormat.nChannels;
-	int nProcessSample = bufferSize / iChannels;
-
-	if (iChannels == 2)
+	int i,j;
+	for(i = 0; i < bufferSize; i+=2)
 	{
-		long* pDstBuffer = (long*)pDstBuffer;
-		while (nProcessSample--)
+		char tmp[2] = {0};
+		short int nSrcValue = 0;
+		short int nDestValue = 0;
+		long nMidValue = 0;
+
+
+		tmp[0] = pRecordBuffer[i];
+		tmp[1] = pRecordBuffer[i+1];
+		nSrcValue = *(int *)tmp;
+		nMidValue += (long)nSrcValue;
+
+		tmp[0] = pBackGroudBuffer[i];
+		tmp[1] = pBackGroudBuffer[i+1];
+		nSrcValue = *(int *)tmp;
+		nMidValue += (long)nSrcValue;
+
+		if(nMidValue > 32767)
 		{
-			int nLeft0 = *pSrc1++;
-			int nRight0 = *pSrc1++;
-			nLeft0 = mul(nLeft0, m_iBackGroudAudioVolume);
-			nRight0 = mul(nRight0, m_iBackGroudAudioVolume);
-			int nLeft1 = *pSrc2++;
-			int nRight1 = *pSrc2++;
-
-			nLeft1 = mulAdd(nLeft1, m_iRecordAudioVolume, nLeft0) >> 12;
-			nRight1 = mulAdd(nRight1, m_iRecordAudioVolume, nRight0) >> 12;
-
-			nLeft1 = clamp16(nLeft1);
-			nRight1 = clamp16(nRight1);
-
-			*pDstBuffer++ = (nRight1 << 16) | (nLeft1 & 0xFFFF);
+			nDestValue = 32767;
 		}
-	}
-	else
-	{
-		short* pDstBuffer = (short*)pDstBuffer;
-		while (nProcessSample--)
+		else if(nMidValue < -32768)
 		{
-			int nLeft0 = *pSrc1++;
-			nLeft0 = mul(nLeft0, m_iRecordAudioVolume);
-
-			int nLeft1 = *pSrc2++;
-			nLeft1 = mulAdd(nLeft1, m_iRecordAudioVolume, nLeft0) >> 12;
-
-			nLeft1 = clamp16(nLeft1);
-
-			*pDstBuffer++ = (nLeft1 & 0xFFFF);
+			nDestValue = -32768;
 		}
+		else
+		{
+			nDestValue = nMidValue;
+		}
+		pOutBuffer[i] = (char)(nDestValue);
+		pOutBuffer[i+1] = (char)(nDestValue>>8);
 	}
+
 }
+
+
+
+
+//void CAYMediaPlayer::mixAudio(short*pOutBuffer,short*pRecordBuffer,short*pBackGroudBuffer,int bufferSize)
+//{
+//	short* pSrc1 = pRecordBuffer;
+//	short* pSrc2 = pBackGroudBuffer;
+//	int iChannels = m_sBackGroudAudioFormat.nChannels;
+//	int nProcessSample = bufferSize / iChannels;
+//	short *pOut = pOutBuffer;
+//	while(bufferSize--){
+//		short nLeft0 = *pSrc1++;
+//		short nRight0 = *pSrc2++;
+//		short out =nLeft0+nRight0;
+//		*pOut++ =out;
+//	}
+//#if 0
+//	if (iChannels == 1)
+//	{
+//		long* pDstBuffer = (long*)pOutBuffer;
+//		while (nProcessSample--)
+//		{
+//			int nLeft0 = *pSrc1++;
+//			int nRight0 = *pSrc1++;
+//			nLeft0 = mul(nLeft0, m_iBackGroudAudioVolume);
+//			nRight0 = mul(nRight0, m_iBackGroudAudioVolume);
+//			int nLeft1 = *pSrc2++;
+//			int nRight1 = *pSrc2++;
+//
+//			nLeft1 = mulAdd(nLeft1, m_iRecordAudioVolume, nLeft0) >> 12;
+//			nRight1 = mulAdd(nRight1, m_iRecordAudioVolume, nRight0) >> 12;
+//
+//			nLeft1 = clamp16(nLeft1);
+//			nRight1 = clamp16(nRight1);
+//
+//			*pDstBuffer++ = (nRight1 << 16) | (nLeft1 & 0xFFFF);
+//		}
+//	}
+//	else
+//	{
+//		short* pDstBuffer = (short*)pOutBuffer;
+//		while (nProcessSample--)
+//		{
+//			int nLeft0 = *pSrc1++;
+//			nLeft0 = mul(nLeft0, m_iRecordAudioVolume);
+//
+//			int nLeft1 = *pSrc2++;
+//			nLeft1 = mulAdd(nLeft1, m_iRecordAudioVolume, nLeft0) >> 12;
+//
+//			nLeft1 = clamp16(nLeft1);
+//
+//			*pDstBuffer++ = (nLeft1 & 0xFFFF);
+//		}
+//	}
+//#endif
+//}
 
 
