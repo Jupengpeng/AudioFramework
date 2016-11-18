@@ -91,7 +91,7 @@ public final class MediaPlayerProxy {
      * @throws Exception
      */
     public void palySong(String sourcePath) throws Exception {
-//        stop();
+        stop();
         play(sourcePath);
         mPlayStatus = PlayStatus.STATUS_STOPPED;
     }

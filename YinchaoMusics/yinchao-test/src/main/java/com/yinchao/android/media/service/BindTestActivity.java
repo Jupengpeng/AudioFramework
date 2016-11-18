@@ -2,9 +2,7 @@ package com.yinchao.android.media.service;
 
 import android.content.ComponentName;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.RemoteException;
-import android.os.ResultReceiver;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.media.MediaBrowserCompat;
@@ -15,6 +13,7 @@ import android.support.v4.media.session.PlaybackStateCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -23,10 +22,11 @@ import com.yinchao.android.media.test.utils.ScheduleTask;
 
 /**
  * Created by Administrator on 2016/11/15.
+ *
+ *
+ *
  */
-
 public class BindTestActivity extends AppCompatActivity {
-
 
 
     TextView console;
@@ -34,6 +34,10 @@ public class BindTestActivity extends AppCompatActivity {
     Button button1;
     Button button2;
     Button button3;
+
+    ImageView skipPrevious;
+    ImageView skipNext;
+    ImageView play;
 
     SeekBar seekBarMain;
     SeekBar seekBarLeft;
@@ -51,19 +55,18 @@ public class BindTestActivity extends AppCompatActivity {
     private MediaBrowserCompat mMediaBrowser;
 
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mediaplayer_test);
 
+        setTitle("BindTestActivity");
         bindView();
 
         initLisener();
-
-        mMediaBrowser = new MediaBrowserCompat(this, new ComponentName(this, YCMusicPlayerService.class), mConnectionCallback, null);
+        initSeekBar();
+        mMediaBrowser = new MediaBrowserCompat(this, new ComponentName(this, YCMusicPlayService.class), mConnectionCallback, null);
     }
-
 
 
     /**
@@ -85,98 +88,167 @@ public class BindTestActivity extends AppCompatActivity {
         totalTime = (TextView) findViewById(R.id.total_time);
         leftNumber = (TextView) findViewById(R.id.left_number);
         rightNumber = (TextView) findViewById(R.id.right_number);
-    }
 
+
+        skipPrevious = (ImageView) findViewById(R.id.skip_previous);
+        play = (ImageView) findViewById(R.id.play);
+        skipNext = (ImageView) findViewById(R.id.skip_next);
+    }
 
 
     /**
      *
      */
     private void initLisener() {
-        button1.setOnClickListener(new View.OnClickListener() {
+
+        skipPrevious.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                getSupportMediaController().getTransportControls().play();
+//                getSupportMediaController().getTransportControls().skipToPrevious();
+//                getSupportMediaController().setVolumeTo(10,1);
             }
         });
 
-        button2.setOnClickListener(new View.OnClickListener() {
+        skipNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MediaMetadataCompat metadata = getSupportMediaController().getMetadata();
-                metadata.keySet();
+                getSupportMediaController().getTransportControls().skipToNext();
             }
         });
-        button3.setOnClickListener(new View.OnClickListener() {
+
+        play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getSupportMediaController().sendCommand("test",null,resultReceiver);
+                if (lastState.getState() == PlaybackStateCompat.STATE_PLAYING) {
+                    getSupportMediaController().getTransportControls().pause();
+                    play.setImageResource(R.drawable.uamp_ic_play_arrow_white_48dp);
+                } else {
+                    getSupportMediaController().getTransportControls().play();
+                    play.setImageResource(R.drawable.uamp_ic_pause_white_48dp);
+                }
+            }
+        });
+
+    }
+
+
+    private void initSeekBar() {
+
+        seekBarMain.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        seekBarLeft.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                vleft = progress;
+                setVolume(vleft, vright);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        seekBarRight.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                vright = progress;
+                setVolume(vleft, vright);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
             }
         });
 
 
     }
-    ResultReceiver resultReceiver = new ResultReceiver(new Handler()){
-        @Override
-        protected void onReceiveResult(int resultCode, Bundle resultData) {
-            super.onReceiveResult(resultCode, resultData);
-        }
 
-        @Override
-        public void send(int resultCode, Bundle resultData) {
-            super.send(resultCode, resultData);
-        }
-    };
+    int vleft = 100;
+    int vright = 100;
 
+    private void setVolume(int left, int right) {
+        Bundle bundle = MediaCustomAction.buildByVolume(left, right);
+        getSupportMediaController()
+                .getTransportControls()
+                .sendCustomAction(MediaCustomAction.ACTION_VOLUME, bundle);
+    }
 
 
     @Override
     protected void onStart() {
         super.onStart();
-
-        mMediaBrowser.connect();
+        if (!mMediaBrowser.isConnected()){
+            mMediaBrowser.connect();
+        }
     }
 
     @Override
     protected void onStop() {
-        super.onStop();mMediaBrowser.disconnect();
+        super.onStop();
+        mMediaBrowser.disconnect();
+        if (getSupportMediaController() != null) {
+            getSupportMediaController().unregisterCallback(mMediaControllerCallback);
+        }
     }
+
+
 
     private void connectToSession(MediaSessionCompat.Token token) throws RemoteException {
         MediaControllerCompat mediaController = new MediaControllerCompat(this, token);
         setSupportMediaController(mediaController);
         mediaController.registerCallback(mMediaControllerCallback);
 
+        lastState = getSupportMediaController().getPlaybackState();
 
-//        mediaController.
+//        getSupportMediaController().setVolumeTo(100,1);
 
     }
 
+    PlaybackStateCompat lastState;
 
     // Callback that ensures that we are showing the controls
     private final MediaControllerCompat.Callback mMediaControllerCallback =
             new MediaControllerCompat.Callback() {
                 @Override
                 public void onPlaybackStateChanged(@NonNull PlaybackStateCompat state) {
-//                    if (shouldShowControls()) {
-//                        showPlaybackControls();
-//                    } else {
-//                        LogHelper.d(TAG, "mediaControllerCallback.onPlaybackStateChanged: " +
-//                                "hiding controls because state is ", state.getState());
-//                        hidePlaybackControls();
-//                    }
+                    lastState = state;
+
+                    if (state.getState() == PlaybackStateCompat.STATE_PLAYING) {
+                        play.setImageResource(R.drawable.uamp_ic_pause_white_48dp);
+                    } else if (state.getState() == PlaybackStateCompat.STATE_PAUSED) {
+                        play.setImageResource(R.drawable.uamp_ic_play_arrow_white_48dp);
+                    }
                 }
 
                 @Override
                 public void onMetadataChanged(MediaMetadataCompat metadata) {
-//                    if (shouldShowControls()) {
-//                        showPlaybackControls();
-//                    } else {
-//                        LogHelper.d(TAG, "mediaControllerCallback.onMetadataChanged: " +
-//                                "hiding controls because metadata is null");
-//                        hidePlaybackControls();
-//                    }
+
+
                 }
             };
 
@@ -184,12 +256,10 @@ public class BindTestActivity extends AppCompatActivity {
             new MediaBrowserCompat.ConnectionCallback() {
                 @Override
                 public void onConnected() {
-//                    LogHelper.d(TAG, "onConnected");
+
                     try {
                         connectToSession(mMediaBrowser.getSessionToken());
                     } catch (RemoteException e) {
-//                        LogHelper.e(TAG, e, "could not connect media controller");
-//                        hidePlaybackControls();
                     }
                 }
             };

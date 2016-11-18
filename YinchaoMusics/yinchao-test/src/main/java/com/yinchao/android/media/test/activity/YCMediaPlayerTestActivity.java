@@ -57,6 +57,7 @@ public class YCMediaPlayerTestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("YCMediaPlayerTestActivity");
         setContentView(R.layout.activity_mediaplayer_test);
 
         pluginPath = "/data/data/com.yinchao.android.app/lib";
