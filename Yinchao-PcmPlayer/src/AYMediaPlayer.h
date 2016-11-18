@@ -31,7 +31,7 @@ typedef enum {
 class CAYMediaPlayer;
 class CAYMediaPlayerThread:public ulu_thread{
 public:
-	CAYMediaPlayerThread(CAYMediaPlayer*pMediaPlayer,AYMEDIAPLAYERTHREADTYPE eType);
+	CAYMediaPlayerThread(CAYMediaPlayer*pMediaPlayer);
 	virtual ~CAYMediaPlayerThread();
 
 protected:
@@ -79,7 +79,7 @@ private:
 	int						audio_render_frame(unsigned char*pData,unsigned int ulDataSize,unsigned int ulTimestamp);
 	int						initAudioContext();
 	int						unInitAudioContext();
-	void					mixAudio(short*pDstBuffer,short*pRecordBuffer,short*pBackGroudBuffer,int bufferSize);
+	void					mixAudio(char*pOutBuffer,char*pRecordBuffer,char*pBackGroudBuffer,int bufferSize);
 	int						mono2stereo(short*pDstBuffer,short*pSrcBuffer,int inSize);
 
 private:
