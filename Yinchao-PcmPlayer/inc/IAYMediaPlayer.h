@@ -1,17 +1,17 @@
 #ifndef __IAYMediaPlayer_H__
 #define __IAYMediaPlayer_H__
 
-#define AYMEDIAPLAYER_SDK_API extern "C" __declspec(dllexport)
-
-//#ifdef _WINDOWS
-//#ifdef AYMEDIAPLAYER_SDK_EXPORTS
 //#define AYMEDIAPLAYER_SDK_API extern "C" __declspec(dllexport)
-//#else	// AYMEDIAPLAYER_SDK_EXPORTS
-//#define AYMEDIAPLAYER_SDK_API extern "C" __declspec(dllimport)
-//#endif	// AYMEDIAPLAYER_SDK_EXPORTS
-//#else	// _WINDOWS
-//#define AYMEDIAPLAYER_SDK_API extern "C" 
-//#endif	// _WINDOWS
+
+#ifdef _WINDOWS
+#ifdef AYMEDIAPLAYER_SDK_EXPORTS
+#define AYMEDIAPLAYER_SDK_API extern "C" __declspec(dllexport)
+#else	// AYMEDIAPLAYER_SDK_EXPORTS
+#define AYMEDIAPLAYER_SDK_API extern "C" __declspec(dllimport)
+#endif	// AYMEDIAPLAYER_SDK_EXPORTS
+#else	// _WINDOWS
+#define AYMEDIAPLAYER_SDK_API extern "C" 
+#endif	// _WINDOWS
 
 typedef struct tagMediaPlayerInitParam 
 {

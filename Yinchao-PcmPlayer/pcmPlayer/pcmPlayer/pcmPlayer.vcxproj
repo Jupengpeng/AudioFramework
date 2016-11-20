@@ -77,6 +77,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Android\com_yinchao_media_recoder_YCPcmPlayer.h" />
     <ClInclude Include="..\..\common\STDataReaderItf.h" />
     <ClInclude Include="..\..\common\STFileReader.h" />
     <ClInclude Include="..\..\common\STMacrodef.h" />
@@ -93,6 +94,7 @@
     <ClInclude Include="..\..\src\IAudioRender.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Android\TTPcmPlayer_jni.cpp" />
     <ClCompile Include="..\..\common\STFileReader.cpp" />
     <ClCompile Include="..\..\common\ulu_JniEnvUtil.cpp" />
     <ClCompile Include="..\..\common\ulu_mutex.cpp" />

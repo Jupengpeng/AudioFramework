@@ -16,6 +16,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
+    <Filter Include="Android">
+      <UniqueIdentifier>{a9eac0d6-799e-4653-ab7b-aa17365c18b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\common\ulu_common.h">
@@ -60,6 +63,9 @@
     <ClInclude Include="..\..\common\STMacrodef.h">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Android\com_yinchao_media_recoder_YCPcmPlayer.h">
+      <Filter>Android</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\common\ulu_JniEnvUtil.cpp">
@@ -88,6 +94,9 @@
     </ClCompile>
     <ClCompile Include="..\..\test\main.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Android\TTPcmPlayer_jni.cpp">
+      <Filter>Android</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

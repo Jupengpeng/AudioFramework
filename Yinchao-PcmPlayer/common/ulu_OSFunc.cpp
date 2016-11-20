@@ -121,17 +121,17 @@ unsigned int ulu_OS_GetTickCount()
         return ((int)elapsedTimeInNanoseconds);//&0xFFFF0;
 #else
     
-//#ifdef _WINDOWS
-//    return GetTickCount();
-//#else
-//    struct timespec time_tmp={0,0};
-//    clock_gettime(CLOCK_MONOTONIC,&time_tmp);
-//    unsigned int ret = time_tmp.tv_sec;
-//    ret *= 1000;
-//    ret = ret + ((time_tmp.tv_nsec/1000000));//&0xFFFF0
-//    return ret;
-//#endif
-	return GetTickCount();
+#ifdef _WINDOWS
+    return GetTickCount();
+#else
+    struct timespec time_tmp={0,0};
+    clock_gettime(CLOCK_MONOTONIC,&time_tmp);
+    unsigned int ret = time_tmp.tv_sec;
+    ret *= 1000;
+    ret = ret + ((time_tmp.tv_nsec/1000000));//&0xFFFF0
+    return ret;
+#endif
+	//return GetTickCount();
     
 #endif
 }

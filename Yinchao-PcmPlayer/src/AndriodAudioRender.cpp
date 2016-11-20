@@ -1,5 +1,6 @@
 #include "AndriodAudioRender.h"
 #ifdef _LINUX_ANDROID
+#include "ulu_log.h"
 #include <jni.h>
 #include <stdio.h>
 #include <string.h>
@@ -28,12 +29,12 @@ int AndroidAudioRender::Init()
 int AndroidAudioRender::UnInit()
 {
     JavaVM * pJava_vm = NULL;
-	//ULULOGI("before AndroidAudioRender Stop");
+	ULULOGI("before AndroidAudioRender Stop");
     Stop();
 
-    //ULULOGI("after AndroidAudioRender Stop");
+    ULULOGI("after AndroidAudioRender Stop");
     AndroidAudioTrackFree();
-	//ULULOGI("after AndroidAudioTrackFree");
+	ULULOGI("after AndroidAudioTrackFree");
     if(m_pJVM != NULL)
     {
         pJava_vm = (JavaVM *)m_pJVM;
@@ -60,7 +61,7 @@ int AndroidAudioRender::SetAudioFormat(AYMediaAudioFormat* pAudioFormat)
 	    m_sAndroidAudioSpec.channel_config = S_Android_AudioTrack_Spec::CHANNEL_OUT_STEREO;
 	}
 	
-	//ULULOGI("the SampleRate:%u, the channel:%u, the SampleBits:%u", pAudioFormat->nSamplesPerSec, pAudioFormat->nChannels, pAudioFormat->wBitsPerSample);
+	ULULOGI("the SampleRate:%u, the channel:%u, the SampleBits:%u", pAudioFormat->nSamplesPerSec, pAudioFormat->nChannels, pAudioFormat->wBitsPerSample);
     switch(m_iSampleBits)
     {
         case 8:
@@ -97,12 +98,13 @@ int AndroidAudioRender::Start()
     {
         return -1;
     }
-
-    //ULULOGI("before pEnv->CallVoidMethod");
+	pEnv->NewByteArray(100);
+    ULULOGI("before pEnv->CallVoidMethod");
     pEnv->CallVoidMethod(m_sAndroidAudioTrack.thiz, m_sAndroidAudioFields.play);
+	ULULOGI("ater pEnv->CallVoidMethod");
     if (pEnv->ExceptionCheck()) 
     {
-        //ULULOGI("Android_AudioTrack_play: play: Exception:");
+        ULULOGI("Android_AudioTrack_play: play: Exception:");
         pEnv->ExceptionDescribe();
         pEnv->ExceptionClear();
         return -1;
@@ -118,11 +120,11 @@ int AndroidAudioRender::Pause()
         return -1;
     }
 
-    //ULULOGI("Android_AudioTrack_pause");
+    ULULOGI("Android_AudioTrack_pause");
     pEnv->CallVoidMethod(m_sAndroidAudioTrack.thiz, m_sAndroidAudioFields.pause);
     if (pEnv->ExceptionCheck()) 
     {
-        //ULULOGI("Android_AudioTrack_pause: pause: Exception:");
+        ULULOGI("Android_AudioTrack_pause: pause: Exception:");
         pEnv->ExceptionDescribe();
         pEnv->ExceptionClear();
         return -1;
@@ -138,10 +140,11 @@ int AndroidAudioRender::Stop()
         return -1;
     }
 
+    ULULOGI("Android_AudioTrack_stop");
     pEnv->CallVoidMethod(m_sAndroidAudioTrack.thiz, m_sAndroidAudioFields.stop);
     if (pEnv->ExceptionCheck()) 
     {
-        //ULULOGI("Android_AudioTrack_stop: stop: Exception:");
+        ULULOGI("Android_AudioTrack_stop: stop: Exception:");
         pEnv->ExceptionDescribe();
         pEnv->ExceptionClear();
         return -1;
@@ -156,7 +159,7 @@ int AndroidAudioRender::Render(unsigned char*   pData, unsigned int  ulDataSize)
     {
         return -1;
     }
-
+	pEnv->NewByteArray(1000);
     if (ulDataSize <= 0)
     {
         return ulDataSize;		
@@ -165,14 +168,14 @@ int AndroidAudioRender::Render(unsigned char*   pData, unsigned int  ulDataSize)
     int reserved = GetReserveBuffer(ulDataSize);
     if (reserved < ulDataSize) 
     {
-        //ULULOGI("SDL_Android_AudioTrack_reserve_buffer failed %d < %d", reserved, ulDataSize);
+        ULULOGI("SDL_Android_AudioTrack_reserve_buffer failed %d < %d", reserved, ulDataSize);
         return AUDIO_COMMIT_NEED_RETRY;
     }
 
     pEnv->SetByteArrayRegion(m_sAndroidAudioTrack.buffer, 0, ulDataSize, (jbyte*) pData);
     if (pEnv->ExceptionCheck()) 
     {
-        //ULULOGI("Android_AudioTrack_write_byte: SetByteArrayRegion: Exception:");
+        ULULOGI("Android_AudioTrack_write_byte: SetByteArrayRegion: Exception:");
         if (pEnv->ExceptionCheck()) 
         {
             pEnv->ExceptionDescribe();
@@ -185,7 +188,7 @@ int AndroidAudioRender::Render(unsigned char*   pData, unsigned int  ulDataSize)
     m_sAndroidAudioTrack.buffer, 0, ulDataSize);
     if (pEnv->ExceptionCheck()) 
     {
-        //ULULOGI("SDL_Android_AudioTrack_write_byte: write_byte: Exception:");
+        ULULOGI("SDL_Android_AudioTrack_write_byte: write_byte: Exception:");
         if (pEnv->ExceptionCheck()) 
         {
             pEnv->ExceptionDescribe();
@@ -207,12 +210,12 @@ int AndroidAudioRender::Flush()
         return -1;
     }
 
-    //ULULOGI("SDL_Android_AudioTrack_flush");
+    ULULOGI("SDL_Android_AudioTrack_flush");
     pEnv->CallVoidMethod(m_sAndroidAudioTrack.thiz, m_sAndroidAudioFields.flush);
-    //ULULOGI("Android_AudioTrack_flush()=void");
+    ULULOGI("Android_AudioTrack_flush()=void");
     if (pEnv->ExceptionCheck()) 
     {
-        //ULULOGI("SDL_Android_AudioTrack_flush: flush: Exception:");
+        ULULOGI("SDL_Android_AudioTrack_flush: flush: Exception:");
         pEnv->ExceptionDescribe();
         pEnv->ExceptionClear();
         return -1;
@@ -249,23 +252,23 @@ int AndroidAudioRender::InitAndroidAudioSystem()
         return -1;
     }
     
-    //ULULOGI("InitAndroidAudioSystem Init");
+    ULULOGI("InitAndroidAudioSystem Init");
     
     clazz = pEnv->FindClass("android/media/AudioTrack");
     //ULU_CHECK_RET(clazz, -1, "missing AudioTrack");
 
-    //ULULOGI("FindClass android/media/AudioTrack ok!");
+    ULULOGI("FindClass android/media/AudioTrack ok!");
 
     // FindClass returns LocalReference
     m_sAndroidAudioFields.clazz = (jclass)pEnv->NewGlobalRef(clazz);
     //ULU_CHECK_RET(m_sAndroidAudioFields.clazz, -1, "AudioTrack NewGlobalRef failed");
     pEnv->DeleteLocalRef(clazz);
 
-    //ULULOGI("NewGlobalRef AudioTrack ok!");
+    ULULOGI("NewGlobalRef AudioTrack ok!");
 
     m_sAndroidAudioFields.constructor = pEnv->GetMethodID(m_sAndroidAudioFields.clazz, "<init>", "(IIIIII)V");
     //ULU_CHECK_RET(m_sAndroidAudioFields.constructor, -1, "missing AudioTrack.<init>");
-    //ULULOGI("Get m_sAndroidAudioFields.constructor  AudioTrack ok!");
+    ULULOGI("Get m_sAndroidAudioFields.constructor  AudioTrack ok!");
 
     m_sAndroidAudioFields.getMinBufferSize = pEnv->GetStaticMethodID(m_sAndroidAudioFields.clazz, "getMinBufferSize", "(III)I");
     //ULU_CHECK_RET(m_sAndroidAudioFields.getMinBufferSize, -1, "missing AudioTrack.getMinBufferSize");
@@ -300,7 +303,7 @@ int AndroidAudioRender::InitAndroidAudioSystem()
     m_sAndroidAudioFields.setStereoVolume = pEnv->GetMethodID(m_sAndroidAudioFields.clazz, "setStereoVolume", "(FF)I");
     //ULU_CHECK_RET(m_sAndroidAudioFields.setStereoVolume, -1, "missing AudioTrack.setStereoVolume");
 
-    //ULULOGI("android.media.AudioTrack class loaded");
+    ULULOGI("android.media.AudioTrack class loaded");
     return 0;
 }
 
@@ -319,13 +322,13 @@ int AndroidAudioRender::AudiotrackGetMinBufferSize()
         (int) pspec->audio_format);
     if (pEnv->ExceptionCheck()) 
     {
-        //ULULOGI("audiotrack_get_min_buffer_size: getMinBufferSize: Exception:");
+        ULULOGI("audiotrack_get_min_buffer_size: getMinBufferSize: Exception:");
         pEnv->ExceptionDescribe();
         pEnv->ExceptionClear();
         return -1;
     }
 
-    //ULULOGI("audiotrack_get_min_buffer_size: %u", retval);
+    ULULOGI("audiotrack_get_min_buffer_size: %u", retval);
     return retval;
 }
 
@@ -344,18 +347,18 @@ int AndroidAudioRender::GetAndroidTrackFromAudioSpec()
     {
         case S_Android_AudioTrack_Spec::CHANNEL_OUT_MONO:
         {
-            //ULULOGI("Android_AudioTrack: %s", "CHANNEL_OUT_MONO");
+            ULULOGI("Android_AudioTrack: %s", "CHANNEL_OUT_MONO");
             break;			
         }
         case S_Android_AudioTrack_Spec::CHANNEL_OUT_STEREO:
         {
-            //ULULOGI("Android_AudioTrack: %s", "CHANNEL_OUT_STEREO");
+            ULULOGI("Android_AudioTrack: %s", "CHANNEL_OUT_STEREO");
             break;
         }
 
         default:
         {
-            //ULULOGI("Android_AudioTrack_new_from_spec: invalid channel %d", m_sAndroidAudioSpec.channel_config);
+            ULULOGI("Android_AudioTrack_new_from_spec: invalid channel %d", m_sAndroidAudioSpec.channel_config);
             return -1;			
         }
     }
@@ -364,17 +367,17 @@ int AndroidAudioRender::GetAndroidTrackFromAudioSpec()
     {
         case S_Android_AudioTrack_Spec::ENCODING_PCM_16BIT:
         {
-            //ULULOGI("Android_AudioTrack: %s", "ENCODING_PCM_16BIT");
+            ULULOGI("Android_AudioTrack: %s", "ENCODING_PCM_16BIT");
             break;	
         }
         case S_Android_AudioTrack_Spec::ENCODING_PCM_8BIT:
         {
-            //ULULOGI("Android_AudioTrack: %s", "ENCODING_PCM_8BIT");
+            ULULOGI("Android_AudioTrack: %s", "ENCODING_PCM_8BIT");
             break;
         }
         default:
         {
-            //ULULOGI("SDL_Android_AudioTrack_new_from_spec: invalid format %d", m_sAndroidAudioSpec.audio_format);
+           ULULOGI("SDL_Android_AudioTrack_new_from_spec: invalid format %d", m_sAndroidAudioSpec.audio_format);
             return -1;
         }
     }
@@ -391,7 +394,7 @@ int AndroidAudioRender::GetAndroidTrackFromAudioSpec()
     (int) m_sAndroidAudioTrack.spec.mode);
     if (!thiz || pEnv->ExceptionCheck()) 
     {
-        //ULULOGI("Android_AudioTrack_new: NewObject: Exception:");
+        ULULOGI("Android_AudioTrack_new: NewObject: Exception:");
         if (pEnv->ExceptionCheck()) 
         {
             pEnv->ExceptionDescribe();
@@ -412,7 +415,7 @@ int AndroidAudioRender::GetAndroidTrackFromAudioSpec()
         m_sAndroidAudioTrack.min_volume = fRetVal;		
     }
 
-	//ULULOGI("the min volume:%f, the max volume:%f", m_sAndroidAudioTrack.min_volume, m_sAndroidAudioTrack.max_volume);
+	ULULOGI("the min volume:%f, the max volume:%f", m_sAndroidAudioTrack.min_volume, m_sAndroidAudioTrack.max_volume);
     m_sAndroidAudioTrack.thiz = pEnv->NewGlobalRef(thiz);
     pEnv->DeleteLocalRef(thiz);
     return 0;
@@ -426,11 +429,11 @@ bool  AndroidAudioRender::AudiotrackGetMaxVolume(float&  fMaxVolume)
         return false;
     }
 
-    //ULULOGI("audiotrack_get_max_volume");
+    ULULOGI("audiotrack_get_max_volume");
     float retval = pEnv->CallStaticFloatMethod(m_sAndroidAudioFields.clazz, m_sAndroidAudioFields.getMaxVolume);
     if (pEnv->ExceptionCheck()) 
     {
-        //ULULOGI("audiotrack_get_max_volume: getMaxVolume: Exception:");
+        ULULOGI("audiotrack_get_max_volume: getMaxVolume: Exception:");
         pEnv->ExceptionDescribe();
         pEnv->ExceptionClear();
         return false;
@@ -448,11 +451,11 @@ bool  AndroidAudioRender::AudiotrackGetMinVolume(float&  fMinVolume)
         return false;
     }
     
-    //ULULOGI("audiotrack_get_min_volume");
+    ULULOGI("audiotrack_get_min_volume");
     float retval = pEnv->CallStaticFloatMethod(m_sAndroidAudioFields.clazz, m_sAndroidAudioFields.getMinVolume);
     if (pEnv->ExceptionCheck()) 
     {
-        //ULULOGI("audiotrack_get_min_volume: getMinVolume: Exception:");
+        ULULOGI("audiotrack_get_min_volume: getMinVolume: Exception:");
         pEnv->ExceptionDescribe();
         pEnv->ExceptionClear();
         return false;
@@ -483,10 +486,11 @@ int  AndroidAudioRender::GetReserveBuffer(unsigned int ulDataSize)
     }
 
     int capacity = ULUMAX(ulDataSize, m_sAndroidAudioTrack.min_buffer_size);
+	ULULOGI("Android_AudioTrack_reserve_buffer capacity =%d",capacity);
     jbyteArray buffer = pEnv->NewByteArray(capacity);
     if (!buffer || pEnv->ExceptionCheck()) 
     {
-        //ULULOGI("Android_AudioTrack_reserve_buffer: NewByteArray: Exception:");
+        ULULOGI("Android_AudioTrack_reserve_buffer: NewByteArray: Exception:");
         if (pEnv->ExceptionCheck()) 
         {
             pEnv->ExceptionDescribe();
@@ -531,12 +535,12 @@ int AndroidAudioRender::SetVolume(int iVolume)
 
 	fVolumeInput = (((float)iVolumeInPer)/100.0)*(m_sAndroidAudioTrack.max_volume-m_sAndroidAudioTrack.min_volume)+ m_sAndroidAudioTrack.min_volume;
 
-	//ULULOGI("Set the Volume value:%f", fVolumeInput);
+	ULULOGI("Set the Volume value:%f", fVolumeInput);
 
 	retval = pEnv->CallIntMethod(m_sAndroidAudioTrack.thiz, m_sAndroidAudioFields.setStereoVolume, fVolumeInput, fVolumeInput);
 	if (pEnv->ExceptionCheck()) 
 	{
-		//ULULOGI("audiotrack_set_stereo_volume: write_byte: Exception:");
+		ULULOGI("audiotrack_set_stereo_volume: write_byte: Exception:");
 		if (pEnv->ExceptionCheck()) 
 		{
 			pEnv->ExceptionDescribe();
@@ -545,7 +549,7 @@ int AndroidAudioRender::SetVolume(int iVolume)
 		return -1;
 	}
 
-	//ULULOGI("Set the Volume value done");
+	ULULOGI("Set the Volume value done");
 	m_iCurVolumeInPer = iVolumeInPer;
 	return 0;
 }
@@ -566,7 +570,7 @@ int AndroidAudioRender::GetLatency(){
 	int latency = pEnv->CallIntMethod(m_sAndroidAudioTrack.thiz, m_sAndroidAudioFields.getLatency);
 	if (pEnv->ExceptionCheck()) 
 	{
-		//ULULOGI("SDL_Android_AudioTrack_getLatency: getLatency: Exception:");
+		ULULOGI("SDL_Android_AudioTrack_getLatency: getLatency: Exception:");
 		if (pEnv->ExceptionCheck()) 
 		{
 			pEnv->ExceptionDescribe();
@@ -584,11 +588,11 @@ int  AndroidAudioRender::AndroidAudioTrackRelease()
         return -1;
     }
 
-    //ULULOGI("Android_AudioTrack_release");
+    ULULOGI("Android_AudioTrack_release");
     pEnv->CallVoidMethod(m_sAndroidAudioTrack.thiz, m_sAndroidAudioFields.release);
     if (pEnv->ExceptionCheck()) 
     {
-        //ULULOGI("Android_AudioTrack_release: release: Exception:");
+        ULULOGI("Android_AudioTrack_release: release: Exception:");
         pEnv->ExceptionDescribe();
         pEnv->ExceptionClear();
         return -1;
@@ -629,16 +633,17 @@ JNIEnv*  AndroidAudioRender::GetJNIEnv()
 
     if(m_pJVM == NULL)
     {
-        //ULULOGI("JVM is NULL");
+        ULULOGI("JVM is NULL");
         return NULL;
     }
 
     pJava_vm = (JavaVM *)m_pJVM;
+	ULULOGI("JavaVM =%d",pJava_vm);
     if(m_pJEnv == NULL)
     {
         pJava_vm->AttachCurrentThread(&pEnv,NULL);
         m_pJEnv = (void*)pEnv;
-        //ULULOGI("Get m_pJEnv value");
+        ULULOGI("Get m_pJEnv value");
     }
 
     pEnv = (JNIEnv *)m_pJEnv;	

@@ -1,4 +1,6 @@
 #include "AYMediaPlayer.h"
+#include "ulu_log.h"
+#include <jni.h>
 AYMEDIAPLAYER_SDK_API bool createMediaPlayerInstance(MediaPlayerInitParam * pInitParam, IAYMediaPlayer ** ppiMediaPlayer){
 
 	CAYMediaPlayer *pMediaPlayer =  new CAYMediaPlayer();
@@ -90,7 +92,9 @@ int CAYMediaPlayer::pause()
 	if (m_bIsPauseFlag == false)
 	{
 		m_bIsPauseFlag = true;
+
 	}
+	m_bIsPauseFlag =false;
 	return 0;
 }
 
@@ -219,16 +223,13 @@ int CAYMediaPlayer::getParam(unsigned int uParamId, void * pParam)
 	return 0;
 }
 
-
-
-
 int CAYMediaPlayer::SetMediaPlayerInitParam(MediaPlayerInitParam *pPlayerInitParam)
 {
 	m_pMediaPlayInitParam =pPlayerInitParam;
 	return 0;
 }
 
-#define DUMP_FILE
+//#define DUMP_FILE
 #ifdef DUMP_FILE
 FILE *outFile = fopen("out.pcm","wb");
 FILE *stereFile = fopen("stereo.pcm","wb");
@@ -237,21 +238,28 @@ void CAYMediaPlayer::functionAudioThread()
 {
 	void* pSourceFunc=NULL;
 	void * pUserDate=NULL;
-	int iRetValue= 0;
-	unsigned char* pTempPcmData = NULL;
-	unsigned int nPrePcmTimestamp = -1;
-	unsigned int nPrePcmDuration = 0;
 	unsigned char *recordBuffer = (unsigned char*)malloc(m_iRecordStepSize);
 	unsigned char *backGroudBuffer =(unsigned char*)malloc(m_iBackGroudStepSize);
 	unsigned int recoderReadPos=0;
 	unsigned int backGroudReadPos=0;
-	unsigned short*temp=NULL;;
+	unsigned short*temp=NULL;
 	while(m_bAudioRunningFlag){
 		int read=0;
-		int readCout =0;
+		int recordCout=0;
 		int accoCount =0;
+		if (m_pAudioRender==NULL)
+		{
+			int ret = createAudioRender(m_sBackGroudAudioFormat);
+			if (ret!=0)
+			{
+				ulu_OS_Sleep(10);
+				continue;
+			}
+		}
+		//read from recorder
 		if (m_pRecodReader!=NULL)
 		{
+
 			read=m_pRecodReader->Read(recordBuffer,recoderReadPos,m_iRecordStepSize);
 			recoderReadPos+=read;
 			if (read< 0)
@@ -262,31 +270,43 @@ void CAYMediaPlayer::functionAudioThread()
 			if (m_sRecordAudioFormat.nChannels==1)
 			{
 				int size =read/2;
-				readCout = size*2;
-				temp = (unsigned short*)malloc(readCout*sizeof(unsigned short));
+				recordCout = size*2;
+				temp = (unsigned short*)malloc(recordCout*sizeof(unsigned short));
 				mono2stereo((short*)temp,(short*)recordBuffer,size);
-
 #ifdef DUMP_FILE
 				fwrite(temp,2,readCout,stereFile);
 #endif
+			}else{
+				recordCout =read/2;
+				temp =(unsigned short*)recordBuffer;
 			}
 		}
 
+
+		// read from backgroud
 		if (m_pBackgroudReader!=NULL)
 		{
 			read=m_pBackgroudReader->Read(backGroudBuffer,backGroudReadPos,m_iBackGroudStepSize);
 			backGroudReadPos+=read;
 			accoCount = read/2;
+			if (read<0)
+			{
+				break;
+			}
+
 		}
-		if (read<0)
-		{
-			break;
-		}
-		int mixSize =(readCout>accoCount)?accoCount:readCout;
+
+		//mix audio
+		int mixSize =(recordCout>accoCount)?accoCount:recordCout;
 		mixSize = mixSize*2;
 		char*out =(char*)malloc(mixSize);
 		memset(out,0,mixSize);
 		mixAudio(out,(char*)temp,(char*)backGroudBuffer,mixSize);
+		ULULOGI("mix size =%d",mixSize);
+		if (mixSize>0&&m_bIsNeedRender ==true)
+		{
+			audio_render_frame((unsigned char*)out,mixSize,0);
+		}
 #ifdef DUMP_FILE
 		fwrite(out,1,mixSize,outFile);
 #endif
@@ -416,11 +436,6 @@ static inline short clamp16(long sample)
 
 
 int CAYMediaPlayer::mono2stereo(short*pDstBuffer,short*pSrcBuffer,int inSize){    
-	/*	unsigned short szBuf[4096];       
-	unsigned short *pst = (unsigned short*)pData;    
-	memset(szBuf, 0, sizeof(szBuf));    
-	memcpy(szBuf, pData, nSize);  */  
-
 	if (pDstBuffer==NULL||pSrcBuffer==NULL)
 	{
 		return -1;
