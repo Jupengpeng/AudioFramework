@@ -53,7 +53,7 @@
 #endif
 
 #ifndef FILE_PATH_MAX_LENGTH
-#define FILE_PATH_MAX_LENGTH 128
+#define FILE_PATH_MAX_LENGTH 1024
 #endif
 
 #ifndef TTASSERT

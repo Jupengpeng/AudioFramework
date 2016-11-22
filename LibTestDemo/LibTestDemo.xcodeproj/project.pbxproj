@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B87424351DD87CDD0031AC77 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B87424341DD87CDD0031AC77 /* main.m */; };
+		B87424381DD87CDD0031AC77 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = B87424371DD87CDD0031AC77 /* AppDelegate.mm */; };
+		B874243B1DD87CDD0031AC77 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B874243A1DD87CDD0031AC77 /* ViewController.mm */; };
+		B874243E1DD87CDD0031AC77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B874243C1DD87CDD0031AC77 /* Main.storyboard */; };
+		B87424401DD87CDD0031AC77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B874243F1DD87CDD0031AC77 /* Assets.xcassets */; };
+		B87424431DD87CDD0031AC77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B87424411DD87CDD0031AC77 /* LaunchScreen.storyboard */; };
+		B87424521DD87E5B0031AC77 /* Omi,AronChupa-Drop In the Ocean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B87424511DD87E5B0031AC77 /* Omi,AronChupa-Drop In the Ocean.mp3 */; };
+		B87DB12C1DDA9D760013DE06 /* NSString+NSMD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = B87DB12B1DDA9D760013DE06 /* NSString+NSMD5Addition.m */; };
+		B88D8DC21DDC08FF0070EFD3 /* YCiOSPlayerLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88D8DC11DDC08FA0070EFD3 /* YCiOSPlayerLib.framework */; };
+		B88D8DC31DDC09080070EFD3 /* YCiOSPlayerLib.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B88D8DC11DDC08FA0070EFD3 /* YCiOSPlayerLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B88D8DC41DDC0A260070EFD3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88FBBAE1DDBFB65000CFB0B /* MediaPlayer.framework */; };
+		B88FBBAD1DDBF9BF000CFB0B /* smilgaki.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B88FBBAC1DDBF9BF000CFB0B /* smilgaki.jpg */; };
+		B8A5CC621DD958D700B68632 /* YCMusicPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8A5CC611DD958D700B68632 /* YCMusicPlayer.mm */; };
+		B8A5CC641DD9B19700B68632 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A5CC631DD9B19700B68632 /* CoreMedia.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B88D8DC01DDC08FA0070EFD3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B88D8DBC1DDC08FA0070EFD3 /* YCiOSPlayerLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B87420FF1DD871B30031AC77;
+			remoteInfo = YCiOSPlayerLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B874244F1DD87DDA0031AC77 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B88D8DC31DDC09080070EFD3 /* YCiOSPlayerLib.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B87424301DD87CDD0031AC77 /* LibTestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LibTestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B87424341DD87CDD0031AC77 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B87424361DD87CDD0031AC77 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B87424371DD87CDD0031AC77 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		B87424391DD87CDD0031AC77 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B874243A1DD87CDD0031AC77 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		B874243D1DD87CDD0031AC77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B874243F1DD87CDD0031AC77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B87424421DD87CDD0031AC77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B87424441DD87CDD0031AC77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B87424511DD87E5B0031AC77 /* Omi,AronChupa-Drop In the Ocean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Omi,AronChupa-Drop In the Ocean.mp3"; sourceTree = "<group>"; };
+		B87DB12A1DDA9D760013DE06 /* NSString+NSMD5Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSMD5Addition.h"; sourceTree = "<group>"; };
+		B87DB12B1DDA9D760013DE06 /* NSString+NSMD5Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSMD5Addition.m"; sourceTree = "<group>"; };
+		B88D8DBC1DDC08FA0070EFD3 /* YCiOSPlayerLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YCiOSPlayerLib.xcodeproj; path = ../YCiOSPlayerLib/YCiOSPlayerLib.xcodeproj; sourceTree = "<group>"; };
+		B88FBBAC1DDBF9BF000CFB0B /* smilgaki.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = smilgaki.jpg; path = ../../../../Desktop/smilgaki.jpg; sourceTree = "<group>"; };
+		B88FBBAE1DDBFB65000CFB0B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		B8A5CC601DD958D700B68632 /* YCMusicPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCMusicPlayer.h; sourceTree = "<group>"; };
+		B8A5CC611DD958D700B68632 /* YCMusicPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = YCMusicPlayer.mm; sourceTree = "<group>"; };
+		B8A5CC631DD9B19700B68632 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B874242D1DD87CDD0031AC77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B88D8DC41DDC0A260070EFD3 /* MediaPlayer.framework in Frameworks */,
+				B88D8DC21DDC08FF0070EFD3 /* YCiOSPlayerLib.framework in Frameworks */,
+				B8A5CC641DD9B19700B68632 /* CoreMedia.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B87424271DD87CDD0031AC77 = {
+			isa = PBXGroup;
+			children = (
+				B88D8DBC1DDC08FA0070EFD3 /* YCiOSPlayerLib.xcodeproj */,
+				B87424321DD87CDD0031AC77 /* LibTestDemo */,
+				B87424311DD87CDD0031AC77 /* Products */,
+				B874244A1DD87CF50031AC77 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B87424311DD87CDD0031AC77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B87424301DD87CDD0031AC77 /* LibTestDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B87424321DD87CDD0031AC77 /* LibTestDemo */ = {
+			isa = PBXGroup;
+			children = (
+				B88FBBAC1DDBF9BF000CFB0B /* smilgaki.jpg */,
+				B87DB12A1DDA9D760013DE06 /* NSString+NSMD5Addition.h */,
+				B87DB12B1DDA9D760013DE06 /* NSString+NSMD5Addition.m */,
+				B8A5CC601DD958D700B68632 /* YCMusicPlayer.h */,
+				B8A5CC611DD958D700B68632 /* YCMusicPlayer.mm */,
+				B87424511DD87E5B0031AC77 /* Omi,AronChupa-Drop In the Ocean.mp3 */,
+				B87424361DD87CDD0031AC77 /* AppDelegate.h */,
+				B87424371DD87CDD0031AC77 /* AppDelegate.mm */,
+				B87424391DD87CDD0031AC77 /* ViewController.h */,
+				B874243A1DD87CDD0031AC77 /* ViewController.mm */,
+				B874243C1DD87CDD0031AC77 /* Main.storyboard */,
+				B874243F1DD87CDD0031AC77 /* Assets.xcassets */,
+				B87424411DD87CDD0031AC77 /* LaunchScreen.storyboard */,
+				B87424441DD87CDD0031AC77 /* Info.plist */,
+				B87424331DD87CDD0031AC77 /* Supporting Files */,
+			);
+			path = LibTestDemo;
+			sourceTree = "<group>";
+		};
+		B87424331DD87CDD0031AC77 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B87424341DD87CDD0031AC77 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B874244A1DD87CF50031AC77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B88FBBAE1DDBFB65000CFB0B /* MediaPlayer.framework */,
+				B8A5CC631DD9B19700B68632 /* CoreMedia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B88D8DBD1DDC08FA0070EFD3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B88D8DC11DDC08FA0070EFD3 /* YCiOSPlayerLib.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B874242F1DD87CDD0031AC77 /* LibTestDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B87424471DD87CDD0031AC77 /* Build configuration list for PBXNativeTarget "LibTestDemo" */;
+			buildPhases = (
+				B874242C1DD87CDD0031AC77 /* Sources */,
+				B874242D1DD87CDD0031AC77 /* Frameworks */,
+				B874242E1DD87CDD0031AC77 /* Resources */,
+				B874244F1DD87DDA0031AC77 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LibTestDemo;
+			productName = LibTestDemo;
+			productReference = B87424301DD87CDD0031AC77 /* LibTestDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B87424281DD87CDD0031AC77 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = yintao;
+				TargetAttributes = {
+					B874242F1DD87CDD0031AC77 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 62UDHM98C2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = B874242B1DD87CDD0031AC77 /* Build configuration list for PBXProject "LibTestDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B87424271DD87CDD0031AC77;
+			productRefGroup = B87424311DD87CDD0031AC77 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B88D8DBD1DDC08FA0070EFD3 /* Products */;
+					ProjectRef = B88D8DBC1DDC08FA0070EFD3 /* YCiOSPlayerLib.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				B874242F1DD87CDD0031AC77 /* LibTestDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B88D8DC11DDC08FA0070EFD3 /* YCiOSPlayerLib.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = YCiOSPlayerLib.framework;
+			remoteRef = B88D8DC01DDC08FA0070EFD3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B874242E1DD87CDD0031AC77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B87424431DD87CDD0031AC77 /* LaunchScreen.storyboard in Resources */,
+				B87424401DD87CDD0031AC77 /* Assets.xcassets in Resources */,
+				B88FBBAD1DDBF9BF000CFB0B /* smilgaki.jpg in Resources */,
+				B874243E1DD87CDD0031AC77 /* Main.storyboard in Resources */,
+				B87424521DD87E5B0031AC77 /* Omi,AronChupa-Drop In the Ocean.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B874242C1DD87CDD0031AC77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8A5CC621DD958D700B68632 /* YCMusicPlayer.mm in Sources */,
+				B874243B1DD87CDD0031AC77 /* ViewController.mm in Sources */,
+				B87DB12C1DDA9D760013DE06 /* NSString+NSMD5Addition.m in Sources */,
+				B87424381DD87CDD0031AC77 /* AppDelegate.mm in Sources */,
+				B87424351DD87CDD0031AC77 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B874243C1DD87CDD0031AC77 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B874243D1DD87CDD0031AC77 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B87424411DD87CDD0031AC77 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B87424421DD87CDD0031AC77 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B87424451DD87CDD0031AC77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B87424461DD87CDD0031AC77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B87424481DD87CDD0031AC77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 62UDHM98C2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LibTestDemo",
+				);
+				INFOPLIST_FILE = LibTestDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yintao.wybz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B87424491DD87CDD0031AC77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 62UDHM98C2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LibTestDemo",
+				);
+				INFOPLIST_FILE = LibTestDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yintao.wybz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B874242B1DD87CDD0031AC77 /* Build configuration list for PBXProject "LibTestDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B87424451DD87CDD0031AC77 /* Debug */,
+				B87424461DD87CDD0031AC77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B87424471DD87CDD0031AC77 /* Build configuration list for PBXNativeTarget "LibTestDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B87424481DD87CDD0031AC77 /* Debug */,
+				B87424491DD87CDD0031AC77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B87424281DD87CDD0031AC77 /* Project object */;
+}

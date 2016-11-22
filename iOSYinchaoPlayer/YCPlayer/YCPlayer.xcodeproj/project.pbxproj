@@ -15,35 +15,35 @@
 		B81D33631DC348CF0076EA18 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B81D33621DC348CF0076EA18 /* CoreVideo.framework */; };
 		B81D33651DC349170076EA18 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B81D33641DC349170076EA18 /* QuartzCore.framework */; };
 		B81D33671DC349450076EA18 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B81D33661DC349450076EA18 /* OpenGLES.framework */; };
-		B8511A261DC82EC900462222 /* ttAACDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119F41DC82EC900462222 /* ttAACDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A271DC82EC900462222 /* ttALACDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119F51DC82EC900462222 /* ttALACDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A281DC82EC900462222 /* ttAMRDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119F61DC82EC900462222 /* ttAMRDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A291DC82EC900462222 /* ttAPEDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119F71DC82EC900462222 /* ttAPEDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A2A1DC82EC900462222 /* ttClConv.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119F81DC82EC900462222 /* ttClConv.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A2B1DC82EC900462222 /* ttDTSDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119F91DC82EC900462222 /* ttDTSDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A2C1DC82EC900462222 /* ttFLACDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119FA1DC82EC900462222 /* ttFLACDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A2D1DC82EC900462222 /* ttHWVideoDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119FB1DC82EC900462222 /* ttHWVideoDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A2E1DC82EC900462222 /* ttIosHwVideoDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119FC1DC82EC900462222 /* ttIosHwVideoDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A2F1DC82EC900462222 /* ttIpodDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119FD1DC82EC900462222 /* ttIpodDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A301DC82EC900462222 /* ttMediaCodecJDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119FE1DC82EC900462222 /* ttMediaCodecJDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8511A261DC82EC900462222 /* ttAACDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119F41DC82EC900462222 /* ttAACDec.h */; };
+		B8511A271DC82EC900462222 /* ttALACDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119F51DC82EC900462222 /* ttALACDec.h */; };
+		B8511A281DC82EC900462222 /* ttAMRDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119F61DC82EC900462222 /* ttAMRDec.h */; };
+		B8511A291DC82EC900462222 /* ttAPEDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119F71DC82EC900462222 /* ttAPEDec.h */; };
+		B8511A2A1DC82EC900462222 /* ttClConv.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119F81DC82EC900462222 /* ttClConv.h */; };
+		B8511A2B1DC82EC900462222 /* ttDTSDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119F91DC82EC900462222 /* ttDTSDec.h */; };
+		B8511A2C1DC82EC900462222 /* ttFLACDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119FA1DC82EC900462222 /* ttFLACDec.h */; };
+		B8511A2D1DC82EC900462222 /* ttHWVideoDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119FB1DC82EC900462222 /* ttHWVideoDec.h */; };
+		B8511A2E1DC82EC900462222 /* ttIosHwVideoDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119FC1DC82EC900462222 /* ttIosHwVideoDec.h */; };
+		B8511A2F1DC82EC900462222 /* ttIpodDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119FD1DC82EC900462222 /* ttIpodDec.h */; };
+		B8511A301DC82EC900462222 /* ttMediaCodecJDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119FE1DC82EC900462222 /* ttMediaCodecJDec.h */; };
 		B8511A311DC82EC900462222 /* ttMP3Dec.h in Headers */ = {isa = PBXBuildFile; fileRef = B85119FF1DC82EC900462222 /* ttMP3Dec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A321DC82EC900462222 /* ttVideoDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A001DC82EC900462222 /* ttVideoDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A331DC82EC900462222 /* TTVideoPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A011DC82EC900462222 /* TTVideoPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A341DC82EC900462222 /* ttWMADec.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A021DC82EC900462222 /* ttWMADec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8511A321DC82EC900462222 /* ttVideoDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A001DC82EC900462222 /* ttVideoDec.h */; };
+		B8511A331DC82EC900462222 /* TTVideoPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A011DC82EC900462222 /* TTVideoPlugin.h */; };
+		B8511A341DC82EC900462222 /* ttWMADec.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A021DC82EC900462222 /* ttWMADec.h */; };
 		B8511A351DC82EC900462222 /* TTAudioPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A031DC82EC900462222 /* TTAudioPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8511A361DC82EC900462222 /* TTAudioPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8511A041DC82EC900462222 /* TTAudioPlugin.cpp */; };
 		B8511A371DC82EC900462222 /* TTMediaPlayerItf.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A051DC82EC900462222 /* TTMediaPlayerItf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8511A381DC82EC900462222 /* TTAudioSink.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8511A061DC82EC900462222 /* TTAudioSink.mm */; };
-		B8511A391DC82EC900462222 /* TTGLRenderBase.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A071DC82EC900462222 /* TTGLRenderBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8511A391DC82EC900462222 /* TTGLRenderBase.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A071DC82EC900462222 /* TTGLRenderBase.h */; };
 		B8511A3A1DC82EC900462222 /* TTGLRenderBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8511A081DC82EC900462222 /* TTGLRenderBase.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B8511A3B1DC82EC900462222 /* TTGLRenderES2_FTU.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A091DC82EC900462222 /* TTGLRenderES2_FTU.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8511A3B1DC82EC900462222 /* TTGLRenderES2_FTU.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A091DC82EC900462222 /* TTGLRenderES2_FTU.h */; };
 		B8511A3C1DC82EC900462222 /* TTGLRenderES2_FTU.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8511A0A1DC82EC900462222 /* TTGLRenderES2_FTU.mm */; };
-		B8511A3D1DC82EC900462222 /* TTGLRenderES2.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A0B1DC82EC900462222 /* TTGLRenderES2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8511A3D1DC82EC900462222 /* TTGLRenderES2.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A0B1DC82EC900462222 /* TTGLRenderES2.h */; };
 		B8511A3E1DC82EC900462222 /* TTGLRenderES2.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8511A0C1DC82EC900462222 /* TTGLRenderES2.mm */; };
 		B8511A3F1DC82EC900462222 /* TTMediaPlayerProxy.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8511A0D1DC82EC900462222 /* TTMediaPlayerProxy.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B8511A401DC82EC900462222 /* TTMediaPlayerWarp.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8511A0E1DC82EC900462222 /* TTMediaPlayerWarp.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B8511A411DC82EC900462222 /* TTPlayerInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A0F1DC82EC900462222 /* TTPlayerInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A421DC82EC900462222 /* TTVideoView.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A101DC82EC900462222 /* TTVideoView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8511A421DC82EC900462222 /* TTVideoView.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A101DC82EC900462222 /* TTVideoView.h */; };
 		B8511A431DC82EC900462222 /* TTVideoView.mm in Sources */ = {isa = PBXBuildFile; fileRef = B8511A111DC82EC900462222 /* TTVideoView.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B8511A441DC82EC900462222 /* PureDecodeEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8511A121DC82EC900462222 /* PureDecodeEntity.cpp */; };
 		B8511A451DC82EC900462222 /* TTAudioDecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8511A131DC82EC900462222 /* TTAudioDecode.cpp */; };
@@ -52,18 +52,20 @@
 		B8511A481DC82EC900462222 /* TTMediaPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8511A161DC82EC900462222 /* TTMediaPlayer.cpp */; };
 		B8511A491DC82EC900462222 /* TTMediaPlayerFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8511A171DC82EC900462222 /* TTMediaPlayerFactory.cpp */; };
 		B8511A4A1DC82EC900462222 /* TTSrcDemux.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8511A181DC82EC900462222 /* TTSrcDemux.cpp */; };
-		B8511A4B1DC82EC900462222 /* TTFFT.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A191DC82EC900462222 /* TTFFT.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8511A4B1DC82EC900462222 /* TTFFT.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A191DC82EC900462222 /* TTFFT.h */; };
 		B8511A4C1DC82EC900462222 /* TTFFT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B8511A1A1DC82EC900462222 /* TTFFT.cpp */; };
 		B8511A4D1DC82EC900462222 /* TTAudioSink.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A1B1DC82EC900462222 /* TTAudioSink.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8511A4E1DC82EC900462222 /* TTMediaPlayerProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A1C1DC82EC900462222 /* TTMediaPlayerProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8511A4F1DC82EC900462222 /* TTMediaPlayerWarp.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A1D1DC82EC900462222 /* TTMediaPlayerWarp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A501DC82EC900462222 /* PureDecodeEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A1E1DC82EC900462222 /* PureDecodeEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8511A501DC82EC900462222 /* PureDecodeEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A1E1DC82EC900462222 /* PureDecodeEntity.h */; };
 		B8511A511DC82EC900462222 /* TTAudioDecode.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A1F1DC82EC900462222 /* TTAudioDecode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8511A521DC82EC900462222 /* TTAudioProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A201DC82EC900462222 /* TTAudioProcess.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8511A531DC82EC900462222 /* TTBaseAudioSink.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A211DC82EC900462222 /* TTBaseAudioSink.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A541DC82EC900462222 /* TTBaseDataSink.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A221DC82EC900462222 /* TTBaseDataSink.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8511A551DC82EC900462222 /* TTMediaPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A231DC82EC900462222 /* TTMediaPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8511A541DC82EC900462222 /* TTBaseDataSink.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A221DC82EC900462222 /* TTBaseDataSink.h */; };
+		B8511A551DC82EC900462222 /* TTMediaPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A231DC82EC900462222 /* TTMediaPlayer.h */; };
 		B8511A561DC82EC900462222 /* TTSrcDemux.h in Headers */ = {isa = PBXBuildFile; fileRef = B8511A241DC82EC900462222 /* TTSrcDemux.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87420531DD854FD0031AC77 /* YCPlayer.h in Sources */ = {isa = PBXBuildFile; fileRef = B87420521DD854000031AC77 /* YCPlayer.h */; };
+		B87420541DD8553E0031AC77 /* YCPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B87420521DD854000031AC77 /* YCPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8829D8A1DC36D6C00A675D6 /* libc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B8829D891DC36D6C00A675D6 /* libc.tbd */; };
 		B89F686E1DC751B500D5B156 /* YCAudioDecoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89F686A1DC751B500D5B156 /* YCAudioDecoder.framework */; };
 		B89F686F1DC751B500D5B156 /* YCInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B89F686B1DC751B500D5B156 /* YCInfo.framework */; };
@@ -142,6 +144,7 @@
 		B8511A221DC82EC900462222 /* TTBaseDataSink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTBaseDataSink.h; path = "../../Yinchao-NewPlayer/media/player/inc/TTBaseDataSink.h"; sourceTree = "<group>"; };
 		B8511A231DC82EC900462222 /* TTMediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMediaPlayer.h; path = "../../Yinchao-NewPlayer/media/player/inc/TTMediaPlayer.h"; sourceTree = "<group>"; };
 		B8511A241DC82EC900462222 /* TTSrcDemux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTSrcDemux.h; path = "../../Yinchao-NewPlayer/media/player/inc/TTSrcDemux.h"; sourceTree = "<group>"; };
+		B87420521DD854000031AC77 /* YCPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YCPlayer.h; sourceTree = "<group>"; };
 		B8829D891DC36D6C00A675D6 /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = usr/lib/libc.tbd; sourceTree = SDKROOT; };
 		B89F686A1DC751B500D5B156 /* YCAudioDecoder.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YCAudioDecoder.framework; path = "../../../../Library/Developer/Xcode/DerivedData/YCiOSPlayer-frrrcxngyoayzjghudpwstfnresz/Build/Products/Debug-iphonesimulator/YCAudioDecoder.framework"; sourceTree = "<group>"; };
 		B89F686B1DC751B500D5B156 /* YCInfo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YCInfo.framework; path = "../../../../Library/Developer/Xcode/DerivedData/YCiOSPlayer-frrrcxngyoayzjghudpwstfnresz/Build/Products/Debug-iphonesimulator/YCInfo.framework"; sourceTree = "<group>"; };
@@ -176,17 +179,44 @@
 		B81D32011DC3334B0076EA18 = {
 			isa = PBXGroup;
 			children = (
-				B85119F41DC82EC900462222 /* ttAACDec.h */,
-				B85119F51DC82EC900462222 /* ttALACDec.h */,
-				B85119F61DC82EC900462222 /* ttAMRDec.h */,
-				B85119F71DC82EC900462222 /* ttAPEDec.h */,
-				B85119F81DC82EC900462222 /* ttClConv.h */,
-				B85119F91DC82EC900462222 /* ttDTSDec.h */,
-				B85119FA1DC82EC900462222 /* ttFLACDec.h */,
-				B85119FB1DC82EC900462222 /* ttHWVideoDec.h */,
-				B85119FC1DC82EC900462222 /* ttIosHwVideoDec.h */,
-				B85119FD1DC82EC900462222 /* ttIpodDec.h */,
-				B85119FE1DC82EC900462222 /* ttMediaCodecJDec.h */,
+				B87420521DD854000031AC77 /* YCPlayer.h */,
+				B87420511DD853C50031AC77 /* contentFile */,
+				B81D320C1DC3334B0076EA18 /* Products */,
+				B81D32F11DC33B0D0076EA18 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B81D320C1DC3334B0076EA18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B81D320B1DC3334B0076EA18 /* YCPlayer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B81D32F11DC33B0D0076EA18 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B89F686A1DC751B500D5B156 /* YCAudioDecoder.framework */,
+				B89F686B1DC751B500D5B156 /* YCInfo.framework */,
+				B89F686C1DC751B500D5B156 /* YCMP3Dec.framework */,
+				B89F686D1DC751B500D5B156 /* YCOsal.framework */,
+				B8829D891DC36D6C00A675D6 /* libc.tbd */,
+				B81D33661DC349450076EA18 /* OpenGLES.framework */,
+				B81D33641DC349170076EA18 /* QuartzCore.framework */,
+				B81D33621DC348CF0076EA18 /* CoreVideo.framework */,
+				B81D33601DC348900076EA18 /* CoreTelephony.framework */,
+				B81D32F81DC33B3C0076EA18 /* UIKit.framework */,
+				B81D32F61DC33B1C0076EA18 /* CoreMedia.framework */,
+				B81D32F41DC33B140076EA18 /* AVFoundation.framework */,
+				B81D32F21DC33B0E0076EA18 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B87420511DD853C50031AC77 /* contentFile */ = {
+			isa = PBXGroup;
+			children = (
 				B85119FF1DC82EC900462222 /* ttMP3Dec.h */,
 				B8511A001DC82EC900462222 /* ttVideoDec.h */,
 				B8511A011DC82EC900462222 /* TTVideoPlugin.h */,
@@ -225,37 +255,19 @@
 				B8511A221DC82EC900462222 /* TTBaseDataSink.h */,
 				B8511A231DC82EC900462222 /* TTMediaPlayer.h */,
 				B8511A241DC82EC900462222 /* TTSrcDemux.h */,
-				B81D320C1DC3334B0076EA18 /* Products */,
-				B81D32F11DC33B0D0076EA18 /* Frameworks */,
+				B85119F41DC82EC900462222 /* ttAACDec.h */,
+				B85119F51DC82EC900462222 /* ttALACDec.h */,
+				B85119F61DC82EC900462222 /* ttAMRDec.h */,
+				B85119F71DC82EC900462222 /* ttAPEDec.h */,
+				B85119F81DC82EC900462222 /* ttClConv.h */,
+				B85119F91DC82EC900462222 /* ttDTSDec.h */,
+				B85119FA1DC82EC900462222 /* ttFLACDec.h */,
+				B85119FB1DC82EC900462222 /* ttHWVideoDec.h */,
+				B85119FC1DC82EC900462222 /* ttIosHwVideoDec.h */,
+				B85119FD1DC82EC900462222 /* ttIpodDec.h */,
+				B85119FE1DC82EC900462222 /* ttMediaCodecJDec.h */,
 			);
-			sourceTree = "<group>";
-		};
-		B81D320C1DC3334B0076EA18 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B81D320B1DC3334B0076EA18 /* YCPlayer.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		B81D32F11DC33B0D0076EA18 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B89F686A1DC751B500D5B156 /* YCAudioDecoder.framework */,
-				B89F686B1DC751B500D5B156 /* YCInfo.framework */,
-				B89F686C1DC751B500D5B156 /* YCMP3Dec.framework */,
-				B89F686D1DC751B500D5B156 /* YCOsal.framework */,
-				B8829D891DC36D6C00A675D6 /* libc.tbd */,
-				B81D33661DC349450076EA18 /* OpenGLES.framework */,
-				B81D33641DC349170076EA18 /* QuartzCore.framework */,
-				B81D33621DC348CF0076EA18 /* CoreVideo.framework */,
-				B81D33601DC348900076EA18 /* CoreTelephony.framework */,
-				B81D32F81DC33B3C0076EA18 /* UIKit.framework */,
-				B81D32F61DC33B1C0076EA18 /* CoreMedia.framework */,
-				B81D32F41DC33B140076EA18 /* AVFoundation.framework */,
-				B81D32F21DC33B0E0076EA18 /* AudioToolbox.framework */,
-			);
-			name = Frameworks;
+			name = contentFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +279,16 @@
 			files = (
 				B8511A411DC82EC900462222 /* TTPlayerInterface.h in Headers */,
 				B8511A311DC82EC900462222 /* ttMP3Dec.h in Headers */,
-				B8511A4D1DC82EC900462222 /* TTAudioSink.h in Headers */,
+				B8511A351DC82EC900462222 /* TTAudioPlugin.h in Headers */,
+				B8511A511DC82EC900462222 /* TTAudioDecode.h in Headers */,
 				B8511A521DC82EC900462222 /* TTAudioProcess.h in Headers */,
 				B8511A561DC82EC900462222 /* TTSrcDemux.h in Headers */,
+				B8511A371DC82EC900462222 /* TTMediaPlayerItf.h in Headers */,
+				B8511A531DC82EC900462222 /* TTBaseAudioSink.h in Headers */,
+				B8511A4E1DC82EC900462222 /* TTMediaPlayerProxy.h in Headers */,
+				B8511A4F1DC82EC900462222 /* TTMediaPlayerWarp.h in Headers */,
+				B87420541DD8553E0031AC77 /* YCPlayer.h in Headers */,
+				B8511A4D1DC82EC900462222 /* TTAudioSink.h in Headers */,
 				B8511A301DC82EC900462222 /* ttMediaCodecJDec.h in Headers */,
 				B8511A391DC82EC900462222 /* TTGLRenderBase.h in Headers */,
 				B8511A2C1DC82EC900462222 /* ttFLACDec.h in Headers */,
@@ -283,20 +302,14 @@
 				B8511A331DC82EC900462222 /* TTVideoPlugin.h in Headers */,
 				B8511A2B1DC82EC900462222 /* ttDTSDec.h in Headers */,
 				B8511A291DC82EC900462222 /* ttAPEDec.h in Headers */,
-				B8511A4E1DC82EC900462222 /* TTMediaPlayerProxy.h in Headers */,
 				B8511A2D1DC82EC900462222 /* ttHWVideoDec.h in Headers */,
-				B8511A531DC82EC900462222 /* TTBaseAudioSink.h in Headers */,
-				B8511A4F1DC82EC900462222 /* TTMediaPlayerWarp.h in Headers */,
 				B8511A3D1DC82EC900462222 /* TTGLRenderES2.h in Headers */,
 				B8511A4B1DC82EC900462222 /* TTFFT.h in Headers */,
 				B8511A281DC82EC900462222 /* ttAMRDec.h in Headers */,
 				B8511A541DC82EC900462222 /* TTBaseDataSink.h in Headers */,
 				B8511A2E1DC82EC900462222 /* ttIosHwVideoDec.h in Headers */,
 				B8511A551DC82EC900462222 /* TTMediaPlayer.h in Headers */,
-				B8511A511DC82EC900462222 /* TTAudioDecode.h in Headers */,
-				B8511A351DC82EC900462222 /* TTAudioPlugin.h in Headers */,
 				B8511A501DC82EC900462222 /* PureDecodeEntity.h in Headers */,
-				B8511A371DC82EC900462222 /* TTMediaPlayerItf.h in Headers */,
 				B8511A321DC82EC900462222 /* ttVideoDec.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B87420531DD854FD0031AC77 /* YCPlayer.h in Sources */,
 				B8511A451DC82EC900462222 /* TTAudioDecode.cpp in Sources */,
 				B8511A491DC82EC900462222 /* TTMediaPlayerFactory.cpp in Sources */,
 				B8511A4A1DC82EC900462222 /* TTSrcDemux.cpp in Sources */,

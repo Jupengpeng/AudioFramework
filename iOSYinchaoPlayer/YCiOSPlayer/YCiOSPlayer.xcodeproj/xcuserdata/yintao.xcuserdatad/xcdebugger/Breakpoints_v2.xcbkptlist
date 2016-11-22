@@ -38,38 +38,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Yinchao-NewPlayer/media/player/src/TTMediaPlayer.cpp"
-            timestampString = "500695509.198735"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1095"
-            endingLineNumber = "1095"
-            landmarkName = "CTTMediaPlayer::SetPlayRange(TTUint aStartTime, TTUint aEndTime)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../../Yinchao-NewPlayer/media/player/src/TTMediaPlayer.cpp"
-            timestampString = "500703413.49291"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "CTTMediaPlayer::SetDataSourceAsync(const TTChar* aUrl, TTInt nFlag)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -102,16 +70,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YCiOSPlayer/ViewController.mm"
-            timestampString = "500710148.534561"
+            filePath = "../../Yinchao-NewPlayer/osal/src/TTHttpReaderProxy.cpp"
+            timestampString = "500819130.764499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "-playHere:"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "CTTHttpReaderProxy::Open(const TTChar* aUrl)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
