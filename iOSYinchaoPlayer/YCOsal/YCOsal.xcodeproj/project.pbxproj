@@ -10,61 +10,61 @@
 		B823E2411DC2284F00912A85 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B823E2401DC2284F00912A85 /* AVFoundation.framework */; };
 		B823E2431DC2287F00912A85 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B823E2421DC2287F00912A85 /* AudioToolbox.framework */; };
 		B823E2451DC2289B00912A85 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B823E2441DC2289B00912A85 /* CoreMedia.framework */; };
-		B89F69F51DC829AF00D5B156 /* TTTypedef.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69F41DC829AF00D5B156 /* TTTypedef.h */; };
-		B89F6A1F1DC829DD00D5B156 /* TTArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69F61DC829DD00D5B156 /* TTArray.h */; };
-		B89F6A201DC829DD00D5B156 /* TTAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69F71DC829DD00D5B156 /* TTAudio.h */; };
-		B89F6A211DC829DD00D5B156 /* TTAudioSink.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69F81DC829DD00D5B156 /* TTAudioSink.h */; };
-		B89F6A221DC829DD00D5B156 /* TTAvUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69F91DC829DD00D5B156 /* TTAvUtils.h */; };
-		B89F6A231DC829DD00D5B156 /* TTBaseDataReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69FA1DC829DD00D5B156 /* TTBaseDataReader.h */; };
-		B89F6A241DC829DD00D5B156 /* TTBitReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69FB1DC829DD00D5B156 /* TTBitReader.h */; };
-		B89F6A251DC829DD00D5B156 /* TTBufferReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69FC1DC829DD00D5B156 /* TTBufferReader.h */; };
-		B89F6A261DC829DD00D5B156 /* TTBufferReaderProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69FD1DC829DD00D5B156 /* TTBufferReaderProxy.h */; };
-		B89F6A271DC829DD00D5B156 /* TTCacheBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69FE1DC829DD00D5B156 /* TTCacheBuffer.h */; };
-		B89F6A281DC829DD00D5B156 /* TTCommandId.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69FF1DC829DD00D5B156 /* TTCommandId.h */; };
-		B89F6A291DC829DD00D5B156 /* TTCondition.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A001DC829DD00D5B156 /* TTCondition.h */; };
-		B89F6A2A1DC829DD00D5B156 /* TTCritical.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A011DC829DD00D5B156 /* TTCritical.h */; };
-		B89F6A2B1DC829DD00D5B156 /* TTDataReaderItf.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A021DC829DD00D5B156 /* TTDataReaderItf.h */; };
-		B89F6A2C1DC829DD00D5B156 /* TTDirEnum.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A031DC829DD00D5B156 /* TTDirEnum.h */; };
-		B89F6A2D1DC829DD00D5B156 /* TTDllLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A041DC829DD00D5B156 /* TTDllLoader.h */; };
-		B89F6A2E1DC829DD00D5B156 /* TTDNSCache.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A051DC829DD00D5B156 /* TTDNSCache.h */; };
-		B89F6A2F1DC829DD00D5B156 /* TTEventThread.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A061DC829DD00D5B156 /* TTEventThread.h */; };
-		B89F6A301DC829DD00D5B156 /* TTFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A071DC829DD00D5B156 /* TTFileReader.h */; };
-		B89F6A311DC829DD00D5B156 /* TThread.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A081DC829DD00D5B156 /* TThread.h */; };
-		B89F6A321DC829DD00D5B156 /* TTHttpCacheFile.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A091DC829DD00D5B156 /* TTHttpCacheFile.h */; };
-		B89F6A331DC829DD00D5B156 /* TTHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A0A1DC829DD00D5B156 /* TTHttpClient.h */; };
-		B89F6A341DC829DD00D5B156 /* TTHttpReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A0B1DC829DD00D5B156 /* TTHttpReader.h */; };
-		B89F6A351DC829DD00D5B156 /* TTHttpReaderProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A0C1DC829DD00D5B156 /* TTHttpReaderProxy.h */; };
-		B89F6A361DC829DD00D5B156 /* TTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A0D1DC829DD00D5B156 /* TTimer.h */; };
-		B89F6A371DC829DD00D5B156 /* TTInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A0E1DC829DD00D5B156 /* TTInterface.h */; };
-		B89F6A381DC829DD00D5B156 /* TTIOClient.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A0F1DC829DD00D5B156 /* TTIOClient.h */; };
-		B89F6A391DC829DD00D5B156 /* TTList.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A101DC829DD00D5B156 /* TTList.h */; };
-		B89F6A3A1DC829DD00D5B156 /* TTLog.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A111DC829DD00D5B156 /* TTLog.h */; };
-		B89F6A3B1DC829DD00D5B156 /* TTMacrodef.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A121DC829DD00D5B156 /* TTMacrodef.h */; };
-		B89F6A3C1DC829DD00D5B156 /* TTMap.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A131DC829DD00D5B156 /* TTMap.h */; };
-		B89F6A3D1DC829DD00D5B156 /* TTMediadef.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A141DC829DD00D5B156 /* TTMediadef.h */; };
-		B89F6A3E1DC829DD00D5B156 /* TTMsgQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A151DC829DD00D5B156 /* TTMsgQueue.h */; };
-		B89F6A3F1DC829DD00D5B156 /* TTNetWorkConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A161DC829DD00D5B156 /* TTNetWorkConfig.h */; };
-		B89F6A401DC829DD00D5B156 /* TTOsalConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A171DC829DD00D5B156 /* TTOsalConfig.h */; };
-		B89F6A411DC829DD00D5B156 /* TTSemaphore.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A181DC829DD00D5B156 /* TTSemaphore.h */; };
-		B89F6A421DC829DD00D5B156 /* TTSleep.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A191DC829DD00D5B156 /* TTSleep.h */; };
-		B89F6A431DC829DD00D5B156 /* TTStdint.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A1A1DC829DD00D5B156 /* TTStdint.h */; };
-		B89F6A441DC829DD00D5B156 /* TTStreamBufferingItf.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A1B1DC829DD00D5B156 /* TTStreamBufferingItf.h */; };
-		B89F6A451DC829DD00D5B156 /* TTSysTime.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A1C1DC829DD00D5B156 /* TTSysTime.h */; };
-		B89F6A461DC829DD00D5B156 /* TTUrlParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A1D1DC829DD00D5B156 /* TTUrlParser.h */; };
-		B89F6A471DC829DD00D5B156 /* TTVideo.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A1E1DC829DD00D5B156 /* TTVideo.h */; };
+		B89F69F51DC829AF00D5B156 /* TTTypedef.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69F41DC829AF00D5B156 /* TTTypedef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A1F1DC829DD00D5B156 /* TTArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69F61DC829DD00D5B156 /* TTArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A201DC829DD00D5B156 /* TTAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69F71DC829DD00D5B156 /* TTAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A211DC829DD00D5B156 /* TTAudioSink.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69F81DC829DD00D5B156 /* TTAudioSink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A221DC829DD00D5B156 /* TTAvUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69F91DC829DD00D5B156 /* TTAvUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A231DC829DD00D5B156 /* TTBaseDataReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69FA1DC829DD00D5B156 /* TTBaseDataReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A241DC829DD00D5B156 /* TTBitReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69FB1DC829DD00D5B156 /* TTBitReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A251DC829DD00D5B156 /* TTBufferReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69FC1DC829DD00D5B156 /* TTBufferReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A261DC829DD00D5B156 /* TTBufferReaderProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69FD1DC829DD00D5B156 /* TTBufferReaderProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A271DC829DD00D5B156 /* TTCacheBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69FE1DC829DD00D5B156 /* TTCacheBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A281DC829DD00D5B156 /* TTCommandId.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F69FF1DC829DD00D5B156 /* TTCommandId.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A291DC829DD00D5B156 /* TTCondition.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A001DC829DD00D5B156 /* TTCondition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A2A1DC829DD00D5B156 /* TTCritical.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A011DC829DD00D5B156 /* TTCritical.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A2B1DC829DD00D5B156 /* TTDataReaderItf.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A021DC829DD00D5B156 /* TTDataReaderItf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A2C1DC829DD00D5B156 /* TTDirEnum.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A031DC829DD00D5B156 /* TTDirEnum.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A2D1DC829DD00D5B156 /* TTDllLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A041DC829DD00D5B156 /* TTDllLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A2E1DC829DD00D5B156 /* TTDNSCache.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A051DC829DD00D5B156 /* TTDNSCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A2F1DC829DD00D5B156 /* TTEventThread.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A061DC829DD00D5B156 /* TTEventThread.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A301DC829DD00D5B156 /* TTFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A071DC829DD00D5B156 /* TTFileReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A311DC829DD00D5B156 /* TThread.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A081DC829DD00D5B156 /* TThread.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A321DC829DD00D5B156 /* TTHttpCacheFile.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A091DC829DD00D5B156 /* TTHttpCacheFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A331DC829DD00D5B156 /* TTHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A0A1DC829DD00D5B156 /* TTHttpClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A341DC829DD00D5B156 /* TTHttpReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A0B1DC829DD00D5B156 /* TTHttpReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A351DC829DD00D5B156 /* TTHttpReaderProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A0C1DC829DD00D5B156 /* TTHttpReaderProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A361DC829DD00D5B156 /* TTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A0D1DC829DD00D5B156 /* TTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A371DC829DD00D5B156 /* TTInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A0E1DC829DD00D5B156 /* TTInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A381DC829DD00D5B156 /* TTIOClient.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A0F1DC829DD00D5B156 /* TTIOClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A391DC829DD00D5B156 /* TTList.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A101DC829DD00D5B156 /* TTList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A3A1DC829DD00D5B156 /* TTLog.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A111DC829DD00D5B156 /* TTLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A3B1DC829DD00D5B156 /* TTMacrodef.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A121DC829DD00D5B156 /* TTMacrodef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A3C1DC829DD00D5B156 /* TTMap.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A131DC829DD00D5B156 /* TTMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A3D1DC829DD00D5B156 /* TTMediadef.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A141DC829DD00D5B156 /* TTMediadef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A3E1DC829DD00D5B156 /* TTMsgQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A151DC829DD00D5B156 /* TTMsgQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A3F1DC829DD00D5B156 /* TTNetWorkConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A161DC829DD00D5B156 /* TTNetWorkConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A401DC829DD00D5B156 /* TTOsalConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A171DC829DD00D5B156 /* TTOsalConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A411DC829DD00D5B156 /* TTSemaphore.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A181DC829DD00D5B156 /* TTSemaphore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A421DC829DD00D5B156 /* TTSleep.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A191DC829DD00D5B156 /* TTSleep.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A431DC829DD00D5B156 /* TTStdint.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A1A1DC829DD00D5B156 /* TTStdint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A441DC829DD00D5B156 /* TTStreamBufferingItf.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A1B1DC829DD00D5B156 /* TTStreamBufferingItf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A451DC829DD00D5B156 /* TTSysTime.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A1C1DC829DD00D5B156 /* TTSysTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A461DC829DD00D5B156 /* TTUrlParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A1D1DC829DD00D5B156 /* TTUrlParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A471DC829DD00D5B156 /* TTVideo.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A1E1DC829DD00D5B156 /* TTVideo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B89F6A4F1DC82A1500D5B156 /* TTAutoReleasePool.mm in Sources */ = {isa = PBXBuildFile; fileRef = B89F6A491DC82A1500D5B156 /* TTAutoReleasePool.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B89F6A501DC82A1500D5B156 /* TTBackgroundConfig.mm in Sources */ = {isa = PBXBuildFile; fileRef = B89F6A4A1DC82A1500D5B156 /* TTBackgroundConfig.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B89F6A511DC82A1500D5B156 /* TTExtAudioFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = B89F6A4B1DC82A1500D5B156 /* TTExtAudioFileReader.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B89F6A521DC82A1500D5B156 /* TTIPodLibraryFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = B89F6A4C1DC82A1500D5B156 /* TTIPodLibraryFileReader.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B89F6A531DC82A1500D5B156 /* TTPackagePathFetcher.mm in Sources */ = {isa = PBXBuildFile; fileRef = B89F6A4D1DC82A1500D5B156 /* TTPackagePathFetcher.mm */; };
 		B89F6A541DC82A1500D5B156 /* TTUIDeviceHardware.mm in Sources */ = {isa = PBXBuildFile; fileRef = B89F6A4E1DC82A1500D5B156 /* TTUIDeviceHardware.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B89F6A611DC82A9400D5B156 /* TTAutoReleasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A5A1DC82A9400D5B156 /* TTAutoReleasePool.h */; };
-		B89F6A621DC82A9400D5B156 /* TTBackgroundConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A5B1DC82A9400D5B156 /* TTBackgroundConfig.h */; };
-		B89F6A631DC82A9400D5B156 /* TTExtAudioFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A5C1DC82A9400D5B156 /* TTExtAudioFileReader.h */; };
-		B89F6A641DC82A9400D5B156 /* TTIPodLibraryFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A5D1DC82A9400D5B156 /* TTIPodLibraryFileReader.h */; };
-		B89F6A651DC82A9400D5B156 /* TTIPodLibraryPCMOutputFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A5E1DC82A9400D5B156 /* TTIPodLibraryPCMOutputFormat.h */; };
-		B89F6A661DC82A9400D5B156 /* TTPackagePathFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A5F1DC82A9400D5B156 /* TTPackagePathFetcher.h */; };
-		B89F6A671DC82A9400D5B156 /* TTUIDeviceHardware.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A601DC82A9400D5B156 /* TTUIDeviceHardware.h */; };
+		B89F6A611DC82A9400D5B156 /* TTAutoReleasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A5A1DC82A9400D5B156 /* TTAutoReleasePool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A621DC82A9400D5B156 /* TTBackgroundConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A5B1DC82A9400D5B156 /* TTBackgroundConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A631DC82A9400D5B156 /* TTExtAudioFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A5C1DC82A9400D5B156 /* TTExtAudioFileReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A641DC82A9400D5B156 /* TTIPodLibraryFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A5D1DC82A9400D5B156 /* TTIPodLibraryFileReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A651DC82A9400D5B156 /* TTIPodLibraryPCMOutputFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A5E1DC82A9400D5B156 /* TTIPodLibraryPCMOutputFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A661DC82A9400D5B156 /* TTPackagePathFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A5F1DC82A9400D5B156 /* TTPackagePathFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B89F6A671DC82A9400D5B156 /* TTUIDeviceHardware.h in Headers */ = {isa = PBXBuildFile; fileRef = B89F6A601DC82A9400D5B156 /* TTUIDeviceHardware.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B89F6A801DC82AC000D5B156 /* TTAvUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B89F6A681DC82AC000D5B156 /* TTAvUtils.cpp */; };
 		B89F6A811DC82AC000D5B156 /* TTBaseDataReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B89F6A691DC82AC000D5B156 /* TTBaseDataReader.cpp */; };
 		B89F6A821DC82AC000D5B156 /* TTBitReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B89F6A6A1DC82AC000D5B156 /* TTBitReader.cpp */; };
@@ -198,31 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				B89F6A581DC82A5300D5B156 /* src */,
-				B89F6A681DC82AC000D5B156 /* TTAvUtils.cpp */,
-				B89F6A691DC82AC000D5B156 /* TTBaseDataReader.cpp */,
-				B89F6A6A1DC82AC000D5B156 /* TTBitReader.cpp */,
-				B89F6A6B1DC82AC000D5B156 /* TTBufferReader.cpp */,
-				B89F6A6C1DC82AC000D5B156 /* TTBufferReaderProxy.cpp */,
-				B89F6A6D1DC82AC000D5B156 /* TTCacheBuffer.cpp */,
-				B89F6A6E1DC82AC000D5B156 /* TTCondition.cpp */,
-				B89F6A6F1DC82AC000D5B156 /* TTCritical.cpp */,
-				B89F6A701DC82AC000D5B156 /* TTDirEnum.cpp */,
-				B89F6A711DC82AC000D5B156 /* TTDllLoader.cpp */,
-				B89F6A721DC82AC000D5B156 /* TTDNSCache.cpp */,
-				B89F6A731DC82AC000D5B156 /* TTEventThread.cpp */,
-				B89F6A741DC82AC000D5B156 /* TTFileReader.cpp */,
-				B89F6A751DC82AC000D5B156 /* TThread.cpp */,
-				B89F6A761DC82AC000D5B156 /* TTHttpCacheFile.cpp */,
-				B89F6A771DC82AC000D5B156 /* TTHttpClient.cpp */,
-				B89F6A781DC82AC000D5B156 /* TTHttpReader.cpp */,
-				B89F6A791DC82AC000D5B156 /* TTHttpReaderProxy.cpp */,
-				B89F6A7A1DC82AC000D5B156 /* TTIOClient.cpp */,
-				B89F6A7B1DC82AC000D5B156 /* TTNetWorkConfig.cpp */,
-				B89F6A7C1DC82AC000D5B156 /* TTSemaphore.cpp */,
-				B89F6A7D1DC82AC000D5B156 /* TTSleep.cpp */,
-				B89F6A7E1DC82AC000D5B156 /* TTSysTime.cpp */,
-				B89F6A7F1DC82AC000D5B156 /* TTUrlParser.cpp */,
-				B89F69F41DC829AF00D5B156 /* TTTypedef.h */,
 				B89F6A481DC829F200D5B156 /* inc */,
 				B823E0CC1DC21A0000912A85 /* Products */,
 				B823E23F1DC2284F00912A85 /* Frameworks */,
@@ -253,6 +228,7 @@
 			children = (
 				B89F6A591DC82A8500D5B156 /* iOS */,
 				B89F69F61DC829DD00D5B156 /* TTArray.h */,
+				B89F6A171DC829DD00D5B156 /* TTOsalConfig.h */,
 				B89F69F71DC829DD00D5B156 /* TTAudio.h */,
 				B89F69F81DC829DD00D5B156 /* TTAudioSink.h */,
 				B89F69F91DC829DD00D5B156 /* TTAvUtils.h */,
@@ -263,6 +239,7 @@
 				B89F69FE1DC829DD00D5B156 /* TTCacheBuffer.h */,
 				B89F69FF1DC829DD00D5B156 /* TTCommandId.h */,
 				B89F6A001DC829DD00D5B156 /* TTCondition.h */,
+				B89F6A181DC829DD00D5B156 /* TTSemaphore.h */,
 				B89F6A011DC829DD00D5B156 /* TTCritical.h */,
 				B89F6A021DC829DD00D5B156 /* TTDataReaderItf.h */,
 				B89F6A031DC829DD00D5B156 /* TTDirEnum.h */,
@@ -285,8 +262,6 @@
 				B89F6A141DC829DD00D5B156 /* TTMediadef.h */,
 				B89F6A151DC829DD00D5B156 /* TTMsgQueue.h */,
 				B89F6A161DC829DD00D5B156 /* TTNetWorkConfig.h */,
-				B89F6A171DC829DD00D5B156 /* TTOsalConfig.h */,
-				B89F6A181DC829DD00D5B156 /* TTSemaphore.h */,
 				B89F6A191DC829DD00D5B156 /* TTSleep.h */,
 				B89F6A1A1DC829DD00D5B156 /* TTStdint.h */,
 				B89F6A1B1DC829DD00D5B156 /* TTStreamBufferingItf.h */,
@@ -313,6 +288,31 @@
 		B89F6A581DC82A5300D5B156 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				B89F6A681DC82AC000D5B156 /* TTAvUtils.cpp */,
+				B89F6A691DC82AC000D5B156 /* TTBaseDataReader.cpp */,
+				B89F6A6A1DC82AC000D5B156 /* TTBitReader.cpp */,
+				B89F6A6B1DC82AC000D5B156 /* TTBufferReader.cpp */,
+				B89F6A6C1DC82AC000D5B156 /* TTBufferReaderProxy.cpp */,
+				B89F6A6D1DC82AC000D5B156 /* TTCacheBuffer.cpp */,
+				B89F6A6E1DC82AC000D5B156 /* TTCondition.cpp */,
+				B89F6A6F1DC82AC000D5B156 /* TTCritical.cpp */,
+				B89F6A701DC82AC000D5B156 /* TTDirEnum.cpp */,
+				B89F6A711DC82AC000D5B156 /* TTDllLoader.cpp */,
+				B89F6A721DC82AC000D5B156 /* TTDNSCache.cpp */,
+				B89F6A731DC82AC000D5B156 /* TTEventThread.cpp */,
+				B89F6A741DC82AC000D5B156 /* TTFileReader.cpp */,
+				B89F6A751DC82AC000D5B156 /* TThread.cpp */,
+				B89F6A761DC82AC000D5B156 /* TTHttpCacheFile.cpp */,
+				B89F6A771DC82AC000D5B156 /* TTHttpClient.cpp */,
+				B89F6A781DC82AC000D5B156 /* TTHttpReader.cpp */,
+				B89F6A791DC82AC000D5B156 /* TTHttpReaderProxy.cpp */,
+				B89F6A7A1DC82AC000D5B156 /* TTIOClient.cpp */,
+				B89F6A7B1DC82AC000D5B156 /* TTNetWorkConfig.cpp */,
+				B89F6A7C1DC82AC000D5B156 /* TTSemaphore.cpp */,
+				B89F6A7D1DC82AC000D5B156 /* TTSleep.cpp */,
+				B89F6A7E1DC82AC000D5B156 /* TTSysTime.cpp */,
+				B89F6A7F1DC82AC000D5B156 /* TTUrlParser.cpp */,
+				B89F69F41DC829AF00D5B156 /* TTTypedef.h */,
 				B89F6A571DC82A3A00D5B156 /* iOS */,
 			);
 			name = src;

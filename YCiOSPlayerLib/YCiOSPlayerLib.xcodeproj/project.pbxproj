@@ -1,0 +1,1107 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B87421041DD871B30031AC77 /* YCiOSPlayerLib.h in Headers */ = {isa = PBXBuildFile; fileRef = B87421021DD871B30031AC77 /* YCiOSPlayerLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87422E31DD878B20031AC77 /* ttMP3Dec.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422B21DD878B20031AC77 /* ttMP3Dec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87422E41DD878B20031AC77 /* ttVideoDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422B31DD878B20031AC77 /* ttVideoDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87422E51DD878B20031AC77 /* TTVideoPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422B41DD878B20031AC77 /* TTVideoPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87422E61DD878B20031AC77 /* ttWMADec.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422B51DD878B20031AC77 /* ttWMADec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87422E71DD878B20031AC77 /* TTAudioPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422B61DD878B20031AC77 /* TTAudioPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87422E81DD878B20031AC77 /* TTAudioPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87422B71DD878B20031AC77 /* TTAudioPlugin.cpp */; };
+		B87422E91DD878B20031AC77 /* TTMediaPlayerItf.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422B81DD878B20031AC77 /* TTMediaPlayerItf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87422EA1DD878B20031AC77 /* TTAudioSink.mm in Sources */ = {isa = PBXBuildFile; fileRef = B87422B91DD878B20031AC77 /* TTAudioSink.mm */; };
+		B87422EB1DD878B20031AC77 /* TTGLRenderBase.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422BA1DD878B20031AC77 /* TTGLRenderBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87422EC1DD878B20031AC77 /* TTGLRenderBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = B87422BB1DD878B20031AC77 /* TTGLRenderBase.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B87422ED1DD878B20031AC77 /* TTGLRenderES2_FTU.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422BC1DD878B20031AC77 /* TTGLRenderES2_FTU.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87422EE1DD878B20031AC77 /* TTGLRenderES2_FTU.mm in Sources */ = {isa = PBXBuildFile; fileRef = B87422BD1DD878B20031AC77 /* TTGLRenderES2_FTU.mm */; };
+		B87422EF1DD878B20031AC77 /* TTGLRenderES2.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422BE1DD878B20031AC77 /* TTGLRenderES2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87422F01DD878B20031AC77 /* TTGLRenderES2.mm in Sources */ = {isa = PBXBuildFile; fileRef = B87422BF1DD878B20031AC77 /* TTGLRenderES2.mm */; };
+		B87422F11DD878B20031AC77 /* TTMediaPlayerProxy.mm in Sources */ = {isa = PBXBuildFile; fileRef = B87422C01DD878B20031AC77 /* TTMediaPlayerProxy.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B87422F21DD878B20031AC77 /* TTMediaPlayerWarp.mm in Sources */ = {isa = PBXBuildFile; fileRef = B87422C11DD878B20031AC77 /* TTMediaPlayerWarp.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B87422F31DD878B20031AC77 /* TTPlayerInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422C21DD878B20031AC77 /* TTPlayerInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87422F41DD878B20031AC77 /* TTVideoView.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422C31DD878B20031AC77 /* TTVideoView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87422F51DD878B20031AC77 /* TTVideoView.mm in Sources */ = {isa = PBXBuildFile; fileRef = B87422C41DD878B20031AC77 /* TTVideoView.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B87422F61DD878B20031AC77 /* PureDecodeEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87422C51DD878B20031AC77 /* PureDecodeEntity.cpp */; };
+		B87422F71DD878B20031AC77 /* TTAudioDecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87422C61DD878B20031AC77 /* TTAudioDecode.cpp */; };
+		B87422F81DD878B20031AC77 /* TTAudioProcess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87422C71DD878B20031AC77 /* TTAudioProcess.cpp */; };
+		B87422F91DD878B20031AC77 /* TTBaseAudioSink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87422C81DD878B20031AC77 /* TTBaseAudioSink.cpp */; };
+		B87422FA1DD878B20031AC77 /* TTMediaPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87422C91DD878B20031AC77 /* TTMediaPlayer.cpp */; };
+		B87422FB1DD878B20031AC77 /* TTMediaPlayerFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87422CA1DD878B20031AC77 /* TTMediaPlayerFactory.cpp */; };
+		B87422FC1DD878B20031AC77 /* TTSrcDemux.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87422CB1DD878B20031AC77 /* TTSrcDemux.cpp */; };
+		B87422FD1DD878B20031AC77 /* TTFFT.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422CC1DD878B20031AC77 /* TTFFT.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87422FE1DD878B20031AC77 /* TTFFT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87422CD1DD878B20031AC77 /* TTFFT.cpp */; };
+		B87422FF1DD878B20031AC77 /* TTAudioSink.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422CE1DD878B20031AC77 /* TTAudioSink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423001DD878B20031AC77 /* TTMediaPlayerProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422CF1DD878B20031AC77 /* TTMediaPlayerProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423011DD878B20031AC77 /* TTMediaPlayerWarp.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422D01DD878B20031AC77 /* TTMediaPlayerWarp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423021DD878B20031AC77 /* PureDecodeEntity.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422D11DD878B20031AC77 /* PureDecodeEntity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423031DD878B20031AC77 /* TTAudioDecode.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422D21DD878B20031AC77 /* TTAudioDecode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423041DD878B20031AC77 /* TTAudioProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422D31DD878B20031AC77 /* TTAudioProcess.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423051DD878B20031AC77 /* TTBaseAudioSink.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422D41DD878B20031AC77 /* TTBaseAudioSink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423061DD878B20031AC77 /* TTBaseDataSink.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422D51DD878B20031AC77 /* TTBaseDataSink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423071DD878B20031AC77 /* TTMediaPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422D61DD878B20031AC77 /* TTMediaPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423081DD878B20031AC77 /* TTSrcDemux.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422D71DD878B20031AC77 /* TTSrcDemux.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423091DD878B20031AC77 /* ttAACDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422D81DD878B20031AC77 /* ttAACDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874230A1DD878B20031AC77 /* ttALACDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422D91DD878B20031AC77 /* ttALACDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874230B1DD878B20031AC77 /* ttAMRDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422DA1DD878B20031AC77 /* ttAMRDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874230C1DD878B20031AC77 /* ttAPEDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422DB1DD878B20031AC77 /* ttAPEDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874230D1DD878B20031AC77 /* ttClConv.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422DC1DD878B20031AC77 /* ttClConv.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874230E1DD878B20031AC77 /* ttDTSDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422DD1DD878B20031AC77 /* ttDTSDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874230F1DD878B20031AC77 /* ttFLACDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422DE1DD878B20031AC77 /* ttFLACDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423101DD878B20031AC77 /* ttHWVideoDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422DF1DD878B20031AC77 /* ttHWVideoDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423111DD878B20031AC77 /* ttIosHwVideoDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422E01DD878B20031AC77 /* ttIosHwVideoDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423121DD878B20031AC77 /* ttIpodDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422E11DD878B20031AC77 /* ttIpodDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423131DD878B20031AC77 /* ttMediaCodecJDec.h in Headers */ = {isa = PBXBuildFile; fileRef = B87422E21DD878B20031AC77 /* ttMediaCodecJDec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423331DD879250031AC77 /* TTAvUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423141DD879250031AC77 /* TTAvUtils.cpp */; };
+		B87423341DD879250031AC77 /* TTBaseDataReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423151DD879250031AC77 /* TTBaseDataReader.cpp */; };
+		B87423351DD879250031AC77 /* TTBitReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423161DD879250031AC77 /* TTBitReader.cpp */; };
+		B87423361DD879250031AC77 /* TTBufferReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423171DD879250031AC77 /* TTBufferReader.cpp */; };
+		B87423371DD879250031AC77 /* TTBufferReaderProxy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423181DD879250031AC77 /* TTBufferReaderProxy.cpp */; };
+		B87423381DD879250031AC77 /* TTCacheBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423191DD879250031AC77 /* TTCacheBuffer.cpp */; };
+		B87423391DD879250031AC77 /* TTCondition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B874231A1DD879250031AC77 /* TTCondition.cpp */; };
+		B874233A1DD879250031AC77 /* TTCritical.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B874231B1DD879250031AC77 /* TTCritical.cpp */; };
+		B874233B1DD879250031AC77 /* TTDirEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B874231C1DD879250031AC77 /* TTDirEnum.cpp */; };
+		B874233C1DD879250031AC77 /* TTDllLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B874231D1DD879250031AC77 /* TTDllLoader.cpp */; };
+		B874233D1DD879250031AC77 /* TTDNSCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B874231E1DD879250031AC77 /* TTDNSCache.cpp */; };
+		B874233E1DD879250031AC77 /* TTEventThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B874231F1DD879250031AC77 /* TTEventThread.cpp */; };
+		B874233F1DD879250031AC77 /* TTFileReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423201DD879250031AC77 /* TTFileReader.cpp */; };
+		B87423401DD879250031AC77 /* TThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423211DD879250031AC77 /* TThread.cpp */; };
+		B87423411DD879250031AC77 /* TTHttpCacheFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423221DD879250031AC77 /* TTHttpCacheFile.cpp */; };
+		B87423421DD879250031AC77 /* TTHttpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423231DD879250031AC77 /* TTHttpClient.cpp */; };
+		B87423431DD879250031AC77 /* TTHttpReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423241DD879250031AC77 /* TTHttpReader.cpp */; };
+		B87423441DD879250031AC77 /* TTHttpReaderProxy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423251DD879250031AC77 /* TTHttpReaderProxy.cpp */; };
+		B87423451DD879250031AC77 /* TTIOClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423261DD879250031AC77 /* TTIOClient.cpp */; };
+		B87423461DD879250031AC77 /* TTNetWorkConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423271DD879250031AC77 /* TTNetWorkConfig.cpp */; };
+		B87423471DD879250031AC77 /* TTSemaphore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423281DD879250031AC77 /* TTSemaphore.cpp */; };
+		B87423481DD879250031AC77 /* TTSleep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423291DD879250031AC77 /* TTSleep.cpp */; };
+		B87423491DD879250031AC77 /* TTSysTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B874232A1DD879250031AC77 /* TTSysTime.cpp */; };
+		B874234A1DD879250031AC77 /* TTUrlParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B874232B1DD879250031AC77 /* TTUrlParser.cpp */; };
+		B874234B1DD879250031AC77 /* TTTypedef.h in Headers */ = {isa = PBXBuildFile; fileRef = B874232C1DD879250031AC77 /* TTTypedef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874234C1DD879250031AC77 /* TTAutoReleasePool.mm in Sources */ = {isa = PBXBuildFile; fileRef = B874232D1DD879250031AC77 /* TTAutoReleasePool.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B874234D1DD879250031AC77 /* TTBackgroundConfig.mm in Sources */ = {isa = PBXBuildFile; fileRef = B874232E1DD879250031AC77 /* TTBackgroundConfig.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B874234E1DD879250031AC77 /* TTExtAudioFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = B874232F1DD879250031AC77 /* TTExtAudioFileReader.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B874234F1DD879250031AC77 /* TTIPodLibraryFileReader.mm in Sources */ = {isa = PBXBuildFile; fileRef = B87423301DD879250031AC77 /* TTIPodLibraryFileReader.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B87423501DD879250031AC77 /* TTPackagePathFetcher.mm in Sources */ = {isa = PBXBuildFile; fileRef = B87423311DD879250031AC77 /* TTPackagePathFetcher.mm */; };
+		B87423511DD879250031AC77 /* TTUIDeviceHardware.mm in Sources */ = {isa = PBXBuildFile; fileRef = B87423321DD879250031AC77 /* TTUIDeviceHardware.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B87423821DD879360031AC77 /* TTAutoReleasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423521DD879360031AC77 /* TTAutoReleasePool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423831DD879360031AC77 /* TTBackgroundConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423531DD879360031AC77 /* TTBackgroundConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423841DD879360031AC77 /* TTExtAudioFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423541DD879360031AC77 /* TTExtAudioFileReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423851DD879360031AC77 /* TTIPodLibraryFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423551DD879360031AC77 /* TTIPodLibraryFileReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423861DD879360031AC77 /* TTIPodLibraryPCMOutputFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423561DD879360031AC77 /* TTIPodLibraryPCMOutputFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423871DD879360031AC77 /* TTPackagePathFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423571DD879360031AC77 /* TTPackagePathFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423881DD879360031AC77 /* TTUIDeviceHardware.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423581DD879360031AC77 /* TTUIDeviceHardware.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423891DD879360031AC77 /* TTArray.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423591DD879360031AC77 /* TTArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874238A1DD879360031AC77 /* TTOsalConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B874235A1DD879360031AC77 /* TTOsalConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874238B1DD879360031AC77 /* TTAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = B874235B1DD879360031AC77 /* TTAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874238D1DD879360031AC77 /* TTAvUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = B874235D1DD879360031AC77 /* TTAvUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874238E1DD879360031AC77 /* TTBaseDataReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B874235E1DD879360031AC77 /* TTBaseDataReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874238F1DD879360031AC77 /* TTBitReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B874235F1DD879360031AC77 /* TTBitReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423901DD879360031AC77 /* TTBufferReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423601DD879360031AC77 /* TTBufferReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423911DD879360031AC77 /* TTBufferReaderProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423611DD879360031AC77 /* TTBufferReaderProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423921DD879360031AC77 /* TTCacheBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423621DD879360031AC77 /* TTCacheBuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423931DD879360031AC77 /* TTCommandId.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423631DD879360031AC77 /* TTCommandId.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423941DD879360031AC77 /* TTCondition.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423641DD879360031AC77 /* TTCondition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423951DD879360031AC77 /* TTSemaphore.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423651DD879360031AC77 /* TTSemaphore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423961DD879360031AC77 /* TTCritical.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423661DD879360031AC77 /* TTCritical.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423971DD879360031AC77 /* TTDataReaderItf.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423671DD879360031AC77 /* TTDataReaderItf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423981DD879360031AC77 /* TTDirEnum.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423681DD879360031AC77 /* TTDirEnum.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423991DD879360031AC77 /* TTDllLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423691DD879360031AC77 /* TTDllLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874239A1DD879360031AC77 /* TTDNSCache.h in Headers */ = {isa = PBXBuildFile; fileRef = B874236A1DD879360031AC77 /* TTDNSCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874239B1DD879360031AC77 /* TTEventThread.h in Headers */ = {isa = PBXBuildFile; fileRef = B874236B1DD879360031AC77 /* TTEventThread.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874239C1DD879360031AC77 /* TTFileReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B874236C1DD879360031AC77 /* TTFileReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874239D1DD879360031AC77 /* TThread.h in Headers */ = {isa = PBXBuildFile; fileRef = B874236D1DD879360031AC77 /* TThread.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874239E1DD879360031AC77 /* TTHttpCacheFile.h in Headers */ = {isa = PBXBuildFile; fileRef = B874236E1DD879360031AC77 /* TTHttpCacheFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B874239F1DD879360031AC77 /* TTHttpClient.h in Headers */ = {isa = PBXBuildFile; fileRef = B874236F1DD879360031AC77 /* TTHttpClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423A01DD879360031AC77 /* TTHttpReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423701DD879360031AC77 /* TTHttpReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423A11DD879360031AC77 /* TTHttpReaderProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423711DD879360031AC77 /* TTHttpReaderProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423A21DD879360031AC77 /* TTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423721DD879360031AC77 /* TTimer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423A31DD879360031AC77 /* TTInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423731DD879360031AC77 /* TTInterface.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423A41DD879360031AC77 /* TTIOClient.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423741DD879360031AC77 /* TTIOClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423A51DD879360031AC77 /* TTList.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423751DD879360031AC77 /* TTList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423A61DD879360031AC77 /* TTLog.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423761DD879360031AC77 /* TTLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423A71DD879360031AC77 /* TTMacrodef.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423771DD879360031AC77 /* TTMacrodef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423A81DD879360031AC77 /* TTMap.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423781DD879360031AC77 /* TTMap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423A91DD879360031AC77 /* TTMediadef.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423791DD879360031AC77 /* TTMediadef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423AA1DD879360031AC77 /* TTMsgQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = B874237A1DD879360031AC77 /* TTMsgQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423AB1DD879360031AC77 /* TTNetWorkConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B874237B1DD879360031AC77 /* TTNetWorkConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423AC1DD879360031AC77 /* TTSleep.h in Headers */ = {isa = PBXBuildFile; fileRef = B874237C1DD879360031AC77 /* TTSleep.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423AD1DD879360031AC77 /* TTStdint.h in Headers */ = {isa = PBXBuildFile; fileRef = B874237D1DD879360031AC77 /* TTStdint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423AE1DD879360031AC77 /* TTStreamBufferingItf.h in Headers */ = {isa = PBXBuildFile; fileRef = B874237E1DD879360031AC77 /* TTStreamBufferingItf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423AF1DD879360031AC77 /* TTSysTime.h in Headers */ = {isa = PBXBuildFile; fileRef = B874237F1DD879360031AC77 /* TTSysTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423B01DD879360031AC77 /* TTUrlParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423801DD879360031AC77 /* TTUrlParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423B11DD879360031AC77 /* TTVideo.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423811DD879360031AC77 /* TTVideo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423CB1DD8795F0031AC77 /* TTExtAudioFileParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423B21DD8795F0031AC77 /* TTExtAudioFileParser.cpp */; };
+		B87423CC1DD8795F0031AC77 /* TTIPodLibraryParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423B31DD8795F0031AC77 /* TTIPodLibraryParser.cpp */; };
+		B87423CD1DD8795F0031AC77 /* TTMediaParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423B41DD8795F0031AC77 /* TTMediaParser.cpp */; };
+		B87423CE1DD8795F0031AC77 /* TTAPETag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423B51DD8795F0031AC77 /* TTAPETag.cpp */; };
+		B87423CF1DD8795F0031AC77 /* TTHttpMP3Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423B61DD8795F0031AC77 /* TTHttpMP3Parser.cpp */; };
+		B87423D01DD8795F0031AC77 /* TTID3Tag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423B71DD8795F0031AC77 /* TTID3Tag.cpp */; };
+		B87423D11DD8795F0031AC77 /* TTIntReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423B81DD8795F0031AC77 /* TTIntReader.cpp */; };
+		B87423D21DD8795F0031AC77 /* TTMediainfoProxy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423B91DD8795F0031AC77 /* TTMediainfoProxy.cpp */; };
+		B87423D31DD8795F0031AC77 /* TTMP3Header.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423BA1DD8795F0031AC77 /* TTMP3Header.cpp */; };
+		B87423D41DD8795F0031AC77 /* TTMP3Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423BB1DD8795F0031AC77 /* TTMP3Parser.cpp */; };
+		B87423D51DD8795F0031AC77 /* TTExtAudioFileParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423BC1DD8795F0031AC77 /* TTExtAudioFileParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423D61DD8795F0031AC77 /* TTPureDataParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423BD1DD8795F0031AC77 /* TTPureDataParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423D71DD8795F0031AC77 /* RIFF.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423BE1DD8795F0031AC77 /* RIFF.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423D81DD8795F0031AC77 /* TTAPETag.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423BF1DD8795F0031AC77 /* TTAPETag.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423D91DD8795F0031AC77 /* TTHttpMP3Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423C01DD8795F0031AC77 /* TTHttpMP3Parser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423DA1DD8795F0031AC77 /* TTID3Tag.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423C11DD8795F0031AC77 /* TTID3Tag.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423DB1DD8795F0031AC77 /* TTIMediaInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423C21DD8795F0031AC77 /* TTIMediaInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423DC1DD8795F0031AC77 /* TTIntReader.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423C31DD8795F0031AC77 /* TTIntReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423DD1DD8795F0031AC77 /* TTMediainfoDef.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423C41DD8795F0031AC77 /* TTMediainfoDef.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423DE1DD8795F0031AC77 /* TTMediainfoProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423C51DD8795F0031AC77 /* TTMediainfoProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423DF1DD8795F0031AC77 /* TTMediaParser.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423C61DD8795F0031AC77 /* TTMediaParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423E01DD8795F0031AC77 /* TTMediaParserItf.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423C71DD8795F0031AC77 /* TTMediaParserItf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423E11DD8795F0031AC77 /* TTMP3Header.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423C81DD8795F0031AC77 /* TTMP3Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423E21DD8795F0031AC77 /* TTMP3Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423C91DD8795F0031AC77 /* TTMP3Parser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423E31DD8795F0031AC77 /* TTMP4Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423CA1DD8795F0031AC77 /* TTMP4Parser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423E81DD8796F0031AC77 /* aflibConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B87423E41DD8796F0031AC77 /* aflibConverter.cpp */; };
+		B87423E91DD8796F0031AC77 /* aflibconverter.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423E51DD8796F0031AC77 /* aflibconverter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423EA1DD8796F0031AC77 /* aflibConverterLargeFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423E61DD8796F0031AC77 /* aflibConverterLargeFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423EB1DD8796F0031AC77 /* aflibConverterSmallFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423E71DD8796F0031AC77 /* aflibConverterSmallFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423F51DD879880031AC77 /* ttMemAlign.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423EC1DD879880031AC77 /* ttMemAlign.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423F61DD879880031AC77 /* ttMP3Dec.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423ED1DD879880031AC77 /* ttMP3Dec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423F71DD879880031AC77 /* ttMP3DecBit.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423EE1DD879880031AC77 /* ttMP3DecBit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423F81DD879880031AC77 /* ttMP3DecBuf.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423EF1DD879880031AC77 /* ttMP3DecBuf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423F91DD879880031AC77 /* ttMP3DecCfg.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423F01DD879880031AC77 /* ttMP3DecCfg.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423FA1DD879880031AC77 /* ttMP3DecFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423F11DD879880031AC77 /* ttMP3DecFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423FB1DD879880031AC77 /* ttMP3DecGlobal.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423F21DD879880031AC77 /* ttMP3DecGlobal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423FC1DD879880031AC77 /* ttMP3DecHuffman.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423F31DD879880031AC77 /* ttMP3DecHuffman.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87423FD1DD879880031AC77 /* ttTypeDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = B87423F41DD879880031AC77 /* ttTypeDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B87424091DD879960031AC77 /* ttMemAlign.c in Sources */ = {isa = PBXBuildFile; fileRef = B87423FE1DD879960031AC77 /* ttMemAlign.c */; };
+		B874240A1DD879960031AC77 /* ttMP3DecApis.c in Sources */ = {isa = PBXBuildFile; fileRef = B87423FF1DD879960031AC77 /* ttMP3DecApis.c */; };
+		B874240B1DD879960031AC77 /* ttMP3DecBit.c in Sources */ = {isa = PBXBuildFile; fileRef = B87424001DD879960031AC77 /* ttMP3DecBit.c */; };
+		B874240C1DD879960031AC77 /* ttMP3DecBuf.c in Sources */ = {isa = PBXBuildFile; fileRef = B87424011DD879960031AC77 /* ttMP3DecBuf.c */; };
+		B874240D1DD879960031AC77 /* ttMP3Decdct32.c in Sources */ = {isa = PBXBuildFile; fileRef = B87424021DD879960031AC77 /* ttMP3Decdct32.c */; };
+		B874240E1DD879960031AC77 /* ttMP3DecFrame.c in Sources */ = {isa = PBXBuildFile; fileRef = B87424031DD879960031AC77 /* ttMP3DecFrame.c */; };
+		B874240F1DD879960031AC77 /* ttMP3DecHuffman.c in Sources */ = {isa = PBXBuildFile; fileRef = B87424041DD879960031AC77 /* ttMP3DecHuffman.c */; };
+		B87424101DD879960031AC77 /* ttMP3DecLayer12.c in Sources */ = {isa = PBXBuildFile; fileRef = B87424051DD879960031AC77 /* ttMP3DecLayer12.c */; };
+		B87424111DD879960031AC77 /* ttMP3DecLayer3.c in Sources */ = {isa = PBXBuildFile; fileRef = B87424061DD879960031AC77 /* ttMP3DecLayer3.c */; };
+		B87424121DD879960031AC77 /* ttMP3DecPolyphase.c in Sources */ = {isa = PBXBuildFile; fileRef = B87424071DD879960031AC77 /* ttMP3DecPolyphase.c */; };
+		B87424131DD879960031AC77 /* ttMP3DecRQTable.c in Sources */ = {isa = PBXBuildFile; fileRef = B87424081DD879960031AC77 /* ttMP3DecRQTable.c */; };
+		B87424161DD87BBD0031AC77 /* libc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B87424151DD87BBD0031AC77 /* libc.tbd */; };
+		B87424181DD87BC90031AC77 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87424171DD87BC90031AC77 /* QuartzCore.framework */; };
+		B874241A1DD87BD10031AC77 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87424191DD87BD10031AC77 /* OpenGLES.framework */; };
+		B874241C1DD87BDA0031AC77 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B874241B1DD87BDA0031AC77 /* CoreVideo.framework */; };
+		B874241E1DD87BE50031AC77 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B874241D1DD87BE50031AC77 /* CoreTelephony.framework */; };
+		B87424201DD87BED0031AC77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B874241F1DD87BED0031AC77 /* UIKit.framework */; };
+		B87424221DD87BF30031AC77 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87424211DD87BF30031AC77 /* CoreMedia.framework */; };
+		B87424241DD87BFC0031AC77 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87424231DD87BFC0031AC77 /* AVFoundation.framework */; };
+		B87424261DD87C020031AC77 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B87424251DD87C020031AC77 /* AudioToolbox.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B87420FF1DD871B30031AC77 /* YCiOSPlayerLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YCiOSPlayerLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B87421021DD871B30031AC77 /* YCiOSPlayerLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YCiOSPlayerLib.h; sourceTree = "<group>"; };
+		B87421031DD871B30031AC77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B87422B21DD878B20031AC77 /* ttMP3Dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttMP3Dec.h; path = "../../../Yinchao-NewPlayer/media/common/inc/ttMP3Dec.h"; sourceTree = "<group>"; };
+		B87422B31DD878B20031AC77 /* ttVideoDec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttVideoDec.h; path = "../../../Yinchao-NewPlayer/media/common/inc/ttVideoDec.h"; sourceTree = "<group>"; };
+		B87422B41DD878B20031AC77 /* TTVideoPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTVideoPlugin.h; path = "../../../Yinchao-NewPlayer/media/common/inc/TTVideoPlugin.h"; sourceTree = "<group>"; };
+		B87422B51DD878B20031AC77 /* ttWMADec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttWMADec.h; path = "../../../Yinchao-NewPlayer/media/common/inc/ttWMADec.h"; sourceTree = "<group>"; };
+		B87422B61DD878B20031AC77 /* TTAudioPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTAudioPlugin.h; path = "../../../Yinchao-NewPlayer/media/common/inc/TTAudioPlugin.h"; sourceTree = "<group>"; };
+		B87422B71DD878B20031AC77 /* TTAudioPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTAudioPlugin.cpp; path = "../../../Yinchao-NewPlayer/media/common/src/IOS/TTAudioPlugin.cpp"; sourceTree = "<group>"; };
+		B87422B81DD878B20031AC77 /* TTMediaPlayerItf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMediaPlayerItf.h; path = "../../../Yinchao-NewPlayer/media/player/TTMediaPlayerItf.h"; sourceTree = "<group>"; };
+		B87422B91DD878B20031AC77 /* TTAudioSink.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTAudioSink.mm; path = "../../../Yinchao-NewPlayer/media/player/src/IOS/TTAudioSink.mm"; sourceTree = "<group>"; };
+		B87422BA1DD878B20031AC77 /* TTGLRenderBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTGLRenderBase.h; path = "../../../Yinchao-NewPlayer/media/player/src/IOS/TTGLRenderBase.h"; sourceTree = "<group>"; };
+		B87422BB1DD878B20031AC77 /* TTGLRenderBase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTGLRenderBase.mm; path = "../../../Yinchao-NewPlayer/media/player/src/IOS/TTGLRenderBase.mm"; sourceTree = "<group>"; };
+		B87422BC1DD878B20031AC77 /* TTGLRenderES2_FTU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTGLRenderES2_FTU.h; path = "../../../Yinchao-NewPlayer/media/player/src/IOS/TTGLRenderES2_FTU.h"; sourceTree = "<group>"; };
+		B87422BD1DD878B20031AC77 /* TTGLRenderES2_FTU.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTGLRenderES2_FTU.mm; path = "../../../Yinchao-NewPlayer/media/player/src/IOS/TTGLRenderES2_FTU.mm"; sourceTree = "<group>"; };
+		B87422BE1DD878B20031AC77 /* TTGLRenderES2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTGLRenderES2.h; path = "../../../Yinchao-NewPlayer/media/player/src/IOS/TTGLRenderES2.h"; sourceTree = "<group>"; };
+		B87422BF1DD878B20031AC77 /* TTGLRenderES2.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTGLRenderES2.mm; path = "../../../Yinchao-NewPlayer/media/player/src/IOS/TTGLRenderES2.mm"; sourceTree = "<group>"; };
+		B87422C01DD878B20031AC77 /* TTMediaPlayerProxy.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTMediaPlayerProxy.mm; path = "../../../Yinchao-NewPlayer/media/player/src/IOS/TTMediaPlayerProxy.mm"; sourceTree = "<group>"; };
+		B87422C11DD878B20031AC77 /* TTMediaPlayerWarp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTMediaPlayerWarp.mm; path = "../../../Yinchao-NewPlayer/media/player/src/IOS/TTMediaPlayerWarp.mm"; sourceTree = "<group>"; };
+		B87422C21DD878B20031AC77 /* TTPlayerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTPlayerInterface.h; path = "../../../Yinchao-NewPlayer/media/player/src/IOS/TTPlayerInterface.h"; sourceTree = "<group>"; };
+		B87422C31DD878B20031AC77 /* TTVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTVideoView.h; path = "../../../Yinchao-NewPlayer/media/player/src/IOS/TTVideoView.h"; sourceTree = "<group>"; };
+		B87422C41DD878B20031AC77 /* TTVideoView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTVideoView.mm; path = "../../../Yinchao-NewPlayer/media/player/src/IOS/TTVideoView.mm"; sourceTree = "<group>"; };
+		B87422C51DD878B20031AC77 /* PureDecodeEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PureDecodeEntity.cpp; path = "../../../Yinchao-NewPlayer/media/player/src/PureDecodeEntity.cpp"; sourceTree = "<group>"; };
+		B87422C61DD878B20031AC77 /* TTAudioDecode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTAudioDecode.cpp; path = "../../../Yinchao-NewPlayer/media/player/src/TTAudioDecode.cpp"; sourceTree = "<group>"; };
+		B87422C71DD878B20031AC77 /* TTAudioProcess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTAudioProcess.cpp; path = "../../../Yinchao-NewPlayer/media/player/src/TTAudioProcess.cpp"; sourceTree = "<group>"; };
+		B87422C81DD878B20031AC77 /* TTBaseAudioSink.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTBaseAudioSink.cpp; path = "../../../Yinchao-NewPlayer/media/player/src/TTBaseAudioSink.cpp"; sourceTree = "<group>"; };
+		B87422C91DD878B20031AC77 /* TTMediaPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTMediaPlayer.cpp; path = "../../../Yinchao-NewPlayer/media/player/src/TTMediaPlayer.cpp"; sourceTree = "<group>"; };
+		B87422CA1DD878B20031AC77 /* TTMediaPlayerFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTMediaPlayerFactory.cpp; path = "../../../Yinchao-NewPlayer/media/player/src/TTMediaPlayerFactory.cpp"; sourceTree = "<group>"; };
+		B87422CB1DD878B20031AC77 /* TTSrcDemux.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTSrcDemux.cpp; path = "../../../Yinchao-NewPlayer/media/player/src/TTSrcDemux.cpp"; sourceTree = "<group>"; };
+		B87422CC1DD878B20031AC77 /* TTFFT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTFFT.h; path = "../../../Yinchao-NewPlayer/media/common/inc/TTFFT.h"; sourceTree = "<group>"; };
+		B87422CD1DD878B20031AC77 /* TTFFT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTFFT.cpp; path = "../../../Yinchao-NewPlayer/media/common/src/TTFFT.cpp"; sourceTree = "<group>"; };
+		B87422CE1DD878B20031AC77 /* TTAudioSink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTAudioSink.h; path = "../../../Yinchao-NewPlayer/media/player/inc/IOS/TTAudioSink.h"; sourceTree = "<group>"; };
+		B87422CF1DD878B20031AC77 /* TTMediaPlayerProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMediaPlayerProxy.h; path = "../../../Yinchao-NewPlayer/media/player/inc/IOS/TTMediaPlayerProxy.h"; sourceTree = "<group>"; };
+		B87422D01DD878B20031AC77 /* TTMediaPlayerWarp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMediaPlayerWarp.h; path = "../../../Yinchao-NewPlayer/media/player/inc/IOS/TTMediaPlayerWarp.h"; sourceTree = "<group>"; };
+		B87422D11DD878B20031AC77 /* PureDecodeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PureDecodeEntity.h; path = "../../../Yinchao-NewPlayer/media/player/inc/PureDecodeEntity.h"; sourceTree = "<group>"; };
+		B87422D21DD878B20031AC77 /* TTAudioDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTAudioDecode.h; path = "../../../Yinchao-NewPlayer/media/player/inc/TTAudioDecode.h"; sourceTree = "<group>"; };
+		B87422D31DD878B20031AC77 /* TTAudioProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTAudioProcess.h; path = "../../../Yinchao-NewPlayer/media/player/inc/TTAudioProcess.h"; sourceTree = "<group>"; };
+		B87422D41DD878B20031AC77 /* TTBaseAudioSink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTBaseAudioSink.h; path = "../../../Yinchao-NewPlayer/media/player/inc/TTBaseAudioSink.h"; sourceTree = "<group>"; };
+		B87422D51DD878B20031AC77 /* TTBaseDataSink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTBaseDataSink.h; path = "../../../Yinchao-NewPlayer/media/player/inc/TTBaseDataSink.h"; sourceTree = "<group>"; };
+		B87422D61DD878B20031AC77 /* TTMediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMediaPlayer.h; path = "../../../Yinchao-NewPlayer/media/player/inc/TTMediaPlayer.h"; sourceTree = "<group>"; };
+		B87422D71DD878B20031AC77 /* TTSrcDemux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTSrcDemux.h; path = "../../../Yinchao-NewPlayer/media/player/inc/TTSrcDemux.h"; sourceTree = "<group>"; };
+		B87422D81DD878B20031AC77 /* ttAACDec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttAACDec.h; path = "../../../Yinchao-NewPlayer/media/common/inc/ttAACDec.h"; sourceTree = "<group>"; };
+		B87422D91DD878B20031AC77 /* ttALACDec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttALACDec.h; path = "../../../Yinchao-NewPlayer/media/common/inc/ttALACDec.h"; sourceTree = "<group>"; };
+		B87422DA1DD878B20031AC77 /* ttAMRDec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttAMRDec.h; path = "../../../Yinchao-NewPlayer/media/common/inc/ttAMRDec.h"; sourceTree = "<group>"; };
+		B87422DB1DD878B20031AC77 /* ttAPEDec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttAPEDec.h; path = "../../../Yinchao-NewPlayer/media/common/inc/ttAPEDec.h"; sourceTree = "<group>"; };
+		B87422DC1DD878B20031AC77 /* ttClConv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttClConv.h; path = "../../../Yinchao-NewPlayer/media/common/inc/ttClConv.h"; sourceTree = "<group>"; };
+		B87422DD1DD878B20031AC77 /* ttDTSDec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttDTSDec.h; path = "../../../Yinchao-NewPlayer/media/common/inc/ttDTSDec.h"; sourceTree = "<group>"; };
+		B87422DE1DD878B20031AC77 /* ttFLACDec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttFLACDec.h; path = "../../../Yinchao-NewPlayer/media/common/inc/ttFLACDec.h"; sourceTree = "<group>"; };
+		B87422DF1DD878B20031AC77 /* ttHWVideoDec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttHWVideoDec.h; path = "../../../Yinchao-NewPlayer/media/common/inc/ttHWVideoDec.h"; sourceTree = "<group>"; };
+		B87422E01DD878B20031AC77 /* ttIosHwVideoDec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttIosHwVideoDec.h; path = "../../../Yinchao-NewPlayer/media/common/inc/ttIosHwVideoDec.h"; sourceTree = "<group>"; };
+		B87422E11DD878B20031AC77 /* ttIpodDec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttIpodDec.h; path = "../../../Yinchao-NewPlayer/media/common/inc/ttIpodDec.h"; sourceTree = "<group>"; };
+		B87422E21DD878B20031AC77 /* ttMediaCodecJDec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttMediaCodecJDec.h; path = "../../../Yinchao-NewPlayer/media/common/inc/ttMediaCodecJDec.h"; sourceTree = "<group>"; };
+		B87423141DD879250031AC77 /* TTAvUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTAvUtils.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTAvUtils.cpp"; sourceTree = "<group>"; };
+		B87423151DD879250031AC77 /* TTBaseDataReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTBaseDataReader.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTBaseDataReader.cpp"; sourceTree = "<group>"; };
+		B87423161DD879250031AC77 /* TTBitReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTBitReader.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTBitReader.cpp"; sourceTree = "<group>"; };
+		B87423171DD879250031AC77 /* TTBufferReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTBufferReader.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTBufferReader.cpp"; sourceTree = "<group>"; };
+		B87423181DD879250031AC77 /* TTBufferReaderProxy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTBufferReaderProxy.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTBufferReaderProxy.cpp"; sourceTree = "<group>"; };
+		B87423191DD879250031AC77 /* TTCacheBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTCacheBuffer.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTCacheBuffer.cpp"; sourceTree = "<group>"; };
+		B874231A1DD879250031AC77 /* TTCondition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTCondition.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTCondition.cpp"; sourceTree = "<group>"; };
+		B874231B1DD879250031AC77 /* TTCritical.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTCritical.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTCritical.cpp"; sourceTree = "<group>"; };
+		B874231C1DD879250031AC77 /* TTDirEnum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTDirEnum.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTDirEnum.cpp"; sourceTree = "<group>"; };
+		B874231D1DD879250031AC77 /* TTDllLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTDllLoader.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTDllLoader.cpp"; sourceTree = "<group>"; };
+		B874231E1DD879250031AC77 /* TTDNSCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTDNSCache.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTDNSCache.cpp"; sourceTree = "<group>"; };
+		B874231F1DD879250031AC77 /* TTEventThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTEventThread.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTEventThread.cpp"; sourceTree = "<group>"; };
+		B87423201DD879250031AC77 /* TTFileReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTFileReader.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTFileReader.cpp"; sourceTree = "<group>"; };
+		B87423211DD879250031AC77 /* TThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TThread.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TThread.cpp"; sourceTree = "<group>"; };
+		B87423221DD879250031AC77 /* TTHttpCacheFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTHttpCacheFile.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTHttpCacheFile.cpp"; sourceTree = "<group>"; };
+		B87423231DD879250031AC77 /* TTHttpClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTHttpClient.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTHttpClient.cpp"; sourceTree = "<group>"; };
+		B87423241DD879250031AC77 /* TTHttpReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTHttpReader.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTHttpReader.cpp"; sourceTree = "<group>"; };
+		B87423251DD879250031AC77 /* TTHttpReaderProxy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTHttpReaderProxy.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTHttpReaderProxy.cpp"; sourceTree = "<group>"; };
+		B87423261DD879250031AC77 /* TTIOClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTIOClient.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTIOClient.cpp"; sourceTree = "<group>"; };
+		B87423271DD879250031AC77 /* TTNetWorkConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTNetWorkConfig.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTNetWorkConfig.cpp"; sourceTree = "<group>"; };
+		B87423281DD879250031AC77 /* TTSemaphore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTSemaphore.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTSemaphore.cpp"; sourceTree = "<group>"; };
+		B87423291DD879250031AC77 /* TTSleep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTSleep.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTSleep.cpp"; sourceTree = "<group>"; };
+		B874232A1DD879250031AC77 /* TTSysTime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTSysTime.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTSysTime.cpp"; sourceTree = "<group>"; };
+		B874232B1DD879250031AC77 /* TTUrlParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTUrlParser.cpp; path = "../../../Yinchao-NewPlayer/osal/src/TTUrlParser.cpp"; sourceTree = "<group>"; };
+		B874232C1DD879250031AC77 /* TTTypedef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTTypedef.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTTypedef.h"; sourceTree = "<group>"; };
+		B874232D1DD879250031AC77 /* TTAutoReleasePool.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTAutoReleasePool.mm; path = "../../../Yinchao-NewPlayer/osal/src/IOS/TTAutoReleasePool.mm"; sourceTree = "<group>"; };
+		B874232E1DD879250031AC77 /* TTBackgroundConfig.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTBackgroundConfig.mm; path = "../../../Yinchao-NewPlayer/osal/src/IOS/TTBackgroundConfig.mm"; sourceTree = "<group>"; };
+		B874232F1DD879250031AC77 /* TTExtAudioFileReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTExtAudioFileReader.mm; path = "../../../Yinchao-NewPlayer/osal/src/IOS/TTExtAudioFileReader.mm"; sourceTree = "<group>"; };
+		B87423301DD879250031AC77 /* TTIPodLibraryFileReader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTIPodLibraryFileReader.mm; path = "../../../Yinchao-NewPlayer/osal/src/IOS/TTIPodLibraryFileReader.mm"; sourceTree = "<group>"; };
+		B87423311DD879250031AC77 /* TTPackagePathFetcher.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTPackagePathFetcher.mm; path = "../../../Yinchao-NewPlayer/osal/src/IOS/TTPackagePathFetcher.mm"; sourceTree = "<group>"; };
+		B87423321DD879250031AC77 /* TTUIDeviceHardware.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = TTUIDeviceHardware.mm; path = "../../../Yinchao-NewPlayer/osal/src/IOS/TTUIDeviceHardware.mm"; sourceTree = "<group>"; };
+		B87423521DD879360031AC77 /* TTAutoReleasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTAutoReleasePool.h; path = "../../../Yinchao-NewPlayer/osal/inc/IOS/TTAutoReleasePool.h"; sourceTree = "<group>"; };
+		B87423531DD879360031AC77 /* TTBackgroundConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTBackgroundConfig.h; path = "../../../Yinchao-NewPlayer/osal/inc/IOS/TTBackgroundConfig.h"; sourceTree = "<group>"; };
+		B87423541DD879360031AC77 /* TTExtAudioFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTExtAudioFileReader.h; path = "../../../Yinchao-NewPlayer/osal/inc/IOS/TTExtAudioFileReader.h"; sourceTree = "<group>"; };
+		B87423551DD879360031AC77 /* TTIPodLibraryFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTIPodLibraryFileReader.h; path = "../../../Yinchao-NewPlayer/osal/inc/IOS/TTIPodLibraryFileReader.h"; sourceTree = "<group>"; };
+		B87423561DD879360031AC77 /* TTIPodLibraryPCMOutputFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTIPodLibraryPCMOutputFormat.h; path = "../../../Yinchao-NewPlayer/osal/inc/IOS/TTIPodLibraryPCMOutputFormat.h"; sourceTree = "<group>"; };
+		B87423571DD879360031AC77 /* TTPackagePathFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTPackagePathFetcher.h; path = "../../../Yinchao-NewPlayer/osal/inc/IOS/TTPackagePathFetcher.h"; sourceTree = "<group>"; };
+		B87423581DD879360031AC77 /* TTUIDeviceHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTUIDeviceHardware.h; path = "../../../Yinchao-NewPlayer/osal/inc/IOS/TTUIDeviceHardware.h"; sourceTree = "<group>"; };
+		B87423591DD879360031AC77 /* TTArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTArray.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTArray.h"; sourceTree = "<group>"; };
+		B874235A1DD879360031AC77 /* TTOsalConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTOsalConfig.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTOsalConfig.h"; sourceTree = "<group>"; };
+		B874235B1DD879360031AC77 /* TTAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTAudio.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTAudio.h"; sourceTree = "<group>"; };
+		B874235D1DD879360031AC77 /* TTAvUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTAvUtils.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTAvUtils.h"; sourceTree = "<group>"; };
+		B874235E1DD879360031AC77 /* TTBaseDataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTBaseDataReader.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTBaseDataReader.h"; sourceTree = "<group>"; };
+		B874235F1DD879360031AC77 /* TTBitReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTBitReader.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTBitReader.h"; sourceTree = "<group>"; };
+		B87423601DD879360031AC77 /* TTBufferReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTBufferReader.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTBufferReader.h"; sourceTree = "<group>"; };
+		B87423611DD879360031AC77 /* TTBufferReaderProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTBufferReaderProxy.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTBufferReaderProxy.h"; sourceTree = "<group>"; };
+		B87423621DD879360031AC77 /* TTCacheBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTCacheBuffer.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTCacheBuffer.h"; sourceTree = "<group>"; };
+		B87423631DD879360031AC77 /* TTCommandId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTCommandId.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTCommandId.h"; sourceTree = "<group>"; };
+		B87423641DD879360031AC77 /* TTCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTCondition.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTCondition.h"; sourceTree = "<group>"; };
+		B87423651DD879360031AC77 /* TTSemaphore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTSemaphore.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTSemaphore.h"; sourceTree = "<group>"; };
+		B87423661DD879360031AC77 /* TTCritical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTCritical.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTCritical.h"; sourceTree = "<group>"; };
+		B87423671DD879360031AC77 /* TTDataReaderItf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTDataReaderItf.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTDataReaderItf.h"; sourceTree = "<group>"; };
+		B87423681DD879360031AC77 /* TTDirEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTDirEnum.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTDirEnum.h"; sourceTree = "<group>"; };
+		B87423691DD879360031AC77 /* TTDllLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTDllLoader.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTDllLoader.h"; sourceTree = "<group>"; };
+		B874236A1DD879360031AC77 /* TTDNSCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTDNSCache.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTDNSCache.h"; sourceTree = "<group>"; };
+		B874236B1DD879360031AC77 /* TTEventThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTEventThread.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTEventThread.h"; sourceTree = "<group>"; };
+		B874236C1DD879360031AC77 /* TTFileReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTFileReader.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTFileReader.h"; sourceTree = "<group>"; };
+		B874236D1DD879360031AC77 /* TThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TThread.h; path = "../../../Yinchao-NewPlayer/osal/inc/TThread.h"; sourceTree = "<group>"; };
+		B874236E1DD879360031AC77 /* TTHttpCacheFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTHttpCacheFile.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTHttpCacheFile.h"; sourceTree = "<group>"; };
+		B874236F1DD879360031AC77 /* TTHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTHttpClient.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTHttpClient.h"; sourceTree = "<group>"; };
+		B87423701DD879360031AC77 /* TTHttpReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTHttpReader.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTHttpReader.h"; sourceTree = "<group>"; };
+		B87423711DD879360031AC77 /* TTHttpReaderProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTHttpReaderProxy.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTHttpReaderProxy.h"; sourceTree = "<group>"; };
+		B87423721DD879360031AC77 /* TTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTimer.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTimer.h"; sourceTree = "<group>"; };
+		B87423731DD879360031AC77 /* TTInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTInterface.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTInterface.h"; sourceTree = "<group>"; };
+		B87423741DD879360031AC77 /* TTIOClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTIOClient.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTIOClient.h"; sourceTree = "<group>"; };
+		B87423751DD879360031AC77 /* TTList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTList.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTList.h"; sourceTree = "<group>"; };
+		B87423761DD879360031AC77 /* TTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTLog.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTLog.h"; sourceTree = "<group>"; };
+		B87423771DD879360031AC77 /* TTMacrodef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMacrodef.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTMacrodef.h"; sourceTree = "<group>"; };
+		B87423781DD879360031AC77 /* TTMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMap.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTMap.h"; sourceTree = "<group>"; };
+		B87423791DD879360031AC77 /* TTMediadef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMediadef.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTMediadef.h"; sourceTree = "<group>"; };
+		B874237A1DD879360031AC77 /* TTMsgQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMsgQueue.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTMsgQueue.h"; sourceTree = "<group>"; };
+		B874237B1DD879360031AC77 /* TTNetWorkConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTNetWorkConfig.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTNetWorkConfig.h"; sourceTree = "<group>"; };
+		B874237C1DD879360031AC77 /* TTSleep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTSleep.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTSleep.h"; sourceTree = "<group>"; };
+		B874237D1DD879360031AC77 /* TTStdint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTStdint.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTStdint.h"; sourceTree = "<group>"; };
+		B874237E1DD879360031AC77 /* TTStreamBufferingItf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTStreamBufferingItf.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTStreamBufferingItf.h"; sourceTree = "<group>"; };
+		B874237F1DD879360031AC77 /* TTSysTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTSysTime.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTSysTime.h"; sourceTree = "<group>"; };
+		B87423801DD879360031AC77 /* TTUrlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTUrlParser.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTUrlParser.h"; sourceTree = "<group>"; };
+		B87423811DD879360031AC77 /* TTVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTVideo.h; path = "../../../Yinchao-NewPlayer/osal/inc/TTVideo.h"; sourceTree = "<group>"; };
+		B87423B21DD8795F0031AC77 /* TTExtAudioFileParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTExtAudioFileParser.cpp; path = "../../../Yinchao-NewPlayer/media/info/src/IOS/TTExtAudioFileParser.cpp"; sourceTree = "<group>"; };
+		B87423B31DD8795F0031AC77 /* TTIPodLibraryParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTIPodLibraryParser.cpp; path = "../../../Yinchao-NewPlayer/media/info/src/IOS/TTIPodLibraryParser.cpp"; sourceTree = "<group>"; };
+		B87423B41DD8795F0031AC77 /* TTMediaParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTMediaParser.cpp; path = "../../../Yinchao-NewPlayer/media/info/src/TTMediaParser.cpp"; sourceTree = "<group>"; };
+		B87423B51DD8795F0031AC77 /* TTAPETag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTAPETag.cpp; path = "../../../Yinchao-NewPlayer/media/info/src/TTAPETag.cpp"; sourceTree = "<group>"; };
+		B87423B61DD8795F0031AC77 /* TTHttpMP3Parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTHttpMP3Parser.cpp; path = "../../../Yinchao-NewPlayer/media/info/src/TTHttpMP3Parser.cpp"; sourceTree = "<group>"; };
+		B87423B71DD8795F0031AC77 /* TTID3Tag.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTID3Tag.cpp; path = "../../../Yinchao-NewPlayer/media/info/src/TTID3Tag.cpp"; sourceTree = "<group>"; };
+		B87423B81DD8795F0031AC77 /* TTIntReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTIntReader.cpp; path = "../../../Yinchao-NewPlayer/media/info/src/TTIntReader.cpp"; sourceTree = "<group>"; };
+		B87423B91DD8795F0031AC77 /* TTMediainfoProxy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTMediainfoProxy.cpp; path = "../../../Yinchao-NewPlayer/media/info/src/TTMediainfoProxy.cpp"; sourceTree = "<group>"; };
+		B87423BA1DD8795F0031AC77 /* TTMP3Header.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTMP3Header.cpp; path = "../../../Yinchao-NewPlayer/media/info/src/TTMP3Header.cpp"; sourceTree = "<group>"; };
+		B87423BB1DD8795F0031AC77 /* TTMP3Parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TTMP3Parser.cpp; path = "../../../Yinchao-NewPlayer/media/info/src/TTMP3Parser.cpp"; sourceTree = "<group>"; };
+		B87423BC1DD8795F0031AC77 /* TTExtAudioFileParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTExtAudioFileParser.h; path = "../../../Yinchao-NewPlayer/media/info/inc/IOS/TTExtAudioFileParser.h"; sourceTree = "<group>"; };
+		B87423BD1DD8795F0031AC77 /* TTPureDataParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTPureDataParser.h; path = "../../../Yinchao-NewPlayer/media/info/inc/IOS/TTPureDataParser.h"; sourceTree = "<group>"; };
+		B87423BE1DD8795F0031AC77 /* RIFF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RIFF.h; path = "../../../Yinchao-NewPlayer/media/info/inc/RIFF.h"; sourceTree = "<group>"; };
+		B87423BF1DD8795F0031AC77 /* TTAPETag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTAPETag.h; path = "../../../Yinchao-NewPlayer/media/info/inc/TTAPETag.h"; sourceTree = "<group>"; };
+		B87423C01DD8795F0031AC77 /* TTHttpMP3Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTHttpMP3Parser.h; path = "../../../Yinchao-NewPlayer/media/info/inc/TTHttpMP3Parser.h"; sourceTree = "<group>"; };
+		B87423C11DD8795F0031AC77 /* TTID3Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTID3Tag.h; path = "../../../Yinchao-NewPlayer/media/info/inc/TTID3Tag.h"; sourceTree = "<group>"; };
+		B87423C21DD8795F0031AC77 /* TTIMediaInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTIMediaInfo.h; path = "../../../Yinchao-NewPlayer/media/info/inc/TTIMediaInfo.h"; sourceTree = "<group>"; };
+		B87423C31DD8795F0031AC77 /* TTIntReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTIntReader.h; path = "../../../Yinchao-NewPlayer/media/info/inc/TTIntReader.h"; sourceTree = "<group>"; };
+		B87423C41DD8795F0031AC77 /* TTMediainfoDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMediainfoDef.h; path = "../../../Yinchao-NewPlayer/media/info/inc/TTMediainfoDef.h"; sourceTree = "<group>"; };
+		B87423C51DD8795F0031AC77 /* TTMediainfoProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMediainfoProxy.h; path = "../../../Yinchao-NewPlayer/media/info/inc/TTMediainfoProxy.h"; sourceTree = "<group>"; };
+		B87423C61DD8795F0031AC77 /* TTMediaParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMediaParser.h; path = "../../../Yinchao-NewPlayer/media/info/inc/TTMediaParser.h"; sourceTree = "<group>"; };
+		B87423C71DD8795F0031AC77 /* TTMediaParserItf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMediaParserItf.h; path = "../../../Yinchao-NewPlayer/media/info/inc/TTMediaParserItf.h"; sourceTree = "<group>"; };
+		B87423C81DD8795F0031AC77 /* TTMP3Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMP3Header.h; path = "../../../Yinchao-NewPlayer/media/info/inc/TTMP3Header.h"; sourceTree = "<group>"; };
+		B87423C91DD8795F0031AC77 /* TTMP3Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMP3Parser.h; path = "../../../Yinchao-NewPlayer/media/info/inc/TTMP3Parser.h"; sourceTree = "<group>"; };
+		B87423CA1DD8795F0031AC77 /* TTMP4Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMP4Parser.h; path = "../../../Yinchao-NewPlayer/media/info/inc/TTMP4Parser.h"; sourceTree = "<group>"; };
+		B87423E41DD8796F0031AC77 /* aflibConverter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = aflibConverter.cpp; path = "../../../Yinchao-NewPlayer/media/audiodecoder/src/aflib/aflibConverter.cpp"; sourceTree = "<group>"; };
+		B87423E51DD8796F0031AC77 /* aflibconverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aflibconverter.h; path = "../../../Yinchao-NewPlayer/media/audiodecoder/src/aflib/aflibconverter.h"; sourceTree = "<group>"; };
+		B87423E61DD8796F0031AC77 /* aflibConverterLargeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aflibConverterLargeFilter.h; path = "../../../Yinchao-NewPlayer/media/audiodecoder/src/aflib/aflibConverterLargeFilter.h"; sourceTree = "<group>"; };
+		B87423E71DD8796F0031AC77 /* aflibConverterSmallFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = aflibConverterSmallFilter.h; path = "../../../Yinchao-NewPlayer/media/audiodecoder/src/aflib/aflibConverterSmallFilter.h"; sourceTree = "<group>"; };
+		B87423EC1DD879880031AC77 /* ttMemAlign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttMemAlign.h; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/inc/ttMemAlign.h"; sourceTree = "<group>"; };
+		B87423ED1DD879880031AC77 /* ttMP3Dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttMP3Dec.h; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/inc/ttMP3Dec.h"; sourceTree = "<group>"; };
+		B87423EE1DD879880031AC77 /* ttMP3DecBit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttMP3DecBit.h; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/inc/ttMP3DecBit.h"; sourceTree = "<group>"; };
+		B87423EF1DD879880031AC77 /* ttMP3DecBuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttMP3DecBuf.h; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/inc/ttMP3DecBuf.h"; sourceTree = "<group>"; };
+		B87423F01DD879880031AC77 /* ttMP3DecCfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttMP3DecCfg.h; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/inc/ttMP3DecCfg.h"; sourceTree = "<group>"; };
+		B87423F11DD879880031AC77 /* ttMP3DecFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttMP3DecFrame.h; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/inc/ttMP3DecFrame.h"; sourceTree = "<group>"; };
+		B87423F21DD879880031AC77 /* ttMP3DecGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttMP3DecGlobal.h; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/inc/ttMP3DecGlobal.h"; sourceTree = "<group>"; };
+		B87423F31DD879880031AC77 /* ttMP3DecHuffman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttMP3DecHuffman.h; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/inc/ttMP3DecHuffman.h"; sourceTree = "<group>"; };
+		B87423F41DD879880031AC77 /* ttTypeDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ttTypeDefine.h; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/inc/ttTypeDefine.h"; sourceTree = "<group>"; };
+		B87423FE1DD879960031AC77 /* ttMemAlign.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ttMemAlign.c; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/src/ttMemAlign.c"; sourceTree = "<group>"; };
+		B87423FF1DD879960031AC77 /* ttMP3DecApis.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ttMP3DecApis.c; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/src/ttMP3DecApis.c"; sourceTree = "<group>"; };
+		B87424001DD879960031AC77 /* ttMP3DecBit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ttMP3DecBit.c; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/src/ttMP3DecBit.c"; sourceTree = "<group>"; };
+		B87424011DD879960031AC77 /* ttMP3DecBuf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ttMP3DecBuf.c; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/src/ttMP3DecBuf.c"; sourceTree = "<group>"; };
+		B87424021DD879960031AC77 /* ttMP3Decdct32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ttMP3Decdct32.c; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/src/ttMP3Decdct32.c"; sourceTree = "<group>"; };
+		B87424031DD879960031AC77 /* ttMP3DecFrame.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ttMP3DecFrame.c; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/src/ttMP3DecFrame.c"; sourceTree = "<group>"; };
+		B87424041DD879960031AC77 /* ttMP3DecHuffman.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ttMP3DecHuffman.c; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/src/ttMP3DecHuffman.c"; sourceTree = "<group>"; };
+		B87424051DD879960031AC77 /* ttMP3DecLayer12.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ttMP3DecLayer12.c; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/src/ttMP3DecLayer12.c"; sourceTree = "<group>"; };
+		B87424061DD879960031AC77 /* ttMP3DecLayer3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ttMP3DecLayer3.c; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/src/ttMP3DecLayer3.c"; sourceTree = "<group>"; };
+		B87424071DD879960031AC77 /* ttMP3DecPolyphase.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ttMP3DecPolyphase.c; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/src/ttMP3DecPolyphase.c"; sourceTree = "<group>"; };
+		B87424081DD879960031AC77 /* ttMP3DecRQTable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ttMP3DecRQTable.c; path = "../../../Yinchao-NewPlayer/media/codec/MP3Dec/src/ttMP3DecRQTable.c"; sourceTree = "<group>"; };
+		B87424151DD87BBD0031AC77 /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = usr/lib/libc.tbd; sourceTree = SDKROOT; };
+		B87424171DD87BC90031AC77 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B87424191DD87BD10031AC77 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		B874241B1DD87BDA0031AC77 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		B874241D1DD87BE50031AC77 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		B874241F1DD87BED0031AC77 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B87424211DD87BF30031AC77 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		B87424231DD87BFC0031AC77 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B87424251DD87C020031AC77 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B88FBBB01DDC02FF000CFB0B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B87420FB1DD871B30031AC77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B87424261DD87C020031AC77 /* AudioToolbox.framework in Frameworks */,
+				B87424241DD87BFC0031AC77 /* AVFoundation.framework in Frameworks */,
+				B87424221DD87BF30031AC77 /* CoreMedia.framework in Frameworks */,
+				B87424201DD87BED0031AC77 /* UIKit.framework in Frameworks */,
+				B874241E1DD87BE50031AC77 /* CoreTelephony.framework in Frameworks */,
+				B874241C1DD87BDA0031AC77 /* CoreVideo.framework in Frameworks */,
+				B874241A1DD87BD10031AC77 /* OpenGLES.framework in Frameworks */,
+				B87424181DD87BC90031AC77 /* QuartzCore.framework in Frameworks */,
+				B87424161DD87BBD0031AC77 /* libc.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B87420F51DD871B20031AC77 = {
+			isa = PBXGroup;
+			children = (
+				B87421011DD871B30031AC77 /* YCiOSPlayerLib */,
+				B87421001DD871B30031AC77 /* Products */,
+				B87424141DD87BBC0031AC77 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B87421001DD871B30031AC77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B87420FF1DD871B30031AC77 /* YCiOSPlayerLib.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B87421011DD871B30031AC77 /* YCiOSPlayerLib */ = {
+			isa = PBXGroup;
+			children = (
+				B87421141DD873530031AC77 /* YCAudioDecoder */,
+				B87421151DD873530031AC77 /* YCInfo */,
+				B87421161DD873530031AC77 /* YCMP3Dec */,
+				B87421171DD873530031AC77 /* YCOsal */,
+				B87421181DD873530031AC77 /* YCPlayer */,
+				B87421021DD871B30031AC77 /* YCiOSPlayerLib.h */,
+				B87421031DD871B30031AC77 /* Info.plist */,
+			);
+			path = YCiOSPlayerLib;
+			sourceTree = "<group>";
+		};
+		B87421141DD873530031AC77 /* YCAudioDecoder */ = {
+			isa = PBXGroup;
+			children = (
+				B87423E41DD8796F0031AC77 /* aflibConverter.cpp */,
+				B87423E51DD8796F0031AC77 /* aflibconverter.h */,
+				B87423E61DD8796F0031AC77 /* aflibConverterLargeFilter.h */,
+				B87423E71DD8796F0031AC77 /* aflibConverterSmallFilter.h */,
+			);
+			path = YCAudioDecoder;
+			sourceTree = "<group>";
+		};
+		B87421151DD873530031AC77 /* YCInfo */ = {
+			isa = PBXGroup;
+			children = (
+				B87423B21DD8795F0031AC77 /* TTExtAudioFileParser.cpp */,
+				B87423B31DD8795F0031AC77 /* TTIPodLibraryParser.cpp */,
+				B87423B41DD8795F0031AC77 /* TTMediaParser.cpp */,
+				B87423B51DD8795F0031AC77 /* TTAPETag.cpp */,
+				B87423B61DD8795F0031AC77 /* TTHttpMP3Parser.cpp */,
+				B87423B71DD8795F0031AC77 /* TTID3Tag.cpp */,
+				B87423B81DD8795F0031AC77 /* TTIntReader.cpp */,
+				B87423B91DD8795F0031AC77 /* TTMediainfoProxy.cpp */,
+				B87423BA1DD8795F0031AC77 /* TTMP3Header.cpp */,
+				B87423BB1DD8795F0031AC77 /* TTMP3Parser.cpp */,
+				B87423BC1DD8795F0031AC77 /* TTExtAudioFileParser.h */,
+				B87423BD1DD8795F0031AC77 /* TTPureDataParser.h */,
+				B87423BE1DD8795F0031AC77 /* RIFF.h */,
+				B87423BF1DD8795F0031AC77 /* TTAPETag.h */,
+				B87423C01DD8795F0031AC77 /* TTHttpMP3Parser.h */,
+				B87423C11DD8795F0031AC77 /* TTID3Tag.h */,
+				B87423C21DD8795F0031AC77 /* TTIMediaInfo.h */,
+				B87423C31DD8795F0031AC77 /* TTIntReader.h */,
+				B87423C41DD8795F0031AC77 /* TTMediainfoDef.h */,
+				B87423C51DD8795F0031AC77 /* TTMediainfoProxy.h */,
+				B87423C61DD8795F0031AC77 /* TTMediaParser.h */,
+				B87423C71DD8795F0031AC77 /* TTMediaParserItf.h */,
+				B87423C81DD8795F0031AC77 /* TTMP3Header.h */,
+				B87423C91DD8795F0031AC77 /* TTMP3Parser.h */,
+				B87423CA1DD8795F0031AC77 /* TTMP4Parser.h */,
+			);
+			path = YCInfo;
+			sourceTree = "<group>";
+		};
+		B87421161DD873530031AC77 /* YCMP3Dec */ = {
+			isa = PBXGroup;
+			children = (
+				B87423EC1DD879880031AC77 /* ttMemAlign.h */,
+				B87423ED1DD879880031AC77 /* ttMP3Dec.h */,
+				B87423EE1DD879880031AC77 /* ttMP3DecBit.h */,
+				B87423EF1DD879880031AC77 /* ttMP3DecBuf.h */,
+				B87423F01DD879880031AC77 /* ttMP3DecCfg.h */,
+				B87423F11DD879880031AC77 /* ttMP3DecFrame.h */,
+				B87423F21DD879880031AC77 /* ttMP3DecGlobal.h */,
+				B87423F31DD879880031AC77 /* ttMP3DecHuffman.h */,
+				B87423FE1DD879960031AC77 /* ttMemAlign.c */,
+				B87423FF1DD879960031AC77 /* ttMP3DecApis.c */,
+				B87424001DD879960031AC77 /* ttMP3DecBit.c */,
+				B87424011DD879960031AC77 /* ttMP3DecBuf.c */,
+				B87424021DD879960031AC77 /* ttMP3Decdct32.c */,
+				B87424031DD879960031AC77 /* ttMP3DecFrame.c */,
+				B87424041DD879960031AC77 /* ttMP3DecHuffman.c */,
+				B87424051DD879960031AC77 /* ttMP3DecLayer12.c */,
+				B87424061DD879960031AC77 /* ttMP3DecLayer3.c */,
+				B87424071DD879960031AC77 /* ttMP3DecPolyphase.c */,
+				B87424081DD879960031AC77 /* ttMP3DecRQTable.c */,
+				B87423F41DD879880031AC77 /* ttTypeDefine.h */,
+			);
+			path = YCMP3Dec;
+			sourceTree = "<group>";
+		};
+		B87421171DD873530031AC77 /* YCOsal */ = {
+			isa = PBXGroup;
+			children = (
+				B87423141DD879250031AC77 /* TTAvUtils.cpp */,
+				B87423151DD879250031AC77 /* TTBaseDataReader.cpp */,
+				B87423161DD879250031AC77 /* TTBitReader.cpp */,
+				B87423171DD879250031AC77 /* TTBufferReader.cpp */,
+				B87423181DD879250031AC77 /* TTBufferReaderProxy.cpp */,
+				B87423191DD879250031AC77 /* TTCacheBuffer.cpp */,
+				B874231A1DD879250031AC77 /* TTCondition.cpp */,
+				B874231B1DD879250031AC77 /* TTCritical.cpp */,
+				B874231C1DD879250031AC77 /* TTDirEnum.cpp */,
+				B874231D1DD879250031AC77 /* TTDllLoader.cpp */,
+				B874231E1DD879250031AC77 /* TTDNSCache.cpp */,
+				B874231F1DD879250031AC77 /* TTEventThread.cpp */,
+				B87423201DD879250031AC77 /* TTFileReader.cpp */,
+				B87423211DD879250031AC77 /* TThread.cpp */,
+				B87423221DD879250031AC77 /* TTHttpCacheFile.cpp */,
+				B87423231DD879250031AC77 /* TTHttpClient.cpp */,
+				B87423241DD879250031AC77 /* TTHttpReader.cpp */,
+				B87423251DD879250031AC77 /* TTHttpReaderProxy.cpp */,
+				B87423261DD879250031AC77 /* TTIOClient.cpp */,
+				B87423271DD879250031AC77 /* TTNetWorkConfig.cpp */,
+				B87423281DD879250031AC77 /* TTSemaphore.cpp */,
+				B87423291DD879250031AC77 /* TTSleep.cpp */,
+				B874232A1DD879250031AC77 /* TTSysTime.cpp */,
+				B874232B1DD879250031AC77 /* TTUrlParser.cpp */,
+				B874232C1DD879250031AC77 /* TTTypedef.h */,
+				B874232D1DD879250031AC77 /* TTAutoReleasePool.mm */,
+				B874232E1DD879250031AC77 /* TTBackgroundConfig.mm */,
+				B874232F1DD879250031AC77 /* TTExtAudioFileReader.mm */,
+				B87423301DD879250031AC77 /* TTIPodLibraryFileReader.mm */,
+				B87423311DD879250031AC77 /* TTPackagePathFetcher.mm */,
+				B87423321DD879250031AC77 /* TTUIDeviceHardware.mm */,
+				B87423521DD879360031AC77 /* TTAutoReleasePool.h */,
+				B87423531DD879360031AC77 /* TTBackgroundConfig.h */,
+				B87423541DD879360031AC77 /* TTExtAudioFileReader.h */,
+				B87423551DD879360031AC77 /* TTIPodLibraryFileReader.h */,
+				B87423561DD879360031AC77 /* TTIPodLibraryPCMOutputFormat.h */,
+				B87423571DD879360031AC77 /* TTPackagePathFetcher.h */,
+				B87423581DD879360031AC77 /* TTUIDeviceHardware.h */,
+				B87423591DD879360031AC77 /* TTArray.h */,
+				B874235A1DD879360031AC77 /* TTOsalConfig.h */,
+				B874235B1DD879360031AC77 /* TTAudio.h */,
+				B874235D1DD879360031AC77 /* TTAvUtils.h */,
+				B874235E1DD879360031AC77 /* TTBaseDataReader.h */,
+				B874235F1DD879360031AC77 /* TTBitReader.h */,
+				B87423601DD879360031AC77 /* TTBufferReader.h */,
+				B87423611DD879360031AC77 /* TTBufferReaderProxy.h */,
+				B87423621DD879360031AC77 /* TTCacheBuffer.h */,
+				B87423631DD879360031AC77 /* TTCommandId.h */,
+				B87423641DD879360031AC77 /* TTCondition.h */,
+				B87423651DD879360031AC77 /* TTSemaphore.h */,
+				B87423661DD879360031AC77 /* TTCritical.h */,
+				B87423671DD879360031AC77 /* TTDataReaderItf.h */,
+				B87423681DD879360031AC77 /* TTDirEnum.h */,
+				B87423691DD879360031AC77 /* TTDllLoader.h */,
+				B874236A1DD879360031AC77 /* TTDNSCache.h */,
+				B874236B1DD879360031AC77 /* TTEventThread.h */,
+				B874236C1DD879360031AC77 /* TTFileReader.h */,
+				B874236D1DD879360031AC77 /* TThread.h */,
+				B874236E1DD879360031AC77 /* TTHttpCacheFile.h */,
+				B874236F1DD879360031AC77 /* TTHttpClient.h */,
+				B87423701DD879360031AC77 /* TTHttpReader.h */,
+				B87423711DD879360031AC77 /* TTHttpReaderProxy.h */,
+				B87423721DD879360031AC77 /* TTimer.h */,
+				B87423731DD879360031AC77 /* TTInterface.h */,
+				B87423741DD879360031AC77 /* TTIOClient.h */,
+				B87423751DD879360031AC77 /* TTList.h */,
+				B87423761DD879360031AC77 /* TTLog.h */,
+				B87423771DD879360031AC77 /* TTMacrodef.h */,
+				B87423781DD879360031AC77 /* TTMap.h */,
+				B87423791DD879360031AC77 /* TTMediadef.h */,
+				B874237A1DD879360031AC77 /* TTMsgQueue.h */,
+				B874237B1DD879360031AC77 /* TTNetWorkConfig.h */,
+				B874237C1DD879360031AC77 /* TTSleep.h */,
+				B874237D1DD879360031AC77 /* TTStdint.h */,
+				B874237E1DD879360031AC77 /* TTStreamBufferingItf.h */,
+				B874237F1DD879360031AC77 /* TTSysTime.h */,
+				B87423801DD879360031AC77 /* TTUrlParser.h */,
+				B87423811DD879360031AC77 /* TTVideo.h */,
+			);
+			path = YCOsal;
+			sourceTree = "<group>";
+		};
+		B87421181DD873530031AC77 /* YCPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				B87422B21DD878B20031AC77 /* ttMP3Dec.h */,
+				B87422B31DD878B20031AC77 /* ttVideoDec.h */,
+				B87422B41DD878B20031AC77 /* TTVideoPlugin.h */,
+				B87422B51DD878B20031AC77 /* ttWMADec.h */,
+				B87422B61DD878B20031AC77 /* TTAudioPlugin.h */,
+				B87422B71DD878B20031AC77 /* TTAudioPlugin.cpp */,
+				B87422B81DD878B20031AC77 /* TTMediaPlayerItf.h */,
+				B87422B91DD878B20031AC77 /* TTAudioSink.mm */,
+				B87422BA1DD878B20031AC77 /* TTGLRenderBase.h */,
+				B87422BB1DD878B20031AC77 /* TTGLRenderBase.mm */,
+				B87422BC1DD878B20031AC77 /* TTGLRenderES2_FTU.h */,
+				B87422BD1DD878B20031AC77 /* TTGLRenderES2_FTU.mm */,
+				B87422BE1DD878B20031AC77 /* TTGLRenderES2.h */,
+				B87422BF1DD878B20031AC77 /* TTGLRenderES2.mm */,
+				B87422C01DD878B20031AC77 /* TTMediaPlayerProxy.mm */,
+				B87422C11DD878B20031AC77 /* TTMediaPlayerWarp.mm */,
+				B87422C21DD878B20031AC77 /* TTPlayerInterface.h */,
+				B87422C31DD878B20031AC77 /* TTVideoView.h */,
+				B87422C41DD878B20031AC77 /* TTVideoView.mm */,
+				B87422C51DD878B20031AC77 /* PureDecodeEntity.cpp */,
+				B87422C61DD878B20031AC77 /* TTAudioDecode.cpp */,
+				B87422C71DD878B20031AC77 /* TTAudioProcess.cpp */,
+				B87422C81DD878B20031AC77 /* TTBaseAudioSink.cpp */,
+				B87422C91DD878B20031AC77 /* TTMediaPlayer.cpp */,
+				B87422CA1DD878B20031AC77 /* TTMediaPlayerFactory.cpp */,
+				B87422CB1DD878B20031AC77 /* TTSrcDemux.cpp */,
+				B87422CC1DD878B20031AC77 /* TTFFT.h */,
+				B87422CD1DD878B20031AC77 /* TTFFT.cpp */,
+				B87422CE1DD878B20031AC77 /* TTAudioSink.h */,
+				B87422CF1DD878B20031AC77 /* TTMediaPlayerProxy.h */,
+				B87422D01DD878B20031AC77 /* TTMediaPlayerWarp.h */,
+				B87422D11DD878B20031AC77 /* PureDecodeEntity.h */,
+				B87422D21DD878B20031AC77 /* TTAudioDecode.h */,
+				B87422D31DD878B20031AC77 /* TTAudioProcess.h */,
+				B87422D41DD878B20031AC77 /* TTBaseAudioSink.h */,
+				B87422D51DD878B20031AC77 /* TTBaseDataSink.h */,
+				B87422D61DD878B20031AC77 /* TTMediaPlayer.h */,
+				B87422D71DD878B20031AC77 /* TTSrcDemux.h */,
+				B87422D81DD878B20031AC77 /* ttAACDec.h */,
+				B87422D91DD878B20031AC77 /* ttALACDec.h */,
+				B87422DA1DD878B20031AC77 /* ttAMRDec.h */,
+				B87422DB1DD878B20031AC77 /* ttAPEDec.h */,
+				B87422DC1DD878B20031AC77 /* ttClConv.h */,
+				B87422DD1DD878B20031AC77 /* ttDTSDec.h */,
+				B87422DE1DD878B20031AC77 /* ttFLACDec.h */,
+				B87422DF1DD878B20031AC77 /* ttHWVideoDec.h */,
+				B87422E01DD878B20031AC77 /* ttIosHwVideoDec.h */,
+				B87422E11DD878B20031AC77 /* ttIpodDec.h */,
+				B87422E21DD878B20031AC77 /* ttMediaCodecJDec.h */,
+			);
+			path = YCPlayer;
+			sourceTree = "<group>";
+		};
+		B87424141DD87BBC0031AC77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B88FBBB01DDC02FF000CFB0B /* MediaPlayer.framework */,
+				B87424251DD87C020031AC77 /* AudioToolbox.framework */,
+				B87424231DD87BFC0031AC77 /* AVFoundation.framework */,
+				B87424211DD87BF30031AC77 /* CoreMedia.framework */,
+				B874241F1DD87BED0031AC77 /* UIKit.framework */,
+				B874241D1DD87BE50031AC77 /* CoreTelephony.framework */,
+				B874241B1DD87BDA0031AC77 /* CoreVideo.framework */,
+				B87424191DD87BD10031AC77 /* OpenGLES.framework */,
+				B87424171DD87BC90031AC77 /* QuartzCore.framework */,
+				B87424151DD87BBD0031AC77 /* libc.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B87420FC1DD871B30031AC77 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B87423131DD878B20031AC77 /* ttMediaCodecJDec.h in Headers */,
+				B87423DD1DD8795F0031AC77 /* TTMediainfoDef.h in Headers */,
+				B87423D71DD8795F0031AC77 /* RIFF.h in Headers */,
+				B87422E61DD878B20031AC77 /* ttWMADec.h in Headers */,
+				B87423891DD879360031AC77 /* TTArray.h in Headers */,
+				B874239E1DD879360031AC77 /* TTHttpCacheFile.h in Headers */,
+				B87423F71DD879880031AC77 /* ttMP3DecBit.h in Headers */,
+				B87423981DD879360031AC77 /* TTDirEnum.h in Headers */,
+				B874238D1DD879360031AC77 /* TTAvUtils.h in Headers */,
+				B87423A51DD879360031AC77 /* TTList.h in Headers */,
+				B87423DC1DD8795F0031AC77 /* TTIntReader.h in Headers */,
+				B87423B01DD879360031AC77 /* TTUrlParser.h in Headers */,
+				B87423E31DD8795F0031AC77 /* TTMP4Parser.h in Headers */,
+				B87423991DD879360031AC77 /* TTDllLoader.h in Headers */,
+				B87423A71DD879360031AC77 /* TTMacrodef.h in Headers */,
+				B874230C1DD878B20031AC77 /* ttAPEDec.h in Headers */,
+				B87423911DD879360031AC77 /* TTBufferReaderProxy.h in Headers */,
+				B87423AF1DD879360031AC77 /* TTSysTime.h in Headers */,
+				B87423AE1DD879360031AC77 /* TTStreamBufferingItf.h in Headers */,
+				B87423DB1DD8795F0031AC77 /* TTIMediaInfo.h in Headers */,
+				B87423F61DD879880031AC77 /* ttMP3Dec.h in Headers */,
+				B87422F41DD878B20031AC77 /* TTVideoView.h in Headers */,
+				B874230B1DD878B20031AC77 /* ttAMRDec.h in Headers */,
+				B87423E21DD8795F0031AC77 /* TTMP3Parser.h in Headers */,
+				B87423901DD879360031AC77 /* TTBufferReader.h in Headers */,
+				B874230E1DD878B20031AC77 /* ttDTSDec.h in Headers */,
+				B874238E1DD879360031AC77 /* TTBaseDataReader.h in Headers */,
+				B87423D91DD8795F0031AC77 /* TTHttpMP3Parser.h in Headers */,
+				B874239D1DD879360031AC77 /* TThread.h in Headers */,
+				B87423E01DD8795F0031AC77 /* TTMediaParserItf.h in Headers */,
+				B87423841DD879360031AC77 /* TTExtAudioFileReader.h in Headers */,
+				B87423931DD879360031AC77 /* TTCommandId.h in Headers */,
+				B87423861DD879360031AC77 /* TTIPodLibraryPCMOutputFormat.h in Headers */,
+				B87423941DD879360031AC77 /* TTCondition.h in Headers */,
+				B87423D61DD8795F0031AC77 /* TTPureDataParser.h in Headers */,
+				B87423A41DD879360031AC77 /* TTIOClient.h in Headers */,
+				B87423AC1DD879360031AC77 /* TTSleep.h in Headers */,
+				B87422FD1DD878B20031AC77 /* TTFFT.h in Headers */,
+				B87423EA1DD8796F0031AC77 /* aflibConverterLargeFilter.h in Headers */,
+				B87423951DD879360031AC77 /* TTSemaphore.h in Headers */,
+				B87422E31DD878B20031AC77 /* ttMP3Dec.h in Headers */,
+				B87422FF1DD878B20031AC77 /* TTAudioSink.h in Headers */,
+				B87423031DD878B20031AC77 /* TTAudioDecode.h in Headers */,
+				B874238A1DD879360031AC77 /* TTOsalConfig.h in Headers */,
+				B87423881DD879360031AC77 /* TTUIDeviceHardware.h in Headers */,
+				B87423061DD878B20031AC77 /* TTBaseDataSink.h in Headers */,
+				B87422ED1DD878B20031AC77 /* TTGLRenderES2_FTU.h in Headers */,
+				B87423071DD878B20031AC77 /* TTMediaPlayer.h in Headers */,
+				B87423F51DD879880031AC77 /* ttMemAlign.h in Headers */,
+				B87423DA1DD8795F0031AC77 /* TTID3Tag.h in Headers */,
+				B87423A91DD879360031AC77 /* TTMediadef.h in Headers */,
+				B87423001DD878B20031AC77 /* TTMediaPlayerProxy.h in Headers */,
+				B87423EB1DD8796F0031AC77 /* aflibConverterSmallFilter.h in Headers */,
+				B87422E41DD878B20031AC77 /* ttVideoDec.h in Headers */,
+				B87423871DD879360031AC77 /* TTPackagePathFetcher.h in Headers */,
+				B87423121DD878B20031AC77 /* ttIpodDec.h in Headers */,
+				B87423FD1DD879880031AC77 /* ttTypeDefine.h in Headers */,
+				B87423DE1DD8795F0031AC77 /* TTMediainfoProxy.h in Headers */,
+				B874239B1DD879360031AC77 /* TTEventThread.h in Headers */,
+				B87423FC1DD879880031AC77 /* ttMP3DecHuffman.h in Headers */,
+				B87423971DD879360031AC77 /* TTDataReaderItf.h in Headers */,
+				B87423D51DD8795F0031AC77 /* TTExtAudioFileParser.h in Headers */,
+				B874238B1DD879360031AC77 /* TTAudio.h in Headers */,
+				B87423A01DD879360031AC77 /* TTHttpReader.h in Headers */,
+				B87423A81DD879360031AC77 /* TTMap.h in Headers */,
+				B874230D1DD878B20031AC77 /* ttClConv.h in Headers */,
+				B87423821DD879360031AC77 /* TTAutoReleasePool.h in Headers */,
+				B87423051DD878B20031AC77 /* TTBaseAudioSink.h in Headers */,
+				B87423921DD879360031AC77 /* TTCacheBuffer.h in Headers */,
+				B87423F81DD879880031AC77 /* ttMP3DecBuf.h in Headers */,
+				B87423AB1DD879360031AC77 /* TTNetWorkConfig.h in Headers */,
+				B874239C1DD879360031AC77 /* TTFileReader.h in Headers */,
+				B87423021DD878B20031AC77 /* PureDecodeEntity.h in Headers */,
+				B87423A31DD879360031AC77 /* TTInterface.h in Headers */,
+				B874230A1DD878B20031AC77 /* ttALACDec.h in Headers */,
+				B87423011DD878B20031AC77 /* TTMediaPlayerWarp.h in Headers */,
+				B87423FB1DD879880031AC77 /* ttMP3DecGlobal.h in Headers */,
+				B87422F31DD878B20031AC77 /* TTPlayerInterface.h in Headers */,
+				B87423FA1DD879880031AC77 /* ttMP3DecFrame.h in Headers */,
+				B87423E11DD8795F0031AC77 /* TTMP3Header.h in Headers */,
+				B87423E91DD8796F0031AC77 /* aflibconverter.h in Headers */,
+				B87423AD1DD879360031AC77 /* TTStdint.h in Headers */,
+				B87422EF1DD878B20031AC77 /* TTGLRenderES2.h in Headers */,
+				B87423041DD878B20031AC77 /* TTAudioProcess.h in Headers */,
+				B87423DF1DD8795F0031AC77 /* TTMediaParser.h in Headers */,
+				B87423091DD878B20031AC77 /* ttAACDec.h in Headers */,
+				B874238F1DD879360031AC77 /* TTBitReader.h in Headers */,
+				B87422EB1DD878B20031AC77 /* TTGLRenderBase.h in Headers */,
+				B87423961DD879360031AC77 /* TTCritical.h in Headers */,
+				B87423831DD879360031AC77 /* TTBackgroundConfig.h in Headers */,
+				B87423A21DD879360031AC77 /* TTimer.h in Headers */,
+				B87423AA1DD879360031AC77 /* TTMsgQueue.h in Headers */,
+				B874230F1DD878B20031AC77 /* ttFLACDec.h in Headers */,
+				B87422E71DD878B20031AC77 /* TTAudioPlugin.h in Headers */,
+				B87423A11DD879360031AC77 /* TTHttpReaderProxy.h in Headers */,
+				B87423D81DD8795F0031AC77 /* TTAPETag.h in Headers */,
+				B87423081DD878B20031AC77 /* TTSrcDemux.h in Headers */,
+				B87423F91DD879880031AC77 /* ttMP3DecCfg.h in Headers */,
+				B87423A61DD879360031AC77 /* TTLog.h in Headers */,
+				B87423B11DD879360031AC77 /* TTVideo.h in Headers */,
+				B87423111DD878B20031AC77 /* ttIosHwVideoDec.h in Headers */,
+				B874234B1DD879250031AC77 /* TTTypedef.h in Headers */,
+				B874239F1DD879360031AC77 /* TTHttpClient.h in Headers */,
+				B874239A1DD879360031AC77 /* TTDNSCache.h in Headers */,
+				B87422E91DD878B20031AC77 /* TTMediaPlayerItf.h in Headers */,
+				B87423851DD879360031AC77 /* TTIPodLibraryFileReader.h in Headers */,
+				B87422E51DD878B20031AC77 /* TTVideoPlugin.h in Headers */,
+				B87423101DD878B20031AC77 /* ttHWVideoDec.h in Headers */,
+				B87421041DD871B30031AC77 /* YCiOSPlayerLib.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B87420FE1DD871B30031AC77 /* YCiOSPlayerLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B87421071DD871B30031AC77 /* Build configuration list for PBXNativeTarget "YCiOSPlayerLib" */;
+			buildPhases = (
+				B87420FA1DD871B30031AC77 /* Sources */,
+				B87420FB1DD871B30031AC77 /* Frameworks */,
+				B87420FC1DD871B30031AC77 /* Headers */,
+				B87420FD1DD871B30031AC77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YCiOSPlayerLib;
+			productName = YCiOSPlayerLib;
+			productReference = B87420FF1DD871B30031AC77 /* YCiOSPlayerLib.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B87420F61DD871B20031AC77 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = yintao;
+				TargetAttributes = {
+					B87420FE1DD871B30031AC77 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 62UDHM98C2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B87420F91DD871B20031AC77 /* Build configuration list for PBXProject "YCiOSPlayerLib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B87420F51DD871B20031AC77;
+			productRefGroup = B87421001DD871B30031AC77 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B87420FE1DD871B30031AC77 /* YCiOSPlayerLib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B87420FD1DD871B30031AC77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B87420FA1DD871B30031AC77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B874240A1DD879960031AC77 /* ttMP3DecApis.c in Sources */,
+				B87424131DD879960031AC77 /* ttMP3DecRQTable.c in Sources */,
+				B87422FA1DD878B20031AC77 /* TTMediaPlayer.cpp in Sources */,
+				B87422F71DD878B20031AC77 /* TTAudioDecode.cpp in Sources */,
+				B874234F1DD879250031AC77 /* TTIPodLibraryFileReader.mm in Sources */,
+				B874233A1DD879250031AC77 /* TTCritical.cpp in Sources */,
+				B87423371DD879250031AC77 /* TTBufferReaderProxy.cpp in Sources */,
+				B87423411DD879250031AC77 /* TTHttpCacheFile.cpp in Sources */,
+				B87422FE1DD878B20031AC77 /* TTFFT.cpp in Sources */,
+				B87422F51DD878B20031AC77 /* TTVideoView.mm in Sources */,
+				B874233F1DD879250031AC77 /* TTFileReader.cpp in Sources */,
+				B874240D1DD879960031AC77 /* ttMP3Decdct32.c in Sources */,
+				B87423461DD879250031AC77 /* TTNetWorkConfig.cpp in Sources */,
+				B87423491DD879250031AC77 /* TTSysTime.cpp in Sources */,
+				B87423421DD879250031AC77 /* TTHttpClient.cpp in Sources */,
+				B87422F01DD878B20031AC77 /* TTGLRenderES2.mm in Sources */,
+				B87424091DD879960031AC77 /* ttMemAlign.c in Sources */,
+				B87423D41DD8795F0031AC77 /* TTMP3Parser.cpp in Sources */,
+				B874240C1DD879960031AC77 /* ttMP3DecBuf.c in Sources */,
+				B87423481DD879250031AC77 /* TTSleep.cpp in Sources */,
+				B87423351DD879250031AC77 /* TTBitReader.cpp in Sources */,
+				B874234E1DD879250031AC77 /* TTExtAudioFileReader.mm in Sources */,
+				B87422EC1DD878B20031AC77 /* TTGLRenderBase.mm in Sources */,
+				B87423D11DD8795F0031AC77 /* TTIntReader.cpp in Sources */,
+				B87422F61DD878B20031AC77 /* PureDecodeEntity.cpp in Sources */,
+				B87423501DD879250031AC77 /* TTPackagePathFetcher.mm in Sources */,
+				B87423361DD879250031AC77 /* TTBufferReader.cpp in Sources */,
+				B87423401DD879250031AC77 /* TThread.cpp in Sources */,
+				B87423471DD879250031AC77 /* TTSemaphore.cpp in Sources */,
+				B87422FB1DD878B20031AC77 /* TTMediaPlayerFactory.cpp in Sources */,
+				B874233E1DD879250031AC77 /* TTEventThread.cpp in Sources */,
+				B87423CD1DD8795F0031AC77 /* TTMediaParser.cpp in Sources */,
+				B87423331DD879250031AC77 /* TTAvUtils.cpp in Sources */,
+				B874234C1DD879250031AC77 /* TTAutoReleasePool.mm in Sources */,
+				B87423431DD879250031AC77 /* TTHttpReader.cpp in Sources */,
+				B874233C1DD879250031AC77 /* TTDllLoader.cpp in Sources */,
+				B874234A1DD879250031AC77 /* TTUrlParser.cpp in Sources */,
+				B87423E81DD8796F0031AC77 /* aflibConverter.cpp in Sources */,
+				B87423D21DD8795F0031AC77 /* TTMediainfoProxy.cpp in Sources */,
+				B87423381DD879250031AC77 /* TTCacheBuffer.cpp in Sources */,
+				B87423CC1DD8795F0031AC77 /* TTIPodLibraryParser.cpp in Sources */,
+				B87423441DD879250031AC77 /* TTHttpReaderProxy.cpp in Sources */,
+				B87423D01DD8795F0031AC77 /* TTID3Tag.cpp in Sources */,
+				B87422F11DD878B20031AC77 /* TTMediaPlayerProxy.mm in Sources */,
+				B874240F1DD879960031AC77 /* ttMP3DecHuffman.c in Sources */,
+				B87422F91DD878B20031AC77 /* TTBaseAudioSink.cpp in Sources */,
+				B87423CF1DD8795F0031AC77 /* TTHttpMP3Parser.cpp in Sources */,
+				B87423341DD879250031AC77 /* TTBaseDataReader.cpp in Sources */,
+				B87424111DD879960031AC77 /* ttMP3DecLayer3.c in Sources */,
+				B87424121DD879960031AC77 /* ttMP3DecPolyphase.c in Sources */,
+				B87422FC1DD878B20031AC77 /* TTSrcDemux.cpp in Sources */,
+				B874233B1DD879250031AC77 /* TTDirEnum.cpp in Sources */,
+				B874234D1DD879250031AC77 /* TTBackgroundConfig.mm in Sources */,
+				B874233D1DD879250031AC77 /* TTDNSCache.cpp in Sources */,
+				B87422E81DD878B20031AC77 /* TTAudioPlugin.cpp in Sources */,
+				B87423511DD879250031AC77 /* TTUIDeviceHardware.mm in Sources */,
+				B87423CB1DD8795F0031AC77 /* TTExtAudioFileParser.cpp in Sources */,
+				B87424101DD879960031AC77 /* ttMP3DecLayer12.c in Sources */,
+				B87423CE1DD8795F0031AC77 /* TTAPETag.cpp in Sources */,
+				B87422EA1DD878B20031AC77 /* TTAudioSink.mm in Sources */,
+				B874240B1DD879960031AC77 /* ttMP3DecBit.c in Sources */,
+				B87423D31DD8795F0031AC77 /* TTMP3Header.cpp in Sources */,
+				B87422F81DD878B20031AC77 /* TTAudioProcess.cpp in Sources */,
+				B87422EE1DD878B20031AC77 /* TTGLRenderES2_FTU.mm in Sources */,
+				B87423391DD879250031AC77 /* TTCondition.cpp in Sources */,
+				B874240E1DD879960031AC77 /* ttMP3DecFrame.c in Sources */,
+				B87423451DD879250031AC77 /* TTIOClient.cpp in Sources */,
+				B87422F21DD878B20031AC77 /* TTMediaPlayerWarp.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B87421051DD871B30031AC77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B87421061DD871B30031AC77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B87421081DD871B30031AC77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 62UDHM98C2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_INPUT_FILETYPE = automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../Yinchao-NewPlayer/osal/inc",
+					"$(SRCROOT)/../Yinchao-NewPlayer/media/info/inc/IOS",
+					"$(SRCROOT)/../Yinchao-NewPlayer/media/audiodecoder/src/aflib",
+					"$(SRCROOT)/../Yinchao-NewPlayer/media/info/inc",
+					"$(SRCROOT)/../Yinchao-NewPlayer/osal",
+				);
+				INFOPLIST_FILE = YCiOSPlayerLib/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JPTest.YCiOSPlayerLib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B87421091DD871B30031AC77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 62UDHM98C2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_INPUT_FILETYPE = automatic;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../Yinchao-NewPlayer/osal/inc",
+					"$(SRCROOT)/../Yinchao-NewPlayer/media/info/inc/IOS",
+					"$(SRCROOT)/../Yinchao-NewPlayer/media/audiodecoder/src/aflib",
+					"$(SRCROOT)/../Yinchao-NewPlayer/media/info/inc",
+					"$(SRCROOT)/../Yinchao-NewPlayer/osal",
+				);
+				INFOPLIST_FILE = YCiOSPlayerLib/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.JPTest.YCiOSPlayerLib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B87420F91DD871B20031AC77 /* Build configuration list for PBXProject "YCiOSPlayerLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B87421051DD871B30031AC77 /* Debug */,
+				B87421061DD871B30031AC77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B87421071DD871B30031AC77 /* Build configuration list for PBXNativeTarget "YCiOSPlayerLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B87421081DD871B30031AC77 /* Debug */,
+				B87421091DD871B30031AC77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B87420F61DD871B20031AC77 /* Project object */;
+}
